@@ -1,0 +1,18 @@
+{
+  "name": "日刊工業 ものづくり復習",
+  "short_name": "製造復習",
+  "description": "現場データ化、水冷AIサーバー、CNC自動化を3問で復習する画像付きクイズ",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f6f8",
+  "theme_color": "#101827",
+  "icons": [
+    {
+      "src": "./assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

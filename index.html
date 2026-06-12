@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="日刊工業新聞の製造業トピックを3問で復習する画像付きPWAクイズ">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
+  <title>日刊工業 ものづくり復習 3問</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f6f8;
+      --panel: #ffffff;
+      --ink: #121826;
+      --muted: #596579;
+      --line: #d9e0ea;
+      --blue: #1f66d1;
+      --blue-soft: #eaf2ff;
+      --green: #148653;
+      --green-soft: #e7f7ef;
+      --red: #c43d3d;
+      --red-soft: #fff0f0;
+      --dark: #101827;
+      --shadow: 0 10px 30px rgba(16, 24, 39, .10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100svh;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+      line-height: 1.7;
+    }
+
+    h1,
+    h2,
+    h3,
+    p,
+    li,
+    button,
+    figcaption,
+    .pill {
+      overflow-wrap: anywhere;
+    }
+
+    main {
+      width: min(980px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 18px 0 44px;
+    }
+
+    header {
+      padding: 8px 0 4px;
+    }
+
+    .kicker {
+      margin: 0 0 6px;
+      color: var(--blue);
+      font-weight: 800;
+      font-size: 15px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(26px, 6vw, 44px);
+      line-height: 1.16;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: clamp(16px, 3.4vw, 19px);
+      max-width: 42em;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+      margin: 16px 0;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .94);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .score {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      font-weight: 800;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: #15447e;
+      font-size: 15px;
+    }
+
+    .reset-button,
+    .install-button {
+      min-height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--ink);
+      font-weight: 800;
+      cursor: pointer;
+      padding: 7px 12px;
+    }
+
+    .install-button {
+      display: none;
+      border-color: #244f93;
+      background: #12213a;
+      color: #fff;
+    }
+
+    .install-button.show {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 16px;
+      align-items: stretch;
+      margin: 18px 0;
+    }
+
+    .hero-card,
+    .quiz-card,
+    .finish-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-card img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 260px;
+      object-fit: cover;
+    }
+
+    .map-card {
+      padding: 18px;
+    }
+
+    .map-card h2,
+    .finish-card h2 {
+      margin: 0 0 10px;
+      font-size: clamp(24px, 4.5vw, 32px);
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .route-list {
+      display: grid;
+      gap: 10px;
+      margin: 12px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .route-list li {
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfe;
+      font-size: 17px;
+    }
+
+    .quiz-card {
+      margin: 18px 0;
+      padding: 18px;
+    }
+
+    .question-meta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #eef1f5;
+      color: #3f4c60;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .question {
+      margin: 0 0 12px;
+      font-size: clamp(22px, 4.8vw, 32px);
+      line-height: 1.28;
+      letter-spacing: 0;
+    }
+
+    .hint {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: clamp(15px, 3vw, 17px);
+    }
+
+    .choices {
+      display: grid;
+      gap: 10px;
+    }
+
+    .choice {
+      width: 100%;
+      min-height: 58px;
+      border: 2px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--ink);
+      padding: 13px 14px;
+      text-align: left;
+      font: inherit;
+      font-size: clamp(17px, 3.6vw, 20px);
+      line-height: 1.45;
+      cursor: pointer;
+    }
+
+    .choice:hover,
+    .choice:focus-visible {
+      border-color: var(--blue);
+      background: var(--blue-soft);
+      outline: none;
+    }
+
+    .choice.correct {
+      border-color: var(--green);
+      background: var(--green-soft);
+      font-weight: 900;
+    }
+
+    .choice.wrong {
+      border-color: var(--red);
+      background: var(--red-soft);
+    }
+
+    .answer {
+      display: none;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+
+    .answer.show {
+      display: block;
+    }
+
+    .answer h3 {
+      margin: 0 0 8px;
+      font-size: clamp(24px, 5vw, 34px);
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .answer p {
+      margin: 8px 0;
+      font-size: clamp(17px, 3.6vw, 20px);
+    }
+
+    figure {
+      margin: 14px 0 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    figure img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    figcaption {
+      padding: 10px 12px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .finish-card {
+      display: none;
+      padding: 18px;
+      margin-top: 18px;
+      background: var(--dark);
+      color: #fff;
+    }
+
+    .finish-card.show {
+      display: block;
+    }
+
+    .finish-card p {
+      margin: 8px 0 0;
+      font-size: 18px;
+      color: #d7e1f0;
+    }
+
+    @media (max-width: 760px) {
+      main {
+        width: min(980px, calc(100% - 20px));
+        padding-top: 10px;
+      }
+
+      .topbar {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card img {
+        min-height: unset;
+        aspect-ratio: 16 / 10;
+      }
+
+      .quiz-card,
+      .map-card,
+      .finish-card {
+        padding: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="kicker">日刊工業新聞 復習アプリ</p>
+      <h1>ものづくり重要語 3問</h1>
+      <p class="lead">
+        現場力のデータ化、水冷AIサーバー、CNC（数字で機械を動かす制御）とARMROIDを、
+        触って思い出すための画像付きクイズ。
+      </p>
+    </header>
+
+    <section class="topbar" aria-live="polite">
+      <div class="score">
+        <span class="pill" id="scoreText">正解 0 / 3</span>
+        <span class="pill" id="statusText">まだ回答中</span>
+      </div>
+      <div>
+        <button class="install-button" id="installButton" type="button">アプリに入れる</button>
+        <button class="reset-button" id="resetButton" type="button">やり直す</button>
+      </div>
+    </section>
+
+    <section class="hero" aria-label="今回の学習地図">
+      <div class="hero-card">
+        <img src="./assets/q3-cnc-armroid.png" alt="CNC工作機械の中でロボットアームが材料を扱う自動化セル">
+      </div>
+      <div class="hero-card map-card">
+        <h2>今回の芯</h2>
+        <ul class="route-list">
+          <li>勘（かん：経験で感じる違和感）を、測れるデータにする。</li>
+          <li>AIサーバーは熱が大きいので、水冷検証が大事。</li>
+          <li>CNC画面からロボットまで扱いやすくし、自動化を広げる。</li>
+        </ul>
+      </div>
+    </section>
+
+    <article class="quiz-card" data-correct="1" id="q1">
+      <div class="question-meta">
+        <span class="tag">第1問</span>
+        <span class="tag">AIと現場力</span>
+      </div>
+      <h2 class="question">AIに現場力を教える時、最初に必要なのは？</h2>
+      <p class="hint">形式知化（けいしきちか：人に伝えられる形にすること）の核心。</p>
+      <div class="choices">
+        <button class="choice" type="button">ベテランの勘を、そのままAIへ入れる</button>
+        <button class="choice" type="button">音・温度・振動・画像など、測れるデータに変える</button>
+        <button class="choice" type="button">文章だけを大量に読ませる</button>
+      </div>
+      <section class="answer">
+        <h3>答え：測れるデータに変える</h3>
+        <p>AIは「なんとなく変」を直接読めない。</p>
+        <p>だから、違和感をセンサー値（数字で測れる情報）に変える。</p>
+        <figure>
+          <img src="./assets/q1-genba-data.png" alt="作業者の違和感をセンサーと画面のデータへ変えている工場">
+          <figcaption>
+            見る場所：人の勘 → センサー → 画面のデータ。ここがAIに渡せる形。
+          </figcaption>
+        </figure>
+      </section>
+    </article>
+
+    <article class="quiz-card" data-correct="2" id="q2">
+      <div class="question-meta">
+        <span class="tag">第2問</span>
+        <span class="tag">水冷サーバー</span>
+      </div>
+      <h2 class="question">DC水冷サーバー検証で一番見たいことは？</h2>
+      <p class="hint">DC（データセンター：サーバーを大量に置く施設）の話。</p>
+      <div class="choices">
+        <button class="choice" type="button">水の色がきれいか</button>
+        <button class="choice" type="button">サーバー名が覚えやすいか</button>
+        <button class="choice" type="button">冷えるか、漏れないか、省エネになるか</button>
+      </div>
+      <section class="answer">
+        <h3>答え：冷却・漏れ・省エネ</h3>
+        <p>AIサーバーはCPU/GPU（計算する部品）が熱くなる。</p>
+        <p>水冷は強いが、水を使うので漏れ確認も重要。</p>
+        <figure>
+          <img src="./assets/q2-watercooling-server.png" alt="液冷チューブ付きAIサーバーを検証する技術者">
+          <figcaption>
+            見る場所：青赤の配管、流量計、点検する人。冷却と安全確認がセット。
+          </figcaption>
+        </figure>
+      </section>
+    </article>
+
+    <article class="quiz-card" data-correct="0" id="q3">
+      <div class="question-meta">
+        <span class="tag">第3問</span>
+        <span class="tag">CNCとARMROID</span>
+      </div>
+      <h2 class="question">ティーチングレスCNCとARMROIDが狙う「使いやすさ」は？</h2>
+      <p class="hint">ティーチング（ロボットに動きを教える作業）を減らす話。</p>
+      <div class="choices">
+        <button class="choice" type="button">ロボット専門家でなくても、工作機械の画面から扱いやすくする</button>
+        <button class="choice" type="button">ロボットを速く動かすだけにする</button>
+        <button class="choice" type="button">人が毎回材料を入れる前提に戻す</button>
+      </div>
+      <section class="answer">
+        <h3>答え：工作機械の人が扱える自動化</h3>
+        <p>CNC（数字で機械を動かす制御）に、ロボット操作を近づける。</p>
+        <p>ARMROIDは、工作機械とロボットを一体で使う発想。</p>
+        <figure>
+          <img src="./assets/q3-cnc-armroid.png" alt="CNC工作機械内のロボットアームがワークを扱う場面">
+          <figcaption>
+            見る場所：左の材料、中央のロボット、右の操作盤。人が機械画面から自動化を扱う。
+          </figcaption>
+        </figure>
+      </section>
+    </article>
+
+    <section class="finish-card" id="finishCard">
+      <h2>完了</h2>
+      <p>今日の重要ポイントは、現場データ化・冷却インフラ・使いやすい自動化の3本。</p>
+      <p>明日また開いて、3問を押し直せば復習できます。</p>
+    </section>
+  </main>
+
+  <script>
+    const cards = Array.from(document.querySelectorAll(".quiz-card"));
+    const scoreText = document.getElementById("scoreText");
+    const statusText = document.getElementById("statusText");
+    const finishCard = document.getElementById("finishCard");
+    const resetButton = document.getElementById("resetButton");
+    const installButton = document.getElementById("installButton");
+    const storageKey = "nikkan-manufacturing-review-quiz-v1";
+    let deferredPrompt = null;
+    let state = loadState();
+
+    function loadState() {
+      try {
+        return JSON.parse(localStorage.getItem(storageKey)) || { answers: {} };
+      } catch {
+        return { answers: {} };
+      }
+    }
+
+    function saveState() {
+      localStorage.setItem(storageKey, JSON.stringify(state));
+    }
+
+    function applyAnswer(card, selectedIndex, fromStorage = false) {
+      const cardId = card.id;
+      const correctIndex = Number(card.dataset.correct);
+      const buttons = Array.from(card.querySelectorAll(".choice"));
+      const answer = card.querySelector(".answer");
+      answer.classList.add("show");
+
+      buttons.forEach((button, index) => {
+        button.disabled = true;
+        if (index === correctIndex) button.classList.add("correct");
+        if (index === selectedIndex && index !== correctIndex) button.classList.add("wrong");
+      });
+
+      if (!fromStorage) {
+        state.answers[cardId] = selectedIndex;
+        saveState();
+      }
+
+      updateScore();
+    }
+
+    function updateScore() {
+      const entries = Object.entries(state.answers);
+      const correct = entries.filter(([id, selected]) => {
+        const card = document.getElementById(id);
+        return card && Number(card.dataset.correct) === selected;
+      }).length;
+
+      scoreText.textContent = `正解 ${correct} / 3`;
+      statusText.textContent = entries.length === 3 ? "全問完了" : `回答 ${entries.length} / 3`;
+      finishCard.classList.toggle("show", entries.length === 3);
+    }
+
+    cards.forEach((card) => {
+      const saved = state.answers[card.id];
+      const buttons = Array.from(card.querySelectorAll(".choice"));
+
+      if (Number.isInteger(saved)) {
+        applyAnswer(card, saved, true);
+      }
+
+      buttons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+          if (state.answers[card.id] !== undefined) return;
+          applyAnswer(card, index);
+          card.querySelector(".answer").scrollIntoView({ block: "nearest", behavior: "smooth" });
+        });
+      });
+    });
+
+    resetButton.addEventListener("click", () => {
+      state = { answers: {} };
+      saveState();
+      location.reload();
+    });
+
+    window.addEventListener("beforeinstallprompt", (event) => {
+      event.preventDefault();
+      deferredPrompt = event;
+      installButton.classList.add("show");
+    });
+
+    installButton.addEventListener("click", async () => {
+      if (!deferredPrompt) return;
+      deferredPrompt.prompt();
+      await deferredPrompt.userChoice;
+      deferredPrompt = null;
+      installButton.classList.remove("show");
+    });
+
+    if ("serviceWorker" in navigator && location.protocol !== "file:") {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./service-worker.js");
+      });
+    }
+
+    updateScore();
+  </script>
+</body>
+</html>
