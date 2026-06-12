@@ -35,6 +35,10 @@ Do not replace the old set when a new article is turned into questions.
 
 Add the new set to `quiz-data.js`, add its images to `assets/`, and let the app show it in the review shelf.
 
+Every quiz set must include a visible `date` as `作成日`.
+
+Use this for managing when each 3-question set was made.
+
 For conceptual, manufacturing, technical, robot, or invention topics:
 
 - choose the 3 most important questions,

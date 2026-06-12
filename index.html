@@ -162,6 +162,20 @@
       margin-top: 4px;
     }
 
+    .created-date {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      min-height: 32px;
+      margin: 0 0 10px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #eef1f5;
+      color: #3f4c60;
+      font-size: 15px;
+      font-weight: 900;
+    }
+
     .install-button {
       display: none;
       border-color: #244f93;
@@ -425,6 +439,7 @@
         <img id="heroImage" alt="">
       </div>
       <div class="hero-card map-card">
+        <p class="created-date" id="createdDate">作成日：----</p>
         <h2 id="setTitle">今回の芯</h2>
         <ul class="route-list" id="summaryList"></ul>
       </div>
@@ -449,6 +464,7 @@
     const totalText = document.getElementById("totalText");
     const statusText = document.getElementById("statusText");
     const heroImage = document.getElementById("heroImage");
+    const createdDate = document.getElementById("createdDate");
     const setTitle = document.getElementById("setTitle");
     const summaryList = document.getElementById("summaryList");
     const finishCard = document.getElementById("finishCard");
@@ -505,7 +521,7 @@
         button.type = "button";
         button.innerHTML = `
           ${index + 1}. ${set.shortTitle || set.title}
-          <span>${set.date} / 正解 ${result.correct} / ${result.total}</span>
+          <span>作成日：${set.date} / 正解 ${result.correct} / ${result.total}</span>
         `;
         button.addEventListener("click", () => {
           activeSetId = set.id;
@@ -519,6 +535,7 @@
     function renderHero(set) {
       heroImage.src = set.heroImage;
       heroImage.alt = set.heroAlt || set.title;
+      createdDate.textContent = `作成日：${set.date}`;
       setTitle.textContent = set.title;
       summaryList.innerHTML = "";
       set.summary.forEach((item) => {
