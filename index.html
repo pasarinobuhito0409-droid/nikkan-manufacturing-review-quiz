@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#101827">
-  <meta name="description" content="日刊工業新聞の製造業トピックを3問で復習する画像付きPWAクイズ">
+  <meta name="description" content="日刊工業新聞の製造業トピックを増やしながら復習する画像付きPWAクイズ">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
-  <title>日刊工業 ものづくり復習 3問</title>
+  <title>日刊工業 ものづくり復習アプリ</title>
   <style>
     :root {
       color-scheme: light;
@@ -83,7 +83,7 @@
       margin: 10px 0 0;
       color: var(--muted);
       font-size: clamp(16px, 3.4vw, 19px);
-      max-width: 42em;
+      max-width: 44em;
     }
 
     .topbar {
@@ -103,7 +103,8 @@
       backdrop-filter: blur(12px);
     }
 
-    .score {
+    .score,
+    .actions {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
@@ -122,16 +123,43 @@
       font-size: 15px;
     }
 
+    .set-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+      margin: 18px 0;
+    }
+
+    .set-button,
     .reset-button,
     .install-button {
-      min-height: 38px;
+      min-height: 42px;
       border: 1px solid var(--line);
       border-radius: 8px;
       background: #fff;
       color: var(--ink);
       font-weight: 800;
       cursor: pointer;
-      padding: 7px 12px;
+      padding: 9px 12px;
+    }
+
+    .set-button {
+      min-height: 92px;
+      text-align: left;
+      box-shadow: var(--shadow);
+    }
+
+    .set-button.active {
+      border: 2px solid var(--blue);
+      background: var(--blue-soft);
+    }
+
+    .set-button span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+      margin-top: 4px;
     }
 
     .install-button {
@@ -368,129 +396,68 @@
   <main>
     <header>
       <p class="kicker">日刊工業新聞 復習アプリ</p>
-      <h1>ものづくり重要語 3問</h1>
+      <h1>問題が増える復習棚</h1>
       <p class="lead">
-        現場力のデータ化、水冷AIサーバー、CNC（数字で機械を動かす制御）とARMROIDを、
-        触って思い出すための画像付きクイズ。
+        新しい3問を作るたび、前の問題を消さずに下へ追加する。
+      </p>
+      <p class="lead">
+        スマホで開けば、記事ごとの復習セットを選んで解き直せる。
       </p>
     </header>
 
     <section class="topbar" aria-live="polite">
       <div class="score">
+        <span class="pill" id="setText">セット 1</span>
         <span class="pill" id="scoreText">正解 0 / 3</span>
+        <span class="pill" id="totalText">全体 0 / 3</span>
         <span class="pill" id="statusText">まだ回答中</span>
       </div>
-      <div>
+      <div class="actions">
         <button class="install-button" id="installButton" type="button">アプリに入れる</button>
-        <button class="reset-button" id="resetButton" type="button">やり直す</button>
+        <button class="reset-button" id="resetButton" type="button">このセットをやり直す</button>
       </div>
     </section>
+
+    <nav class="set-list" id="setList" aria-label="復習セット一覧"></nav>
 
     <section class="hero" aria-label="今回の学習地図">
       <div class="hero-card">
-        <img src="./assets/q3-cnc-armroid.png" alt="CNC工作機械の中でロボットアームが材料を扱う自動化セル">
+        <img id="heroImage" alt="">
       </div>
       <div class="hero-card map-card">
-        <h2>今回の芯</h2>
-        <ul class="route-list">
-          <li>勘（かん：経験で感じる違和感）を、測れるデータにする。</li>
-          <li>AIサーバーは熱が大きいので、水冷検証が大事。</li>
-          <li>CNC画面からロボットまで扱いやすくし、自動化を広げる。</li>
-        </ul>
+        <h2 id="setTitle">今回の芯</h2>
+        <ul class="route-list" id="summaryList"></ul>
       </div>
     </section>
 
-    <article class="quiz-card" data-correct="1" id="q1">
-      <div class="question-meta">
-        <span class="tag">第1問</span>
-        <span class="tag">AIと現場力</span>
-      </div>
-      <h2 class="question">AIに現場力を教える時、最初に必要なのは？</h2>
-      <p class="hint">形式知化（けいしきちか：人に伝えられる形にすること）の核心。</p>
-      <div class="choices">
-        <button class="choice" type="button">ベテランの勘を、そのままAIへ入れる</button>
-        <button class="choice" type="button">音・温度・振動・画像など、測れるデータに変える</button>
-        <button class="choice" type="button">文章だけを大量に読ませる</button>
-      </div>
-      <section class="answer">
-        <h3>答え：測れるデータに変える</h3>
-        <p>AIは「なんとなく変」を直接読めない。</p>
-        <p>だから、違和感をセンサー値（数字で測れる情報）に変える。</p>
-        <figure>
-          <img src="./assets/q1-genba-data.png" alt="作業者の違和感をセンサーと画面のデータへ変えている工場">
-          <figcaption>
-            見る場所：人の勘 → センサー → 画面のデータ。ここがAIに渡せる形。
-          </figcaption>
-        </figure>
-      </section>
-    </article>
-
-    <article class="quiz-card" data-correct="2" id="q2">
-      <div class="question-meta">
-        <span class="tag">第2問</span>
-        <span class="tag">水冷サーバー</span>
-      </div>
-      <h2 class="question">DC水冷サーバー検証で一番見たいことは？</h2>
-      <p class="hint">DC（データセンター：サーバーを大量に置く施設）の話。</p>
-      <div class="choices">
-        <button class="choice" type="button">水の色がきれいか</button>
-        <button class="choice" type="button">サーバー名が覚えやすいか</button>
-        <button class="choice" type="button">冷えるか、漏れないか、省エネになるか</button>
-      </div>
-      <section class="answer">
-        <h3>答え：冷却・漏れ・省エネ</h3>
-        <p>AIサーバーはCPU/GPU（計算する部品）が熱くなる。</p>
-        <p>水冷は強いが、水を使うので漏れ確認も重要。</p>
-        <figure>
-          <img src="./assets/q2-watercooling-server.png" alt="液冷チューブ付きAIサーバーを検証する技術者">
-          <figcaption>
-            見る場所：青赤の配管、流量計、点検する人。冷却と安全確認がセット。
-          </figcaption>
-        </figure>
-      </section>
-    </article>
-
-    <article class="quiz-card" data-correct="0" id="q3">
-      <div class="question-meta">
-        <span class="tag">第3問</span>
-        <span class="tag">CNCとARMROID</span>
-      </div>
-      <h2 class="question">ティーチングレスCNCとARMROIDが狙う「使いやすさ」は？</h2>
-      <p class="hint">ティーチング（ロボットに動きを教える作業）を減らす話。</p>
-      <div class="choices">
-        <button class="choice" type="button">ロボット専門家でなくても、工作機械の画面から扱いやすくする</button>
-        <button class="choice" type="button">ロボットを速く動かすだけにする</button>
-        <button class="choice" type="button">人が毎回材料を入れる前提に戻す</button>
-      </div>
-      <section class="answer">
-        <h3>答え：工作機械の人が扱える自動化</h3>
-        <p>CNC（数字で機械を動かす制御）に、ロボット操作を近づける。</p>
-        <p>ARMROIDは、工作機械とロボットを一体で使う発想。</p>
-        <figure>
-          <img src="./assets/q3-cnc-armroid.png" alt="CNC工作機械内のロボットアームがワークを扱う場面">
-          <figcaption>
-            見る場所：左の材料、中央のロボット、右の操作盤。人が機械画面から自動化を扱う。
-          </figcaption>
-        </figure>
-      </section>
-    </article>
+    <section id="quizArea" aria-label="問題"></section>
 
     <section class="finish-card" id="finishCard">
-      <h2>完了</h2>
-      <p>今日の重要ポイントは、現場データ化・冷却インフラ・使いやすい自動化の3本。</p>
-      <p>明日また開いて、3問を押し直せば復習できます。</p>
+      <h2>このセット完了</h2>
+      <p id="finishText"></p>
+      <p>新しい問題セットが増えても、この復習棚に残ります。</p>
     </section>
   </main>
 
+  <script src="./quiz-data.js"></script>
   <script>
-    const cards = Array.from(document.querySelectorAll(".quiz-card"));
+    const quizSets = window.NIKKAN_QUIZ_SETS || [];
+    const setList = document.getElementById("setList");
+    const quizArea = document.getElementById("quizArea");
+    const setText = document.getElementById("setText");
     const scoreText = document.getElementById("scoreText");
+    const totalText = document.getElementById("totalText");
     const statusText = document.getElementById("statusText");
+    const heroImage = document.getElementById("heroImage");
+    const setTitle = document.getElementById("setTitle");
+    const summaryList = document.getElementById("summaryList");
     const finishCard = document.getElementById("finishCard");
+    const finishText = document.getElementById("finishText");
     const resetButton = document.getElementById("resetButton");
     const installButton = document.getElementById("installButton");
-    const storageKey = "nikkan-manufacturing-review-quiz-v1";
+    const storageKey = "nikkan-manufacturing-review-quiz-library-v1";
     let deferredPrompt = null;
+    let activeSetId = quizSets[0]?.id || "";
     let state = loadState();
 
     function loadState() {
@@ -505,60 +472,154 @@
       localStorage.setItem(storageKey, JSON.stringify(state));
     }
 
-    function applyAnswer(card, selectedIndex, fromStorage = false) {
-      const cardId = card.id;
-      const correctIndex = Number(card.dataset.correct);
+    function answerKey(setId, questionId) {
+      return `${setId}::${questionId}`;
+    }
+
+    function getActiveSet() {
+      return quizSets.find((set) => set.id === activeSetId) || quizSets[0];
+    }
+
+    function countSet(set) {
+      const answered = set.questions.filter((q) => state.answers[answerKey(set.id, q.id)] !== undefined).length;
+      const correct = set.questions.filter((q) => state.answers[answerKey(set.id, q.id)] === q.correctIndex).length;
+      return { answered, correct, total: set.questions.length };
+    }
+
+    function countTotal() {
+      return quizSets.reduce((acc, set) => {
+        const result = countSet(set);
+        acc.correct += result.correct;
+        acc.answered += result.answered;
+        acc.total += result.total;
+        return acc;
+      }, { correct: 0, answered: 0, total: 0 });
+    }
+
+    function renderSetList() {
+      setList.innerHTML = "";
+      quizSets.forEach((set, index) => {
+        const result = countSet(set);
+        const button = document.createElement("button");
+        button.className = `set-button${set.id === activeSetId ? " active" : ""}`;
+        button.type = "button";
+        button.innerHTML = `
+          ${index + 1}. ${set.shortTitle || set.title}
+          <span>${set.date} / 正解 ${result.correct} / ${result.total}</span>
+        `;
+        button.addEventListener("click", () => {
+          activeSetId = set.id;
+          render();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+        setList.appendChild(button);
+      });
+    }
+
+    function renderHero(set) {
+      heroImage.src = set.heroImage;
+      heroImage.alt = set.heroAlt || set.title;
+      setTitle.textContent = set.title;
+      summaryList.innerHTML = "";
+      set.summary.forEach((item) => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        summaryList.appendChild(li);
+      });
+    }
+
+    function renderQuiz(set) {
+      quizArea.innerHTML = "";
+      set.questions.forEach((q, index) => {
+        const key = answerKey(set.id, q.id);
+        const saved = state.answers[key];
+        const card = document.createElement("article");
+        card.className = "quiz-card";
+        card.id = key;
+        card.innerHTML = `
+          <div class="question-meta">
+            <span class="tag">第${index + 1}問</span>
+            <span class="tag">${q.tag}</span>
+          </div>
+          <h2 class="question">${q.question}</h2>
+          <p class="hint">${q.hint}</p>
+          <div class="choices"></div>
+          <section class="answer">
+            <h3>${q.answerTitle}</h3>
+            ${q.answerParagraphs.map((text) => `<p>${text}</p>`).join("")}
+            <figure>
+              <img src="${q.image}" alt="${q.imageAlt}">
+              <figcaption>${q.caption}</figcaption>
+            </figure>
+          </section>
+        `;
+
+        const choices = card.querySelector(".choices");
+        q.choices.forEach((choice, choiceIndex) => {
+          const button = document.createElement("button");
+          button.className = "choice";
+          button.type = "button";
+          button.textContent = choice;
+          button.addEventListener("click", () => {
+            if (state.answers[key] !== undefined) return;
+            state.answers[key] = choiceIndex;
+            saveState();
+            applyAnswer(card, q, choiceIndex);
+            card.querySelector(".answer").scrollIntoView({ block: "nearest", behavior: "smooth" });
+          });
+          choices.appendChild(button);
+        });
+
+        quizArea.appendChild(card);
+
+        if (Number.isInteger(saved)) {
+          applyAnswer(card, q, saved);
+        }
+      });
+    }
+
+    function applyAnswer(card, question, selectedIndex) {
       const buttons = Array.from(card.querySelectorAll(".choice"));
       const answer = card.querySelector(".answer");
       answer.classList.add("show");
 
       buttons.forEach((button, index) => {
         button.disabled = true;
-        if (index === correctIndex) button.classList.add("correct");
-        if (index === selectedIndex && index !== correctIndex) button.classList.add("wrong");
+        if (index === question.correctIndex) button.classList.add("correct");
+        if (index === selectedIndex && index !== question.correctIndex) button.classList.add("wrong");
       });
 
-      if (!fromStorage) {
-        state.answers[cardId] = selectedIndex;
-        saveState();
-      }
-
       updateScore();
+      renderSetList();
     }
 
     function updateScore() {
-      const entries = Object.entries(state.answers);
-      const correct = entries.filter(([id, selected]) => {
-        const card = document.getElementById(id);
-        return card && Number(card.dataset.correct) === selected;
-      }).length;
+      const set = getActiveSet();
+      const current = countSet(set);
+      const total = countTotal();
+      const setIndex = quizSets.findIndex((item) => item.id === set.id) + 1;
 
-      scoreText.textContent = `正解 ${correct} / 3`;
-      statusText.textContent = entries.length === 3 ? "全問完了" : `回答 ${entries.length} / 3`;
-      finishCard.classList.toggle("show", entries.length === 3);
+      setText.textContent = `セット ${setIndex} / ${quizSets.length}`;
+      scoreText.textContent = `正解 ${current.correct} / ${current.total}`;
+      totalText.textContent = `全体 ${total.correct} / ${total.total}`;
+      statusText.textContent = current.answered === current.total ? "このセット完了" : `回答 ${current.answered} / ${current.total}`;
+      finishText.textContent = `${set.title} は完了。あとでまた開けば、同じ場所から復習できます。`;
+      finishCard.classList.toggle("show", current.answered === current.total);
     }
 
-    cards.forEach((card) => {
-      const saved = state.answers[card.id];
-      const buttons = Array.from(card.querySelectorAll(".choice"));
-
-      if (Number.isInteger(saved)) {
-        applyAnswer(card, saved, true);
-      }
-
-      buttons.forEach((button, index) => {
-        button.addEventListener("click", () => {
-          if (state.answers[card.id] !== undefined) return;
-          applyAnswer(card, index);
-          card.querySelector(".answer").scrollIntoView({ block: "nearest", behavior: "smooth" });
-        });
-      });
-    });
+    function render() {
+      const set = getActiveSet();
+      renderSetList();
+      renderHero(set);
+      renderQuiz(set);
+      updateScore();
+    }
 
     resetButton.addEventListener("click", () => {
-      state = { answers: {} };
+      const set = getActiveSet();
+      set.questions.forEach((q) => delete state.answers[answerKey(set.id, q.id)]);
       saveState();
-      location.reload();
+      render();
     });
 
     window.addEventListener("beforeinstallprompt", (event) => {
@@ -581,7 +642,7 @@
       });
     }
 
-    updateScore();
+    render();
   </script>
 </body>
 </html>

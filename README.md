@@ -29,6 +29,12 @@ When 三輪さん says `問題作って`, `3問`, `復習`, or `テスト`, the 
 
 Use a touch/click HTML quiz.
 
+New quiz sets are append-only.
+
+Do not replace the old set when a new article is turned into questions.
+
+Add the new set to `quiz-data.js`, add its images to `assets/`, and let the app show it in the review shelf.
+
 For conceptual, manufacturing, technical, robot, or invention topics:
 
 - choose the 3 most important questions,
