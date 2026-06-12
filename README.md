@@ -2,6 +2,10 @@
 
 Created: 2026-06-12
 
+Live app:
+
+https://pasarinobuhito0409-droid.github.io/nikkan-manufacturing-review-quiz/
+
 ## Purpose
 
 This is a smartphone-ready PWA quiz for 三輪さん.
