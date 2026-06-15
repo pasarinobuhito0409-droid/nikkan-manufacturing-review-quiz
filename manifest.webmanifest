@@ -1,7 +1,7 @@
 {
   "name": "日刊工業 ものづくり復習",
   "short_name": "製造復習",
-  "description": "現場データ化、水冷AIサーバー、CNC自動化を3問で復習する画像付きクイズ",
+  "description": "日刊工業新聞の重要トピックを3問ずつ増やして復習する画像付きクイズ",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

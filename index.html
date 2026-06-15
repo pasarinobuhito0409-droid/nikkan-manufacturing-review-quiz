@@ -473,7 +473,7 @@
     const installButton = document.getElementById("installButton");
     const storageKey = "nikkan-manufacturing-review-quiz-library-v1";
     let deferredPrompt = null;
-    let activeSetId = quizSets[0]?.id || "";
+    let activeSetId = quizSets[quizSets.length - 1]?.id || "";
     let state = loadState();
 
     function loadState() {
