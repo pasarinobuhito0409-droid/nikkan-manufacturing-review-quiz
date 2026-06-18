@@ -45,6 +45,9 @@ Use this for managing when each 3-question set was made.
 For conceptual, manufacturing, technical, robot, or invention topics:
 
 - choose the 3 most important questions,
+- distribute correct answers across choices instead of putting the answer in the same position,
+- make wrong choices plausible enough that 三輪さん must understand the concept, not just spot an obviously silly option,
+- avoid trick questions; each wrong choice should reveal a real misunderstanding,
 - generate or attach one explanatory image per revealed answer panel,
 - make it PWA-ready when the user wants repeat review,
 - mirror the artifact into `claude-config/projects/textbooks/`,
