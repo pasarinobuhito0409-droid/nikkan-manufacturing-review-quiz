@@ -15,6 +15,9 @@ It reviews the important points from the recent 日刊工業新聞 manufacturing
 - AI現場力のデータ化
 - DC水冷サーバー検証
 - ティーチングレスCNCとARMROID自動化
+- ミュトス級AIと重要インフラ安全
+- マニュアル頼らず創意工夫
+- 2026/6/18 見出し：AI判断過程、遠隔施工、特許・ライセンス用語
 
 ## Files
 

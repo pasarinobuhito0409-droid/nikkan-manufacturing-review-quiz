@@ -242,6 +242,45 @@
       font-size: 17px;
     }
 
+    .glossary {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .glossary h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      line-height: 1.35;
+    }
+
+    .glossary dl {
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .glossary div {
+      padding: 10px;
+      border-radius: 8px;
+      background: #f7f9fc;
+      border: 1px solid #e3e8f0;
+    }
+
+    .glossary dt {
+      margin: 0 0 2px;
+      font-weight: 900;
+      color: var(--dark);
+    }
+
+    .glossary dd {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 750;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
     .quiz-card {
       margin: 18px 0;
       padding: 18px;
@@ -442,6 +481,7 @@
         <p class="created-date" id="createdDate">作成日：----</p>
         <h2 id="setTitle">今回の芯</h2>
         <ul class="route-list" id="summaryList"></ul>
+        <section class="glossary" id="glossaryBox" hidden></section>
       </div>
     </section>
 
@@ -467,6 +507,7 @@
     const createdDate = document.getElementById("createdDate");
     const setTitle = document.getElementById("setTitle");
     const summaryList = document.getElementById("summaryList");
+    const glossaryBox = document.getElementById("glossaryBox");
     const finishCard = document.getElementById("finishCard");
     const finishText = document.getElementById("finishText");
     const resetButton = document.getElementById("resetButton");
@@ -543,6 +584,26 @@
         li.textContent = item;
         summaryList.appendChild(li);
       });
+
+      glossaryBox.innerHTML = "";
+      glossaryBox.hidden = !Array.isArray(set.glossary) || set.glossary.length === 0;
+      if (!glossaryBox.hidden) {
+        const heading = document.createElement("h3");
+        heading.textContent = "用語メモ";
+        const dl = document.createElement("dl");
+        set.glossary.forEach((item) => {
+          const row = document.createElement("div");
+          const dt = document.createElement("dt");
+          const dd = document.createElement("dd");
+          dt.textContent = item.term;
+          dd.textContent = item.meaning;
+          row.appendChild(dt);
+          row.appendChild(dd);
+          dl.appendChild(row);
+        });
+        glossaryBox.appendChild(heading);
+        glossaryBox.appendChild(dl);
+      }
     }
 
     function renderQuiz(set) {
