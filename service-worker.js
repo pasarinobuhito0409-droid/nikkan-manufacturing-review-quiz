@@ -1,4 +1,4 @@
-const CACHE_NAME = "nikkan-manufacturing-review-quiz-v7";
+const CACHE_NAME = "nikkan-manufacturing-review-quiz-v8";
 
 const ASSETS = [
   "./",
@@ -20,6 +20,7 @@ const ASSETS = [
   "./assets/2026-06-18-q2-ai-agent-process.png",
   "./assets/2026-06-18-q3-patent-license-terms.png",
   "./assets/2026-06-19-q1-humanoid-autonomous.png",
+  "./assets/2026-06-19-q1-humanoid-autonomous-readable.png",
   "./assets/2026-06-19-q2-headline-common.png",
   "./assets/2026-06-19-q3-foundation-research-user-manual.png"
 ];

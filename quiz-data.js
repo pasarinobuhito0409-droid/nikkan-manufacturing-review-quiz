@@ -349,7 +349,7 @@ window.NIKKAN_QUIZ_SETS = [
     title: "日刊工業新聞 6/19 ヒューマノイドと未来の発明 復習3問",
     shortTitle: "ヒューマノイド・物理AI・基礎研究",
     sourceLabel: "日刊工業新聞 2026/6/19 復習",
-    heroImage: "./assets/2026-06-19-q1-humanoid-autonomous.png",
+    heroImage: "./assets/2026-06-19-q1-humanoid-autonomous-readable.png",
     heroAlt: "自律型ヒューマノイドの記事と説明を並べた実ページベースの画像",
     summary: [
       "今日の核は、AIが画面の中だけでなく、ロボ・材料・医療・点検として現実へ出てくること。",
@@ -388,7 +388,8 @@ window.NIKKAN_QUIZ_SETS = [
           "AI（判断する頭）、センサー（周りを見る目）、制御（動かし方）、機体（身体）を1つにすること。",
           "つまり、画面の中のAIを、現場で動くロボへ近づける研究。"
         ],
-        image: "./assets/2026-06-19-q1-humanoid-autonomous.png",
+        image: "./assets/2026-06-19-q1-humanoid-autonomous-readable.png",
+        zoomImage: "./assets/2026-06-19-q1-humanoid-autonomous-readable.png",
         imageAlt: "自律型ヒューマノイドの記事と説明を並べた実ページベースの画像",
         caption: "見る場所：新聞の実ページと要点。人型ロボは、AI・センサー・制御・身体をまとめて初めて現場で役に立つ。"
       },

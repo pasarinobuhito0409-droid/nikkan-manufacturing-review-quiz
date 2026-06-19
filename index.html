@@ -44,6 +44,10 @@
       line-height: 1.7;
     }
 
+    body.viewer-open {
+      overflow: hidden;
+    }
+
     h1,
     h2,
     h3,
@@ -387,17 +391,113 @@
       background: #fff;
     }
 
-    figure img {
+    .image-open-button {
       display: block;
       width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
+      border: 0;
+      padding: 0;
+      background: #fff;
+      color: inherit;
+      cursor: zoom-in;
+      text-align: left;
+    }
+
+    .image-open-button img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      background: #f8fbff;
+    }
+
+    .image-open-button:focus-visible {
+      outline: 4px solid var(--blue);
+      outline-offset: -4px;
+    }
+
+    .image-open-hint {
+      display: block;
+      padding: 9px 12px;
+      background: #eef5ff;
+      color: #15447e;
+      font-size: 15px;
+      font-weight: 900;
     }
 
     figcaption {
       padding: 10px 12px;
       color: var(--muted);
       font-size: 15px;
+    }
+
+    .image-viewer[hidden] {
+      display: none;
+    }
+
+    .image-viewer {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      background: rgba(8, 14, 27, .94);
+      color: #fff;
+    }
+
+    .image-viewer-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, .2);
+      background: rgba(16, 24, 39, .98);
+    }
+
+    .image-viewer-title {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 900;
+      color: #dbe8ff;
+    }
+
+    .image-viewer-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .image-viewer button {
+      min-height: 40px;
+      border: 1px solid rgba(255, 255, 255, .26);
+      border-radius: 8px;
+      background: #fff;
+      color: #101827;
+      font-weight: 900;
+      padding: 7px 10px;
+      cursor: pointer;
+    }
+
+    .image-viewer-stage {
+      overflow: auto;
+      padding: 18px;
+      overscroll-behavior: contain;
+    }
+
+    .image-viewer-stage img {
+      display: block;
+      max-width: none;
+      height: auto;
+      background: #fff;
+      box-shadow: 0 16px 50px rgba(0, 0, 0, .45);
+    }
+
+    .image-viewer-caption {
+      margin: 10px 0 0;
+      color: #d7e1f0;
+      font-size: 15px;
+      font-weight: 800;
     }
 
     .finish-card {
@@ -494,6 +594,23 @@
     </section>
   </main>
 
+  <div class="image-viewer" id="imageViewer" role="dialog" aria-modal="true" aria-label="高画質画像ビューア" hidden>
+    <div class="image-viewer-toolbar">
+      <p class="image-viewer-title" id="imageViewerTitle">高画質画像</p>
+      <div class="image-viewer-actions">
+        <button type="button" id="viewerFitButton">全体</button>
+        <button type="button" id="viewerActualButton">1倍</button>
+        <button type="button" id="viewerZoomOutButton">小さく</button>
+        <button type="button" id="viewerZoomInButton">大きく</button>
+        <button type="button" id="viewerCloseButton">閉じる</button>
+      </div>
+    </div>
+    <div class="image-viewer-stage" id="imageViewerStage">
+      <img id="imageViewerImage" alt="">
+      <p class="image-viewer-caption" id="imageViewerCaption"></p>
+    </div>
+  </div>
+
   <script src="./quiz-data.js"></script>
   <script>
     const quizSets = window.NIKKAN_QUIZ_SETS || [];
@@ -512,10 +629,21 @@
     const finishText = document.getElementById("finishText");
     const resetButton = document.getElementById("resetButton");
     const installButton = document.getElementById("installButton");
+    const imageViewer = document.getElementById("imageViewer");
+    const imageViewerImage = document.getElementById("imageViewerImage");
+    const imageViewerTitle = document.getElementById("imageViewerTitle");
+    const imageViewerCaption = document.getElementById("imageViewerCaption");
+    const imageViewerStage = document.getElementById("imageViewerStage");
+    const viewerFitButton = document.getElementById("viewerFitButton");
+    const viewerActualButton = document.getElementById("viewerActualButton");
+    const viewerZoomOutButton = document.getElementById("viewerZoomOutButton");
+    const viewerZoomInButton = document.getElementById("viewerZoomInButton");
+    const viewerCloseButton = document.getElementById("viewerCloseButton");
     const storageKey = "nikkan-manufacturing-review-quiz-library-v2";
     let deferredPrompt = null;
     let activeSetId = quizSets[quizSets.length - 1]?.id || "";
     let state = loadState();
+    let viewerScale = 1;
 
     function loadState() {
       try {
@@ -626,7 +754,10 @@
             <h3>${q.answerTitle}</h3>
             ${q.answerParagraphs.map((text) => `<p>${text}</p>`).join("")}
             <figure>
-              <img src="${q.image}" alt="${q.imageAlt}">
+              <button class="image-open-button" type="button" aria-label="画像を高画質で開く">
+                <img src="${q.image}" alt="${q.imageAlt}">
+                <span class="image-open-hint">画像をクリックで高画質表示</span>
+              </button>
               <figcaption>${q.caption}</figcaption>
             </figure>
           </section>
@@ -646,6 +777,11 @@
             card.querySelector(".answer").scrollIntoView({ block: "nearest", behavior: "smooth" });
           });
           choices.appendChild(button);
+        });
+
+        const imageButton = card.querySelector(".image-open-button");
+        imageButton.addEventListener("click", () => {
+          openImageViewer(q.zoomImage || q.image, q.imageAlt || q.answerTitle, q.caption || "");
         });
 
         quizArea.appendChild(card);
@@ -685,6 +821,43 @@
       finishCard.classList.toggle("show", current.answered === current.total);
     }
 
+    function updateViewerScale() {
+      const naturalWidth = imageViewerImage.naturalWidth || 1200;
+      imageViewerImage.style.width = `${Math.max(320, Math.round(naturalWidth * viewerScale))}px`;
+      imageViewerTitle.textContent = `高画質画像 ${Math.round(viewerScale * 100)}%`;
+    }
+
+    function fitViewerImage() {
+      const naturalWidth = imageViewerImage.naturalWidth || 1200;
+      const naturalHeight = imageViewerImage.naturalHeight || 800;
+      const fitWidth = (imageViewerStage.clientWidth - 32) / naturalWidth;
+      const fitHeight = (imageViewerStage.clientHeight - 70) / naturalHeight;
+      viewerScale = Math.max(.18, Math.min(fitWidth, fitHeight, 1));
+      updateViewerScale();
+      imageViewerStage.scrollTo({ top: 0, left: 0 });
+    }
+
+    function openImageViewer(src, alt, caption) {
+      viewerScale = 1;
+      imageViewerImage.src = src;
+      imageViewerImage.alt = alt;
+      imageViewerCaption.textContent = caption;
+      imageViewer.hidden = false;
+      document.body.classList.add("viewer-open");
+      imageViewerImage.onload = () => {
+        updateViewerScale();
+        imageViewerStage.scrollTo({ top: 0, left: 0 });
+      };
+      updateViewerScale();
+      viewerCloseButton.focus();
+    }
+
+    function closeImageViewer() {
+      imageViewer.hidden = true;
+      document.body.classList.remove("viewer-open");
+      imageViewerImage.removeAttribute("src");
+    }
+
     function render() {
       const set = getActiveSet();
       renderSetList();
@@ -712,6 +885,27 @@
       await deferredPrompt.userChoice;
       deferredPrompt = null;
       installButton.classList.remove("show");
+    });
+
+    viewerFitButton.addEventListener("click", fitViewerImage);
+    viewerActualButton.addEventListener("click", () => {
+      viewerScale = 1;
+      updateViewerScale();
+    });
+    viewerZoomOutButton.addEventListener("click", () => {
+      viewerScale = Math.max(.18, viewerScale / 1.35);
+      updateViewerScale();
+    });
+    viewerZoomInButton.addEventListener("click", () => {
+      viewerScale = Math.min(4, viewerScale * 1.35);
+      updateViewerScale();
+    });
+    viewerCloseButton.addEventListener("click", closeImageViewer);
+    imageViewer.addEventListener("click", (event) => {
+      if (event.target === imageViewer) closeImageViewer();
+    });
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !imageViewer.hidden) closeImageViewer();
     });
 
     if ("serviceWorker" in navigator && location.protocol !== "file:") {
