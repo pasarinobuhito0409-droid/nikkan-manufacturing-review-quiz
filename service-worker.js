@@ -1,4 +1,4 @@
-const CACHE_NAME = "nikkan-manufacturing-review-quiz-v8";
+const CACHE_NAME = "nikkan-manufacturing-review-quiz-v9";
 
 const ASSETS = [
   "./",
@@ -22,7 +22,10 @@ const ASSETS = [
   "./assets/2026-06-19-q1-humanoid-autonomous.png",
   "./assets/2026-06-19-q1-humanoid-autonomous-readable.png",
   "./assets/2026-06-19-q2-headline-common.png",
-  "./assets/2026-06-19-q3-foundation-research-user-manual.png"
+  "./assets/2026-06-19-q3-foundation-research-user-manual.png",
+  "./assets/2026-06-22-q1-quantum-demand-source.jpg",
+  "./assets/2026-06-22-q2-quantum-app-algorithm.png",
+  "./assets/2026-06-22-q3-physical-ai-requirements.jpg"
 ];
 
 self.addEventListener("install", (event) => {
