@@ -1,0 +1,25 @@
+{
+  "name": "CO2回収から再生床材へ 3D教材",
+  "short_name": "CO2床材3D",
+  "description": "自販機のCO2吸収材が再生床材になる流れを触って学ぶ3D教材",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#07111d",
+  "theme_color": "#07111d",
+  "icons": [
+    {
+      "src": "./assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

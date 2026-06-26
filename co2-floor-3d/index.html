@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07111d">
+  <link rel="icon" href="./assets/icon-192.png">
+  <meta name="description" content="自販機でCO2を回収し、吸収材を再生床材へ変える流れを触って学ぶ3D教材">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./styles.css">
+  <title>CO2回収から再生床材へ 3D教材</title>
+</head>
+<body>
+  <main class="app-shell">
+    <section class="stage-shell" aria-label="CO2回収から再生床材へ 3D教材">
+      <div class="scene-wrap" id="sceneWrap">
+        <canvas id="sceneCanvas" aria-label="3D教材画面"></canvas>
+        <div class="scene-shine"></div>
+
+        <header class="hero-copy">
+          <p class="eyebrow">日刊工業新聞 2026年6月26日</p>
+          <h1>CO2回収から<br>再生床材へ</h1>
+          <p>自販機、吸収材、原料、圧縮、床材をひとつの3D空間でたどる。</p>
+        </header>
+
+        <section class="camera-tools" aria-label="3D操作">
+          <button type="button" id="rotateLeft">回転</button>
+          <button type="button" id="zoomIn">拡大</button>
+          <button type="button" id="zoomOut">縮小</button>
+          <button type="button" id="insideToggle">内部</button>
+        </section>
+
+        <section class="focus-card" aria-live="polite">
+          <p class="focus-kicker" id="focusKicker">いま見る工程</p>
+          <h2 id="focusTitle">1 自販機</h2>
+          <p id="focusBody">空気中のCO2を吸い込み、内部の吸収材へ集める入口。</p>
+          <div class="mini-meters">
+            <span><strong id="co2Meter">42</strong> CO2粒子</span>
+            <span><strong id="energyMeter">低</strong> 焼成なし</span>
+          </div>
+        </section>
+      </div>
+
+      <nav class="step-rail" aria-label="工程ステップ">
+        <button class="step-button active" type="button" data-step="0">
+          <span>1</span>
+          自販機
+        </button>
+        <button class="step-button" type="button" data-step="1">
+          <span>2</span>
+          吸収材
+        </button>
+        <button class="step-button" type="button" data-step="2">
+          <span>3</span>
+          原料
+        </button>
+        <button class="step-button" type="button" data-step="3">
+          <span>4</span>
+          圧縮
+        </button>
+        <button class="step-button" type="button" data-step="4">
+          <span>5</span>
+          床材
+        </button>
+      </nav>
+
+      <section class="flow-control" aria-label="CO2の流れ調整">
+        <label for="flowRange">CO2の流れ</label>
+        <input id="flowRange" type="range" min="0" max="100" value="72">
+        <output id="flowValue">72%</output>
+      </section>
+    </section>
+
+    <aside class="learning-panel" aria-label="学習パネル">
+      <section class="panel-block">
+        <p class="panel-kicker">触って理解</p>
+        <h2>見る順番</h2>
+        <ol>
+          <li>自販機にCO2が入る。</li>
+          <li>内部の特殊な吸収材に集まる。</li>
+          <li>回収材を原料へ混ぜる。</li>
+          <li>高温で焼かずに圧縮・硬化する。</li>
+          <li>駅の床材として使う。</li>
+        </ol>
+      </section>
+
+      <section class="panel-block dark">
+        <p class="panel-kicker">今日の芯</p>
+        <h2>捨てる吸収材を、材料へ戻す</h2>
+        <p>
+          アップサイクルとは、使い終わった物を価値の高い材料へ作り直すこと。
+        </p>
+      </section>
+
+      <section class="reference-card">
+        <button class="image-button" id="openPreview" type="button">
+          <img src="./assets/completion-preview.png" alt="完成イメージ">
+          <span>完成イメージを見る</span>
+        </button>
+        <button class="image-button" id="openExplainer" type="button">
+          <img src="./assets/co2-process-explainer.png" alt="CO2回収から再生床材へのリアル図解">
+          <span>リアル図解を見る</span>
+        </button>
+      </section>
+    </aside>
+  </main>
+
+  <dialog class="image-dialog" id="imageDialog">
+    <form method="dialog">
+      <button class="close-button" aria-label="閉じる">閉じる</button>
+    </form>
+    <img id="dialogImage" alt="">
+  </dialog>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
