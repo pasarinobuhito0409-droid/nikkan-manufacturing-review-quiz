@@ -1,4 +1,4 @@
-const CACHE_NAME = "nikkan-manufacturing-review-quiz-v12";
+const CACHE_NAME = "nikkan-manufacturing-review-quiz-v13";
 
 const ASSETS = [
   "./",
@@ -32,7 +32,23 @@ const ASSETS = [
   "./assets/2026-06-24-3dprinter-article-source.jpg",
   "./assets/2026-06-24-q1-metal-powder-bed.png",
   "./assets/2026-06-24-q2-resin-vs-metal-3d.png",
-  "./assets/2026-06-24-q3-fiber-laser-marking.png"
+  "./assets/2026-06-24-q3-fiber-laser-marking.png",
+  "./co2-floor-3d/",
+  "./co2-floor-3d/index.html",
+  "./co2-floor-3d/styles.css",
+  "./co2-floor-3d/app.js",
+  "./co2-floor-3d/manifest.webmanifest",
+  "./co2-floor-3d/service-worker.js",
+  "./co2-floor-3d/vendor/three.module.js",
+  "./co2-floor-3d/assets/completion-preview.png",
+  "./co2-floor-3d/assets/co2-process-explainer.png",
+  "./co2-floor-3d/assets/icon-192.png",
+  "./co2-floor-3d/assets/icon-512.png",
+  "./co2-floor-3d/assets/textures/vending-front.jpg",
+  "./co2-floor-3d/assets/textures/absorber-core.jpg",
+  "./co2-floor-3d/assets/textures/powder-bowl.jpg",
+  "./co2-floor-3d/assets/textures/press-machine.jpg",
+  "./co2-floor-3d/assets/textures/tile-surface.jpg"
 ];
 
 self.addEventListener("install", (event) => {

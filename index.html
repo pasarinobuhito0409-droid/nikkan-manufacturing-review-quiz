@@ -166,6 +166,65 @@
       margin-top: 4px;
     }
 
+    .special-apps {
+      margin: 18px 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .special-card {
+      display: grid;
+      grid-template-columns: minmax(120px, 220px) 1fr;
+      gap: 14px;
+      align-items: center;
+      padding: 12px;
+      border: 1px solid #b9d4f5;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #ffffff 0%, #eef6ff 100%);
+      color: var(--ink);
+      box-shadow: var(--shadow);
+      text-decoration: none;
+    }
+
+    .special-card:focus-visible,
+    .special-card:hover {
+      border-color: var(--blue);
+      outline: 3px solid rgba(31, 102, 209, .18);
+    }
+
+    .special-card img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      border-radius: 7px;
+      border: 1px solid var(--line);
+      background: #0d1a28;
+    }
+
+    .special-card small {
+      display: inline-flex;
+      width: fit-content;
+      margin-bottom: 6px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: #dff0ff;
+      color: #15508d;
+      font-weight: 900;
+    }
+
+    .special-card h2 {
+      margin: 0 0 4px;
+      font-size: clamp(20px, 3vw, 28px);
+      line-height: 1.25;
+    }
+
+    .special-card p {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 750;
+    }
+
     .created-date {
       display: inline-flex;
       align-items: center;
@@ -542,6 +601,10 @@
       .finish-card {
         padding: 14px;
       }
+
+      .special-card {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -572,6 +635,17 @@
     </section>
 
     <nav class="set-list" id="setList" aria-label="復習セット一覧"></nav>
+
+    <section class="special-apps" aria-label="3D教材">
+      <a class="special-card" href="./co2-floor-3d/">
+        <img src="./co2-floor-3d/assets/completion-preview.png" alt="CO2回収から再生床材へ 3D教材の画面">
+        <span>
+          <small>3D教材</small>
+          <h2>CO2回収から再生床材へ</h2>
+          <p>自販機、吸収材、原料、圧縮、床材の流れを触って確認する。</p>
+        </span>
+      </a>
+    </section>
 
     <section class="hero" aria-label="今回の学習地図">
       <div class="hero-card">
