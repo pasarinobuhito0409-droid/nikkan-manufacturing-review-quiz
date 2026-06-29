@@ -1,4 +1,4 @@
-const CACHE_NAME = "nikkan-manufacturing-review-quiz-v14";
+const CACHE_NAME = "nikkan-manufacturing-review-quiz-v15";
 
 const ASSETS = [
   "./",
@@ -51,7 +51,20 @@ const ASSETS = [
   "./co2-floor-3d/assets/textures/absorber-core.jpg",
   "./co2-floor-3d/assets/textures/powder-bowl.jpg",
   "./co2-floor-3d/assets/textures/press-machine.jpg",
-  "./co2-floor-3d/assets/textures/tile-surface.jpg"
+  "./co2-floor-3d/assets/textures/tile-surface.jpg",
+  "./power-nano-neuron-3d/",
+  "./power-nano-neuron-3d/index.html",
+  "./power-nano-neuron-3d/styles.css",
+  "./power-nano-neuron-3d/app.js",
+  "./power-nano-neuron-3d/manifest.webmanifest",
+  "./power-nano-neuron-3d/service-worker.js",
+  "./power-nano-neuron-3d/vendor/three.module.js",
+  "./power-nano-neuron-3d/assets/preview.png",
+  "./power-nano-neuron-3d/assets/icon-192.png",
+  "./power-nano-neuron-3d/assets/icon-512.png",
+  "./power-nano-neuron-3d/assets/kw-kwh-power-energy.png",
+  "./power-nano-neuron-3d/assets/beyond-2nm-semiconductor.png",
+  "./power-nano-neuron-3d/assets/neuron-autophagy-recovery.png"
 ];
 
 self.addEventListener("install", (event) => {
