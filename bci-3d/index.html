@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f6f7f2">
+  <meta name="description" content="ブレイン・コンピューター・インターフェースを3Dで触って学ぶ教材">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./assets/icon-192.png" type="image/png">
+  <title>BCI 3D教材</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main>
+    <section class="hero" aria-label="BCIの実験風景">
+      <img src="./assets/bci-real-lab.png" alt="脳波センサーをつけた人がロボットハンドを操作する研究室">
+      <div class="hero-copy">
+        <p class="kicker">日刊工業新聞 2026/7/2</p>
+        <h1>脳活動で機器操作</h1>
+        <p>手のかわりに、脳の電気を合図にする。</p>
+      </div>
+    </section>
+
+    <section class="core" aria-label="今日の芯">
+      <p class="badge">今日の芯</p>
+      <h2>BCIは、脳と機械の通訳機。</h2>
+      <p>
+        BCI（ビーシーアイ）は、脳波（のうは）を読み取る。
+        AI（判断する仕組み）が命令に変え、
+        ロボットハンドや車いすなどを動かす。
+      </p>
+    </section>
+
+    <section class="stage-section" aria-label="3Dで見るBCIの流れ">
+      <div class="stage-head">
+        <div>
+          <p class="badge">3Dで触る</p>
+          <h2>脳 → センサー → AI → 機器</h2>
+        </div>
+        <button id="playButton" class="tool-button" type="button">一時停止</button>
+      </div>
+
+      <div class="stage-shell">
+        <canvas id="bciStage" aria-label="BCIの3Dアニメーション"></canvas>
+        <div class="readout">
+          <span id="phaseLabel">1. 脳が合図を出す</span>
+          <span id="signalLabel">信号：考える</span>
+        </div>
+      </div>
+
+      <div class="step-tabs" aria-label="見る順番">
+        <button class="step-tab active" type="button" data-step="0">1 脳</button>
+        <button class="step-tab" type="button" data-step="1">2 センサー</button>
+        <button class="step-tab" type="button" data-step="2">3 AI変換</button>
+        <button class="step-tab" type="button" data-step="3">4 機器が動く</button>
+      </div>
+
+      <article class="explain-panel">
+        <h2 id="panelTitle">1. 脳が「動かしたい」と考える</h2>
+        <p id="panelText">
+          脳は小さな電気を出している。BCIは、その変化を合図として使う。
+        </p>
+        <p id="panelAnalogy" class="analogy">
+          たとえると、ゲームのボタンを指ではなく脳の電気で押す感じ。
+        </p>
+      </article>
+    </section>
+
+    <section class="terms" aria-label="用語メモ">
+      <h2>用語メモ</h2>
+      <dl>
+        <div>
+          <dt>BCI（ビーシーアイ）</dt>
+          <dd>Brain-Computer Interface。脳と機械をつなぐ通訳機。</dd>
+        </div>
+        <div>
+          <dt>脳波（のうは）</dt>
+          <dd>脳から出る、とても小さな電気のゆれ。</dd>
+        </div>
+        <div>
+          <dt>デコード</dt>
+          <dd>ぐちゃぐちゃの信号から「右へ」「つかむ」などの命令を読み取ること。</dd>
+        </div>
+      </dl>
+    </section>
+  </main>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

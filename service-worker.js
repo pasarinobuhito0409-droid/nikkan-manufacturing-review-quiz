@@ -1,4 +1,4 @@
-const CACHE_NAME = "nikkan-manufacturing-review-quiz-v17";
+const CACHE_NAME = "nikkan-manufacturing-review-quiz-v18";
 
 const ASSETS = [
   "./",
@@ -70,7 +70,18 @@ const ASSETS = [
   "./power-nano-neuron-3d/assets/icon-512.png",
   "./power-nano-neuron-3d/assets/kw-kwh-power-energy.png",
   "./power-nano-neuron-3d/assets/beyond-2nm-semiconductor.png",
-  "./power-nano-neuron-3d/assets/neuron-autophagy-recovery.png"
+  "./power-nano-neuron-3d/assets/neuron-autophagy-recovery.png",
+  "./bci-3d/",
+  "./bci-3d/index.html",
+  "./bci-3d/styles.css",
+  "./bci-3d/app.js",
+  "./bci-3d/manifest.webmanifest",
+  "./bci-3d/service-worker.js",
+  "./bci-3d/vendor/three.module.js",
+  "./bci-3d/assets/bci-real-lab.png",
+  "./bci-3d/assets/preview.png",
+  "./bci-3d/assets/icon-192.png",
+  "./bci-3d/assets/icon-512.png"
 ];
 
 self.addEventListener("install", (event) => {
