@@ -1,4 +1,4 @@
-const CACHE_NAME = "nikkan-manufacturing-review-quiz-v18";
+const CACHE_NAME = "nikkan-manufacturing-review-quiz-v19";
 
 const ASSETS = [
   "./",
@@ -42,6 +42,9 @@ const ASSETS = [
   "./assets/2026-07-01-q1-nanoterasu-beamline.png",
   "./assets/2026-07-01-q2-high-added-value-qc.png",
   "./assets/2026-07-01-q3-public-lab-bridge.png",
+  "./assets/2026-07-02-q1-bci-core.png",
+  "./assets/2026-07-02-q2-visual-attention-bci.png",
+  "./assets/2026-07-02-q3-brain-network-basal-ganglia.png",
   "./co2-floor-3d/",
   "./co2-floor-3d/index.html",
   "./co2-floor-3d/styles.css",
@@ -80,6 +83,9 @@ const ASSETS = [
   "./bci-3d/vendor/three.module.js",
   "./bci-3d/assets/bci-real-lab.png",
   "./bci-3d/assets/preview.png",
+  "./bci-3d/assets/quiz-bci-core.png",
+  "./bci-3d/assets/quiz-visual-attention.png",
+  "./bci-3d/assets/quiz-brain-network.png",
   "./bci-3d/assets/icon-192.png",
   "./bci-3d/assets/icon-512.png"
 ];

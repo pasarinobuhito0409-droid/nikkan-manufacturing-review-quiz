@@ -132,6 +132,10 @@
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 10px;
       margin: 18px 0;
+      max-height: 360px;
+      overflow-y: auto;
+      padding-right: 4px;
+      scroll-padding: 10px;
     }
 
     .set-button,
@@ -663,7 +667,7 @@
       </a>
     </section>
 
-    <section class="hero" aria-label="今回の学習地図">
+    <section class="hero" id="currentSet" aria-label="今回の学習地図">
       <div class="hero-card">
         <img id="heroImage" alt="">
       </div>
@@ -789,6 +793,7 @@
         });
         setList.appendChild(button);
       });
+      setList.querySelector(".set-button.active")?.scrollIntoView({ block: "nearest" });
     }
 
     function renderHero(set) {

@@ -7,6 +7,7 @@ const signalLabel = document.querySelector("#signalLabel");
 const panelTitle = document.querySelector("#panelTitle");
 const panelText = document.querySelector("#panelText");
 const panelAnalogy = document.querySelector("#panelAnalogy");
+const quizCards = document.querySelector("#quizCards");
 const stepButtons = Array.from(document.querySelectorAll(".step-tab"));
 
 const steps = [
@@ -45,6 +46,45 @@ const steps = [
     analogy: "手を動かせない時でも、脳の合図で道具を動かす入口になる。",
     color: 0x9b5de5,
     focusX: -0.25
+  }
+];
+
+const quizItems = [
+  {
+    step: 3,
+    question: "第1問：BCI（ビーシーアイ）の一番大事な役目は？",
+    choices: [
+      "脳の信号を、機器を動かす命令に変える",
+      "ロボットハンドを人の手と同じ形にする",
+      "画面を明るくして見やすくする"
+    ],
+    correctIndex: 0,
+    answer: "BCIは、脳と機械の通訳機。脳波を読み、AIが命令に変え、機器が動く。",
+    image: "./assets/quiz-bci-core.png"
+  },
+  {
+    step: 1,
+    question: "第2問：視覚刺激（しかくしげき）や注意制御（ちゅういせいぎょ）は何を使う？",
+    choices: [
+      "筋肉の力だけを測る",
+      "見る・集中する時の脳波の変化を使う",
+      "ロボットの重さだけで判断する"
+    ],
+    correctIndex: 1,
+    answer: "画面の点滅や集中先で脳波が変わる。その違いを、選択の合図として使う。",
+    image: "./assets/quiz-visual-attention.png"
+  },
+  {
+    step: 2,
+    question: "第3問：神経基盤解明（しんけいきばんかいめい）で見る大事な回路は？",
+    choices: [
+      "目だけで完結する回路",
+      "耳と皮膚だけをつなぐ回路",
+      "運動関連領域と基底核（きていかく）を結ぶ脳ネットワーク"
+    ],
+    correctIndex: 2,
+    answer: "動かしたい気持ちを命令にするには、運動の司令室と、深い場所の調整役がつながることが大事。",
+    image: "./assets/quiz-brain-network.png"
   }
 ];
 
@@ -390,6 +430,48 @@ function setStep(index) {
   tubeB.material.color.lerp(color, .5);
 }
 
+function renderQuiz() {
+  quizCards.innerHTML = "";
+  quizItems.forEach((item, index) => {
+    const card = document.createElement("article");
+    card.className = "quiz-card";
+    card.innerHTML = `
+      <h3>${item.question}</h3>
+      <div class="quiz-choices"></div>
+      <div class="quiz-answer">
+        <p>${item.answer}</p>
+        <img src="${item.image}" alt="${item.question}のリアル図解">
+      </div>
+    `;
+
+    const choices = card.querySelector(".quiz-choices");
+    const answer = card.querySelector(".quiz-answer");
+
+    item.choices.forEach((choice, choiceIndex) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "quiz-choice";
+      button.textContent = choice;
+      button.addEventListener("click", () => {
+        const buttons = Array.from(card.querySelectorAll(".quiz-choice"));
+        buttons.forEach((target, targetIndex) => {
+          target.disabled = true;
+          if (targetIndex === item.correctIndex) target.classList.add("correct");
+          if (targetIndex === choiceIndex && targetIndex !== item.correctIndex) target.classList.add("wrong");
+        });
+        answer.classList.add("show");
+        setStep(item.step);
+        playing = true;
+        playButton.textContent = "一時停止";
+        card.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+      choices.appendChild(button);
+    });
+
+    quizCards.appendChild(card);
+  });
+}
+
 function animate() {
   requestAnimationFrame(animate);
   const delta = playing ? 0.016 : 0;
@@ -476,4 +558,5 @@ if ("serviceWorker" in navigator && location.protocol !== "file:") {
 
 resize();
 setStep(0);
+renderQuiz();
 animate();

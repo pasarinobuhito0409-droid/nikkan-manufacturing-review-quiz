@@ -1,4 +1,4 @@
-const CACHE_NAME = "bci-3d-textbook-v1";
+const CACHE_NAME = "bci-3d-textbook-v2";
 
 const ASSETS = [
   "./",
@@ -9,7 +9,10 @@ const ASSETS = [
   "./assets/bci-real-lab.png",
   "./assets/icon-192.png",
   "./assets/icon-512.png",
-  "./vendor/three.module.js"
+  "./vendor/three.module.js",
+  "./assets/quiz-bci-core.png",
+  "./assets/quiz-visual-attention.png",
+  "./assets/quiz-brain-network.png"
 ];
 
 self.addEventListener("install", (event) => {
