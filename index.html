@@ -42,6 +42,7 @@
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       letter-spacing: 0;
       line-height: 1.7;
+      overflow-x: hidden;
     }
 
     body.viewer-open {
@@ -105,6 +106,7 @@
       background: rgba(255, 255, 255, .94);
       box-shadow: var(--shadow);
       backdrop-filter: blur(12px);
+      min-width: 0;
     }
 
     .score,
@@ -114,6 +116,7 @@
       gap: 8px;
       align-items: center;
       font-weight: 800;
+      min-width: 0;
     }
 
     .pill {
@@ -641,6 +644,14 @@
     <nav class="set-list" id="setList" aria-label="復習セット一覧"></nav>
 
     <section class="special-apps" aria-label="3D教材">
+      <a class="special-card" href="./cheap-tactile-data/">
+        <img src="./cheap-tactile-data/assets/hero-cheap-tactile.png" alt="100均・中古部品・自作センサーで安い触覚データを作る発明メモ">
+        <span>
+          <small>発明メモ</small>
+          <h2>安い触覚データ</h2>
+          <p>日常動画の広さに、押す力・すべりの触覚データを足す発明メモ。</p>
+        </span>
+      </a>
       <a class="special-card" href="./co2-floor-3d/">
         <img src="./co2-floor-3d/assets/completion-preview.png" alt="CO2回収から再生床材へ 3D教材の画面">
         <span>

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#102033">
+  <meta name="description" content="100均・中古部品・自作センサーで安い触覚データを作る発明メモアプリ">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./assets/icon-192.png" type="image/png">
+  <link rel="stylesheet" href="./styles.css">
+  <title>安い触覚データ 発明メモ</title>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="top">
+      <a class="back-link" href="../">復習アプリへ</a>
+      <button class="install-button" id="installButton" type="button">ホームに追加</button>
+    </header>
+
+    <section class="hero" aria-labelledby="pageTitle">
+      <div class="hero-copy">
+        <p class="kicker">発明メモ</p>
+        <h1 id="pageTitle">安い触覚データ</h1>
+        <p class="lead">
+          <span>100均・中古部品・自作センサーで、</span>
+          <span>ロボの「触った感じ」を集める。</span>
+        </p>
+        <div class="core-line">
+          <span>今日の芯</span>
+          <strong>
+            <span>日常動画の広さに、</span>
+            <span>触覚（しょっかく：触った情報）を足す。</span>
+          </strong>
+        </div>
+      </div>
+      <figure class="hero-image">
+        <button class="image-button" type="button" data-image="./assets/hero-cheap-tactile.png" data-caption="安い部品で押す力・すべり・日常物を測り、ロボ学習に使う発明メモ">
+          <img src="./assets/hero-cheap-tactile.png" alt="100均・中古部品・自作センサーで安い触覚データを作るリアルな作業台">
+          <span>画像を大きく見る</span>
+        </button>
+        <figcaption>見る場所：安い部品 → 押す力 → すべり → 日常物 → ロボ学習。</figcaption>
+      </figure>
+    </section>
+
+    <nav class="tabs" aria-label="発明メモの切り替え">
+      <button class="tab active" type="button" data-panel="hypothesis">仮説</button>
+      <button class="tab" type="button" data-panel="parts">道具</button>
+      <button class="tab" type="button" data-panel="data">データ</button>
+      <button class="tab" type="button" data-panel="risk">突っ込み</button>
+      <button class="tab" type="button" data-panel="first-test">最初の実験</button>
+    </nav>
+
+    <section class="panel active" id="hypothesis">
+      <h2>仮説</h2>
+      <p>
+        大企業は、
+        高いロボと大量データが強い。
+      </p>
+      <p>
+        でも、
+        日常の想定外はまだ広い。
+      </p>
+      <p class="strong">
+        三輪さんの穴は、
+        安く触覚を集めること。
+      </p>
+    </section>
+
+    <section class="panel" id="parts">
+      <h2>道具</h2>
+      <ul class="check-list">
+        <li>FSR（エフエスアール：押す力を測る薄いセンサー）</li>
+        <li>圧電素子（あつでんそし：押すと電気が出る部品）</li>
+        <li>導電性フォーム（どうでんせいフォーム：電気が流れるスポンジ）</li>
+        <li>中古マウス・ゲーム部品・銅テープ</li>
+        <li>ESP32（小型マイコン：小さい制御コンピューター）</li>
+      </ul>
+    </section>
+
+    <section class="panel" id="data">
+      <h2>集めるデータ</h2>
+      <div class="data-grid">
+        <article>
+          <span>1</span>
+          <h3>押す力</h3>
+          <p>どれくらい強く当たったか。</p>
+        </article>
+        <article>
+          <span>2</span>
+          <h3>すべり</h3>
+          <p>持った物が逃げた瞬間。</p>
+        </article>
+        <article>
+          <span>3</span>
+          <h3>素材差</h3>
+          <p>スポンジ・紙・金属・線材の違い。</p>
+        </article>
+        <article>
+          <span>4</span>
+          <h3>失敗</h3>
+          <p>落とす・引っかかる・強く押しすぎる。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="risk">
+      <h2>突っ込み</h2>
+      <p>
+        日常動画だけでは、
+        力の大きさが抜けやすい。
+      </p>
+      <p>
+        安いセンサーは、
+        ノイズ（余計な乱れ）も多い。
+      </p>
+      <p class="strong">
+        だから、
+        ロボで再確認する回路が必要。
+      </p>
+      <figure class="wide-image">
+        <button class="image-button" type="button" data-image="./assets/data-loop.png" data-caption="研究室データと日常データの違い。安い触覚データは、この間をつなぐ仮説になる。">
+          <img src="./assets/data-loop.png" alt="研究室データと日常データの違いを示すリアルな比較画像">
+          <span>画像を大きく見る</span>
+        </button>
+      </figure>
+    </section>
+
+    <section class="panel" id="first-test">
+      <h2>最初の実験</h2>
+      <ol class="steps">
+        <li>スポンジに導電性フォームを貼る。</li>
+        <li>銅テープを電極にする。</li>
+        <li>ロボ指か手で押す。</li>
+        <li>力の波形を記録する。</li>
+        <li>すべった瞬間に印を付ける。</li>
+      </ol>
+      <button class="save-button" id="saveButton" type="button">この発明メモを固定</button>
+      <p class="save-status" id="saveStatus">未固定</p>
+    </section>
+  </main>
+
+  <div class="viewer" id="viewer" hidden>
+    <div class="viewer-bar">
+      <p id="viewerCaption">画像</p>
+      <button type="button" id="closeViewer">閉じる</button>
+    </div>
+    <div class="viewer-stage">
+      <img id="viewerImage" alt="">
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

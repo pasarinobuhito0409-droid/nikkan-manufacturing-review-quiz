@@ -1,0 +1,396 @@
+:root {
+  color-scheme: light;
+  --bg: #eef3f7;
+  --panel: #ffffff;
+  --ink: #132033;
+  --muted: #58677b;
+  --line: #d3dde8;
+  --accent: #0f766e;
+  --accent-2: #d9822b;
+  --soft: #e8f7f4;
+  --dark: #102033;
+  --shadow: 0 18px 48px rgba(16, 32, 51, .13);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.65;
+  letter-spacing: 0;
+  overflow-x: hidden;
+}
+
+body.viewer-open {
+  overflow: hidden;
+}
+
+.app-shell {
+  width: min(1120px, calc(100% - 24px));
+  margin: 0 auto;
+  padding: 14px 0 42px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 12px;
+  min-width: 0;
+}
+
+.back-link,
+.install-button,
+.tab,
+.save-button,
+.viewer button {
+  min-height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  font-weight: 900;
+  text-decoration: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.install-button {
+  display: none;
+  background: var(--dark);
+  color: #fff;
+}
+
+.install-button.show {
+  display: inline-flex;
+  align-items: center;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: .82fr 1.18fr;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.hero > *,
+.panel,
+.tabs {
+  min-width: 0;
+}
+
+.hero-copy,
+.panel {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.hero-copy {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.kicker {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-size: 16px;
+  font-weight: 900;
+}
+
+h1,
+h2,
+h3,
+p,
+li,
+button,
+figcaption {
+  overflow-wrap: anywhere;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(36px, 7vw, 66px);
+  line-height: 1.05;
+}
+
+.lead {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: clamp(18px, 3.7vw, 24px);
+  font-weight: 750;
+}
+
+.lead span,
+.core-line strong span {
+  display: block;
+}
+
+.core-line {
+  margin-top: 18px;
+  padding: 14px;
+  border: 1px solid #b8ded7;
+  border-radius: 8px;
+  background: var(--soft);
+}
+
+.core-line span,
+.core-line strong {
+  display: block;
+}
+
+.core-line span {
+  color: var(--accent);
+  font-weight: 900;
+}
+
+.core-line strong {
+  margin-top: 4px;
+  font-size: 19px;
+  line-height: 1.5;
+}
+
+figure {
+  margin: 0;
+}
+
+.hero-image {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.image-button {
+  display: block;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: #fff;
+  color: var(--ink);
+  cursor: zoom-in;
+  text-align: left;
+}
+
+.image-button img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.image-button span {
+  display: block;
+  padding: 9px 12px;
+  background: #eef6ff;
+  color: #194d86;
+  font-weight: 900;
+}
+
+figcaption {
+  padding: 10px 12px;
+  color: var(--muted);
+  font-weight: 750;
+}
+
+.tabs {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 12px 0;
+  background: rgba(238, 243, 247, .92);
+  backdrop-filter: blur(10px);
+}
+
+.tab {
+  white-space: nowrap;
+}
+
+.tab.active {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.panel {
+  display: none;
+  padding: 20px;
+  margin-top: 2px;
+}
+
+.panel.active {
+  display: block;
+}
+
+.panel h2 {
+  margin: 0 0 14px;
+  font-size: clamp(28px, 5vw, 42px);
+  line-height: 1.15;
+}
+
+.panel p,
+.panel li {
+  font-size: clamp(18px, 3.7vw, 23px);
+}
+
+.panel p {
+  margin: 10px 0;
+}
+
+.strong {
+  font-weight: 950;
+}
+
+.check-list,
+.steps {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.data-grid article {
+  min-height: 160px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfdff;
+}
+
+.data-grid span {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent-2);
+  color: #fff;
+  font-size: 20px;
+  font-weight: 950;
+}
+
+.data-grid h3 {
+  margin: 10px 0 4px;
+  font-size: 22px;
+}
+
+.data-grid p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 17px;
+  font-weight: 750;
+}
+
+.wide-image {
+  margin-top: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.save-button {
+  margin-top: 18px;
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.save-status {
+  color: var(--muted);
+  font-weight: 900;
+}
+
+.viewer[hidden] {
+  display: none;
+}
+
+.viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  background: rgba(7, 13, 24, .94);
+}
+
+.viewer-bar {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  background: var(--dark);
+  color: #fff;
+}
+
+.viewer-bar p {
+  margin: 0;
+  font-weight: 900;
+}
+
+.viewer-stage {
+  overflow: auto;
+  padding: 16px;
+}
+
+.viewer-stage img {
+  display: block;
+  width: min(1500px, 100%);
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 18px 54px rgba(0, 0, 0, .48);
+}
+
+@media (max-width: 820px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy,
+  .panel {
+    padding: 16px;
+  }
+
+  .data-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .app-shell {
+    width: min(100% - 18px, 1120px);
+  }
+
+  .top {
+    align-items: stretch;
+  }
+
+  .back-link,
+  .install-button {
+    flex: 1;
+    text-align: center;
+  }
+
+  .data-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,4 +1,4 @@
-const CACHE_NAME = "nikkan-manufacturing-review-quiz-v19";
+const CACHE_NAME = "nikkan-manufacturing-review-quiz-v20";
 
 const ASSETS = [
   "./",
@@ -45,6 +45,9 @@ const ASSETS = [
   "./assets/2026-07-02-q1-bci-core.png",
   "./assets/2026-07-02-q2-visual-attention-bci.png",
   "./assets/2026-07-02-q3-brain-network-basal-ganglia.png",
+  "./assets/2026-07-03-q1-vtla-multimodal-hand.png",
+  "./assets/2026-07-03-q2-lab-vs-daily-data.png",
+  "./assets/2026-07-03-q3-cheap-tactile-invention.png",
   "./co2-floor-3d/",
   "./co2-floor-3d/index.html",
   "./co2-floor-3d/styles.css",
@@ -87,7 +90,17 @@ const ASSETS = [
   "./bci-3d/assets/quiz-visual-attention.png",
   "./bci-3d/assets/quiz-brain-network.png",
   "./bci-3d/assets/icon-192.png",
-  "./bci-3d/assets/icon-512.png"
+  "./bci-3d/assets/icon-512.png",
+  "./cheap-tactile-data/",
+  "./cheap-tactile-data/index.html",
+  "./cheap-tactile-data/styles.css",
+  "./cheap-tactile-data/app.js",
+  "./cheap-tactile-data/manifest.webmanifest",
+  "./cheap-tactile-data/service-worker.js",
+  "./cheap-tactile-data/assets/hero-cheap-tactile.png",
+  "./cheap-tactile-data/assets/data-loop.png",
+  "./cheap-tactile-data/assets/icon-192.png",
+  "./cheap-tactile-data/assets/icon-512.png"
 ];
 
 self.addEventListener("install", (event) => {
