@@ -1379,5 +1379,113 @@ window.NIKKAN_QUIZ_SETS = [
         caption: "見る場所：銅の被覆層、アルミ芯材、界面、OK密着とNGはがれ。"
       }
     ]
+  },
+  {
+    id: "2026-07-07-cadcam-workflow-ui-interoperability",
+    date: "2026-07-07",
+    title: "日刊工業新聞 7/7 3D CAD/CAM進化 復習3問",
+    shortTitle: "3D CAD/CAM進化",
+    sourceLabel: "日刊工業新聞 2026/7/7 復習",
+    heroImage: "./assets/2026-07-07-q1-cadcam-workflow.png",
+    heroAlt: "設計データからCAM、確認、CNC加工までつながる3D CAD/CAMワークフローのリアル図解",
+    summary: [
+      "3D CAD/CAM進化の芯は、設計から加工までの仕事の流れをつなげること。",
+      "ワークフロー変革は、紙・手入力・別ソフトの行き来を減らし、変更に強くする話。",
+      "モダンUIと相互運用性が高まると、設計変更、加工確認、現場共有が速く正確になる。"
+    ],
+    glossary: [
+      {
+        term: "3D CAD（すりーでぃーきゃど）",
+        meaning: "立体の形を作る設計ソフト。部品の形、寸法、公差を3Dで考える場所。"
+      },
+      {
+        term: "CAM（きゃむ）",
+        meaning: "加工手順や工具の動きを作るソフト。CADの形を、工作機械が動ける道に変える。"
+      },
+      {
+        term: "ワークフロー変革（わーくふろーへんかく）",
+        meaning: "仕事の流れを変えること。設計、加工、確認、現場共有のつながり方を変える。"
+      },
+      {
+        term: "ユーザーインターフェース（ゆーざーいんたーふぇーす）",
+        meaning: "人がソフトを触る画面。ボタン、表示、操作のしやすさのこと。"
+      },
+      {
+        term: "モダン（もだん）",
+        meaning: "今の感覚で見やすく、触りやすく、迷いにくいこと。"
+      },
+      {
+        term: "相互運用性（そうごうんようせい）",
+        meaning: "別々のソフトや機械でも、同じデータを通じさせる力。"
+      }
+    ],
+    questions: [
+      {
+        id: "cadcam-workflow-transformation",
+        tag: "流れの変化",
+        question: "3D CAD/CAMの「ワークフロー変革」で一番大事な意味はどれ？",
+        hint: "ただ3Dで見える話ではなく、設計から加工までの流れを見る。",
+        choices: [
+          "設計、CAM、確認、CNC加工をつなげ、手入力や戻り作業を減らすこと",
+          "3Dモデルの色をきれいにして、見た目を現代的にすること",
+          "工作機械を増やして、人が確認しなくても全部自動で作ること"
+        ],
+        correctIndex: 0,
+        answerTitle: "答え：設計から加工までをつなげる",
+        answerParagraphs: [
+          "ワークフロー変革は、仕事の流れそのものを変えること。",
+          "昔は、紙図面、別ソフト、手入力でデータが切れやすかった。",
+          "3D CAD/CAMがつながると、設計変更が加工データへ届きやすくなる。"
+        ],
+        image: "./assets/2026-07-07-q1-cadcam-workflow.png",
+        zoomImage: "./assets/2026-07-07-q1-cadcam-workflow.png",
+        imageAlt: "3D CADからCAM、確認、CNC加工へつながるワークフロー変革のリアル図解",
+        caption: "見る場所：設計、CAM、確認、CNC加工が1本の流れでつながっているところ。"
+      },
+      {
+        id: "modern-cadcam-ui",
+        tag: "操作画面",
+        question: "3D CAD/CAMでいう「モダンなユーザーインターフェース」は、何が良い？",
+        hint: "かっこいい画面だけではなく、現場で迷わないことが大事。",
+        choices: [
+          "専門家だけが使えるように、ボタンや設定をできるだけ細かく隠すこと",
+          "画面を派手にして、加工結果より見た目を優先すること",
+          "見やすく、すぐ触れて、ミスや干渉に気づきやすい操作画面にすること"
+        ],
+        correctIndex: 2,
+        answerTitle: "答え：迷わず触れて、ミスに気づける画面",
+        answerParagraphs: [
+          "UIは、人がソフトを触る入口。",
+          "モダンUIは、ただ新しい見た目ではない。",
+          "どこを触るか、何が危ないか、変更結果がどうなるかを見やすくする力。"
+        ],
+        image: "./assets/2026-07-07-q2-modern-ui.png",
+        zoomImage: "./assets/2026-07-07-q2-modern-ui.png",
+        imageAlt: "モダンな3D CAD/CAMユーザーインターフェースを説明するリアル図解",
+        caption: "見る場所：大きい3Dビュー、操作パネル、干渉や加工残りを見つける表示。"
+      },
+      {
+        id: "cadcam-interoperability",
+        tag: "データ連携",
+        question: "3D CAD/CAMの「相互運用性を高くする」とは、現場ではどういうこと？",
+        hint: "ソフト同士、機械同士で同じデータが通じるかを見る。",
+        choices: [
+          "すべて同じメーカーの機械に入れ替えないと、データを使えない状態にすること",
+          "CAD、CAM、CNC、検査で同じ3Dデータを共有し、手入力のズレを減らすこと",
+          "加工現場では3Dデータを使わず、最後は紙図面だけで確認すること"
+        ],
+        correctIndex: 1,
+        answerTitle: "答え：同じ3Dデータを別の場所でも通じさせる",
+        answerParagraphs: [
+          "相互運用性は、別々の道具でもデータが通じる力。",
+          "CADで作った形を、CAM、CNC、検査でも使えると、入力ミスが減る。",
+          "これは、設計と現場の間にあるズレを減らすための力。"
+        ],
+        image: "./assets/2026-07-07-q3-interoperability.png",
+        zoomImage: "./assets/2026-07-07-q3-interoperability.png",
+        imageAlt: "CAD、CAM、CNC、検査、データベースが同じ3Dデータでつながる相互運用性のリアル図解",
+        caption: "見る場所：同じ3Dデータが、CAD、CAM、CNC、検査へ流れているところ。"
+      }
+    ]
   }
 ];
