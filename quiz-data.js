@@ -1487,5 +1487,139 @@ window.NIKKAN_QUIZ_SETS = [
         caption: "見る場所：同じ3Dデータが、CAD、CAM、CNC、検査へ流れているところ。"
       }
     ]
+  },
+  {
+    id: "2026-07-08-nature-dialogue-experiment-apparatus",
+    date: "2026-07-08",
+    title: "日刊工業新聞 7/8 失敗を恐れず、自然と対話を 復習3問",
+    shortTitle: "自然と対話・実験装置・基礎と応用",
+    sourceLabel: "日刊工業新聞 2026/7/8 復習",
+    heroImage: "./assets/2026-07-08-q2-top-runners-apparatus-green.png",
+    heroAlt: "昔のトップランナーは自分で実験装置を作ったという緑ライン付き新聞記事",
+    summary: [
+      "今日の芯は、自然を観察し、すぐ答えに飛ばず、実験で確かめること。",
+      "緑ラインの大事な所は、自分で実験装置を工夫して作る過程が研究者を鍛えること。",
+      "三輪さんの視点は、自然観察も回り道も絶対ではなく、発明のツールとして使うこと。"
+    ],
+    importantPoints: [
+      {
+        title: "三輪さんの重要メモ",
+        text: "モノがない時代のトップランナーは、自分で実験装置を作った。不自由は発想と発明の宝。",
+        image: "./assets/2026-07-08-q2-top-runners-apparatus-green.png",
+        zoomImage: "./assets/2026-07-08-q2-top-runners-apparatus-green.png",
+        imageAlt: "昔のトップランナーは自分で実験装置を作ったという緑ライン",
+        caption: "見返す場所：独自の実験装置を作ってきた、何でも簡単に手に入る今、の流れ。"
+      },
+      {
+        title: "緑ライン：装置を与えすぎない",
+        text: "立派な装置を最初からそろえすぎると、自分で組み立て問題を解決するプロセスが抜ける。",
+        image: "./assets/2026-07-08-q2-top-runners-apparatus-green.png",
+        zoomImage: "./assets/2026-07-08-q2-top-runners-apparatus-green.png",
+        imageAlt: "立派な装置を最初からそろえすぎると研究現場で問題解決の過程が抜けるという緑ライン",
+        caption: "見返す場所：装置をそろえすぎる、問題を解決するプロセス、発展を阻害する要因。"
+      },
+      {
+        title: "緑ライン：基礎と応用は行き来する",
+        text: "応用の中で『これは何だろう』と深掘りして基礎へ行き、基礎から役立つ要素が見つかれば応用へ戻る。",
+        image: "./assets/2026-07-08-q3-foundation-application-green.png",
+        zoomImage: "./assets/2026-07-08-q3-foundation-application-green.png",
+        imageAlt: "基礎研究と応用研究は行き来するという緑ライン",
+        caption: "見返す場所：応用研究で実験、これは何だろう、基礎研究、役立つ要素が見つかれば応用。"
+      }
+    ],
+    glossary: [
+      {
+        term: "従い（したがい）",
+        meaning: "ある考えや観察結果に沿って行動すること。ここでは、自然の現象を見て進め方を決める意味。"
+      },
+      {
+        term: "自然と対話（しぜんとたいわ）",
+        meaning: "自然を人のように見ることではない。現象を観察し、なぜそうなるかを実験で確かめること。"
+      },
+      {
+        term: "回り道（まわりみち）",
+        meaning: "最短の成果だけを狙わず、試作・観察・失敗を通って理解を深める道。"
+      },
+      {
+        term: "森鴎外（もり おうがい）",
+        meaning: "明治時代の文豪・医師。記事では、言葉や郷里の文脈で出てきた人物。"
+      },
+      {
+        term: "論演（ろんえん：読みは文脈上の推定）",
+        meaning: "論じながら話すこと。記事文脈では、講演・演説に近い言葉として読む。"
+      },
+      {
+        term: "郷里（きょうり）",
+        meaning: "生まれ育ったふるさと。"
+      }
+    ],
+    questions: [
+      {
+        id: "nature-dialogue-observation",
+        tag: "自然と対話",
+        question: "記事の「自然と対話する」に一番近い行動はどれ？",
+        hint: "自然を信仰する話ではなく、現象との向き合い方。",
+        choices: [
+          "現象をよく観察し、『なぜ？』を立て、実験で確かめ直すこと",
+          "自然に逆らわず、考えずに結果を待つこと",
+          "論文や説明書だけを信じ、現場の変化を見ないこと"
+        ],
+        correctIndex: 0,
+        answerTitle: "答え：観察して、なぜを立て、実験で返事をもらう",
+        answerParagraphs: [
+          "自然と対話は、自然が言葉で話すという意味ではない。",
+          "観察して、『なぜこうなる？』と問いを出す。",
+          "その問いを、実験や試作で確かめる。ここが発明にも効く。"
+        ],
+        image: "./assets/2026-07-08-q1-nature-dialogue-source.png",
+        zoomImage: "./assets/2026-07-08-q1-nature-dialogue-source.png",
+        imageAlt: "失敗を恐れず自然と対話をの記事全体を確認できる新聞記事画像",
+        caption: "見る場所：記事全体。自然を観察する、回り道、実験装置という流れをつなげて読む。"
+      },
+      {
+        id: "homemade-apparatus-learning",
+        tag: "実験装置",
+        question: "緑ラインの「自分で実験装置を工夫して作る」が大事な理由はどれ？",
+        hint: "装置がないこと自体が偉いのではない。作る過程を見る。",
+        choices: [
+          "高い装置を使わない研究は、必ずノーベル賞につながるから",
+          "既製品を買わない方が、常に短期間で成果が出るから",
+          "装置を作る過程で、現象の見方と問題解決力が鍛えられるから"
+        ],
+        correctIndex: 2,
+        answerTitle: "答え：作る過程で、見る力が育つ",
+        answerParagraphs: [
+          "大事なのは、不自由そのものではない。",
+          "不自由の中で、どう測るか、どう動かすか、どう確かめるかを考えること。",
+          "だから三輪さんの『自分でできることはする』は、発明の筋トレになる。"
+        ],
+        image: "./assets/2026-07-08-q2-top-runners-apparatus-green.png",
+        zoomImage: "./assets/2026-07-08-q2-top-runners-apparatus-green.png",
+        imageAlt: "昔のトップランナーは自分で実験装置を作ったという緑ライン付き新聞記事",
+        caption: "見る場所：独自の実験装置、何でも簡単に手に入る、装置をそろえすぎると考える過程が抜ける。"
+      },
+      {
+        id: "foundation-application-loop",
+        tag: "基礎と応用",
+        question: "記事の基礎研究（きそけんきゅう）と応用研究（おうようけんきゅう）の見方で、一番近いものはどれ？",
+        hint: "どちらか一方だけではなく、行き来する。",
+        choices: [
+          "最初から基礎だけをやれば、応用は自然に出る",
+          "応用の中の『これは何だろう』から基礎へ行き、基礎の発見が応用へ戻る",
+          "応用研究は短期成果だけなので、好奇心とは関係しない"
+        ],
+        correctIndex: 1,
+        answerTitle: "答え：応用から基礎へ深掘りし、また応用へ戻る",
+        answerParagraphs: [
+          "記事の大事な線は、基礎か応用かを分けすぎないこと。",
+          "実験をしているうちに『これは何だろう』が出る。",
+          "そこを深掘りすると基礎になり、見つかった要素がまた応用へ戻る。"
+        ],
+        image: "./assets/2026-07-08-q3-foundation-application-green.png",
+        zoomImage: "./assets/2026-07-08-q3-foundation-application-green.png",
+        imageAlt: "基礎研究と応用研究を行き来する考え方を示す緑ライン付き新聞記事",
+        caption: "見る場所：応用研究で実験、これは何だろう、基礎研究、役立つ要素が見つかれば応用。"
+      }
+    ]
   }
 ];

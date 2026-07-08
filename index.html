@@ -64,9 +64,12 @@
       width: min(980px, calc(100% - 28px));
       margin: 0 auto;
       padding: 18px 0 44px;
+      display: flex;
+      flex-direction: column;
     }
 
     header {
+      order: 1;
       padding: 8px 0 4px;
     }
 
@@ -92,6 +95,7 @@
     }
 
     .topbar {
+      order: 2;
       position: sticky;
       top: 0;
       z-index: 5;
@@ -131,6 +135,7 @@
     }
 
     .set-list {
+      order: 3;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 10px;
@@ -174,6 +179,7 @@
     }
 
     .special-apps {
+      order: 7;
       margin: 18px 0;
       display: grid;
       grid-template-columns: 1fr;
@@ -259,6 +265,7 @@
     }
 
     .hero {
+      order: 4;
       display: grid;
       grid-template-columns: 1.05fr .95fr;
       gap: 16px;
@@ -312,6 +319,74 @@
       font-size: 17px;
     }
 
+    .important-points {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .important-points h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      line-height: 1.35;
+    }
+
+    .important-point-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .important-point {
+      display: grid;
+      grid-template-columns: 1fr minmax(92px, 160px);
+      gap: 10px;
+      align-items: center;
+      padding: 10px;
+      border: 1px solid #c6dfb5;
+      border-radius: 8px;
+      background: #f4fbef;
+    }
+
+    .important-point strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 16px;
+      line-height: 1.35;
+    }
+
+    .important-point p {
+      margin: 0;
+      color: #38512f;
+      font-size: 15px;
+      font-weight: 750;
+      line-height: 1.55;
+    }
+
+    .important-image-button {
+      width: 100%;
+      border: 1px solid #9fc68b;
+      border-radius: 8px;
+      background: #fff;
+      padding: 0;
+      overflow: hidden;
+      cursor: zoom-in;
+      color: #28521f;
+      font-weight: 900;
+    }
+
+    .important-image-button img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+    }
+
+    .important-image-button span {
+      display: block;
+      padding: 6px;
+      font-size: 13px;
+    }
+
     .glossary {
       margin-top: 16px;
       padding-top: 14px;
@@ -354,6 +429,10 @@
     .quiz-card {
       margin: 18px 0;
       padding: 18px;
+    }
+
+    #quizArea {
+      order: 5;
     }
 
     .question-meta {
@@ -567,6 +646,7 @@
     }
 
     .finish-card {
+      order: 6;
       display: none;
       padding: 18px;
       margin-top: 18px;
@@ -612,6 +692,10 @@
       .special-card {
         grid-template-columns: 1fr;
       }
+
+      .important-point {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -642,6 +726,27 @@
     </section>
 
     <nav class="set-list" id="setList" aria-label="復習セット一覧"></nav>
+
+    <section class="hero" id="currentSet" aria-label="今回の学習地図">
+      <div class="hero-card">
+        <img id="heroImage" alt="">
+      </div>
+      <div class="hero-card map-card">
+        <p class="created-date" id="createdDate">作成日：----</p>
+        <h2 id="setTitle">今回の芯</h2>
+        <ul class="route-list" id="summaryList"></ul>
+        <section class="important-points" id="importantBox" hidden></section>
+        <section class="glossary" id="glossaryBox" hidden></section>
+      </div>
+    </section>
+
+    <section id="quizArea" aria-label="問題"></section>
+
+    <section class="finish-card" id="finishCard">
+      <h2>このセット完了</h2>
+      <p id="finishText"></p>
+      <p>新しい問題セットが増えても、この復習棚に残ります。</p>
+    </section>
 
     <section class="special-apps" aria-label="3D教材">
       <a class="special-card" href="./cheap-tactile-data/">
@@ -677,26 +782,6 @@
         </span>
       </a>
     </section>
-
-    <section class="hero" id="currentSet" aria-label="今回の学習地図">
-      <div class="hero-card">
-        <img id="heroImage" alt="">
-      </div>
-      <div class="hero-card map-card">
-        <p class="created-date" id="createdDate">作成日：----</p>
-        <h2 id="setTitle">今回の芯</h2>
-        <ul class="route-list" id="summaryList"></ul>
-        <section class="glossary" id="glossaryBox" hidden></section>
-      </div>
-    </section>
-
-    <section id="quizArea" aria-label="問題"></section>
-
-    <section class="finish-card" id="finishCard">
-      <h2>このセット完了</h2>
-      <p id="finishText"></p>
-      <p>新しい問題セットが増えても、この復習棚に残ります。</p>
-    </section>
   </main>
 
   <div class="image-viewer" id="imageViewer" role="dialog" aria-modal="true" aria-label="高画質画像ビューア" hidden>
@@ -729,6 +814,7 @@
     const createdDate = document.getElementById("createdDate");
     const setTitle = document.getElementById("setTitle");
     const summaryList = document.getElementById("summaryList");
+    const importantBox = document.getElementById("importantBox");
     const glossaryBox = document.getElementById("glossaryBox");
     const finishCard = document.getElementById("finishCard");
     const finishText = document.getElementById("finishText");
@@ -818,6 +904,50 @@
         li.textContent = item;
         summaryList.appendChild(li);
       });
+
+      importantBox.innerHTML = "";
+      const importantPoints = Array.isArray(set.importantPoints) ? set.importantPoints : [];
+      importantBox.hidden = importantPoints.length === 0;
+      if (!importantBox.hidden) {
+        const heading = document.createElement("h3");
+        heading.textContent = "重要マーカー";
+        const list = document.createElement("div");
+        list.className = "important-point-list";
+        importantPoints.forEach((item) => {
+          const row = document.createElement("article");
+          row.className = "important-point";
+          const copy = document.createElement("div");
+          const title = document.createElement("strong");
+          const text = document.createElement("p");
+          title.textContent = item.title;
+          text.textContent = item.text;
+          copy.appendChild(title);
+          copy.appendChild(text);
+          row.appendChild(copy);
+
+          if (item.image) {
+            const button = document.createElement("button");
+            button.className = "important-image-button";
+            button.type = "button";
+            button.setAttribute("aria-label", "重要部分を高画質で開く");
+            const img = document.createElement("img");
+            img.src = item.image;
+            img.alt = item.imageAlt || item.title;
+            const label = document.createElement("span");
+            label.textContent = "重要部分を開く";
+            button.appendChild(img);
+            button.appendChild(label);
+            button.addEventListener("click", () => {
+              openImageViewer(item.zoomImage || item.image, item.imageAlt || item.title, item.caption || item.text || "");
+            });
+            row.appendChild(button);
+          }
+
+          list.appendChild(row);
+        });
+        importantBox.appendChild(heading);
+        importantBox.appendChild(list);
+      }
 
       glossaryBox.innerHTML = "";
       glossaryBox.hidden = !Array.isArray(set.glossary) || set.glossary.length === 0;
