@@ -1,4 +1,4 @@
-const CACHE_NAME = "nikkan-manufacturing-review-quiz-v23";
+const CACHE_NAME = "nikkan-manufacturing-review-quiz-v24";
 
 const ASSETS = [
   "./",

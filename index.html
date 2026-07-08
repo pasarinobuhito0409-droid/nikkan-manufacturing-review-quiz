@@ -113,6 +113,66 @@
       min-width: 0;
     }
 
+    .deck-nav {
+      order: 3;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto auto;
+      gap: 8px;
+      align-items: center;
+      margin: 0 0 12px;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .deck-status {
+      min-width: 0;
+      text-align: center;
+    }
+
+    .deck-status strong {
+      display: block;
+      font-size: 17px;
+      line-height: 1.25;
+    }
+
+    .deck-status span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .deck-button,
+    .question-nav-button,
+    .answer-next-button {
+      min-height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--ink);
+      font-weight: 900;
+      cursor: pointer;
+      padding: 8px 12px;
+    }
+
+    .deck-button.primary,
+    .answer-next-button {
+      border-color: #244f93;
+      background: #12213a;
+      color: #fff;
+    }
+
+    .deck-button:disabled,
+    .question-nav-button:disabled,
+    .answer-next-button:disabled {
+      cursor: not-allowed;
+      opacity: .45;
+    }
+
     .score,
     .actions {
       display: flex;
@@ -135,15 +195,15 @@
     }
 
     .set-list {
-      order: 3;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 10px;
-      margin: 18px 0;
-      max-height: 360px;
-      overflow-y: auto;
-      padding-right: 4px;
+      order: 7;
+      display: flex;
+      gap: 8px;
+      margin: 0 0 12px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 2px 2px 8px;
       scroll-padding: 10px;
+      scroll-snap-type: x proximity;
     }
 
     .set-button,
@@ -160,9 +220,11 @@
     }
 
     .set-button {
-      min-height: 92px;
+      min-width: min(76vw, 280px);
+      min-height: 64px;
       text-align: left;
       box-shadow: var(--shadow);
+      scroll-snap-align: center;
     }
 
     .set-button.active {
@@ -179,7 +241,7 @@
     }
 
     .special-apps {
-      order: 7;
+      order: 8;
       margin: 18px 0;
       display: grid;
       grid-template-columns: 1fr;
@@ -265,7 +327,7 @@
     }
 
     .hero {
-      order: 4;
+      order: 5;
       display: grid;
       grid-template-columns: 1.05fr .95fr;
       gap: 16px;
@@ -432,7 +494,63 @@
     }
 
     #quizArea {
-      order: 5;
+      order: 4;
+    }
+
+    .question-pager {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      gap: 10px;
+      align-items: center;
+      margin: 12px 0 0;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .question-pager-title {
+      min-width: 0;
+      text-align: center;
+      font-weight: 900;
+      line-height: 1.35;
+    }
+
+    .question-dots {
+      display: flex;
+      justify-content: center;
+      gap: 7px;
+      margin-top: 6px;
+    }
+
+    .question-dot {
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--ink);
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .question-dot.active {
+      border-color: var(--blue);
+      background: var(--blue-soft);
+      color: #15447e;
+    }
+
+    .question-dot.answered {
+      border-color: var(--green);
+      background: var(--green-soft);
+      color: #0e5f3b;
+    }
+
+    .answer-actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 14px;
     }
 
     .question-meta {
@@ -674,6 +792,19 @@
         grid-template-columns: 1fr;
       }
 
+      .deck-nav {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .deck-status {
+        grid-column: 1 / -1;
+        order: -1;
+      }
+
+      .deck-button {
+        width: 100%;
+      }
+
       .hero {
         grid-template-columns: 1fr;
       }
@@ -695,6 +826,15 @@
 
       .important-point {
         grid-template-columns: 1fr;
+      }
+
+      .question-pager {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .question-pager-title {
+        grid-column: 1 / -1;
+        order: -1;
       }
     }
   </style>
@@ -723,6 +863,16 @@
         <button class="install-button" id="installButton" type="button">アプリに入れる</button>
         <button class="reset-button" id="resetButton" type="button">このセットをやり直す</button>
       </div>
+    </section>
+
+    <section class="deck-nav" aria-label="復習セット送り">
+      <button class="deck-button" id="prevSetButton" type="button">← 前へ</button>
+      <div class="deck-status">
+        <strong id="deckSetLabel">セット 1 / 1</strong>
+        <span id="deckHint">1画面で1セットずつ見る</span>
+      </div>
+      <button class="deck-button primary" id="nextSetButton" type="button">次へ →</button>
+      <button class="deck-button" id="jumpUnansweredButton" type="button">未回答へ</button>
     </section>
 
     <nav class="set-list" id="setList" aria-label="復習セット一覧"></nav>
@@ -810,6 +960,11 @@
     const scoreText = document.getElementById("scoreText");
     const totalText = document.getElementById("totalText");
     const statusText = document.getElementById("statusText");
+    const prevSetButton = document.getElementById("prevSetButton");
+    const nextSetButton = document.getElementById("nextSetButton");
+    const jumpUnansweredButton = document.getElementById("jumpUnansweredButton");
+    const deckSetLabel = document.getElementById("deckSetLabel");
+    const deckHint = document.getElementById("deckHint");
     const heroImage = document.getElementById("heroImage");
     const createdDate = document.getElementById("createdDate");
     const setTitle = document.getElementById("setTitle");
@@ -833,6 +988,7 @@
     const storageKey = "nikkan-manufacturing-review-quiz-library-v2";
     let deferredPrompt = null;
     let activeSetId = quizSets[quizSets.length - 1]?.id || "";
+    let activeQuestionIndex = 0;
     let state = loadState();
     let viewerScale = 1;
 
@@ -854,6 +1010,36 @@
 
     function getActiveSet() {
       return quizSets.find((set) => set.id === activeSetId) || quizSets[0];
+    }
+
+    function getActiveSetIndex() {
+      return Math.max(0, quizSets.findIndex((set) => set.id === activeSetId));
+    }
+
+    function getFirstUnansweredIndex(set) {
+      return set.questions.findIndex((q) => state.answers[answerKey(set.id, q.id)] === undefined);
+    }
+
+    function getStartQuestionIndex(set) {
+      const firstUnanswered = getFirstUnansweredIndex(set);
+      return firstUnanswered >= 0 ? firstUnanswered : 0;
+    }
+
+    function setActiveSetByIndex(index) {
+      const nextIndex = Math.max(0, Math.min(index, quizSets.length - 1));
+      const nextSet = quizSets[nextIndex];
+      if (!nextSet) return;
+      activeSetId = nextSet.id;
+      activeQuestionIndex = getStartQuestionIndex(nextSet);
+      render();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function setActiveQuestion(index) {
+      const set = getActiveSet();
+      activeQuestionIndex = Math.max(0, Math.min(index, set.questions.length - 1));
+      render();
+      quizArea.scrollIntoView({ block: "start", behavior: "smooth" });
     }
 
     function countSet(set) {
@@ -884,13 +1070,11 @@
           <span>作成日：${set.date} / 正解 ${result.correct} / ${result.total}</span>
         `;
         button.addEventListener("click", () => {
-          activeSetId = set.id;
-          render();
-          window.scrollTo({ top: 0, behavior: "smooth" });
+          setActiveSetByIndex(index);
         });
         setList.appendChild(button);
       });
-      setList.querySelector(".set-button.active")?.scrollIntoView({ block: "nearest" });
+      setList.querySelector(".set-button.active")?.scrollIntoView({ block: "nearest", inline: "center" });
     }
 
     function renderHero(set) {
@@ -972,60 +1156,104 @@
 
     function renderQuiz(set) {
       quizArea.innerHTML = "";
-      set.questions.forEach((q, index) => {
-        const key = answerKey(set.id, q.id);
-        const saved = state.answers[key];
-        const card = document.createElement("article");
-        card.className = "quiz-card";
-        card.id = key;
-        card.innerHTML = `
-          <div class="question-meta">
-            <span class="tag">第${index + 1}問</span>
-            <span class="tag">${q.tag}</span>
+      if (!set.questions.length) return;
+      activeQuestionIndex = Math.max(0, Math.min(activeQuestionIndex, set.questions.length - 1));
+
+      const pager = document.createElement("section");
+      pager.className = "question-pager";
+      pager.innerHTML = `
+        <button class="question-nav-button" type="button" data-question-prev>← 問題</button>
+        <div class="question-pager-title">
+          <div>第${activeQuestionIndex + 1}問 / ${set.questions.length}</div>
+          <div class="question-dots" aria-label="問題送り"></div>
+        </div>
+        <button class="question-nav-button" type="button" data-question-next>問題 →</button>
+      `;
+      const dots = pager.querySelector(".question-dots");
+      set.questions.forEach((item, index) => {
+        const dot = document.createElement("button");
+        const answered = state.answers[answerKey(set.id, item.id)] !== undefined;
+        dot.className = `question-dot${index === activeQuestionIndex ? " active" : ""}${answered ? " answered" : ""}`;
+        dot.type = "button";
+        dot.textContent = index + 1;
+        dot.addEventListener("click", () => setActiveQuestion(index));
+        dots.appendChild(dot);
+      });
+      const prevQuestionButton = pager.querySelector("[data-question-prev]");
+      const nextQuestionButton = pager.querySelector("[data-question-next]");
+      prevQuestionButton.disabled = activeQuestionIndex === 0;
+      nextQuestionButton.disabled = activeQuestionIndex === set.questions.length - 1;
+      prevQuestionButton.addEventListener("click", () => setActiveQuestion(activeQuestionIndex - 1));
+      nextQuestionButton.addEventListener("click", () => setActiveQuestion(activeQuestionIndex + 1));
+      quizArea.appendChild(pager);
+
+      const q = set.questions[activeQuestionIndex];
+      const key = answerKey(set.id, q.id);
+      const saved = state.answers[key];
+      const card = document.createElement("article");
+      card.className = "quiz-card";
+      card.id = key;
+      card.innerHTML = `
+        <div class="question-meta">
+          <span class="tag">第${activeQuestionIndex + 1}問</span>
+          <span class="tag">${q.tag}</span>
+        </div>
+        <h2 class="question">${q.question}</h2>
+        <p class="hint">${q.hint}</p>
+        <div class="choices"></div>
+        <section class="answer">
+          <h3>${q.answerTitle}</h3>
+          ${q.answerParagraphs.map((text) => `<p>${text}</p>`).join("")}
+          <figure>
+            <button class="image-open-button" type="button" aria-label="画像を高画質で開く">
+              <img src="${q.image}" alt="${q.imageAlt}">
+              <span class="image-open-hint">画像をクリックで高画質表示</span>
+            </button>
+            <figcaption>${q.caption}</figcaption>
+          </figure>
+          <div class="answer-actions">
+            <button class="answer-next-button" type="button">
+              ${activeQuestionIndex === set.questions.length - 1 ? "このセットを確認" : "次の問題へ"}
+            </button>
           </div>
-          <h2 class="question">${q.question}</h2>
-          <p class="hint">${q.hint}</p>
-          <div class="choices"></div>
-          <section class="answer">
-            <h3>${q.answerTitle}</h3>
-            ${q.answerParagraphs.map((text) => `<p>${text}</p>`).join("")}
-            <figure>
-              <button class="image-open-button" type="button" aria-label="画像を高画質で開く">
-                <img src="${q.image}" alt="${q.imageAlt}">
-                <span class="image-open-hint">画像をクリックで高画質表示</span>
-              </button>
-              <figcaption>${q.caption}</figcaption>
-            </figure>
-          </section>
-        `;
+        </section>
+      `;
 
-        const choices = card.querySelector(".choices");
-        q.choices.forEach((choice, choiceIndex) => {
-          const button = document.createElement("button");
-          button.className = "choice";
-          button.type = "button";
-          button.textContent = choice;
-          button.addEventListener("click", () => {
-            if (state.answers[key] !== undefined) return;
-            state.answers[key] = choiceIndex;
-            saveState();
-            applyAnswer(card, q, choiceIndex);
-            card.querySelector(".answer").scrollIntoView({ block: "nearest", behavior: "smooth" });
-          });
-          choices.appendChild(button);
+      const choices = card.querySelector(".choices");
+      q.choices.forEach((choice, choiceIndex) => {
+        const button = document.createElement("button");
+        button.className = "choice";
+        button.type = "button";
+        button.textContent = choice;
+        button.addEventListener("click", () => {
+          if (state.answers[key] !== undefined) return;
+          state.answers[key] = choiceIndex;
+          saveState();
+          applyAnswer(card, q, choiceIndex);
+          card.querySelector(".answer").scrollIntoView({ block: "nearest", behavior: "smooth" });
         });
+        choices.appendChild(button);
+      });
 
-        const imageButton = card.querySelector(".image-open-button");
-        imageButton.addEventListener("click", () => {
-          openImageViewer(q.zoomImage || q.image, q.imageAlt || q.answerTitle, q.caption || "");
-        });
+      const imageButton = card.querySelector(".image-open-button");
+      imageButton.addEventListener("click", () => {
+        openImageViewer(q.zoomImage || q.image, q.imageAlt || q.answerTitle, q.caption || "");
+      });
 
-        quizArea.appendChild(card);
-
-        if (Number.isInteger(saved)) {
-          applyAnswer(card, q, saved);
+      const answerNextButton = card.querySelector(".answer-next-button");
+      answerNextButton.addEventListener("click", () => {
+        if (activeQuestionIndex < set.questions.length - 1) {
+          setActiveQuestion(activeQuestionIndex + 1);
+        } else {
+          window.scrollTo({ top: 0, behavior: "smooth" });
         }
       });
+
+      quizArea.appendChild(card);
+
+      if (Number.isInteger(saved)) {
+        applyAnswer(card, q, saved);
+      }
     }
 
     function applyAnswer(card, question, selectedIndex) {
@@ -1039,6 +1267,7 @@
         if (index === selectedIndex && index !== question.correctIndex) button.classList.add("wrong");
       });
 
+      quizArea.querySelectorAll(".question-dot")[activeQuestionIndex]?.classList.add("answered");
       updateScore();
       renderSetList();
     }
@@ -1047,7 +1276,8 @@
       const set = getActiveSet();
       const current = countSet(set);
       const total = countTotal();
-      const setIndex = quizSets.findIndex((item) => item.id === set.id) + 1;
+      const setIndex = getActiveSetIndex() + 1;
+      const firstUnanswered = getFirstUnansweredIndex(set);
 
       setText.textContent = `セット ${setIndex} / ${quizSets.length}`;
       scoreText.textContent = `正解 ${current.correct} / ${current.total}`;
@@ -1055,6 +1285,12 @@
       statusText.textContent = current.answered === current.total ? "このセット完了" : `回答 ${current.answered} / ${current.total}`;
       finishText.textContent = `${set.title} は完了。あとでまた開けば、同じ場所から復習できます。`;
       finishCard.classList.toggle("show", current.answered === current.total);
+      deckSetLabel.textContent = `セット ${setIndex} / ${quizSets.length}`;
+      deckHint.textContent = `今は第${activeQuestionIndex + 1}問だけ表示`;
+      prevSetButton.disabled = setIndex <= 1;
+      nextSetButton.disabled = setIndex >= quizSets.length;
+      jumpUnansweredButton.disabled = firstUnanswered < 0 || firstUnanswered === activeQuestionIndex;
+      jumpUnansweredButton.textContent = firstUnanswered < 0 ? "このセット完了" : `未回答 ${firstUnanswered + 1}へ`;
     }
 
     function updateViewerScale() {
@@ -1102,9 +1338,24 @@
       updateScore();
     }
 
+    prevSetButton.addEventListener("click", () => {
+      setActiveSetByIndex(getActiveSetIndex() - 1);
+    });
+
+    nextSetButton.addEventListener("click", () => {
+      setActiveSetByIndex(getActiveSetIndex() + 1);
+    });
+
+    jumpUnansweredButton.addEventListener("click", () => {
+      const set = getActiveSet();
+      const firstUnanswered = getFirstUnansweredIndex(set);
+      if (firstUnanswered >= 0) setActiveQuestion(firstUnanswered);
+    });
+
     resetButton.addEventListener("click", () => {
       const set = getActiveSet();
       set.questions.forEach((q) => delete state.answers[answerKey(set.id, q.id)]);
+      activeQuestionIndex = 0;
       saveState();
       render();
     });
