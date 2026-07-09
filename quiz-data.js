@@ -1723,10 +1723,10 @@ window.NIKKAN_QUIZ_SETS = [
           "老いた脳では、この工場が休眠してしまい、神経新生が細る。",
           "だから若返り研究は、まず眠った工場を安全に起こせるかを見る。"
         ],
-        image: "./assets/2026-07-09-q1-neural-stem-cell-green.png",
-        zoomImage: "./assets/2026-07-09-q1-neural-stem-cell-green.png",
-        imageAlt: "老いた脳では幹細胞が休眠し神経新生が大幅に減るという緑ラインの拡大",
-        caption: "図解の読み方：緑の「幹細胞が休眠」から「神経新生が大幅に減る」へ読む。工場停止のイメージ。"
+        image: "./assets/2026-07-09-q1-neural-stem-cell-real-diagram.png",
+        zoomImage: "./assets/2026-07-09-q1-neural-stem-cell-real-diagram.png",
+        imageAlt: "老いた脳で幹細胞が休眠し神経新生が減る仕組みを示すリアル図解",
+        caption: "図解の読み方：老いた脳では、神経を作る幹細胞の工場が眠り、新しい神経細胞が増えにくくなる。"
       },
       {
         id: "ipad-amyloid-cognition",
@@ -1745,10 +1745,10 @@ window.NIKKAN_QUIZ_SETS = [
           "そのあと、脳にたまるアミロイドβが減る。",
           "最後に、認知機能の改善に成功した、という順番。"
         ],
-        image: "./assets/2026-07-09-q2-ipad-amyloid-green.png",
-        zoomImage: "./assets/2026-07-09-q2-ipad-amyloid-green.png",
-        imageAlt: "iPaDでアミロイドβを減らし認知機能の改善に成功したという緑ラインの拡大",
-        caption: "図解の読み方：緑の「アミロイドβを減らし」から「認知機能の改善に成功」へつなげる。"
+        image: "./assets/2026-07-09-q2-ipad-amyloid-real-diagram.png",
+        zoomImage: "./assets/2026-07-09-q2-ipad-amyloid-real-diagram.png",
+        imageAlt: "iPaDで幹細胞を活性化しアミロイドβが減って認知機能が改善する流れのリアル図解",
+        caption: "図解の読み方：iPaDで幹細胞を起こす、アミロイドβを掃除する、認知機能がよくなる、の順で見る。"
       },
       {
         id: "dead-new-neurons-cleanup",
@@ -1767,10 +1767,10 @@ window.NIKKAN_QUIZ_SETS = [
           "すると免疫細胞が、死んだ細胞を食べて掃除する。",
           "そのとき近くのアミロイドβも巻き込んで片づく、という考え方が記事の大事な原理。"
         ],
-        image: "./assets/2026-07-09-q3-new-neuron-cleanup-green.png",
-        zoomImage: "./assets/2026-07-09-q3-new-neuron-cleanup-green.png",
-        imageAlt: "新たに作られた神経細胞の一部が死にアミロイドβが死んだ細胞と一緒に食べられるという緑ラインの拡大",
-        caption: "図解の読み方：緑の「1カ月で死ぬ」「死んだ細胞と」を、免疫細胞の掃除として読む。"
+        image: "./assets/2026-07-09-q3-microglia-cleanup-real-diagram.png",
+        zoomImage: "./assets/2026-07-09-q3-microglia-cleanup-real-diagram.png",
+        imageAlt: "掃除細胞が死んだ新生細胞とアミロイドβを一緒に片づける仕組みのリアル図解",
+        caption: "図解の読み方：死んだ新生細胞を掃除細胞が食べるとき、近くのアミロイドβも一緒に片づく可能性を見る。"
       }
     ]
   }
