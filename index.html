@@ -1094,7 +1094,7 @@
       importantBox.hidden = importantPoints.length === 0;
       if (!importantBox.hidden) {
         const heading = document.createElement("h3");
-        heading.textContent = "重要マーカー";
+        heading.textContent = set.importantTitle || "重要マーカー";
         const list = document.createElement("div");
         list.className = "important-point-list";
         importantPoints.forEach((item) => {
@@ -1137,7 +1137,7 @@
       glossaryBox.hidden = !Array.isArray(set.glossary) || set.glossary.length === 0;
       if (!glossaryBox.hidden) {
         const heading = document.createElement("h3");
-        heading.textContent = "用語メモ";
+        heading.textContent = set.glossaryTitle || "用語メモ";
         const dl = document.createElement("dl");
         set.glossary.forEach((item) => {
           const row = document.createElement("div");

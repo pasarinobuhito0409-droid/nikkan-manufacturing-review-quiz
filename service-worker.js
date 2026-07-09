@@ -1,4 +1,4 @@
-const CACHE_NAME = "nikkan-manufacturing-review-quiz-v24";
+const CACHE_NAME = "nikkan-manufacturing-review-quiz-v25";
 
 const ASSETS = [
   "./",
@@ -57,6 +57,11 @@ const ASSETS = [
   "./assets/2026-07-08-q1-nature-dialogue-source.png",
   "./assets/2026-07-08-q2-top-runners-apparatus-green.png",
   "./assets/2026-07-08-q3-foundation-application-green.png",
+  "./assets/2026-07-09-brain-rejuvenation-green-full.png",
+  "./assets/2026-07-09-brain-rejuvenation-summary-source.png",
+  "./assets/2026-07-09-q1-neural-stem-cell-green.png",
+  "./assets/2026-07-09-q2-ipad-amyloid-green.png",
+  "./assets/2026-07-09-q3-new-neuron-cleanup-green.png",
   "./co2-floor-3d/",
   "./co2-floor-3d/index.html",
   "./co2-floor-3d/styles.css",
