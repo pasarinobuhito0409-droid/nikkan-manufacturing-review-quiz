@@ -951,7 +951,7 @@
     </div>
   </div>
 
-  <script src="./quiz-data.js"></script>
+  <script src="./quiz-data.js?v=20260709-real-diagram-v27"></script>
   <script>
     const quizSets = window.NIKKAN_QUIZ_SETS || [];
     const setList = document.getElementById("setList");
@@ -1397,7 +1397,7 @@
 
     if ("serviceWorker" in navigator && location.protocol !== "file:") {
       window.addEventListener("load", () => {
-        navigator.serviceWorker.register("./service-worker.js");
+        navigator.serviceWorker.register("./service-worker.js?v=20260709-real-diagram-v27");
       });
     }
 
