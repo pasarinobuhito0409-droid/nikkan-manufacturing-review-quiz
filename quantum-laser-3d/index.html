@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#e9eff1">
+  <meta name="description" content="狭線幅レーザーと量子メモリーの条件合わせを操作して学ぶ3D原理学習モデル">
+  <title>量子レーザー 3D原理ラボ</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="lab" id="lab">
+    <canvas id="labCanvas" aria-label="狭線幅レーザーと量子中継器の3D学習装置"></canvas>
+
+    <header class="instrument-header">
+      <p class="eyebrow">643 nm 狭線幅（きょうせんぷく）レーザー</p>
+      <h1>量子レーザー 3D原理ラボ</h1>
+      <p class="model-notice">原理学習モデル（製品内部の再現ではない）</p>
+    </header>
+
+    <section class="readouts" aria-label="実験結果" aria-live="polite">
+      <div class="readout">
+        <span>スペクトル（光の色幅）重なり</span>
+        <strong id="overlapOutput">--%</strong>
+      </div>
+      <div class="readout">
+        <span>保存成功率（推定）</span>
+        <strong id="storageOutput">--%</strong>
+      </div>
+      <div class="readout link-readout">
+        <span>中継（ちゅうけい）リンク</span>
+        <strong id="linkOutput">調整中</strong>
+      </div>
+    </section>
+
+    <div class="principle-note" id="principleNote">
+      <span class="note-mark" aria-hidden="true"></span>
+      <p><strong>細いだけでは足りない。</strong><br>中心周波数が結晶の受入範囲に重なると、光を保存しやすくなる。</p>
+    </div>
+
+    <section class="instrument-rail" aria-label="光学条件の調整">
+      <button class="motion-button" id="motionToggle" type="button" aria-pressed="false" aria-label="光子と周波数ドリフトの動きを一時停止">
+        <span class="pause-icon" aria-hidden="true"></span>
+        <span id="motionLabel">一時停止</span>
+      </button>
+
+      <label class="control" for="linewidth">
+        <span>線幅（せんぷく）</span>
+        <output id="linewidthValue">100 kHz</output>
+        <input id="linewidth" type="range" min="10" max="500" value="100" step="10">
+      </label>
+
+      <label class="control" for="drift">
+        <span>周波数（しゅうはすう）ずれ</span>
+        <output id="driftValue">0 kHz</output>
+        <input id="drift" type="range" min="-500" max="500" value="0" step="10">
+      </label>
+
+      <label class="control" for="temperature">
+        <span>結晶（けっしょう）温度差</span>
+        <output id="temperatureValue">0.0 °C</output>
+        <input id="temperature" type="range" min="-2" max="2" value="0" step="0.1">
+      </label>
+
+      <label class="control" for="fiberLoss">
+        <span>光ファイバー損失（そんしつ）</span>
+        <output id="fiberLossValue">15%</output>
+        <input id="fiberLoss" type="range" min="0" max="100" value="15" step="1">
+      </label>
+    </section>
+
+    <div class="view-hint">ドラッグ：視点移動　ホイール：拡大</div>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

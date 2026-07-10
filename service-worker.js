@@ -1,4 +1,4 @@
-const CACHE_NAME = "nikkan-manufacturing-review-quiz-v27";
+const CACHE_NAME = "nikkan-manufacturing-review-quiz-v31";
 
 const ASSETS = [
   "./",
@@ -65,6 +65,23 @@ const ASSETS = [
   "./assets/2026-07-09-q1-neural-stem-cell-real-diagram.png",
   "./assets/2026-07-09-q2-ipad-amyloid-real-diagram.png",
   "./assets/2026-07-09-q3-microglia-cleanup-real-diagram.png",
+  "./assets/2026-07-10-red-quantum-source.jpg",
+  "./assets/2026-07-10-red-humanoid-source.jpg",
+  "./assets/2026-07-10-red-pc-reuse-source.jpg",
+  "./assets/2026-07-10-red-construction-ai-source.jpg",
+  "./assets/2026-07-10-red-motion-data-source.jpg",
+  "./assets/2026-07-10-q1-humanoid-mass-production.png",
+  "./assets/2026-07-10-q2-motion-data-learning.png",
+  "./assets/2026-07-10-q3-construction-ai-loop.png",
+  "./assets/2026-07-10-quantum-source-a.png",
+  "./assets/2026-07-10-quantum-source-b.png",
+  "./assets/2026-07-10-q4-quantum-643nm-linewidth.png",
+  "./assets/2026-07-10-q5-linewidth-frequency-stability.png",
+  "./assets/2026-07-10-q6-quantum-repeater-memory.png",
+  "./quantum-laser-3d/index.html",
+  "./quantum-laser-3d/styles.css",
+  "./quantum-laser-3d/app.js",
+  "./quantum-laser-3d/vendor/three.module.js",
   "./co2-floor-3d/",
   "./co2-floor-3d/index.html",
   "./co2-floor-3d/styles.css",
