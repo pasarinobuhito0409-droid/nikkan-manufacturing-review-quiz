@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#f7f9f8">
+  <meta name="theme-color" content="#111310">
   <meta name="description" content="日刊工業新聞の記事から発明原理を想起・証拠・3Dで復習する精密学習ラボ">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
@@ -589,6 +589,356 @@
       .image-viewer-toolbar { align-items: flex-start; }
       .image-viewer-title { display: none; }
     }
+
+    /* v32: private night invention laboratory */
+    :root {
+      color-scheme: dark;
+      --white: #171a17;
+      --aluminum: #10120f;
+      --aluminum-2: #242823;
+      --graphite: #f1eadb;
+      --muted: #afa995;
+      --line: rgba(196, 185, 157, .2);
+      --teal: #849b62;
+      --teal-soft: rgba(47, 73, 52, .52);
+      --red: #b96861;
+      --red-soft: rgba(91, 29, 31, .58);
+      --green: #9bb46c;
+      --green-soft: rgba(39, 68, 45, .62);
+      --amber: #c9a461;
+      --amber-soft: rgba(112, 78, 30, .28);
+      --titanium: #b8b2a2;
+      --oxblood: #7f292b;
+      font-family: "Yu Mincho", "Hiragino Mincho ProN", "Yu Gothic UI", "Meiryo", serif;
+    }
+
+    body {
+      background: #0b0d0b;
+      color: var(--graphite);
+    }
+
+    button, a, .instrument-label, .question-meta, .calibration-line,
+    .answer-status, .answer-verdict, .answer-principle, .set-row small {
+      font-family: "Yu Gothic UI", "Meiryo", system-ui, sans-serif;
+    }
+
+    button:focus-visible,
+    a:focus-visible { outline-color: rgba(201, 164, 97, .76); }
+
+    .app-shell { background: #10120f; }
+
+    .instrument-header {
+      min-height: 88px;
+      padding: 14px max(20px, env(safe-area-inset-left));
+      border-bottom-color: rgba(201, 164, 97, .25);
+      background: rgba(15, 17, 14, .96);
+      box-shadow: 0 14px 36px rgba(0, 0, 0, .22);
+    }
+
+    .icon-button {
+      border-color: rgba(201, 164, 97, .28);
+      background: rgba(33, 35, 30, .72);
+      color: #d7c29c;
+    }
+
+    .instrument-label {
+      color: var(--amber);
+      font-weight: 700;
+      letter-spacing: .12em;
+    }
+
+    .instrument-title h1 {
+      color: #f1eadb;
+      font-weight: 600;
+    }
+
+    .instrument-title p,
+    .readout strong { color: var(--muted); }
+
+    .progress-track { background: #302d24; }
+    .progress-track span { background: var(--green); }
+
+    .mode-tabs {
+      min-height: 58px;
+      border-bottom-color: rgba(201, 164, 97, .18);
+      background: #121411;
+    }
+
+    .mode-tab {
+      min-height: 58px;
+      color: #8f897a;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .mode-tab.active {
+      border-bottom-color: var(--amber);
+      background: rgba(30, 33, 28, .78);
+      color: #e4d3b3;
+    }
+
+    .learning-stage {
+      background: #111310;
+      scrollbar-color: #6f644e #191b17;
+    }
+
+    .stage-inner { padding: 42px 36px 64px; }
+
+    .calibration-line {
+      margin-bottom: 26px;
+      color: #91856e;
+      font-weight: 700;
+      letter-spacing: .12em;
+    }
+
+    .calibration-line::after { background: rgba(201, 164, 97, .26); }
+
+    .question-meta {
+      gap: 10px;
+      color: #ccb177;
+      font-weight: 700;
+    }
+
+    .difficulty-label {
+      padding: 2px 9px;
+      border: 1px solid rgba(132, 155, 98, .56);
+      border-radius: 999px;
+      background: rgba(39, 68, 45, .32);
+      color: #b6c78e;
+      font-size: 12px;
+    }
+
+    .question {
+      margin: 16px 0 12px;
+      color: #f4ecdc;
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+
+    .hint { margin-bottom: 30px; color: #aaa28f; font-weight: 500; }
+    .choices { gap: 14px; }
+
+    .choice {
+      min-height: 62px;
+      border-color: rgba(184, 178, 162, .24);
+      background: rgba(24, 27, 23, .88);
+      color: #e7dece;
+      font-weight: 600;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, .12);
+    }
+
+    .choice:hover:not(:disabled) {
+      border-color: rgba(201, 164, 97, .5);
+      background: #20221d;
+    }
+
+    .choice:disabled { opacity: 1; cursor: default; }
+
+    .choice::before {
+      border-color: rgba(201, 164, 97, .38);
+      background: #141612;
+      color: #c5ae82;
+    }
+
+    .choice.selected {
+      border-color: #c9a461;
+      background: rgba(79, 63, 34, .44);
+      box-shadow: inset 3px 0 #c9a461, 0 12px 24px rgba(0, 0, 0, .18);
+    }
+
+    .choice.selected::before {
+      border-color: #c9a461;
+      color: #f0d69f;
+      background: #342b1d;
+    }
+
+    .choice.correct,
+    .choice.selected.correct {
+      border-color: #829c58;
+      background: rgba(39, 68, 45, .72);
+      box-shadow: inset 4px 0 #9bb46c;
+    }
+
+    .choice.wrong,
+    .choice.selected.wrong {
+      border-color: #9b4847;
+      background: rgba(91, 29, 31, .76);
+      box-shadow: inset 4px 0 #b96861;
+    }
+
+    .answer-panel {
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(201, 164, 97, .42);
+    }
+
+    .answer-status { color: var(--green); }
+    .answer-status.wrong { color: #cf7a72; }
+
+    .answer-verdict {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      max-width: 820px;
+      margin-bottom: 12px;
+    }
+
+    .answer-verdict p {
+      margin: 0;
+      padding: 12px 14px;
+      border-left: 3px solid var(--green);
+      background: rgba(39, 68, 45, .42);
+      color: #dce8c5;
+    }
+
+    .answer-verdict .selected-wrong {
+      border-left-color: #b96861;
+      background: rgba(91, 29, 31, .54);
+      color: #f0c5bf;
+    }
+
+    .answer-verdict span { display: block; color: var(--muted); font-size: 12px; }
+    .answer-verdict strong { display: block; margin-top: 3px; }
+
+    .answer-principle {
+      max-width: 820px;
+      margin: 0 0 22px;
+      padding: 10px 14px;
+      border-left: 3px solid var(--amber);
+      color: #ead8b8;
+      background: rgba(112, 78, 30, .2);
+      font-weight: 700;
+    }
+
+    .answer-panel h2 { color: #f1e5cf; font-weight: 500; }
+    .answer-copy p { color: #ddd5c6; }
+    .answer-copy figcaption { border-top-color: var(--line); color: #aaa18d; }
+
+    .answer-visual,
+    .answer-visual img { background: #0d0f0d; }
+
+    .evidence-header,
+    .evidence-band { border-color: rgba(201, 164, 97, .2); }
+    .evidence-header h2, .evidence-band h3 { color: #eee3cf; font-weight: 500; }
+    .summary-list, .evidence-row p, .glossary-list dd { color: #c8c0b1; }
+    .hero-image, .source-button { border-color: rgba(201, 164, 97, .22); }
+    .source-button { background: #171916; }
+
+    .lab-frame { background: #0b0d0b; }
+    .lab-link { border-color: var(--line); color: #eee4d1; }
+    .lab-link span { color: #aaa18d; }
+    .lab-code { color: var(--amber); }
+
+    .control-dock {
+      border-top-color: rgba(201, 164, 97, .34);
+      background: rgba(16, 18, 15, .97);
+      box-shadow: 0 -14px 36px rgba(0, 0, 0, .24);
+    }
+
+    .dock-button {
+      border-color: rgba(184, 178, 162, .24);
+      background: #1b1e1a;
+      color: #d8cfbf;
+    }
+
+    .dock-button.primary {
+      border-color: #876c3c;
+      background: #425536;
+      color: #f6eddc;
+    }
+
+    .segments { border-color: rgba(184, 178, 162, .22); background: #171916; }
+    .segment { border-left-color: rgba(184, 178, 162, .18); background: #171916; color: #9e9788; }
+    .segment.active { background: #534429; color: #f0d9ad; }
+
+    .drawer-scrim { background: rgba(0, 0, 0, .66); }
+    .research-shelf { border-right-color: rgba(201, 164, 97, .3); background: #121411; box-shadow: 24px 0 60px rgba(0, 0, 0, .42); }
+    .shelf-header, .shelf-tools, .set-row { border-color: var(--line); }
+    .set-row { background: #121411; color: #e5dccb; }
+    .set-row.active { box-shadow: inset 3px 0 var(--amber); background: #25251e; }
+    .set-row time { color: var(--amber); }
+
+    .result-flash {
+      position: fixed;
+      inset: 0;
+      z-index: 90;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background: rgba(7, 8, 7, .82);
+      backdrop-filter: blur(10px);
+    }
+
+    .result-flash[hidden] { display: none; }
+
+    .result-flash-card {
+      width: min(520px, 92vw);
+      padding: 42px 28px 36px;
+      border: 1px solid rgba(201, 164, 97, .32);
+      border-radius: 6px;
+      background: rgba(18, 21, 17, .96);
+      text-align: center;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, .55);
+    }
+
+    .result-seal {
+      width: 112px;
+      height: 112px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 18px;
+      border: 3px double #9bb46c;
+      border-radius: 50%;
+      color: #b8cf86;
+      background: #1f3525;
+      font-family: "Yu Gothic UI", "Meiryo", sans-serif;
+      font-size: 72px;
+      line-height: 1;
+    }
+
+    .result-flash.wrong .result-seal {
+      border-color: #b96861;
+      color: #e0968e;
+      background: #4d1d20;
+    }
+
+    .result-flash strong {
+      display: block;
+      color: #f2eadb;
+      font-size: clamp(36px, 8vw, 58px);
+      font-weight: 500;
+    }
+
+    .result-flash p {
+      margin: 10px auto 0;
+      color: #c9b997;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .result-flash.playing .result-flash-card { animation: result-arrive .9s ease both; }
+
+    @keyframes result-arrive {
+      0% { opacity: 0; transform: scale(.92); }
+      22%, 78% { opacity: 1; transform: scale(1); }
+      100% { opacity: 0; transform: scale(1.01); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+      .result-flash.playing .result-flash-card { animation: none; }
+    }
+
+    @media (max-width: 720px) {
+      .instrument-header { min-height: 72px; padding: 9px 10px; }
+      .mode-tabs, .mode-tab { min-height: 52px; }
+      .stage-inner { padding: 28px 16px 44px; }
+      .question { font-size: 25px; }
+      .choice { min-height: 58px; padding: 10px 12px; }
+      .answer-verdict { grid-template-columns: 1fr; }
+      .result-flash-card { padding: 34px 20px 30px; }
+      .result-seal { width: 96px; height: 96px; font-size: 62px; }
+    }
   </style>
 </head>
 <body>
@@ -631,6 +981,14 @@
     </footer>
   </div>
 
+  <div class="result-flash" id="resultFlash" role="status" aria-live="assertive" aria-atomic="true" hidden>
+    <div class="result-flash-card">
+      <span class="result-seal" id="resultFlashMark" aria-hidden="true"></span>
+      <strong id="resultFlashText"></strong>
+      <p id="resultFlashPrinciple"></p>
+    </div>
+  </div>
+
   <button class="drawer-scrim" id="drawerScrim" type="button" aria-label="研究棚を閉じる" hidden></button>
   <aside class="research-shelf" id="researchShelf" aria-label="研究棚" aria-hidden="true">
     <div class="shelf-header">
@@ -661,7 +1019,7 @@
     </div>
   </div>
 
-  <script src="./quiz-data.js?v=31"></script>
+  <script src="./quiz-data.js?v=32"></script>
   <script>
     const quizSets = window.NIKKAN_QUIZ_SETS || [];
     const storageKey = "nikkan-manufacturing-review-quiz-library-v2";
@@ -690,6 +1048,10 @@
     const nextButton = document.getElementById("nextButton");
     const revealButton = document.getElementById("revealButton");
     const confidenceControl = document.getElementById("confidenceControl");
+    const resultFlash = document.getElementById("resultFlash");
+    const resultFlashMark = document.getElementById("resultFlashMark");
+    const resultFlashText = document.getElementById("resultFlashText");
+    const resultFlashPrinciple = document.getElementById("resultFlashPrinciple");
     const modeTabs = Array.from(document.querySelectorAll(".mode-tab"));
     const confidenceButtons = Array.from(document.querySelectorAll(".segment"));
     const imageViewer = document.getElementById("imageViewer");
@@ -716,6 +1078,7 @@
     let questionStartedAt = Date.now();
     let viewerScale = 1;
     let deferredPrompt = null;
+    let resultFlashTimer = null;
 
     function loadJson(key, fallback) {
       try { return JSON.parse(localStorage.getItem(key)) || fallback; }
@@ -816,7 +1179,7 @@
       const article = document.createElement("article");
       article.innerHTML = `
         <div class="calibration-line">RECALL ${String(activeQuestionIndex + 1).padStart(2, "0")} / ${String(set.questions.length).padStart(2, "0")}</div>
-        <div class="question-meta"><span>第${activeQuestionIndex + 1}問</span><span>${q.tag || "原理"}</span></div>
+        <div class="question-meta"><span>第${activeQuestionIndex + 1}問</span><span>${q.tag || "原理"}</span>${q.difficulty ? `<span class="difficulty-label">${q.difficulty}</span>` : ""}</div>
         <h2 class="question">${q.question}</h2>
         <p class="hint">${q.hint || "答えを見る前に、自分の考えを選ぶ。"}</p>
         <div class="choices" aria-label="選択肢"></div>
@@ -846,10 +1209,16 @@
 
       if (answerRevealed) {
         const correct = selectedChoice === q.correctIndex;
+        const principle = q.principle || q.answerTitle.replace(/^答え[：:]\s*/, "");
         const answer = document.createElement("section");
         answer.className = "answer-panel";
         answer.innerHTML = `
-          <p class="answer-status${correct ? "" : " wrong"}">${correct ? "正解。原理を固定する。" : "修正ポイント。正しい原理を見直す。"}</p>
+          <p class="answer-status${correct ? "" : " wrong"}">${correct ? "正解！" : "不正解"}</p>
+          <div class="answer-verdict">
+            <p class="${correct ? "selected-correct" : "selected-wrong"}"><span>選んだ答え</span><strong>${q.choices[selectedChoice]}</strong></p>
+            <p class="correct-answer"><span>正しい答え</span><strong>${q.choices[q.correctIndex]}</strong></p>
+          </div>
+          <p class="answer-principle">なぜ：${principle}</p>
           <h2>${q.answerTitle}</h2>
           <div class="answer-layout">
             <button class="answer-visual" type="button" aria-label="説明画像を高画質で開く"><img src="${q.image}" alt="${q.imageAlt || q.answerTitle}"></button>
@@ -974,6 +1343,22 @@
       return next.toISOString();
     }
 
+    function showResultFlash(correct, principle) {
+      window.clearTimeout(resultFlashTimer);
+      resultFlash.className = `result-flash ${correct ? "correct" : "wrong"}`;
+      resultFlashMark.textContent = correct ? "✓" : "×";
+      resultFlashText.textContent = correct ? "正解！" : "不正解";
+      resultFlashPrinciple.textContent = principle;
+      resultFlash.hidden = false;
+      void resultFlash.offsetWidth;
+      resultFlash.classList.add("playing");
+      resultFlashTimer = window.setTimeout(() => {
+        resultFlash.hidden = true;
+        resultFlash.classList.remove("playing");
+        stage.querySelector(".answer-panel")?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      }, 900);
+    }
+
     function revealCurrentAnswer() {
       const set = getActiveSet();
       const q = set?.questions?.[activeQuestionIndex];
@@ -1003,7 +1388,7 @@
       saveLearningState();
       answerRevealed = true;
       render();
-      requestAnimationFrame(() => stage.querySelector(".answer-panel")?.scrollIntoView({ block: "nearest", behavior: "smooth" }));
+      showResultFlash(correct, q.principle || q.answerTitle.replace(/^答え[：:]\s*/, ""));
     }
 
     function openShelf() {
@@ -1111,7 +1496,7 @@
     });
 
     if ("serviceWorker" in navigator && location.protocol !== "file:") {
-      window.addEventListener("load", () => navigator.serviceWorker.register("./service-worker.js?v=31"));
+      window.addEventListener("load", () => navigator.serviceWorker.register("./service-worker.js?v=32"));
     }
 
     resetQuestionSession();
