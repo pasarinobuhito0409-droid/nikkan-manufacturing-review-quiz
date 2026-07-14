@@ -1907,30 +1907,41 @@ window.NIKKAN_QUIZ_SETS = [
     id: "2026-07-10-quantum-laser-repeater",
     date: "2026-07-10",
     title: "日刊工業新聞 7/10 量子通信用レーザー 深掘り3問",
+    titleLines: ["日刊工業新聞 7/10", "量子通信用レーザー", "深掘り3問"],
     shortTitle: "量子レーザー・中継",
     sourceLabel: "日刊工業新聞 2026/7/10 量子通信用レーザー",
     heroImage: "./assets/2026-07-10-q4-quantum-643nm-linewidth.png",
     heroAlt: "643 nmの中心波長と100 kHz以下の狭い線幅を分けて示す量子通信用レーザーの図解",
-    curiosityTitle: "赤ライン・記事で確認できる事実",
+    curiosityTitle: "赤｜記事の事実",
     importantTitle: "緑ライン・重要マーカー",
-    glossaryTitle: "黄色ライン・読みと意味",
+    glossaryTitle: "黄｜読みと意味",
     summary: [
-      "記事の事実：中心波長（ちゅうしんはちょう）は643 nm、狭線幅（きょうせんぷく）は100 kHz以下、連続発振（れんぞくはっしん）で1000時間の安定動作が報告された。",
-      "記事の事実：通信光と量子メモリーをつなぐ波長変換（はちょうへんかん）で、励起光源（れいきこうげん）として使う役割が示された。",
-      "科学の説明：細い光の線と、その線が時間とともに動かないことは別の性質。記事から量子メモリーの材料・遷移（せんい）・変換方式までは断定しない。"
+      { label: "性能", text: "643 nm・100 kHz以下・1000時間。" },
+      { label: "役割", text: "波長変換を動かす光源。" },
+      { label: "境界", text: "材料と方式は未確定。" }
     ],
     curiosityPoints: [
       {
-        title: "記事の事実A：643 nm・100 kHz以下・1000時間",
+        title: "事実A｜レーザー性能",
         text: "記事は、オキサイドがLQUOM（ルクオム：量子中継技術の新興企業）向けに643 nmの狭線幅連続発振レーザーを開発し、線幅100 kHz以下と1000時間の連続安定動作を報告したと伝えている。ここは記事証拠であり、量子メモリーの材料や遷移は記事から特定しない。",
+        breathLines: [
+          { label: "開発", text: "LQUOM向け643 nmレーザー。" },
+          { label: "性能", text: "100 kHz以下・1000時間安定。" },
+          { label: "注意", text: "材料と遷移は未確定。" }
+        ],
         image: "./assets/2026-07-10-quantum-source-a.png",
         zoomImage: "./assets/2026-07-10-quantum-source-a.png",
         imageAlt: "643 nmの狭線幅連続発振レーザーと1000時間安定動作を伝える新聞記事の証拠画像",
         caption: "記事証拠：643 nm、線幅100 kHz以下、1000時間の連続安定動作を確認する。"
       },
       {
-        title: "記事の事実B：通信光と量子メモリーをつなぐ励起光源",
+        title: "事実B｜量子中継での役割",
         text: "記事は、このレーザーを、通信波長の光を量子メモリーに合う波長へ変換するための励起光源として位置づけている。周辺技術として、波長変換素子（はちょうへんかんそし）、量子もつれ光源（りょうしもつれこうげん）、量子メモリー結晶（りょうしメモリーけっしょう）にも触れている。正確な変換方式や変換前後の波長は記事から断定しない。",
+        breathLines: [
+          { label: "役割", text: "波長変換を動かす光源。" },
+          { label: "周辺", text: "変換素子・もつれ光源・結晶。" },
+          { label: "注意", text: "方式と波長は未確定。" }
+        ],
         image: "./assets/2026-07-10-quantum-source-b.png",
         zoomImage: "./assets/2026-07-10-quantum-source-b.png",
         imageAlt: "量子中継機に必要な波長変換と量子メモリー向け励起光源を伝える新聞記事の証拠画像",
@@ -2056,6 +2067,156 @@ window.NIKKAN_QUIZ_SETS = [
         zoomImage: "./assets/2026-07-10-q6-quantum-repeater-memory.png",
         imageAlt: "量子状態をコピーせず短い区間の量子もつれをメモリーへ預けて中継する原理図解",
         caption: "図解の読み方：コピーして増幅するのではなく、短い区間のもつれを保存し、順につなぐ。"
+      }
+    ]
+  },
+  {
+    id: "2026-07-14-ai-inspection-welding-skill",
+    date: "2026-07-14",
+    title: "日刊工業新聞 7/14 金属加工AIと技能伝承 深掘り3問",
+    titleLines: ["日刊工業新聞 7/14", "金属加工AIと技能伝承", "深掘り3問"],
+    shortTitle: "金属AI・溶接技能",
+    difficulty: "入門",
+    sourceLabel: "日刊工業新聞 2026/7/14 中小金属加工AI導入・溶接技能伝承",
+    heroImage: "./assets/2026-07-14-summary-source.png",
+    heroAlt: "中小金属加工のAI検査と溶接技能伝承の記事まとめ",
+    curiosityTitle: "赤｜気になった記事事実",
+    importantTitle: "緑｜重要な技能伝承",
+    glossaryTitle: "黄｜読みと意味",
+    summary: [
+      { label: "AI検査", text: "検査を速くする。", breathLines: [{ text: "検査を速くする。" }] },
+      { label: "技能伝承", text: "職人の勘を数値にする。", breathLines: [{ text: "職人の勘を数値にする。" }] },
+      { label: "学び方", text: "測って、比べて、直す。", breathLines: [{ text: "測って、比べて、直す。" }] }
+    ],
+    curiosityPoints: [
+      {
+        title: "中小金属加工へAI導入",
+        text: "中小金属加工でAI導入が広がる。検査工程の省人・効率化を進める。人材採用にもプラス効果がある。記事例では従来5〜10分の検査を短縮した。",
+        breathLines: [
+          { text: "中小金属加工で、" },
+          { text: "AI導入が広がる。" },
+          { text: "検査工程を省人化する。" },
+          { text: "作業を効率化する。" },
+          { text: "人材採用にも、" },
+          { text: "プラス効果がある。" },
+          { label: "記事例", text: "5〜10分の検査を短縮。" }
+        ],
+        image: "./assets/2026-07-14-ai-inspection-source.png",
+        zoomImage: "./assets/2026-07-14-ai-inspection-source.png",
+        imageAlt: "中小金属加工でのAI検査導入を伝える新聞記事",
+        caption: "記事事実。検査時間の短縮は記事内の事例。"
+      }
+    ],
+    importantPoints: [
+      {
+        title: "溶接の勘をデータにする",
+        text: "職人の動きと金属の溶融状態を高性能カメラでデータ化する。トーチの軌跡・傾き・望ましい動かし方を数値で学ぶ。追随するハイスピードカメラで溶融池を確認する。記事例では6カ月分の内容を1カ月で習得した。",
+        breathLines: [
+          { text: "職人の動きを撮る。" },
+          { text: "金属の溶け方を撮る。" },
+          { text: "トーチの軌跡を測る。" },
+          { text: "傾きを測る。" },
+          { text: "よい動かし方を数値で学ぶ。" },
+          { text: "カメラがトーチを追う。" },
+          { text: "溶融池を確認する。" },
+          { label: "記事例", text: "6カ月分を1カ月で習得。" },
+          { label: "注意", text: "すべての人への保証ではない。" }
+        ],
+        image: "./assets/2026-07-14-weld-training-source.png",
+        zoomImage: "./assets/2026-07-14-weld-training-source.png",
+        imageAlt: "高性能カメラで溶接技能を数値化する研修の記事",
+        caption: "記事事実。6カ月から1カ月は記事内の事例であり、一般保証ではない。"
+      }
+    ],
+    glossary: [
+      { term: "検査工程（けんさこうてい）", meaning: "品物が正しいか調べる作業。", breathLines: [{ text: "品物が正しいか、" }, { text: "調べる作業。" }] },
+      { term: "省人化（しょうじんか）", meaning: "少ない人数でできるようにすること。", breathLines: [{ text: "少ない人数で、" }, { text: "できるようにすること。" }] },
+      { term: "暗黙知（あんもくち）", meaning: "言葉にしにくい経験のコツ。", breathLines: [{ text: "言葉にしにくい、" }, { text: "経験のコツ。" }] },
+      { term: "可視化（かしか）", meaning: "見えないことを見える形にすること。", breathLines: [{ text: "見えないことを、" }, { text: "見える形にすること。" }] },
+      { term: "軌跡（きせき）", meaning: "動いた道すじ。", breathLines: [{ text: "動いた道すじ。" }] },
+      { term: "溶融状態（ようゆうじょうたい）", meaning: "金属が熱で溶けている様子。", breathLines: [{ text: "金属が熱で、" }, { text: "溶けている様子。" }] },
+      { term: "溶融池（ようゆうち）", meaning: "溶接中にできる溶けた金属のたまり。", breathLines: [{ text: "溶接中にできる、" }, { text: "溶けた金属のたまり。" }] },
+      { term: "追随（ついずい）", meaning: "動くものを追い続けること。", breathLines: [{ text: "動くものを、" }, { text: "追い続けること。" }] },
+      { term: "習得（しゅうとく）", meaning: "練習して身につけること。", breathLines: [{ text: "練習して、" }, { text: "身につけること。" }] },
+      { term: "許容値（きょようち）", meaning: "ここまでならよいと決めた差。", breathLines: [{ text: "ここまでならよいと、" }, { text: "決めた差。" }] }
+    ],
+    questions: [
+      {
+        id: "ai-inspection-reference-comparison",
+        tag: "AI検査",
+        difficulty: "入門",
+        question: "AI検査は、何を比べて異常を見つける？",
+        hint: "正しい品物の目安と、測った結果を見る。",
+        choices: [
+          "良品の基準と測定結果を比べる",
+          "作業者の年齢と経験年数を比べる",
+          "工場の広さと機械の台数を比べる"
+        ],
+        correctIndex: 0,
+        answerTitle: "答え｜良品の基準と測定結果",
+        principle: "基準との差が許容値を超えたら、異常として示す。",
+        answerParagraphs: [
+          "一般原理｜良品の基準を用意する。",
+          "測定結果と比べる。",
+          "許容値を超えた差を示す。",
+          "記事事実｜検査時間を短縮した事例がある。"
+        ],
+        image: "./assets/2026-07-14-q1-ai-inspection-reference.png",
+        zoomImage: "./assets/2026-07-14-q1-ai-inspection-reference.png",
+        imageAlt: "良品基準と測定結果を比べるAI検査の図",
+        caption: "一般原理。基準と測定値の差を見て、異常候補を示す。"
+      },
+      {
+        id: "weld-skill-measurement",
+        tag: "溶接技能",
+        difficulty: "入門",
+        question: "溶接の勘を伝えるには、何を測る？",
+        hint: "手の動きと、溶けた金属の様子を見る。",
+        choices: [
+          "トーチの軌跡・角度・速度と溶融池",
+          "作業服の色と工場の明るさ",
+          "製品の名前と注文した曜日"
+        ],
+        correctIndex: 0,
+        answerTitle: "答え｜動きと溶融池を測る",
+        principle: "暗黙知を、動きと現象の数字に変える。",
+        answerParagraphs: [
+          "一般原理｜トーチの軌跡を測る。",
+          "角度と速度を測る。",
+          "溶融池の状態も見る。",
+          "記事事実｜高性能カメラでデータ化した。"
+        ],
+        image: "./assets/2026-07-14-q2-weld-skill-data.png",
+        zoomImage: "./assets/2026-07-14-q2-weld-skill-data.png",
+        imageAlt: "トーチの軌跡と角度と速度と溶融池を測る図",
+        caption: "一般原理。手の動きと金属の変化を同時に見る。"
+      },
+      {
+        id: "weld-fast-feedback-loop",
+        tag: "学習ループ",
+        difficulty: "入門",
+        question: "なぜ学習期間を短くできる？",
+        hint: "間違いをすぐ見つけて、すぐ試し直す。",
+        choices: [
+          "測る→比べる→直す→再挑戦をすぐ回せる",
+          "一度だけ説明を聞けば練習が不要になる",
+          "熟練者の動きを見ずに自由に動かす"
+        ],
+        correctIndex: 0,
+        answerTitle: "答え｜直す輪をすぐ回せる",
+        principle: "早いフィードバックが、練習の迷いを減らす。",
+        answerParagraphs: [
+          "一般原理｜まず測る。",
+          "熟練者と比べる。",
+          "ずれを直す。",
+          "すぐ再挑戦する。",
+          "記事事実｜6カ月分を1カ月で習得した例。",
+          "注意｜すべての人への一般保証ではない。"
+        ],
+        image: "./assets/2026-07-14-q3-feedback-loop.png",
+        zoomImage: "./assets/2026-07-14-q3-feedback-loop.png",
+        imageAlt: "測る、比べる、直す、再挑戦の学習ループ図",
+        caption: "一般原理。短い改善の輪を何度も回す。記事例の期間は一般保証ではない。"
       }
     ]
   }

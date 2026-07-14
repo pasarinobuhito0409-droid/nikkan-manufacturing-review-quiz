@@ -1,9 +1,9 @@
-const CACHE_NAME = "nikkan-manufacturing-review-quiz-v32";
+const CACHE_NAME = "nikkan-manufacturing-review-quiz-v34";
 
 const ASSETS = [
   "./",
   "./index.html",
-  "./quiz-data.js",
+  "./quiz-data.js?v=34",
   "./manifest.webmanifest",
   "./service-worker.js",
   "./assets/icon.svg",
@@ -78,6 +78,12 @@ const ASSETS = [
   "./assets/2026-07-10-q4-quantum-643nm-linewidth.png",
   "./assets/2026-07-10-q5-linewidth-frequency-stability.png",
   "./assets/2026-07-10-q6-quantum-repeater-memory.png",
+  "./assets/2026-07-14-ai-inspection-source.png",
+  "./assets/2026-07-14-summary-source.png",
+  "./assets/2026-07-14-weld-training-source.png",
+  "./assets/2026-07-14-q1-ai-inspection-reference.png",
+  "./assets/2026-07-14-q2-weld-skill-data.png",
+  "./assets/2026-07-14-q3-feedback-loop.png",
   "./quantum-laser-3d/index.html",
   "./quantum-laser-3d/styles.css",
   "./quantum-laser-3d/app.js",
@@ -163,13 +169,13 @@ self.addEventListener("fetch", (event) => {
         const copy = response.clone();
         caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
         return response;
-      }).catch(() => caches.match(event.request))
+      }).catch(() => caches.match(event.request, { ignoreSearch: true }))
     );
     return;
   }
 
   event.respondWith(
-    caches.match(event.request).then((cached) => (
+    caches.match(event.request, { ignoreSearch: true }).then((cached) => (
       cached || fetch(event.request).then((response) => {
         const copy = response.clone();
         caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));

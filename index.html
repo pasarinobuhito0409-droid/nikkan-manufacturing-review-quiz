@@ -320,24 +320,31 @@
     }
 
     .evidence-header {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(260px, 38%);
-      gap: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
       padding-bottom: 24px;
       border-bottom: 1px solid var(--line);
     }
 
-    .evidence-header h2 { margin: 5px 0 12px; font-size: clamp(24px, 3vw, 34px); line-height: 1.3; }
+    .evidence-header h2 { margin: 5px 0 16px; font-size: clamp(24px, 3vw, 34px); line-height: 1.28; }
+    .evidence-header h2 span { display: block; }
 
-    .summary-list { margin: 0; padding-left: 22px; }
-    .summary-list li { margin: 7px 0; }
+    .summary-list { display: grid; gap: 9px; max-width: 780px; margin: 0; padding: 0; list-style: none; }
+    .summary-list li { margin: 0; }
+    .breath-lines { display: grid; gap: 7px; max-width: 780px; }
+    .breath-line { margin: 0; color: var(--muted); line-height: 1.75; }
+    .breath-label { display: inline-block; margin-right: .65em; color: var(--ink); font-weight: 900; }
 
     .hero-image {
       width: 100%;
-      max-height: 310px;
-      object-fit: cover;
+      max-width: 920px;
+      min-height: 420px;
+      max-height: 680px;
+      object-fit: contain;
       border: 1px solid var(--line);
       border-radius: 4px;
+      background: #171916;
     }
 
     .evidence-band {
@@ -351,19 +358,20 @@
     .evidence-band.amber h3 { color: var(--amber); }
 
     .evidence-row {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(130px, 210px);
-      gap: 20px;
-      align-items: center;
+      display: block;
       padding: 16px 0;
       border-top: 1px solid var(--aluminum-2);
     }
 
     .evidence-row:first-child { border-top: 0; }
     .evidence-row strong { display: block; margin-bottom: 5px; }
-    .evidence-row p { margin: 0; color: var(--muted); }
+    .evidence-row > .breath-lines { margin-top: 8px; }
 
     .source-button {
+      display: block;
+      width: 100%;
+      max-width: 920px;
+      margin-top: 18px;
       min-height: 44px;
       border: 1px solid var(--line);
       border-radius: 4px;
@@ -372,7 +380,7 @@
       cursor: zoom-in;
     }
 
-    .source-button img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+    .source-button img { display: block; width: 100%; height: auto; max-height: 1100px; object-fit: contain; }
 
     .glossary-list { margin: 0; }
     .glossary-list div { display: grid; grid-template-columns: minmax(150px, .35fr) 1fr; gap: 20px; padding: 13px 0; border-top: 1px solid var(--aluminum-2); }
@@ -568,9 +576,10 @@
       .mode-tabs { padding: 0; }
       .stage-inner { padding: 20px 16px 34px; }
       .question { font-size: 24px; }
-      .answer-layout, .evidence-header { grid-template-columns: 1fr; }
+      .answer-layout { grid-template-columns: 1fr; }
       .answer-visual, .answer-visual img { min-height: 220px; }
-      .evidence-row { grid-template-columns: minmax(0, 1fr) 110px; gap: 12px; }
+      .hero-image { min-height: 0; max-height: 520px; }
+      .source-button { padding: 2px; }
       .glossary-list div { grid-template-columns: 1fr; gap: 3px; }
       .control-dock {
         grid-template-columns: 74px minmax(0, 1fr) 74px;
@@ -1015,11 +1024,11 @@
     </div>
     <div class="image-viewer-stage" id="imageViewerStage">
       <img id="imageViewerImage" alt="">
-      <p class="image-viewer-caption" id="imageViewerCaption"></p>
+      <div class="image-viewer-caption" id="imageViewerCaption"></div>
     </div>
   </div>
 
-  <script src="./quiz-data.js?v=32"></script>
+  <script src="./quiz-data.js?v=34"></script>
   <script>
     const quizSets = window.NIKKAN_QUIZ_SETS || [];
     const storageKey = "nikkan-manufacturing-review-quiz-library-v2";
@@ -1222,7 +1231,7 @@
           <h2>${q.answerTitle}</h2>
           <div class="answer-layout">
             <button class="answer-visual" type="button" aria-label="説明画像を高画質で開く"><img src="${q.image}" alt="${q.imageAlt || q.answerTitle}"></button>
-            <div class="answer-copy">${(q.answerParagraphs || []).map((text) => `<p>${text}</p>`).join("")}<figcaption>${q.caption || ""}</figcaption></div>
+            <div class="answer-copy">${renderBreathLines(q.answerParagraphs || [])}<figcaption>${renderBreathLines(q.caption || "")}</figcaption></div>
           </div>
         `;
         answer.querySelector(".answer-visual").addEventListener("click", () => openImageViewer(q.zoomImage || q.image, q.imageAlt || q.answerTitle, q.caption || ""));
@@ -1230,6 +1239,27 @@
       }
 
       stageInner.appendChild(article);
+    }
+
+    function normalizeBreathLines(value, explicitLines) {
+      if (Array.isArray(explicitLines) && explicitLines.length) return explicitLines;
+      if (Array.isArray(value)) {
+        return value.flatMap((item) => typeof item === "string"
+          ? item.split(/(?<=[。！？])\s*/).filter(Boolean)
+          : [item]);
+      }
+      if (!value) return [];
+      if (typeof value === "object") return [value];
+      return String(value).split(/(?<=[。！？])\s*/).filter(Boolean);
+    }
+
+    function renderBreathLines(value, explicitLines) {
+      const lines = normalizeBreathLines(value, explicitLines);
+      return `<div class="breath-lines">${lines.map((line) => {
+        const label = typeof line === "object" ? line.label : "";
+        const text = typeof line === "object" ? line.text : line;
+        return `<p class="breath-line">${label ? `<span class="breath-label">${label}</span>` : ""}${text || ""}</p>`;
+      }).join("")}</div>`;
     }
 
     function addEvidenceBand(parent, tone, heading, items) {
@@ -1241,7 +1271,7 @@
       items.forEach((item) => {
         const row = document.createElement("div");
         row.className = "evidence-row";
-        row.innerHTML = `<div><strong>${item.title || item.term || ""}</strong><p>${item.text || item.meaning || ""}</p></div>`;
+        row.innerHTML = `<strong>${item.title || item.term || ""}</strong>${renderBreathLines(item.text || item.meaning || "", item.breathLines)}`;
         if (item.image) {
           const button = document.createElement("button");
           button.className = "source-button";
@@ -1258,9 +1288,10 @@
 
     function renderEvidence(set) {
       stage.classList.remove("lab-active");
+      const titleLines = normalizeBreathLines(set.title, set.titleLines);
       stageInner.innerHTML = `
         <section class="evidence-header">
-          <div><div class="calibration-line">EVIDENCE FILE</div><h2>${set.title}</h2><ul class="summary-list">${(set.summary || []).map((item) => `<li>${item}</li>`).join("")}</ul></div>
+          <div><div class="calibration-line">EVIDENCE FILE</div><h2>${titleLines.map((line) => `<span>${typeof line === "object" ? line.text : line}</span>`).join("")}</h2><ul class="summary-list">${(set.summary || []).map((item) => `<li>${renderBreathLines(item, item && item.breathLines)}</li>`).join("")}</ul></div>
           ${set.heroImage ? `<img class="hero-image" src="${set.heroImage}" alt="${set.heroAlt || set.title}">` : ""}
         </section>
       `;
@@ -1271,7 +1302,7 @@
       if (glossary.length) {
         const section = document.createElement("section");
         section.className = "evidence-band amber";
-        section.innerHTML = `<h3>${set.glossaryTitle || "黄：読みと意味"}</h3><dl class="glossary-list">${glossary.map((item) => `<div><dt>${item.term}</dt><dd>${item.meaning}</dd></div>`).join("")}</dl>`;
+        section.innerHTML = `<h3>${set.glossaryTitle || "黄：読みと意味"}</h3><dl class="glossary-list">${glossary.map((item) => `<div><dt>${item.term}</dt><dd>${renderBreathLines(item.meaning, item.breathLines)}</dd></div>`).join("")}</dl>`;
         stageInner.appendChild(section);
       }
     }
@@ -1426,7 +1457,7 @@
       viewerScale = 1;
       imageViewerImage.src = src;
       imageViewerImage.alt = alt;
-      imageViewerCaption.textContent = caption;
+      imageViewerCaption.innerHTML = renderBreathLines(caption || "");
       imageViewer.hidden = false;
       document.body.classList.add("viewer-open");
       imageViewerImage.onload = fitViewerImage;
@@ -1496,7 +1527,7 @@
     });
 
     if ("serviceWorker" in navigator && location.protocol !== "file:") {
-      window.addEventListener("load", () => navigator.serviceWorker.register("./service-worker.js?v=32"));
+      window.addEventListener("load", () => navigator.serviceWorker.register("./service-worker.js?v=34"));
     }
 
     resetQuestionSession();
