@@ -1028,7 +1028,7 @@
     </div>
   </div>
 
-  <script src="./quiz-data.js?v=34"></script>
+  <script src="./quiz-data.js?v=35"></script>
   <script>
     const quizSets = window.NIKKAN_QUIZ_SETS || [];
     const storageKey = "nikkan-manufacturing-review-quiz-library-v2";
@@ -1309,6 +1309,16 @@
 
     function renderLab(set) {
       stageInner.innerHTML = "";
+      if (set && set.id === "2026-07-14-ai-inspection-welding-skill") {
+        stage.classList.add("lab-active");
+        const iframe = document.createElement("iframe");
+        iframe.className = "lab-frame";
+        iframe.src = "./welding-skill-3d/index.html";
+        iframe.title = "溶接技能 3Dラボ";
+        iframe.loading = "eager";
+        stageInner.appendChild(iframe);
+        return;
+      }
       if (isQuantumSet(set)) {
         stage.classList.add("lab-active");
         const iframe = document.createElement("iframe");
@@ -1527,7 +1537,7 @@
     });
 
     if ("serviceWorker" in navigator && location.protocol !== "file:") {
-      window.addEventListener("load", () => navigator.serviceWorker.register("./service-worker.js?v=34"));
+      window.addEventListener("load", () => navigator.serviceWorker.register("./service-worker.js?v=35"));
     }
 
     resetQuestionSession();

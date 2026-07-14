@@ -1,9 +1,9 @@
-const CACHE_NAME = "nikkan-manufacturing-review-quiz-v34";
+const CACHE_NAME = "nikkan-manufacturing-review-quiz-v35";
 
 const ASSETS = [
   "./",
   "./index.html",
-  "./quiz-data.js?v=34",
+  "./quiz-data.js?v=35",
   "./manifest.webmanifest",
   "./service-worker.js",
   "./assets/icon.svg",
@@ -88,6 +88,9 @@ const ASSETS = [
   "./quantum-laser-3d/styles.css",
   "./quantum-laser-3d/app.js",
   "./quantum-laser-3d/vendor/three.module.js",
+  "./welding-skill-3d/index.html",
+  "./welding-skill-3d/styles.css",
+  "./welding-skill-3d/app.js",
   "./co2-floor-3d/",
   "./co2-floor-3d/index.html",
   "./co2-floor-3d/styles.css",

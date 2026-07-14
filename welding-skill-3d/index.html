@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101311">
+  <meta name="description" content="溶接トーチの動きと溶融池、溶接ビードの関係を触って学ぶ3D原理モデル">
+  <title>溶接技能 3Dラボ</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="lab">
+    <canvas id="labCanvas" aria-label="溶接トーチと溶融池の3D学習モデル"></canvas>
+    <div class="part-label torch-label" id="torchLabel" aria-hidden="true">
+      <strong>トーチ</strong>
+      <span>熱を溶接場所へ向ける道具</span>
+    </div>
+    <div class="part-label pool-label" id="poolLabel" aria-hidden="true">
+      <strong>溶融池（ようゆうち）</strong>
+      <span>溶けた金属のたまり</span>
+    </div>
+
+    <header class="lab-header">
+      <p class="eyebrow">WELDING SKILL LAB</p>
+      <h1>溶接技能 3Dラボ</h1>
+      <p class="notice">技能（ぎのう：体で覚えた技）を測る模型です。</p>
+      <p class="notice">記事の実製品（じつせいひん）内部の再現ではありません。</p>
+      <p class="notice">15°・5 mm/sは比較用の例。実際の値は方式・材料で変わります。</p>
+    </header>
+
+    <section class="readouts" aria-label="現在の状態" aria-live="polite">
+      <div><span>トーチ角度</span><strong id="angleOutput">15°</strong></div>
+      <div><span>移動速度</span><strong id="speedOutput">5.0 mm/s</strong></div>
+      <div><span>軌跡（きせき）ずれ</span><strong id="offsetOutput">0.0 mm</strong></div>
+      <div class="pool-state"><span>溶融池（ようゆうち）</span><strong id="poolOutput">安定</strong></div>
+    </section>
+
+    <section class="controls" aria-label="溶接条件の操作">
+      <div class="button-row">
+        <button id="motionToggle" type="button" aria-pressed="false"><span id="motionIcon" aria-hidden="true">Ⅱ</span><span id="motionLabel">一時停止</span></button>
+        <button id="resetButton" type="button">例の基準へ戻す</button>
+      </div>
+      <label><span>角度</span><output id="angleValue">15°</output><input id="angle" type="range" min="0" max="35" value="15" step="1"></label>
+      <label><span>速度</span><output id="speedValue">5.0 mm/s</output><input id="speed" type="range" min="2" max="10" value="5" step="0.5"></label>
+      <label><span>左右ずれ</span><output id="offsetValue">0.0 mm</output><input id="offset" type="range" min="-8" max="8" value="0" step="0.5"></label>
+    </section>
+
+    <p class="hint">ドラッグ：回転　ホイール：拡大</p>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
