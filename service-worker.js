@@ -1,9 +1,9 @@
-const CACHE_NAME = "nikkan-manufacturing-review-quiz-v36";
+const CACHE_NAME = "nikkan-manufacturing-review-quiz-v38";
 
 const ASSETS = [
   "./",
   "./index.html",
-  "./quiz-data.js?v=36",
+  "./quiz-data.js?v=38",
   "./manifest.webmanifest",
   "./service-worker.js",
   "./assets/icon.svg",
@@ -92,6 +92,20 @@ const ASSETS = [
   "./assets/2026-07-15-q1-ai-discovery-loop.png",
   "./assets/2026-07-15-q2-plating-robot-cell.png",
   "./assets/2026-07-15-q3-live-cell-secretion.png",
+  "./assets/2026-07-16-red1-otv-source.jpg",
+  "./assets/2026-07-16-hero-inventor-lab.png",
+  "./assets/2026-07-16-red1-otv-teaching.png",
+  "./assets/2026-07-16-red2-ai-manager-source.jpg",
+  "./assets/2026-07-16-red2-ai-manager-teaching.png",
+  "./assets/2026-07-16-red3-spec-cost-source.jpg",
+  "./assets/2026-07-16-red3-spec-cost-teaching.png",
+  "./assets/2026-07-16-red4-ai-robot-source.jpg",
+  "./assets/2026-07-16-red4-ai-robot-teaching.png",
+  "./assets/2026-07-16-red5-electron-catalyst-source.jpg",
+  "./assets/2026-07-16-red5-electron-catalyst-teaching.png",
+  "./assets/2026-07-16-q1-adaptive-robot.png",
+  "./assets/2026-07-16-q2-parametric-cost.png",
+  "./assets/2026-07-16-q3-electron-nitrogen.png",
   "./quantum-laser-3d/index.html",
   "./quantum-laser-3d/styles.css",
   "./quantum-laser-3d/app.js",

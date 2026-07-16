@@ -2434,5 +2434,219 @@ window.NIKKAN_QUIZ_SETS = [
         caption: "原理。洗う作業や停止を挟まず、物質が出た時刻を追う。"
       }
     ]
+  },
+  {
+    id: "2026-07-16-red-five-invention-seeds",
+    date: "2026-07-16",
+    difficulty: "入門",
+    strictVisuals: true,
+    title: "日刊工業新聞 7/16 赤ライン5本 発明の種3問",
+    titleLines: ["日刊工業新聞 7/16", "赤ライン5本", "発明の種3問"],
+    shortTitle: "軌道・AI・触媒",
+    sourceLabel: "日刊工業新聞 2026/7/16 赤ライン5記事",
+    heroImage: "./assets/2026-07-16-hero-inventor-lab.png",
+    heroAlt: "軌道間輸送機とAIロボットと設計コスト予測と電子触媒を研究する発明ラボ",
+    curiosityTitle: "赤｜気になった記事と発明の種",
+    importantTitle: "緑｜重要な原理",
+    glossaryTitle: "黄｜読みと意味",
+    summary: [
+      { text: "赤ラインは5本。", breathLines: [{ text: "赤ラインは5本。" }] },
+      { text: "記事の事実と原理を分ける。", breathLines: [{ text: "記事の事実と原理を分ける。" }] },
+      { text: "原理から発明の種を作る。", breathLines: [{ text: "原理から発明の種を作る。" }] }
+    ],
+    curiosityPoints: [
+      {
+        title: "宇宙の荷物を運ぶOTV",
+        text: "ロケットで宇宙へ上げた荷物を、別の軌道まで運ぶ宇宙の配送車。",
+        breathLines: [
+          { label: "記事", text: "三菱電機がOTVを開発する。" },
+          { text: "OTVは、軌道間輸送機。" },
+          { text: "宇宙の荷物を別の軌道へ運ぶ。" },
+          { label: "記事", text: "2032年度に試験機を打ち上げる。" },
+          { label: "原理", text: "ロケットは宇宙へ上げる。" },
+          { label: "原理", text: "OTVは宇宙で運び直す。" },
+          { text: "軌道（きどう）は、宇宙の通り道。" },
+          { label: "発明", text: "補給できる宇宙の配送車。" },
+          { label: "発明", text: "運ぶ・点検・修理を1台で行う。" }
+        ],
+        teachingImage: "./assets/2026-07-16-red1-otv-teaching.png",
+        teachingZoomImage: "./assets/2026-07-16-red1-otv-teaching.png",
+        teachingImageAlt: "ロケットが荷物を上げ、軌道間輸送機が高い軌道へ運ぶ三段階図解",
+        teachingImageCaption: "ロケットは宇宙へ上げる。OTVは軌道の間を運ぶ。",
+        image: "./assets/2026-07-16-red1-otv-source.jpg",
+        zoomImage: "./assets/2026-07-16-red1-otv-source.jpg",
+        imageAlt: "三菱電機の軌道間輸送機の記事",
+        caption: "記事の証拠。2032年度の試験機と軌道間輸送の計画。"
+      },
+      {
+        title: "部下の答えが合わない時",
+        text: "全部を直す前に、どこが合わないかを先に聞く。",
+        breathLines: [
+          { label: "記事", text: "答えが合わない部下への助言。" },
+          { label: "記事", text: "まず合わない場所を聞く。" },
+          { label: "原理", text: "ずれた一点を先に見つける。" },
+          { label: "原理", text: "全部のやり直しを減らせる。" },
+          { label: "発明", text: "判断を質問として残すAI。" },
+          { label: "発明", text: "上司の考え方まで引き継ぐ。" }
+        ],
+        teachingImage: "./assets/2026-07-16-red2-ai-manager-teaching.png",
+        teachingZoomImage: "./assets/2026-07-16-red2-ai-manager-teaching.png",
+        teachingImageAlt: "複雑な提案から一つのずれを見つけて整理する上司と部下の図解",
+        teachingImageCaption: "全部を直す前に、ずれた一点を見つける。",
+        image: "./assets/2026-07-16-red2-ai-manager-source.jpg",
+        zoomImage: "./assets/2026-07-16-red2-ai-manager-source.jpg",
+        imageAlt: "部下の意見がAIの答えになったという経営相談の記事",
+        caption: "記事の証拠。合わない箇所を先に聞く助言。"
+      },
+      {
+        title: "設計中にコストを予測",
+        text: "仕様と過去の実績を結び、作る前に費用の傾向を読む。",
+        breathLines: [
+          { label: "記事", text: "三菱重工がコスト表を作った。" },
+          { label: "記事", text: "BOMと過去の実績を使う。" },
+          { text: "BOMは、部品の一覧表。" },
+          { label: "記事", text: "仕様とコストの関係を調べる。" },
+          { label: "原理", text: "重さや速さが費用を動かす。" },
+          { label: "原理", text: "過去データから関係線を作る。" },
+          { label: "発明", text: "CADに付けるコストメーター。" },
+          { label: "発明", text: "寸法変更の費用をすぐ見せる。" }
+        ],
+        teachingImage: "./assets/2026-07-16-red3-spec-cost-teaching.png",
+        teachingZoomImage: "./assets/2026-07-16-red3-spec-cost-teaching.png",
+        teachingImageAlt: "部品表と過去の加工データから仕様ごとのコスト曲線を作る図解",
+        teachingImageCaption: "仕様のつまみを動かすと、予想コストも動く。",
+        image: "./assets/2026-07-16-red3-spec-cost-source.jpg",
+        zoomImage: "./assets/2026-07-16-red3-spec-cost-source.jpg",
+        imageAlt: "実績データとAIでコストを予測する記事",
+        caption: "記事の証拠。仕様パラメーターとコストの関係を使う。"
+      },
+      {
+        title: "位置が変わっても動くAIロボ",
+        text: "見る、考える、道を作る、動くをロボットの中で回す。",
+        breathLines: [
+          { label: "記事", text: "安川電機がグーグル系と連携。" },
+          { label: "記事", text: "部品の位置と形を認識する。" },
+          { label: "記事", text: "作業の順番と動く道を作る。" },
+          { label: "原理", text: "見る・考える・動くを回す。" },
+          { text: "自律（じりつ）は、" },
+          { text: "自分で判断して動くこと。" },
+          { label: "発明", text: "大まかな指示で動く後付けロボ。" },
+          { label: "発明", text: "品種変更にも自分で合わせる。" }
+        ],
+        teachingImage: "./assets/2026-07-16-red4-ai-robot-teaching.png",
+        teachingZoomImage: "./assets/2026-07-16-red4-ai-robot-teaching.png",
+        teachingImageAlt: "カメラで部品を見つけ、つかむ位置と経路を考えて動くAIロボットの図解",
+        teachingImageCaption: "見る、選ぶ、道を作る、つかむを一続きで行う。",
+        image: "./assets/2026-07-16-red4-ai-robot-source.jpg",
+        zoomImage: "./assets/2026-07-16-red4-ai-robot-source.jpg",
+        imageAlt: "安川電機のAIロボットが自律作業する記事",
+        caption: "記事の証拠。位置と形を認識し、作業手順を作る。"
+      },
+      {
+        title: "表面の電子で窒素を弱める",
+        text: "触媒の表面に電子を浮かせ、切れにくい窒素の結合を弱める。",
+        breathLines: [
+          { label: "記事", text: "東京科学大が触媒を開発。" },
+          { text: "触媒（しょくばい）は、" },
+          { text: "化学反応を助ける材料。" },
+          { label: "記事", text: "表面に電子の層を作った。" },
+          { label: "記事", text: "300度・9気圧で合成した。" },
+          { label: "原理", text: "窒素の三重結合は、とても強い。" },
+          { label: "原理", text: "電子を渡すと結合が弱まる。" },
+          { label: "発明", text: "電子を供給する触媒シート。" },
+          { label: "発明", text: "別の反応へ表面設計を広げる。" }
+        ],
+        teachingImage: "./assets/2026-07-16-red5-electron-catalyst-teaching.png",
+        teachingZoomImage: "./assets/2026-07-16-red5-electron-catalyst-teaching.png",
+        teachingImageAlt: "触媒表面の電子層からルテニウムを通じて窒素へ電子が移る図解",
+        teachingImageCaption: "表面の電子が、切れにくい窒素の結合を弱める。",
+        image: "./assets/2026-07-16-red5-electron-catalyst-source.jpg",
+        zoomImage: "./assets/2026-07-16-red5-electron-catalyst-source.jpg",
+        imageAlt: "触媒表面に電子層を形成したアンモニア合成の記事",
+        caption: "記事の証拠。表面電子とルテニウムで窒素を活性化する。"
+      }
+    ],
+    importantPoints: [],
+    glossary: [],
+    questions: [
+      {
+        id: "adaptive-ai-robot-shifted-part",
+        tag: "AIロボ",
+        difficulty: "入門",
+        question: "部品の位置がずれた時、AIロボの強みは？",
+        hint: "見直してから、動く道を作り直す。",
+        choices: [
+          "位置と形を見直し、動く道を作り直す",
+          "最初に教えた道だけを、同じまま動く",
+          "部品が元の位置へ戻るまで止まり続ける"
+        ],
+        correctIndex: 0,
+        answerTitle: "答え｜見て、道を作り直す",
+        principle: "周りを見て、判断と動きを更新できる。",
+        answerParagraphs: [
+          "記事｜部品の位置と形を見る。",
+          "原理｜AIが作業の順番を考える。",
+          "原理｜ぶつからない道を作る。",
+          "原理｜結果を見て次の動きを変える。",
+          "発明｜大まかな指示で動く後付けロボ。"
+        ],
+        image: "./assets/2026-07-16-q1-adaptive-robot.png",
+        zoomImage: "./assets/2026-07-16-q1-adaptive-robot.png",
+        imageAlt: "固定経路で失敗するロボットと位置ずれに合わせて経路を作り直すAIロボットの比較図",
+        caption: "左は決めた道だけ。右は見直して道を作り直す。"
+      },
+      {
+        id: "parametric-cost-early-design",
+        tag: "設計コスト",
+        difficulty: "入門",
+        question: "作る前にコストを予測する材料は？",
+        hint: "今の仕様と、過去に作った時の費用。",
+        choices: [
+          "仕様と、過去の見積もり・実績データ",
+          "設計者の勘だけで決めた一つの金額",
+          "完成後に集める部品の写真だけ"
+        ],
+        correctIndex: 0,
+        answerTitle: "答え｜仕様と過去の実績",
+        principle: "費用を動かす仕様と、実績の関係を使う。",
+        answerParagraphs: [
+          "記事｜BOMと過去の実績を使う。",
+          "BOMは、部品の一覧表。",
+          "原理｜費用を動かす仕様を選ぶ。",
+          "原理｜過去データから関係線を作る。",
+          "発明｜CADに付けるコストメーター。"
+        ],
+        image: "./assets/2026-07-16-q2-parametric-cost.png",
+        zoomImage: "./assets/2026-07-16-q2-parametric-cost.png",
+        imageAlt: "部品の仕様と過去データからコスト曲線を作り設計時に費用を予測する図解",
+        caption: "仕様を変えると、予想コストもすぐ動く。"
+      },
+      {
+        id: "surface-electrons-weaken-nitrogen",
+        tag: "電子触媒",
+        difficulty: "入門",
+        question: "触媒表面の電子は、窒素に何をする？",
+        hint: "切れにくい結合へ電子を渡す。",
+        choices: [
+          "強い三重結合を弱め、反応しやすくする",
+          "窒素を冷やし、完全に動かなくする",
+          "触媒から窒素を遠ざけ、反応を止める"
+        ],
+        correctIndex: 0,
+        answerTitle: "答え｜窒素の結合を弱める",
+        principle: "電子を渡すと、強い窒素の結合が切れやすくなる。",
+        answerParagraphs: [
+          "記事｜表面に電子の層を作った。",
+          "記事｜ルテニウムを上に載せた。",
+          "原理｜窒素の三重結合は、とても強い。",
+          "原理｜電子を渡すと結合が弱まる。",
+          "結果｜水素と結び、アンモニアになる。"
+        ],
+        image: "./assets/2026-07-16-q3-electron-nitrogen.png",
+        zoomImage: "./assets/2026-07-16-q3-electron-nitrogen.png",
+        imageAlt: "触媒表面から電子が窒素へ流れて三重結合を弱めアンモニアになる図解",
+        caption: "電子が窒素の強い結合をゆるめ、反応を進める。"
+      }
+    ]
   }
 ];
