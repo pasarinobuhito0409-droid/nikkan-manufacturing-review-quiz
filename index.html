@@ -421,6 +421,8 @@
 
     .learning-stage.lab-active { overflow: hidden; }
     .learning-stage.lab-active .stage-inner { width: 100%; height: 100%; padding: 0; }
+    .app-shell.lab-mode { grid-template-rows: auto auto minmax(0, 1fr); }
+    .app-shell.lab-mode .control-dock { display: none; }
 
     .lab-list { max-width: 850px; }
     .lab-list h2 { margin: 0 0 8px; }
@@ -1051,7 +1053,7 @@
     </div>
   </div>
 
-  <script src="./quiz-data.js?v=38"></script>
+  <script src="./quiz-data.js?v=39"></script>
   <script>
     const quizSets = window.NIKKAN_QUIZ_SETS || [];
     const storageKey = "nikkan-manufacturing-review-quiz-library-v2";
@@ -1356,6 +1358,16 @@
 
     function renderLab(set) {
       stageInner.innerHTML = "";
+      if (set && set.id === "2026-07-16-red-five-invention-seeds") {
+        stage.classList.add("lab-active");
+        const iframe = document.createElement("iframe");
+        iframe.className = "lab-frame";
+        iframe.src = "./adaptive-robot-3d/index.html";
+        iframe.title = "AIロボット再計画 3Dラボ";
+        iframe.loading = "eager";
+        stageInner.appendChild(iframe);
+        return;
+      }
       if (set && set.id === "2026-07-14-ai-inspection-welding-skill") {
         stage.classList.add("lab-active");
         const iframe = document.createElement("iframe");
@@ -1414,6 +1426,7 @@
       }
       renderHeader(set);
       renderSetList();
+      document.querySelector(".app-shell").classList.toggle("lab-mode", activeMode === "lab");
       modeTabs.forEach((button) => {
         const active = button.dataset.mode === activeMode;
         button.classList.toggle("active", active);

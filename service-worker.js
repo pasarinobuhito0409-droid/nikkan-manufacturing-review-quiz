@@ -1,9 +1,9 @@
-const CACHE_NAME = "nikkan-manufacturing-review-quiz-v38";
+const CACHE_NAME = "nikkan-manufacturing-review-quiz-v39";
 
 const ASSETS = [
   "./",
   "./index.html",
-  "./quiz-data.js?v=38",
+  "./quiz-data.js?v=39",
   "./manifest.webmanifest",
   "./service-worker.js",
   "./assets/icon.svg",
@@ -113,6 +113,10 @@ const ASSETS = [
   "./welding-skill-3d/index.html",
   "./welding-skill-3d/styles.css",
   "./welding-skill-3d/app.js",
+  "./adaptive-robot-3d/index.html",
+  "./adaptive-robot-3d/",
+  "./adaptive-robot-3d/styles.css",
+  "./adaptive-robot-3d/app.js",
   "./co2-floor-3d/",
   "./co2-floor-3d/index.html",
   "./co2-floor-3d/styles.css",
