@@ -950,6 +950,61 @@
       font-weight: 700;
     }
 
+    /* v41: one shared invention study across the entire app */
+    body {
+      background:
+        linear-gradient(rgba(6, 7, 6, .38), rgba(6, 7, 6, .62)),
+        url("./assets/2026-07-16-einstein-invention-study-v41.png") center / cover fixed no-repeat;
+    }
+
+    .app-shell {
+      background: rgba(8, 10, 8, .18);
+    }
+
+    .instrument-header {
+      background: rgba(15, 17, 14, .82);
+      backdrop-filter: blur(12px);
+    }
+
+    .mode-tabs {
+      background: rgba(18, 20, 17, .76);
+      backdrop-filter: blur(10px);
+    }
+
+    .mode-tab.active {
+      background: rgba(61, 53, 38, .72);
+    }
+
+    .learning-stage {
+      background: rgba(9, 11, 9, .18);
+    }
+
+    .stage-inner {
+      background: rgba(12, 14, 12, .72);
+      box-shadow: 0 0 70px rgba(0, 0, 0, .38);
+      backdrop-filter: blur(3px);
+    }
+
+    .choice {
+      background: rgba(24, 27, 23, .76);
+      backdrop-filter: blur(7px);
+    }
+
+    .control-dock {
+      background: rgba(16, 18, 15, .84);
+      backdrop-filter: blur(12px);
+    }
+
+    .learning-stage.lab-active {
+      background: rgba(8, 10, 8, .12);
+    }
+
+    .learning-stage.lab-active .stage-inner {
+      background: transparent;
+      box-shadow: none;
+      backdrop-filter: none;
+    }
+
     .result-flash.playing .result-flash-card { animation: result-arrive .9s ease both; }
 
     @keyframes result-arrive {
@@ -964,6 +1019,7 @@
     }
 
     @media (max-width: 720px) {
+      body { background-position: 43% center; }
       .instrument-header { min-height: 72px; padding: 9px 10px; }
       .mode-tabs, .mode-tab { min-height: 52px; }
       .stage-inner { padding: 28px 16px 44px; }
@@ -1053,7 +1109,7 @@
     </div>
   </div>
 
-  <script src="./quiz-data.js?v=40"></script>
+  <script src="./quiz-data.js?v=41"></script>
   <script>
     const quizSets = window.NIKKAN_QUIZ_SETS || [];
     const storageKey = "nikkan-manufacturing-review-quiz-library-v2";
@@ -1362,7 +1418,7 @@
         stage.classList.add("lab-active");
         const iframe = document.createElement("iframe");
         iframe.className = "lab-frame";
-        iframe.src = "./adaptive-robot-3d/index.html";
+        iframe.src = "./adaptive-robot-3d/index.html?v=41";
         iframe.title = "AIロボット再計画 3Dラボ";
         iframe.loading = "eager";
         stageInner.appendChild(iframe);
@@ -1597,7 +1653,16 @@
     });
 
     if ("serviceWorker" in navigator && location.protocol !== "file:") {
-      window.addEventListener("load", () => navigator.serviceWorker.register("./service-worker.js?v=40"));
+      window.addEventListener("load", async () => {
+        const reloadKey = "nikkan-sw-reloaded-v41";
+        navigator.serviceWorker.addEventListener("controllerchange", () => {
+          if (sessionStorage.getItem(reloadKey)) return;
+          sessionStorage.setItem(reloadKey, "1");
+          location.reload();
+        });
+        const registration = await navigator.serviceWorker.register("./service-worker.js?v=41");
+        registration.update();
+      });
     }
 
     resetQuestionSession();

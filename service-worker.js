@@ -1,9 +1,10 @@
-const CACHE_NAME = "nikkan-manufacturing-review-quiz-v40";
+const CACHE_NAME = "nikkan-manufacturing-review-quiz-v41";
 
 const ASSETS = [
   "./",
   "./index.html",
-  "./quiz-data.js?v=40",
+  "./quiz-data.js?v=41",
+  "./assets/2026-07-16-einstein-invention-study-v41.png",
   "./adaptive-robot-3d/assets/miwa-ai-impossible-lab-background.png",
   "./manifest.webmanifest",
   "./service-worker.js",
@@ -193,7 +194,13 @@ self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
 
   const url = new URL(event.request.url);
-  if (url.pathname.endsWith("/quiz-data.js")) {
+  const needsFreshAppShell =
+    event.request.mode === "navigate" ||
+    url.pathname.endsWith("/index.html") ||
+    url.pathname.endsWith("/service-worker.js") ||
+    url.pathname.includes("/adaptive-robot-3d/");
+
+  if (url.pathname.endsWith("/quiz-data.js") || needsFreshAppShell) {
     event.respondWith(
       fetch(event.request).then((response) => {
         const copy = response.clone();

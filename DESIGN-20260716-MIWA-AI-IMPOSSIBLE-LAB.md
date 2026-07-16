@@ -6,6 +6,19 @@ Make the July 16 3D lab feel like Miwa-san's own invention room.
 
 The room must feel like a loved evening hobby, not assigned professional work.
 
+The room is not limited to the 3D tab.
+
+It is the shared background of the entire review app:
+
+- recall,
+- evidence,
+- 3D lab,
+- header,
+- mode navigation,
+- bottom controls.
+
+The study must be visible from the first question screen.
+
 The scene must communicate one clear story:
 
 `mathematical theory -> physical experiment -> working invention`
@@ -38,6 +51,10 @@ must all belong to the same believable workspace.
 ## 3D layer
 
 The existing adaptive robot remains interactive in the foreground.
+
+The robot appears only inside the 3D tab.
+
+Other tabs keep the same study background without the robot overlay.
 
 Add a restrained animated theory pipeline anchored to the physical scene:
 
@@ -73,6 +90,9 @@ The animation must remain visible without hiding the photorealistic background.
 
 ## Acceptance criteria
 
+- The first recall screen visibly uses the study background.
+- Evidence and 3D tabs retain the same room identity.
+- Header, navigation, reading stage, and controls use translucent surfaces instead of hiding the room.
 - The generated background is copied into the project and PWA cache.
 - The image is visibly different from the previous plain black laboratory.
 - The canvas is transparent enough for the background to remain visible.
