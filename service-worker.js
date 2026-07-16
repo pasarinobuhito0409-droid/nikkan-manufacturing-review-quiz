@@ -1,9 +1,10 @@
-const CACHE_NAME = "nikkan-manufacturing-review-quiz-v39";
+const CACHE_NAME = "nikkan-manufacturing-review-quiz-v40";
 
 const ASSETS = [
   "./",
   "./index.html",
-  "./quiz-data.js?v=39",
+  "./quiz-data.js?v=40",
+  "./adaptive-robot-3d/assets/miwa-ai-impossible-lab-background.png",
   "./manifest.webmanifest",
   "./service-worker.js",
   "./assets/icon.svg",

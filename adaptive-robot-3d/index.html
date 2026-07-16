@@ -4,48 +4,27 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#080b0e">
-  <meta name="description" content="固定ルートとAI再計画の違いを触って学ぶ3Dロボット研究室">
-  <title>適応ロボット 3Dラボ</title>
+  <link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+  <title>Adaptive Motion Lab</title>
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <main class="lab" id="lab">
-    <canvas id="labCanvas" aria-label="ロボットアームの3D実験セル"></canvas>
-
+    <canvas id="labCanvas" aria-label="ロボットアームの3D実験"></canvas>
     <header class="lab-header">
-      <div>
-        <p class="eyebrow">ADAPTIVE MOTION LAB</p>
-        <h1>ずれても、考え直せる。</h1>
-        <p class="subtitle">固定ルートとAI再計画を比べる。</p>
-      </div>
-      <div class="mode-switch" role="group" aria-label="動作方式">
+      <div><p class="eyebrow">ADAPTIVE MOTION LAB</p><h1>数式で遊び、形にする。</h1><p class="subtitle">今日はAIロボの再計画を試す。</p></div>
+      <div class="mode-switch" role="group" aria-label="動作モード">
         <button type="button" data-mode="fixed" aria-pressed="false">固定ルート</button>
         <button type="button" data-mode="ai" class="active" aria-pressed="true">AI再計画</button>
       </div>
     </header>
-
     <section class="state-strip" aria-label="ロボットの状態" aria-live="polite">
-      <div class="state active" data-state="see"><span>01</span><strong>見る</strong></div>
-      <i aria-hidden="true"></i>
-      <div class="state" data-state="think"><span>02</span><strong>考える</strong></div>
-      <i aria-hidden="true"></i>
+      <div class="state active" data-state="see"><span>01</span><strong>見る</strong></div><i aria-hidden="true"></i>
+      <div class="state" data-state="think"><span>02</span><strong>測る</strong></div><i aria-hidden="true"></i>
       <div class="state" data-state="move"><span>03</span><strong>動く</strong></div>
     </section>
-
-    <aside class="status-panel">
-      <p class="status-kicker" id="statusKicker">VISION ONLINE</p>
-      <strong id="statusTitle">部品を見ています</strong>
-      <p id="statusText">位置の変化を探します。</p>
-    </aside>
-
-    <footer class="command-bar">
-      <button class="shift-button" id="shiftPart" type="button">
-        <span aria-hidden="true">↗</span>
-        部品をずらす
-      </button>
-      <p id="resultText">青い部品を別の場所へ動かします。</p>
-      <p class="view-hint">ドラッグ：回転　ホイール・ピンチ：拡大</p>
-    </footer>
+    <aside class="status-panel"><p class="status-kicker" id="statusKicker">VISION ONLINE</p><strong id="statusTitle">部品を見る</strong><p id="statusText">位置の変化を探します。</p></aside>
+    <footer class="command-bar"><button class="shift-button" id="shiftPart" type="button"><span aria-hidden="true">↗</span>部品をずらす</button><p id="resultText">青い部品を別の場所へ動かします。</p><p class="view-hint">ドラッグで回転 / ホイールで拡大</p></footer>
   </main>
   <script type="module" src="./app.js"></script>
 </body>

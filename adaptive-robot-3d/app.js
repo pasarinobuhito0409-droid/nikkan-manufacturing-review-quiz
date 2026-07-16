@@ -11,7 +11,7 @@ const statusTitle = document.getElementById("statusTitle");
 const statusText = document.getElementById("statusText");
 const resultText = document.getElementById("resultText");
 
-let renderer, scene, camera, cell, robot, targetPart, targetHalo, scanRing;
+let renderer, scene, camera, cell, robot, targetPart, targetHalo, scanRing, brassRing, theoryTrace, theoryCursor, measurePulse;
 let shoulder, elbow, wrist, gripper, newPath, oldPath, pathCursor;
 let mode = "ai";
 let phase = "idle";
@@ -34,10 +34,10 @@ init();
 
 function init() {
   scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x080b0e);
-  scene.fog = new THREE.FogExp2(0x080b0e, 0.055);
+  scene.background = null;
   camera = new THREE.PerspectiveCamera(42, 1, 0.1, 60);
-  renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: "high-performance" });
+  renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: "high-performance" });
+  renderer.setClearAlpha(0);
   renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 1.8));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -77,7 +77,7 @@ function createLaboratory() {
   scene.add(cell);
   const floor = new THREE.Mesh(
     new THREE.PlaneGeometry(28, 22),
-    new THREE.MeshStandardMaterial({ color: 0x11171a, roughness: 0.58, metalness: 0.36 })
+    new THREE.MeshStandardMaterial({ color: 0x6f8588, roughness: 0.58, metalness: 0.12, transparent: true, opacity: 0.06, depthWrite: false })
   );
   floor.rotation.x = -Math.PI / 2;
   floor.receiveShadow = true;
@@ -85,24 +85,19 @@ function createLaboratory() {
 
   const grid = new THREE.GridHelper(24, 24, 0x25434a, 0x172329);
   grid.position.y = 0.006;
+  const gridMaterials = Array.isArray(grid.material) ? grid.material : [grid.material];
+  gridMaterials.forEach((material) => {
+    material.transparent = true;
+    material.opacity = 0.16;
+    material.depthWrite = false;
+  });
   cell.add(grid);
-
-  const back = new THREE.Mesh(
-    new THREE.PlaneGeometry(24, 10),
-    new THREE.MeshStandardMaterial({ color: 0x0d1215, roughness: 0.82, metalness: 0.18 })
-  );
-  back.position.set(0, 5, -6.3);
-  back.receiveShadow = true;
-  cell.add(back);
-
-  for (let x = -7; x <= 7; x += 3.5) {
-    const lamp = new THREE.Mesh(new THREE.BoxGeometry(2.2, 0.06, 0.18), new THREE.MeshBasicMaterial({ color: 0xb9f8fb }));
-    lamp.position.set(x, 7, -2.2);
-    cell.add(lamp);
-  }
 
   const platform = box(9.2, 0.32, 6.5, 0x20292d, 0.68, 0.62);
   platform.position.y = 0.16;
+  platform.material.transparent = true;
+  platform.material.opacity = 0.36;
+  platform.material.depthWrite = false;
   platform.receiveShadow = true;
   cell.add(platform);
 }
@@ -190,6 +185,26 @@ function createWorkObjects() {
   scanRing.rotation.x = -Math.PI / 2;
   scanRing.position.copy(oldTarget).setY(0.04);
   cell.add(scanRing);
+  const theoryCurve = new THREE.CatmullRomCurve3([
+    new THREE.Vector3(-1.8, 3.5, -5.7),
+    new THREE.Vector3(-.2, 3.15, -4.7),
+    new THREE.Vector3(1.35, 2.6, -3.2)
+  ]);
+  const theoryPoints = theoryCurve.getPoints(96);
+  const theoryGeometry = new THREE.BufferGeometry().setFromPoints(theoryPoints);
+  theoryGeometry.setDrawRange(0, 0);
+  theoryTrace = new THREE.Line(theoryGeometry, new THREE.LineBasicMaterial({ color: 0x55e7ed, transparent: true, opacity: .42 }));
+  theoryTrace.userData.curve = theoryCurve;
+  theoryTrace.userData.pointCount = theoryPoints.length;
+  cell.add(theoryTrace);
+  theoryCursor = new THREE.Mesh(new THREE.SphereGeometry(.055, 12, 8), new THREE.MeshBasicMaterial({ color: 0x9fffff, transparent: true, opacity: .32, depthWrite: false }));
+  cell.add(theoryCursor);
+  measurePulse = new THREE.Mesh(new THREE.SphereGeometry(.09, 14, 10), new THREE.MeshBasicMaterial({ color: 0x8fffff, transparent: true, opacity: 0 }));
+  cell.add(measurePulse);
+  brassRing = new THREE.Mesh(new THREE.TorusGeometry(1.18, .045, 10, 64), new THREE.MeshBasicMaterial({ color: 0xc99a4a, transparent: true, opacity: 0 }));
+  brassRing.rotation.x = Math.PI / 2;
+  brassRing.position.set(-2.65, .4, 1.15);
+  cell.add(brassRing);
 }
 
 function createPaths() {
@@ -341,8 +356,20 @@ function animate(now) {
 }
 
 function updateCycle(delta, time) {
+  const theoryProgress = (time * 0.075) % 2;
+  const theoryTravel = theoryProgress <= 1 ? theoryProgress : 2 - theoryProgress;
+  const theoryDrawCount = Math.max(2, Math.floor(theoryTrace.userData.pointCount * theoryTravel));
+  theoryTrace.geometry.setDrawRange(0, theoryDrawCount);
+  theoryCursor.position.copy(theoryTrace.userData.curve.getPoint(theoryTravel));
+  theoryTrace.material.opacity = 0.28 + Math.sin(time * 1.6) * 0.05;
+  theoryCursor.material.opacity = 0.2 + Math.sin(time * 2.1) * 0.08;
   scanRing.scale.setScalar(1 + ((phaseTime * 1.8) % 2.2));
   scanRing.material.opacity = phase === "see" ? Math.max(0, 0.65 - ((phaseTime * 0.32) % 0.65)) : 0;
+  const pulse = (time * .45) % 1;
+  measurePulse.position.set(-3.1 + pulse * 6.2, .42, .95);
+  measurePulse.material.opacity = phase === "think" ? .9 : 0;
+  brassRing.material.opacity = phase === "done" && mode === "ai" && targetShifted ? .9 : 0;
+  brassRing.rotation.z += delta * (phase === "done" ? 1.2 : .15);
   if (phase === "idle") return;
 
   if (phase === "see" && phaseTime > 1.25) {

@@ -1,7 +1,7 @@
 :root {
   color-scheme: dark;
   font-family: "Yu Gothic UI", "Hiragino Kaku Gothic ProN", sans-serif;
-  background: #080b0e;
+  background: #080b0e url("./assets/miwa-ai-impossible-lab-background.png") center / cover no-repeat;
   color: #eef5f5;
   letter-spacing: 0;
 }
@@ -17,7 +17,7 @@ button { font: inherit; }
   height: 100dvh;
   min-height: 520px;
   overflow: hidden;
-  background: #080b0e;
+  background: #080b0e url("./assets/miwa-ai-impossible-lab-background.png") center / cover no-repeat;
   isolation: isolate;
 }
 
@@ -39,7 +39,7 @@ button { font: inherit; }
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(3,5,7,.78) 0, transparent 25%, transparent 68%, rgba(3,5,7,.86) 100%);
+  background: linear-gradient(180deg, rgba(3,5,7,.68), rgba(3,5,7,.08) 32%, rgba(3,5,7,.26) 66%, rgba(3,5,7,.78));
 }
 
 .lab-header {
