@@ -1,9 +1,9 @@
-const CACHE_NAME = "nikkan-manufacturing-review-quiz-v41";
+const CACHE_NAME = "nikkan-manufacturing-review-quiz-v42";
 
 const ASSETS = [
   "./",
   "./index.html",
-  "./quiz-data.js?v=41",
+  "./quiz-data.js?v=42",
   "./assets/2026-07-16-einstein-invention-study-v41.png",
   "./adaptive-robot-3d/assets/miwa-ai-impossible-lab-background.png",
   "./manifest.webmanifest",
@@ -108,6 +108,11 @@ const ASSETS = [
   "./assets/2026-07-16-q1-adaptive-robot.png",
   "./assets/2026-07-16-q2-parametric-cost.png",
   "./assets/2026-07-16-q3-electron-nitrogen.png",
+  "./assets/2026-07-17-hero-optical-ai-dc-lab.png",
+  "./assets/2026-07-17-optical-ai-dc-source.png",
+  "./assets/2026-07-17-q1-optical-fiber-capacity-teaching-ja.png",
+  "./assets/2026-07-17-q2-inp-optical-transmitter-teaching-ja.png",
+  "./assets/2026-07-17-q3-liquid-cooling-teaching-ja.png",
   "./quantum-laser-3d/index.html",
   "./quantum-laser-3d/styles.css",
   "./quantum-laser-3d/app.js",

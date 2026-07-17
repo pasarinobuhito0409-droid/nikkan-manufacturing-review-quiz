@@ -58,7 +58,7 @@
     .app-shell {
       height: 100svh;
       display: grid;
-      grid-template-rows: auto auto minmax(0, 1fr) auto;
+      grid-template-rows: auto auto auto minmax(0, 1fr) auto;
       background: var(--white);
     }
 
@@ -163,6 +163,28 @@
       background: var(--white);
       color: var(--teal);
     }
+
+    .learning-lens-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      padding: 8px max(16px, calc((100% - 1040px) / 2));
+      border-bottom: 1px solid rgba(201, 164, 97, .22);
+      background: rgba(17, 19, 16, .9);
+    }
+
+    .learning-lens {
+      min-width: 0;
+      padding: 8px 12px;
+      border-left: 1px solid rgba(201, 164, 97, .18);
+      color: #aaa18d;
+    }
+
+    .learning-lens:first-child { border-left: 0; }
+    .learning-lens strong { display: block; color: #d7c29c; font-size: 14px; }
+    .learning-lens span { display: block; margin-top: 2px; font-size: 12px; line-height: 1.45; }
+    .learning-lens.active { background: rgba(79, 63, 34, .5); color: #eee3cf; }
+    .learning-lens.active strong { color: #f0d9ad; }
 
     .learning-stage {
       min-height: 0;
@@ -421,7 +443,7 @@
 
     .learning-stage.lab-active { overflow: hidden; }
     .learning-stage.lab-active .stage-inner { width: 100%; height: 100%; padding: 0; }
-    .app-shell.lab-mode { grid-template-rows: auto auto minmax(0, 1fr); }
+    .app-shell.lab-mode { grid-template-rows: auto auto auto minmax(0, 1fr); }
     .app-shell.lab-mode .control-dock { display: none; }
 
     .lab-list { max-width: 850px; }
@@ -716,7 +738,13 @@
       scrollbar-color: #6f644e #191b17;
     }
 
-    .stage-inner { padding: 42px 36px 64px; }
+    .stage-inner {
+      padding: 42px 36px 64px;
+      background: rgba(18, 21, 18, .9);
+      border-left: 1px solid rgba(201, 164, 97, .16);
+      border-right: 1px solid rgba(201, 164, 97, .16);
+      box-shadow: 0 0 42px rgba(0, 0, 0, .24);
+    }
 
     .calibration-line {
       margin-bottom: 26px;
@@ -845,6 +873,17 @@
     }
 
     .answer-panel h2 { color: #f1e5cf; font-weight: 500; }
+    .answer-visual::after {
+      content: "図解を先に見る";
+      display: block;
+      padding: 9px 12px;
+      color: #f0d9ad;
+      background: #25251e;
+      font-family: "Yu Gothic UI", "Meiryo", sans-serif;
+      font-size: 13px;
+      font-weight: 900;
+      text-align: left;
+    }
     .answer-copy p { color: #ddd5c6; }
     .answer-copy figcaption { border-top-color: var(--line); color: #aaa18d; }
 
@@ -1005,6 +1044,62 @@
       backdrop-filter: none;
     }
 
+    @media (min-width: 721px) {
+      .evidence-header {
+        display: grid;
+        grid-template-columns: minmax(0, .9fr) minmax(360px, 1.1fr);
+        align-items: start;
+        gap: 30px;
+      }
+
+      .evidence-header > div { padding-top: 4px; }
+      .evidence-header .hero-image { min-height: 360px; max-height: 560px; }
+    }
+
+    .evidence-row > .breath-lines { max-width: 820px; }
+    .evidence-row .source-visual { margin-top: 28px; }
+    .evidence-row .source-visual .source-button { max-width: 100%; }
+    .evidence-row .source-visual img { max-height: 900px; }
+    .evidence-row .teaching-visual { margin-top: 0; }
+    .evidence-row > strong {
+      color: #f1e5cf;
+      font-size: 19px;
+      line-height: 1.5;
+    }
+
+    .article-focus { border-bottom-color: rgba(87, 174, 197, .34); }
+    .article-focus h3 { color: #8bd7e5; }
+    .article-focus .breath-line { color: #e4e0d6; }
+    .evidence-band.neutral h3 { color: #e7d2a4; }
+    .article-evidence .evidence-visual { max-width: 100%; margin-top: 18px; }
+    .article-evidence .source-button img { max-height: none; }
+
+    @media (min-width: 721px) {
+      .evidence-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1.18fr) minmax(260px, .82fr);
+        gap: 18px 28px;
+        align-items: start;
+      }
+
+      .evidence-row > strong { grid-column: 1 / -1; }
+      .evidence-row .teaching-visual { grid-column: 1; grid-row: 2 / span 2; }
+      .evidence-row > .breath-lines { grid-column: 2; grid-row: 2; margin-top: 0; }
+      .evidence-row .source-visual { grid-column: 1 / -1; margin-top: 4px; }
+    }
+
+    @media (max-width: 720px) {
+      .article-focus .breath-lines { gap: 16px; }
+      .evidence-row { display: block; }
+      .evidence-row .teaching-visual { margin-top: 0; }
+      .evidence-row > .breath-lines { margin-top: 24px; }
+      .evidence-row .source-visual { margin-top: 28px; }
+    }
+
+    .evidence-band.red h3::before { content: "赤・気になる原理　"; }
+    .evidence-band.green h3::before { content: "緑・重要な原理　"; }
+    .evidence-band.amber h3::before { content: "黄・読みと意味　"; }
+
     .result-flash.playing .result-flash-card { animation: result-arrive .9s ease both; }
 
     @keyframes result-arrive {
@@ -1022,10 +1117,15 @@
       body { background-position: 43% center; }
       .instrument-header { min-height: 72px; padding: 9px 10px; }
       .mode-tabs, .mode-tab { min-height: 52px; }
+      .learning-lens-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 6px 10px; }
+      .learning-lens { padding: 7px 9px; border-bottom: 1px solid rgba(201, 164, 97, .14); }
+      .learning-lens:nth-child(odd) { border-left: 0; }
       .stage-inner { padding: 28px 16px 44px; }
       .question { font-size: 25px; }
       .choice { min-height: 58px; padding: 10px 12px; }
       .answer-verdict { grid-template-columns: 1fr; }
+      .evidence-header { gap: 18px; }
+      .hero-image { min-height: 240px; }
       .result-flash-card { padding: 34px 20px 30px; }
       .result-seal { width: 96px; height: 96px; font-size: 62px; }
     }
@@ -1051,6 +1151,13 @@
       <button class="mode-tab" type="button" data-mode="evidence" aria-selected="false">証拠</button>
       <button class="mode-tab" type="button" data-mode="lab" aria-selected="false">3Dラボ</button>
     </nav>
+
+    <section class="learning-lens-strip" id="learningLens" aria-label="科学的な読み方">
+      <div class="learning-lens active" data-lens="observation"><strong>観察</strong><span>見えた事実を拾う</span></div>
+      <div class="learning-lens" data-lens="principle"><strong>原理</strong><span>なぜ起きるか考える</span></div>
+      <div class="learning-lens" data-lens="verification"><strong>検証</strong><span>画像と実験で確かめる</span></div>
+      <div class="learning-lens" data-lens="invention"><strong>発明</strong><span>次の使い道をつくる</span></div>
+    </section>
 
     <main class="learning-stage" id="learningStage" tabindex="-1">
       <div class="stage-inner" id="stageInner"></div>
@@ -1109,7 +1216,7 @@
     </div>
   </div>
 
-  <script src="./quiz-data.js?v=41"></script>
+  <script src="./quiz-data.js?v=42"></script>
   <script>
     const quizSets = window.NIKKAN_QUIZ_SETS || [];
     const storageKey = "nikkan-manufacturing-review-quiz-library-v2";
@@ -1123,6 +1230,7 @@
 
     const stage = document.getElementById("learningStage");
     const stageInner = document.getElementById("stageInner");
+    const learningLens = document.getElementById("learningLens");
     const activeSetTitle = document.getElementById("activeSetTitle");
     const activeSetDate = document.getElementById("activeSetDate");
     const progressText = document.getElementById("progressText");
@@ -1400,6 +1508,30 @@
           ${set.heroImage ? `<img class="hero-image" src="${set.heroImage}" alt="${set.heroAlt || set.title}">` : ""}
         </section>
       `;
+      if (set.articleFocus) {
+        const focus = document.createElement("section");
+        focus.className = "evidence-band article-focus";
+        focus.innerHTML = `<h3>${set.articleFocus.title || "今日の芯"}</h3>${renderBreathLines(set.articleFocus.text || "", set.articleFocus.breathLines)}`;
+        stageInner.appendChild(focus);
+      }
+      if (set.articleEvidence && set.articleEvidence.image) {
+        const evidence = document.createElement("section");
+        evidence.className = "evidence-band neutral article-evidence";
+        evidence.innerHTML = `
+          <h3>記事の証拠</h3>
+          <figure class="evidence-visual source-visual">
+            <p class="evidence-visual-label">新聞の該当記事</p>
+            <button class="source-button" type="button" aria-label="記事の証拠画像を高画質で開く"><img src="${set.articleEvidence.image}" alt="${set.articleEvidence.alt || set.title}"></button>
+            ${set.articleEvidence.caption ? `<figcaption>${renderBreathLines(set.articleEvidence.caption)}</figcaption>` : ""}
+          </figure>
+        `;
+        evidence.querySelector("button").addEventListener("click", () => openImageViewer(
+          set.articleEvidence.zoomImage || set.articleEvidence.image,
+          set.articleEvidence.alt || set.title,
+          set.articleEvidence.caption || ""
+        ));
+        stageInner.appendChild(evidence);
+      }
       addEvidenceBand(stageInner, "red", set.curiosityTitle || "赤：気になる原理", Array.isArray(set.curiosityPoints) ? set.curiosityPoints : []);
       addEvidenceBand(stageInner, "green", set.importantTitle || "緑：重要な原理", Array.isArray(set.importantPoints) ? set.importantPoints : []);
 
@@ -1482,6 +1614,12 @@
       }
       renderHeader(set);
       renderSetList();
+      const activeLens = activeMode === "recall"
+        ? (answerRevealed ? "principle" : "observation")
+        : ({ evidence: "principle", lab: "verification" }[activeMode] || "observation");
+      learningLens.querySelectorAll(".learning-lens").forEach((lens) => {
+        lens.classList.toggle("active", lens.dataset.lens === activeLens);
+      });
       document.querySelector(".app-shell").classList.toggle("lab-mode", activeMode === "lab");
       modeTabs.forEach((button) => {
         const active = button.dataset.mode === activeMode;
@@ -1654,13 +1792,13 @@
 
     if ("serviceWorker" in navigator && location.protocol !== "file:") {
       window.addEventListener("load", async () => {
-        const reloadKey = "nikkan-sw-reloaded-v41";
+        const reloadKey = "nikkan-sw-reloaded-v42";
         navigator.serviceWorker.addEventListener("controllerchange", () => {
           if (sessionStorage.getItem(reloadKey)) return;
           sessionStorage.setItem(reloadKey, "1");
           location.reload();
         });
-        const registration = await navigator.serviceWorker.register("./service-worker.js?v=41");
+        const registration = await navigator.serviceWorker.register("./service-worker.js?v=42");
         registration?.update?.();
       });
     }

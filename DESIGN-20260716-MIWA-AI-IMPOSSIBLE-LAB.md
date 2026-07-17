@@ -102,3 +102,54 @@ The animation must remain visible without hiding the photorealistic background.
 - Desktop 1520 x 912 and mobile 390 x 844 have no overlap or horizontal overflow.
 - Canvas pixels change over time and after interaction.
 - Public GitHub Pages serves the v40 asset and lab.
+
+## 2026-07-17 scientific visual learning redesign
+
+The July 17 update changes the whole app, not only the 3D tab.
+
+The shared learning lens is:
+
+`OBSERVE -> PRINCIPLE -> VERIFY -> INVENT`
+
+Every mode keeps the same visual language:
+
+- `OBSERVE`: what the newspaper or real device shows.
+- `PRINCIPLE`: the physical reason in one short breath.
+- `VERIFY`: a number, condition, or comparison that can be checked.
+- `INVENT`: the practical device idea that follows from the principle.
+
+The first viewport must make the current theme obvious before the learner reads
+longer text. The July 17 theme is optical fiber, AI data-center demand, InP
+transmitters, and liquid cooling.
+
+### Image roles
+
+- The newspaper crop remains evidence only.
+- The hero image is a realistic photonics laboratory scene.
+- Each revealed answer has one new explanation-specific realistic teaching image.
+- The three teaching images are never reused across answers or mixed with source crops.
+
+### Whole-app visual rules
+
+- Keep the invention-study background visible through every root-app surface.
+- Use a high-contrast graphite reading plane with paper-like text areas.
+- Use cyan for light/data, amber for heat/energy, green for verified result,
+  and red only for the curiosity marker.
+- Put the learning lens strip directly below the mode tabs so it remains visible
+  in recall, evidence, and lab views.
+- Use one main explanation column and one visual column on desktop.
+- Stack image before explanation on mobile.
+- Keep one visible line to one idea, with generous gaps between numbered items.
+- Never shrink text to fit a panel. Shorten or split it instead.
+- Teaching-diagram labels must be short Japanese phrases. English sentences are a hard fail; only necessary technical symbols such as `InP`, `GPU`, `AI`, `nm`, and `℃` may remain.
+
+### July 17 acceptance criteria
+
+- The current set is append-only and shows `作成日 2026-07-17`.
+- The first recall viewport shows the scientific learning lens and a readable question.
+- The evidence view shows the article crop at readable inline size, not only as a thumbnail.
+- Each of the three July 17 answers reveals a different teaching image.
+- The answer image appears inside the answer panel after the choice is checked.
+- Desktop 1520 x 912 and mobile 390 x 844 show no overlap or horizontal overflow.
+- The same whole-app background treatment is visible in recall, evidence, and lab.
+- The app remains usable if a previous set is selected.

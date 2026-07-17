@@ -2648,5 +2648,117 @@ window.NIKKAN_QUIZ_SETS = [
         caption: "電子が窒素の強い結合をゆるめ、反応を進める。"
       }
     ]
+  },
+  {
+    id: "2026-07-17-optical-fiber-ai-dc",
+    date: "2026-07-17",
+    difficulty: "入門",
+    strictVisuals: true,
+    title: "日刊工業新聞 7/17 光ファイバー・AI/DC特需 3問",
+    titleLines: ["日刊工業新聞 7/17", "光ファイバー・AI/DC特需", "原理をつかむ3問"],
+    shortTitle: "光ファイバー・AI/DC",
+    sourceLabel: "日刊工業新聞 2026/7/17 36面",
+    heroImage: "./assets/2026-07-17-hero-optical-ai-dc-lab.png",
+    heroAlt: "光ファイバー、光通信装置、AIデータセンター、冷却配管が並ぶフォトニクス研究室",
+    summary: [
+      { text: "AIデータセンターの通信量が増え、光ファイバー需要が伸びる。", breathLines: [{ text: "AIデータセンターの通信量が増える。" }, { text: "光ファイバーの需要が伸びる。" }] },
+      { text: "InP基板の増産や、光通信部品の供給拡大が進む。", breathLines: [{ text: "InP基板（インジウムリン基板）の増産が進む。" }, { text: "光通信部品の供給を増やす。" }] },
+      { text: "高密度化が進むほど、発熱を逃がす冷却設計も重要になる。", breathLines: [{ text: "高密度化で、装置の熱が増える。" }, { text: "通信と冷却を一体で考える。" }] }
+    ],
+    articleFocus: {
+      title: "今日の芯：通信・半導体・冷却を一つの系として見る",
+      breathLines: [
+        { label: "観察", text: "記事には、光ファイバー、InP基板、冷却製品が登場する。" },
+        { label: "原理", text: "AIの計算量が増えると、データを運ぶ道と熱を逃がす道が同時に必要になる。" },
+        { label: "発明", text: "光・電気・冷却を最初から一体設計すると、密度の高い装置を作りやすい。" }
+      ]
+    },
+    articleEvidence: {
+      image: "./assets/2026-07-17-optical-ai-dc-source.png",
+      zoomImage: "./assets/2026-07-17-optical-ai-dc-source.png",
+      alt: "日刊工業新聞7月17日 光ファイバー・AI/DC特需の記事部分",
+      caption: "出典：日刊工業新聞 2026年7月17日 36面。記事の証拠画像。"
+    },
+    curiosityPoints: [],
+    importantPoints: [],
+    glossary: [],
+    questions: [
+      {
+        id: "optical-fiber-parallel-channels",
+        tag: "光ファイバー",
+        difficulty: "入門",
+        question: "AIデータセンターで、光ファイバーの需要が増える根本理由は？",
+        hint: "遠くへ大量のデータを運ぶ道を考える。",
+        choices: [
+          "光を複数の道に分けて、同時に大量のデータを運べるから",
+          "光ファイバーなら、冷却装置が完全に不要になるから",
+          "光ファイバーだけで、AIの計算そのものができるから"
+        ],
+        correctIndex: 0,
+        answerTitle: "光は、並列の道を作れる",
+        principle: "複数の光信号を同時に通し、通信の詰まりを減らす。",
+        answerParagraphs: [
+          "記事の事実：AIデータセンター向けの光通信需要が拡大している。",
+          "光ファイバーは、光を細いガラスの中に閉じ込めて運ぶ。",
+          "複数のファイバーや波長を使うと、同時に運べる情報量が増える。",
+          "発明の種：計算機の近くまで光を引き、電気配線の距離を短くする。"
+        ],
+        image: "./assets/2026-07-17-q1-optical-fiber-capacity-teaching-ja.png",
+        zoomImage: "./assets/2026-07-17-q1-optical-fiber-capacity-teaching-ja.png",
+        imageAlt: "光ファイバーの断面、複数の光信号、AIデータセンターを示すリアル図解",
+        caption: "図解：一本のファイバーの中を光が進み、複数の道で容量を増やす。"
+      },
+      {
+        id: "inp-optical-transmitter-base",
+        tag: "InP基板",
+        difficulty: "入門",
+        question: "InP基板（インジウムリン基板）の役割に近いものは？",
+        hint: "電気の情報を、光の情報へ変える部品を考える。",
+        choices: [
+          "サーバーの熱を、水だけで冷やすための土台",
+          "電気信号を光に変える半導体レーザーを支える土台",
+          "光ファイバーの外側を守る黒い被覆"
+        ],
+        correctIndex: 1,
+        answerTitle: "InPは、光を生む半導体の土台",
+        principle: "半導体に電流を流し、光を作ってファイバーへ結合する。",
+        answerParagraphs: [
+          "記事の事実：InP基板を増産し、非中国製で安定供給を目指す。",
+          "InP（インジウムリン）は、光通信用レーザーなどに使われる半導体材料だ。",
+          "電気信号をレーザーの光へ変え、その光をファイバーへ入れる。",
+          "記事は個別製品の波長や性能までは特定していない。"
+        ],
+        image: "./assets/2026-07-17-q2-inp-optical-transmitter-teaching-ja.png",
+        zoomImage: "./assets/2026-07-17-q2-inp-optical-transmitter-teaching-ja.png",
+        imageAlt: "InP半導体レーザー、電気信号、変調光、光ファイバーを示すリアル図解",
+        caption: "図解：電気信号が半導体レーザーを動かし、変調された光がファイバーへ入る。"
+      },
+      {
+        id: "ai-data-center-cooling-path",
+        tag: "冷却設計",
+        difficulty: "入門",
+        question: "AI向け装置で、冷却が重要なのはなぜ？",
+        hint: "計算量が増えたとき、装置の中で増えるものを考える。",
+        choices: [
+          "冷却すると、データ量が自動で増えるから",
+          "冷却すると、光が電気に変わらなくなるから",
+          "発生した熱を外へ逃がし、温度上昇による不安定化を抑えるから"
+        ],
+        correctIndex: 2,
+        answerTitle: "計算が増えるほど、熱の道が必要になる",
+        principle: "熱を部品から冷却流体へ移し、温度を安定させる。",
+        answerParagraphs: [
+          "記事の事実：光通信の拡大とともに、冷却製品にも注力する。",
+          "AI計算や高速通信では、電気抵抗や部品動作によって熱が生まれる。",
+          "冷却板と流体の道を使うと、熱を熱交換器へ運びやすい。",
+          "記事は冷却製品への注力を示すが、具体的な方式や温度条件までは示していない。",
+          "発明の種：光・計算・冷却を一つのモジュールとして設計する。"
+        ],
+        image: "./assets/2026-07-17-q3-liquid-cooling-teaching-ja.png",
+        zoomImage: "./assets/2026-07-17-q3-liquid-cooling-teaching-ja.png",
+        imageAlt: "AIサーバーの発熱、冷却板、冷却流体、熱交換器を示すリアル図解",
+        caption: "図解：発熱を冷却板で受け、流体で熱交換器へ運び、安定動作につなげる。"
+      }
+    ]
   }
 ];
