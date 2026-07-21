@@ -1216,7 +1216,7 @@
     </div>
   </div>
 
-  <script src="./quiz-data.js?v=43"></script>
+  <script src="./quiz-data.js?v=44"></script>
   <script>
     const quizSets = window.NIKKAN_QUIZ_SETS || [];
     const storageKey = "nikkan-manufacturing-review-quiz-library-v2";
@@ -1550,7 +1550,7 @@
         stage.classList.add("lab-active");
         const iframe = document.createElement("iframe");
         iframe.className = "lab-frame";
-        iframe.src = "./multifinger-hand-3d/index.html?v=43";
+        iframe.src = "./multifinger-hand-3d/index.html?v=44";
         iframe.title = "Honda多指ハンド・触覚 3Dラボ";
         iframe.loading = "eager";
         stageInner.appendChild(iframe);
@@ -1802,13 +1802,13 @@
 
     if ("serviceWorker" in navigator && location.protocol !== "file:") {
       window.addEventListener("load", async () => {
-        const reloadKey = "nikkan-sw-reloaded-v43";
+        const reloadKey = "nikkan-sw-reloaded-v44";
         navigator.serviceWorker.addEventListener("controllerchange", () => {
           if (sessionStorage.getItem(reloadKey)) return;
           sessionStorage.setItem(reloadKey, "1");
           location.reload();
         });
-        const registration = await navigator.serviceWorker.register("./service-worker.js?v=43");
+        const registration = await navigator.serviceWorker.register("./service-worker.js?v=44");
         registration?.update?.();
       });
     }
