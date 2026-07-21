@@ -2668,9 +2668,14 @@ window.NIKKAN_QUIZ_SETS = [
     articleFocus: {
       title: "今日の芯：通信・半導体・冷却を一つの系として見る",
       breathLines: [
-        { label: "観察", text: "記事には、光ファイバー、InP基板、冷却製品が登場する。" },
-        { label: "原理", text: "AIの計算量が増えると、データを運ぶ道と熱を逃がす道が同時に必要になる。" },
-        { label: "発明", text: "光・電気・冷却を最初から一体設計すると、密度の高い装置を作りやすい。" }
+        { label: "観察", text: "記事には、光ファイバーが登場する。" },
+        { text: "InP基板と冷却製品も登場する。" },
+        { label: "原理", text: "AIの計算量が増えると、" },
+        { text: "データを運ぶ道が必要になる。" },
+        { text: "熱を逃がす道も同時に必要になる。" },
+        { label: "発明", text: "光・電気・冷却を一体で考える。" },
+        { text: "最初から一体設計すると、" },
+        { text: "密度の高い装置を作りやすい。" }
       ]
     },
     articleEvidence: {
@@ -2698,10 +2703,14 @@ window.NIKKAN_QUIZ_SETS = [
         answerTitle: "光は、並列の道を作れる",
         principle: "複数の光信号を同時に通し、通信の詰まりを減らす。",
         answerParagraphs: [
-          "記事の事実：AIデータセンター向けの光通信需要が拡大している。",
-          "光ファイバーは、光を細いガラスの中に閉じ込めて運ぶ。",
-          "複数のファイバーや波長を使うと、同時に運べる情報量が増える。",
-          "発明の種：計算機の近くまで光を引き、電気配線の距離を短くする。"
+          "記事の事実：光通信需要が拡大する。",
+          "AIデータセンター向けの需要だ。",
+          "光ファイバーは、光を運ぶ。",
+          "細いガラスの中に閉じ込める。",
+          "複数のファイバーや波長を使う。",
+          "同時に運べる情報量が増える。",
+          "発明の種：計算機の近くまで光を引く。",
+          "電気配線の距離を短くする。"
         ],
         image: "./assets/2026-07-17-q1-optical-fiber-capacity-teaching-ja.png",
         zoomImage: "./assets/2026-07-17-q1-optical-fiber-capacity-teaching-ja.png",
@@ -2723,10 +2732,14 @@ window.NIKKAN_QUIZ_SETS = [
         answerTitle: "InPは、光を生む半導体の土台",
         principle: "半導体に電流を流し、光を作ってファイバーへ結合する。",
         answerParagraphs: [
-          "記事の事実：InP基板を増産し、非中国製で安定供給を目指す。",
-          "InP（インジウムリン）は、光通信用レーザーなどに使われる半導体材料だ。",
-          "電気信号をレーザーの光へ変え、その光をファイバーへ入れる。",
-          "記事は個別製品の波長や性能までは特定していない。"
+          "記事の事実：InP基板を増産する。",
+          "非中国製で安定供給を目指す。",
+          "InP（インジウムリン）は、半導体材料だ。",
+          "光通信用レーザーなどに使われる。",
+          "電気信号をレーザーの光へ変える。",
+          "その光をファイバーへ入れる。",
+          "記事では、個別製品の波長や性能を",
+          "特定していない。"
         ],
         image: "./assets/2026-07-17-q2-inp-optical-transmitter-teaching-ja.png",
         zoomImage: "./assets/2026-07-17-q2-inp-optical-transmitter-teaching-ja.png",
@@ -2748,16 +2761,135 @@ window.NIKKAN_QUIZ_SETS = [
         answerTitle: "計算が増えるほど、熱の道が必要になる",
         principle: "熱を部品から冷却流体へ移し、温度を安定させる。",
         answerParagraphs: [
-          "記事の事実：光通信の拡大とともに、冷却製品にも注力する。",
-          "AI計算や高速通信では、電気抵抗や部品動作によって熱が生まれる。",
-          "冷却板と流体の道を使うと、熱を熱交換器へ運びやすい。",
-          "記事は冷却製品への注力を示すが、具体的な方式や温度条件までは示していない。",
-          "発明の種：光・計算・冷却を一つのモジュールとして設計する。"
+          "記事の事実：光通信が拡大する。",
+          "冷却製品にも注力する。",
+          "AI計算や高速通信では熱が生まれる。",
+          "電気抵抗や部品動作が原因になる。",
+          "冷却板と流体の道を使う。",
+          "熱を熱交換器へ運びやすい。",
+          "記事は冷却製品への注力を示す。",
+          "具体的な方式や温度条件は、",
+          "記事では示していない。",
+          "発明の種：光・計算・冷却をまとめる。",
+          "一つのモジュールとして設計する。"
         ],
         image: "./assets/2026-07-17-q3-liquid-cooling-teaching-ja.png",
         zoomImage: "./assets/2026-07-17-q3-liquid-cooling-teaching-ja.png",
         imageAlt: "AIサーバーの発熱、冷却板、冷却流体、熱交換器を示すリアル図解",
         caption: "図解：発熱を冷却板で受け、流体で熱交換器へ運び、安定動作につなげる。"
+      }
+    ]
+  },
+  {
+    id: "2026-07-21-honda-multifinger-tactile-hand",
+    date: "2026-07-21",
+    difficulty: "入門",
+    strictVisuals: true,
+    title: "日刊工業新聞 7/21 多指ハンド・触覚 3問",
+    titleLines: ["日刊工業新聞 7/21", "多指ハンド・触覚", "原理をつかむ3問"],
+    shortTitle: "多指ハンド・触覚",
+    sourceLabel: "日刊工業新聞 2026/7/21 広告特集 8面「注目のロボット・自動化技術」",
+    heroImage: "./assets/2026-07-21-hero-honda-multifinger-lab.png",
+    heroAlt: "現在のロボティクス研究室で、4本指のロボットハンドがコインをつまむ様子",
+    summary: [
+      { text: "Honda R&Dが4本指ハンドを展示。工場・医療・遠隔作業を目指す。", breathLines: [{ text: "Honda R&Dが4本指ハンドを展示。" }, { text: "工場・医療・遠隔作業を目指す。" }] },
+      { text: "新聞では手首込み18自由度。指先の6軸力センサーで力を測る。", breathLines: [{ text: "新聞では手首込み18自由度。" }, { text: "指先の6軸力センサーで力を測る。" }] },
+      { text: "画像だけでなく触覚を戻し、握る力を直す。", breathLines: [{ text: "画像だけでなく触覚を戻す。" }, { text: "握る力を直す。" }] }
+    ],
+    articleFocus: {
+      title: "今日の芯：見る制御に、触る制御を足す",
+      breathLines: [
+        { label: "新聞", text: "手首込み18自由度。指先で3次元の力を検知。" },
+        { label: "Honda公式", text: "手は16駆動関節。触覚は288チャンネル。" },
+        { label: "原理", text: "触覚を戻し、握る力を直す。" }
+      ]
+    },
+    articleEvidence: {
+      image: "./assets/2026-07-21-honda-multifinger-source.jpg",
+      zoomImage: "./assets/2026-07-21-honda-multifinger-source.jpg",
+      alt: "日刊工業新聞2026年7月21日広告特集8面「注目のロボット・自動化技術」に掲載されたHonda R&Dの4本指ロボットハンドの記事",
+      caption: "出典：日刊工業新聞 2026年7月21日。広告特集8面。4本指、18自由度、6軸力センサーの記事。"
+    },
+    curiosityPoints: [],
+    importantPoints: [],
+    glossary: [],
+    questions: [
+      {
+        id: "hand-degree-range-comparison",
+        tag: "多指ハンド",
+        difficulty: "入門",
+        question: "新聞の18自由度と、Honda公式の16駆動関節を、そのまま比べられないのは？",
+        hint: "何を数えた数字かを見る。",
+        choices: [
+          "新聞は手首込み。公式は手の駆動関節だから",
+          "Hondaが指を2本外したから",
+          "6軸センサーを関節として数えたから"
+        ],
+        correctIndex: 0,
+        answerTitle: "数えている範囲が違う",
+        principle: "数える範囲が違う。",
+        answerParagraphs: [
+          "新聞：手首込みで18自由度。",
+          "Honda公式：手は16駆動関節。",
+          "同じ範囲の数字ではない。",
+          "何を数えたかを先に見る。"
+        ],
+        image: "./assets/2026-07-21-q1-hand-mechanism-teaching-ja.png",
+        zoomImage: "./assets/2026-07-21-q1-hand-mechanism-teaching-ja.png",
+        imageAlt: "新聞は手首込み18自由度、Honda公式は手の16駆動関節で、数える範囲が違うことを示す日本語図解",
+        caption: "新聞は手首込み。Honda公式は手の駆動関節。18と16を、そのまま比べない。"
+      },
+      {
+        id: "six-axis-force-torque-sensing",
+        tag: "6軸力覚",
+        difficulty: "入門",
+        question: "指先の6軸力センサーが測るものは？",
+        hint: "押す力だけでなく、ねじる力も考える。",
+        choices: [
+          "物の色と、表面の模様",
+          "3方向の力と、3方向の回す力",
+          "モーターの温度だけ"
+        ],
+        correctIndex: 1,
+        answerTitle: "6軸は、力3つと回転3つ",
+        principle: "力3方向と回す力3方向で、接触を測る。",
+        answerParagraphs: [
+          "新聞の事実：指先で3次元の力を検知。",
+          "工学では、力を3方向に分ける。",
+          "回す力も、3方向に分ける。",
+          "合わせて、6軸の信号になる。",
+          "接触の向きと強さをつかめる。"
+        ],
+        image: "./assets/2026-07-21-q2-six-axis-force-teaching-ja.png",
+        zoomImage: "./assets/2026-07-21-q2-six-axis-force-teaching-ja.png",
+        imageAlt: "指先の6軸力センサーが3方向の力と3方向の回す力を測る図解",
+        caption: "力は、3方向。回す力も、3方向。合わせて、6軸。"
+      },
+      {
+        id: "tactile-closed-loop-grasp",
+        tag: "触覚制御",
+        difficulty: "入門",
+        question: "つぶれやすいコップをつかむとき、触覚の強みは？",
+        hint: "つかんだ後に、何を確かめるか考える。",
+        choices: [
+          "触る前に、材質を完全に当てる",
+          "カメラなしで、周囲を全部見る",
+          "接触を測り、握る力を直す"
+        ],
+        correctIndex: 2,
+        answerTitle: "触覚で、握る力を直す",
+        principle: "測る、比べる、直すを繰り返す。",
+        answerParagraphs: [
+          "新聞の事実：触覚データを活用する。",
+          "画像中心では難しい作業を目指す。",
+          "Honda公式：接触状態を確認する。",
+          "必要なら、力のバランスを修正する。",
+          "工学の推論：滑りや破損の危険を減らせる。"
+        ],
+        image: "./assets/2026-07-21-q3-tactile-feedback-teaching-ja.png",
+        zoomImage: "./assets/2026-07-21-q3-tactile-feedback-teaching-ja.png",
+        imageAlt: "ロボットの指先がコップとの接触を測り、握る力を調整してつぶれや滑りを防ぐ図解",
+        caption: "接触を測る。握る力を比べる。必要なら、力を直す。"
       }
     ]
   }
