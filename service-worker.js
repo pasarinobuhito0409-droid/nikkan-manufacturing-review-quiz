@@ -1,9 +1,9 @@
-const CACHE_NAME = "nikkan-manufacturing-review-quiz-v45";
+const CACHE_NAME = "nikkan-manufacturing-review-quiz-v46";
 
 const PRECACHE_ASSETS = [
   "./",
   "./index.html",
-  "./quiz-data.js?v=45",
+  "./quiz-data.js?v=46",
   "./manifest.webmanifest",
   "./service-worker.js",
   "./assets/icon.svg",
@@ -14,6 +14,9 @@ const PRECACHE_ASSETS = [
   "./assets/2026-07-21-q1-hand-mechanism-teaching-ja.png",
   "./assets/2026-07-21-q2-six-axis-force-teaching-ja.png",
   "./assets/2026-07-21-q3-tactile-feedback-teaching-ja.png",
+  "./assets/2026-07-22-nec-3d-marked-source.png",
+  "./assets/2026-07-22-green-smartphone-3d-principle-teaching-ja.png",
+  "./assets/2026-07-22-green-smartphone-3d-source.png",
   "./assets/2026-07-22-nec-3d-source.png",
   "./assets/2026-07-22-hero-nec-gaussian-3d-lab.png",
   "./assets/2026-07-22-q1-gaussian-density-teaching-ja.png",

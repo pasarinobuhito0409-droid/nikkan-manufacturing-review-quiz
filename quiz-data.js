@@ -2918,14 +2918,50 @@ window.NIKKAN_QUIZ_SETS = [
       ]
     },
     articleEvidence: {
-      image: "./assets/2026-07-22-nec-3d-source.png",
-      zoomImage: "./assets/2026-07-22-nec-3d-source.png",
-      alt: "日刊工業新聞2026年7月22日11面のスマホ映像3D化の記事",
-      caption: "出典：日刊工業新聞 2026年7月22日11面。NEC公式発表を併記。"
+      image: "./assets/2026-07-22-nec-3d-marked-source.png",
+      zoomImage: "./assets/2026-07-22-nec-3d-marked-source.png",
+      alt: "ユーザーが緑と黄色で印を付けた日刊工業新聞2026年7月22日の記事",
+      caption: "ユーザーが7月22日の記事に付けた印。"
     },
     curiosityPoints: [],
-    importantPoints: [],
-    glossary: [],
+    importantTitle: "緑：重要な原理",
+    importantPoints: [
+      {
+        title: "緑：スマホ映像から、約1分で高精細3D",
+        text: "必要な情報へ計算を集中し、スマホ映像を約1分で高精細3Dにする。",
+        breathLines: [
+          { label: "入力", text: "汎用カメラの映像を使う。" },
+          { label: "整理", text: "作業員や一時物を除く。" },
+          { label: "表現", text: "細部へ粒を多く置く。" },
+          { label: "結果", text: "最短約1分で3D化。" },
+          { label: "原理", text: "必要な情報へ計算を集中。" },
+          { label: "発明の種", text: "止めない現場の遠隔点検。" }
+        ],
+        teachingImage: "./assets/2026-07-22-green-smartphone-3d-principle-teaching-ja.png",
+        teachingZoomImage: "./assets/2026-07-22-green-smartphone-3d-principle-teaching-ja.png",
+        teachingImageAlt: "スマホ映像を整理し、粒を集中して3D化する図解",
+        teachingImageCaption: "必要な情報へ粒と計算を集中し、約1分で3D化。",
+        image: "./assets/2026-07-22-green-smartphone-3d-source.png",
+        zoomImage: "./assets/2026-07-22-green-smartphone-3d-source.png",
+        imageAlt: "緑マーク付きのスマホ映像3D化記事の原典切り出し",
+        caption: "緑マーク付きの原典切り出し。スマホ映像から約1分で3D化。"
+      }
+    ],
+    glossaryTitle: "黄：読みと意味",
+    glossary: [
+      {
+        term: "ガウシアン・スプラッティング（がうしあん・すぷらってぃんぐ）",
+        meaning: "広がりのある小さな粒を重ね、写真のような3Dを軽く表す方法。",
+        breathLines: [
+          { text: "広がりのある小さな粒を、" },
+          { text: "たくさん置く。" },
+          { text: "粒の色・大きさ・向きを重ねる。" },
+          { text: "立体の見え方を作る。" },
+          { text: "写真のような3Dを、" },
+          { text: "軽く表せる。" }
+        ]
+      }
+    ],
     questions: [
       {
         id: "gaussian-density-optimization",

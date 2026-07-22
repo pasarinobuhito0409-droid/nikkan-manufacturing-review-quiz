@@ -1096,10 +1096,6 @@
       .evidence-row .source-visual { margin-top: 28px; }
     }
 
-    .evidence-band.red h3::before { content: "赤・気になる原理　"; }
-    .evidence-band.green h3::before { content: "緑・重要な原理　"; }
-    .evidence-band.amber h3::before { content: "黄・読みと意味　"; }
-
     .result-flash.playing .result-flash-card { animation: result-arrive .9s ease both; }
 
     @keyframes result-arrive {
@@ -1216,7 +1212,7 @@
     </div>
   </div>
 
-  <script src="./quiz-data.js?v=45"></script>
+  <script src="./quiz-data.js?v=46"></script>
   <script>
     const quizSets = window.NIKKAN_QUIZ_SETS || [];
     const storageKey = "nikkan-manufacturing-review-quiz-library-v2";
@@ -1550,7 +1546,7 @@
         stage.classList.add("lab-active");
         const iframe = document.createElement("iframe");
         iframe.className = "lab-frame";
-        iframe.src = "./gaussian-site-3d/index.html?v=45";
+        iframe.src = "./gaussian-site-3d/index.html?v=46";
         iframe.title = "スマホ映像から3D化する原理 3Dラボ";
         iframe.loading = "eager";
         stageInner.appendChild(iframe);
@@ -1812,13 +1808,13 @@
 
     if ("serviceWorker" in navigator && location.protocol !== "file:") {
       window.addEventListener("load", async () => {
-        const reloadKey = "nikkan-sw-reloaded-v45";
+        const reloadKey = "nikkan-sw-reloaded-v46";
         navigator.serviceWorker.addEventListener("controllerchange", () => {
           if (sessionStorage.getItem(reloadKey)) return;
           sessionStorage.setItem(reloadKey, "1");
           location.reload();
         });
-        const registration = await navigator.serviceWorker.register("./service-worker.js?v=45");
+        const registration = await navigator.serviceWorker.register("./service-worker.js?v=46");
         registration?.update?.();
       });
     }
