@@ -1216,7 +1216,7 @@
     </div>
   </div>
 
-  <script src="./quiz-data.js?v=44"></script>
+  <script src="./quiz-data.js?v=45"></script>
   <script>
     const quizSets = window.NIKKAN_QUIZ_SETS || [];
     const storageKey = "nikkan-manufacturing-review-quiz-library-v2";
@@ -1546,11 +1546,21 @@
 
     function renderLab(set) {
       stageInner.innerHTML = "";
+      if (set && set.id === "2026-07-22-nec-smartphone-gaussian-3d") {
+        stage.classList.add("lab-active");
+        const iframe = document.createElement("iframe");
+        iframe.className = "lab-frame";
+        iframe.src = "./gaussian-site-3d/index.html?v=45";
+        iframe.title = "スマホ映像から3D化する原理 3Dラボ";
+        iframe.loading = "eager";
+        stageInner.appendChild(iframe);
+        return;
+      }
       if (set && set.id === "2026-07-21-honda-multifinger-tactile-hand") {
         stage.classList.add("lab-active");
         const iframe = document.createElement("iframe");
         iframe.className = "lab-frame";
-        iframe.src = "./multifinger-hand-3d/index.html?v=44";
+        iframe.src = "./multifinger-hand-3d/index.html?v=45";
         iframe.title = "Honda多指ハンド・触覚 3Dラボ";
         iframe.loading = "eager";
         stageInner.appendChild(iframe);
@@ -1802,13 +1812,13 @@
 
     if ("serviceWorker" in navigator && location.protocol !== "file:") {
       window.addEventListener("load", async () => {
-        const reloadKey = "nikkan-sw-reloaded-v44";
+        const reloadKey = "nikkan-sw-reloaded-v45";
         navigator.serviceWorker.addEventListener("controllerchange", () => {
           if (sessionStorage.getItem(reloadKey)) return;
           sessionStorage.setItem(reloadKey, "1");
           location.reload();
         });
-        const registration = await navigator.serviceWorker.register("./service-worker.js?v=44");
+        const registration = await navigator.serviceWorker.register("./service-worker.js?v=45");
         registration?.update?.();
       });
     }

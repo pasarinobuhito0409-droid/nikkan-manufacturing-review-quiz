@@ -2892,5 +2892,104 @@ window.NIKKAN_QUIZ_SETS = [
         caption: "接触を測る。握る力を比べる。必要なら、力を直す。"
       }
     ]
+  },
+  {
+    id: "2026-07-22-nec-smartphone-gaussian-3d",
+    date: "2026-07-22",
+    difficulty: "入門",
+    strictVisuals: true,
+    title: "日刊工業新聞 7/22 スマホ映像・1分で3D 3問",
+    titleLines: ["日刊工業新聞 7/22", "スマホ映像・1分で3D", "原理をつかむ3問"],
+    shortTitle: "スマホ映像・1分で3D",
+    sourceLabel: "日刊工業新聞 2026/7/22 11面・NEC公式 2026/7/14",
+    heroImage: "./assets/2026-07-22-hero-nec-gaussian-3d-lab.png",
+    heroAlt: "スマホ映像から設備の3Dを作る日本語図解",
+    summary: [
+      { text: "スマホ映像だけで、最短約1分で3D化。", breathLines: [{ text: "スマホ映像だけで、3D化。" }, { text: "最短約1分。" }] },
+      { text: "細かい所は、粒を多く置く。", breathLines: [{ text: "細かい所は、粒を多く置く。" }] },
+      { text: "動く作業員を除き、背景を補う。", breathLines: [{ text: "動く作業員を除く。" }, { text: "周囲の映像で、背景を補う。" }] }
+    ],
+    articleFocus: {
+      title: "今日の芯：必要な所だけ残す",
+      breathLines: [
+        { label: "事実", text: "従来比10分の1。最短約1分。" },
+        { label: "原理", text: "細部は粒を多く。単純な所は少なく。" },
+        { label: "用途", text: "現場を止めず、遠隔点検。" }
+      ]
+    },
+    articleEvidence: {
+      image: "./assets/2026-07-22-nec-3d-source.png",
+      zoomImage: "./assets/2026-07-22-nec-3d-source.png",
+      alt: "日刊工業新聞2026年7月22日11面のスマホ映像3D化の記事",
+      caption: "出典：日刊工業新聞 2026年7月22日11面。NEC公式発表を併記。"
+    },
+    curiosityPoints: [],
+    importantPoints: [],
+    glossary: [],
+    questions: [
+      {
+        id: "gaussian-density-optimization",
+        tag: "粒の密度",
+        difficulty: "入門",
+        question: "細かさと速さを両立する粒の置き方は？",
+        hint: "細かい場所と、単純な場所を分ける。",
+        choices: ["全部を同じ密度にする", "細かい所は多く、単純な所は少なく", "平らな所だけ多くする"],
+        correctIndex: 1,
+        answerTitle: "必要な所へ、粒を集める",
+        principle: "複雑な所へ粒を集める。",
+        answerParagraphs: [
+          "見た目の複雑さを調べる。",
+          "圧力計や配管の角は粒を増やす。",
+          "単純な壁は粒を減らす。",
+          "だから細かさを保ち、速く作れる。"
+        ],
+        image: "./assets/2026-07-22-q1-gaussian-density-teaching-ja.png",
+        zoomImage: "./assets/2026-07-22-q1-gaussian-density-teaching-ja.png",
+        imageAlt: "細かい設備へ粒を多く置き、単純な壁を少なくする日本語図解",
+        caption: "細部は粒を多く。単純な面は粒を少なく。"
+      },
+      {
+        id: "transient-worker-removal",
+        tag: "不要物除去",
+        difficulty: "入門",
+        question: "動く作業員が写ったとき、設備だけの3Dにする方法は？",
+        hint: "一時的に写った物を取り除く。",
+        choices: ["人も設備として固定する", "すべての映像を捨てる", "人を除き、別の角度で背景を補う"],
+        correctIndex: 2,
+        answerTitle: "人を除き、背景を補う",
+        principle: "一時物を除き、見えない背景を補う。",
+        answerParagraphs: [
+          "作業員や一時物を見つける。",
+          "3Dを作る途中で除く。",
+          "隠れた所は周囲の映像で補う。",
+          "稼働中の現場も3D化できる。"
+        ],
+        image: "./assets/2026-07-22-q2-transient-removal-teaching-ja.png",
+        zoomImage: "./assets/2026-07-22-q2-transient-removal-teaching-ja.png",
+        imageAlt: "動く作業員を除き、別角度の映像で設備の背景を補う日本語図解",
+        caption: "作業員を除く。別角度の映像で背景を補う。"
+      },
+      {
+        id: "free-viewpoint-remote-inspection",
+        tag: "遠隔点検",
+        difficulty: "入門",
+        question: "普通の動画より、3Dが遠隔点検に向く理由は？",
+        hint: "撮影後に視点を変えられるか考える。",
+        choices: ["あとから好きな視点で見られる", "必ず故障を自動修理する", "現場の音を完全に再現する"],
+        correctIndex: 0,
+        answerTitle: "あとから視点を変えられる",
+        principle: "3Dなら、後から視点を動かせる。",
+        answerParagraphs: [
+          "動画は撮った向きだけ。",
+          "3Dはあとから回して見られる。",
+          "圧力計やバルブを別の角度で確認。",
+          "遠隔で点検と判断がしやすい。"
+        ],
+        image: "./assets/2026-07-22-q3-remote-inspection-teaching-ja.png",
+        zoomImage: "./assets/2026-07-22-q3-remote-inspection-teaching-ja.png",
+        imageAlt: "3D設備を遠隔で回し、圧力計とバルブを別角度から点検する日本語図解",
+        caption: "3Dを回す。別角度から、設備を点検する。"
+      }
+    ]
   }
 ];
