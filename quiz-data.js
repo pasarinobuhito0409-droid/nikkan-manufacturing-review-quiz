@@ -3027,5 +3027,313 @@ window.NIKKAN_QUIZ_SETS = [
         caption: "3Dを回す。別角度から、設備を点検する。"
       }
     ]
+  },
+  {
+    id: "2026-07-24-ai-speed-vs-work-removal",
+    date: "2026-07-24",
+    sourceDate: "2026-07-23",
+    difficulty: "入門",
+    strictVisuals: true,
+    paperTheater: {
+      frameCount: 4,
+      phases: ["what", "how", "why", "result"]
+    },
+    title: "日刊工業新聞 7/23 AI時短と仕事削減 3問",
+    titleLines: ["日刊工業新聞 7/23", "AI時短と仕事削減", "紙芝居で原理をつかむ3問"],
+    shortTitle: "AI時短と仕事削減",
+    sourceLabel: "日刊工業新聞 2026/7/23 ビジネスナビ「AI入れたのに残業が減らない」",
+    heroImage: "./assets/2026-07-24-hero-ai-work-reduction-lab.png",
+    heroAlt: "AIで作業を速くし、不要な定例業務を減らす現代の職場を描いた日本語図解",
+    summary: [
+      {
+        text: "生成AIは、1件の作業を速くする。仕事の数は自動で減らない。",
+        breathLines: [
+          { text: "AIで1件は速くなる。" },
+          { text: "仕事の数は、残る。" }
+        ]
+      },
+      {
+        text: "仕事ごとの時間と、出力が実際に使われたかを測る。",
+        breathLines: [
+          { text: "仕事ごとの時間を測る。" },
+          { text: "使われたかも確かめる。" }
+        ]
+      },
+      {
+        text: "低価値の定例業務は、リーダーが止める・減らす。",
+        breathLines: [
+          { text: "低価値の仕事を探す。" },
+          { text: "リーダーが止める。" }
+        ]
+      }
+    ],
+    articleFocus: {
+      title: "今日の芯：速くするだけでは、残業は減らない",
+      breathLines: [
+        { label: "事実", text: "AIで、1件の作業は速くなる。" },
+        { label: "測定", text: "時間と、利用実績を測る。" },
+        { label: "判断", text: "低価値の仕事を止める。" }
+      ]
+    },
+    articleEvidence: {
+      image: "./assets/2026-07-24-ai-overtime-marked-source.png",
+      zoomImage: "./assets/2026-07-24-ai-overtime-marked-source.png",
+      alt: "ユーザーが緑で印を付けた日刊工業新聞2026年7月23日のAI活用記事",
+      caption: "緑マーカー付きの原典。AI時短と仕事削減の違いを示す記事。",
+      evidenceOnly: true
+    },
+    curiosityPoints: [],
+    importantTitle: "緑：速くするだけでは、仕事は減らない",
+    importantPoints: [
+      {
+        title: "緑：AI時短と、仕事削減を分ける",
+        text: "AIで作業を速くするだけでは、仕事の数は減らない。時間と利用実績を測り、低価値の定例業務を止める。",
+        breathLines: [
+          { label: "① 何か", text: "AIで1件は速くなる。" },
+          { label: "② どう測る？", text: "時間と利用実績を見る。" },
+          { label: "③ なぜ？", text: "低価値の仕事を見つける。" },
+          { label: "④ 結果", text: "仕事を減らし、残業を減らす。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "何が起きている？",
+            image: "./assets/2026-07-24-green-01-what.png",
+            zoomImage: "./assets/2026-07-24-green-01-what.png",
+            imageAlt: "AIで報告書1件は速くなったが、定例業務の束が残り、社員が残業している職場",
+            caption: "AIで1件は速い。仕事の数は、まだ同じ。",
+            labels: ["① 何か", "AIで1件は速い", "仕事の数は同じ", "残業が残る"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "どう測る？",
+            image: "./assets/2026-07-24-green-02-how.png",
+            zoomImage: "./assets/2026-07-24-green-02-how.png",
+            imageAlt: "リーダーが業務板に仕事名、週の時間、利用者、担当者を記録している職場",
+            caption: "仕事ごとに、時間と利用実績を測る。",
+            labels: ["② どう測る？", "仕事名", "週の時間", "誰が使う？", "担当者"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "なぜ見る？",
+            image: "./assets/2026-07-24-green-03-why.png",
+            zoomImage: "./assets/2026-07-24-green-03-why.png",
+            imageAlt: "45分かかる週次報告が未読棚に残り、低い利用価値の候補として示される職場",
+            caption: "長くかかるのに、使われない仕事を見つける。",
+            labels: ["③ なぜ？", "45分使う", "閲覧0回", "価値が低い"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "どう変わる？",
+            image: "./assets/2026-07-24-green-04-result.png",
+            zoomImage: "./assets/2026-07-24-green-04-result.png",
+            imageAlt: "週次報告を停止し、減った時間を企画と育成へ移して定時に帰る職場",
+            caption: "止める決断で、空いた時間を重要な仕事へ回す。",
+            labels: ["④ 結果", "週次報告を停止", "8件→5件", "週300分→180分", "企画・育成へ"],
+            result: true
+          }
+        ]
+      }
+    ],
+    glossaryTitle: "黄：読みと意味",
+    glossary: [],
+    questions: [
+      {
+        id: "ai-speed-does-not-remove-work",
+        tag: "AI時短と仕事の数",
+        difficulty: "入門",
+        question: "生成AIで資料作成が速くなっても、残業が減らない主な理由は？",
+        hint: "1件の速さと、仕事全体の数を分けて考える。",
+        choices: [
+          "AIの速度を毎月上げていないから",
+          "1件は速くても、仕事の数や回数が残るから",
+          "全員が同じ指示文を使わないから"
+        ],
+        correctIndex: 1,
+        answerTitle: "速くなっても、仕事の数は残る",
+        principle: "時短と仕事削減は、別の操作。",
+        answerParagraphs: [
+          "AIは、1件の作業を速くする。",
+          "しかし、定例業務の数は自動で消えない。",
+          "確認、承認、提出も残る。",
+          "だから仕事を減らす判断が必要。"
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "何が起きている？",
+            image: "./assets/2026-07-24-q1-01-what.png",
+            zoomImage: "./assets/2026-07-24-q1-01-what.png",
+            imageAlt: "AIを使う社員の机と、8件の定例業務フォルダーが残る職場",
+            caption: "AIを使っても、8件の仕事が並んでいる。",
+            labels: ["① 何か", "1件30分→10分", "8件は残る"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "どう残る？",
+            image: "./assets/2026-07-24-q1-02-how.png",
+            zoomImage: "./assets/2026-07-24-q1-02-how.png",
+            imageAlt: "月曜日に新しい定例業務が再び届き、仕事の列が続いている現場",
+            caption: "毎週、同じ仕事がまた発生する。",
+            labels: ["② どう残る？", "毎週また発生", "自動では消えない", "8件の責任"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "なぜ減らない？",
+            image: "./assets/2026-07-24-q1-03-why.png",
+            zoomImage: "./assets/2026-07-24-q1-03-why.png",
+            imageAlt: "AIが資料を作った後も、人が確認、承認、提出を続けている職場",
+            caption: "作成が速くても、後工程は残る。",
+            labels: ["③ なぜ？", "確認", "承認", "提出", "仕事全体は残る"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "どうすれば減る？",
+            image: "./assets/2026-07-24-q1-04-result.png",
+            zoomImage: "./assets/2026-07-24-q1-04-result.png",
+            imageAlt: "AI高速化と不要業務の削減を組み合わせ、仕事が8件から5件になった職場",
+            caption: "速くするだけでなく、仕事そのものを減らす。",
+            labels: ["④ 結果", "速くする＋減らす", "8件→5件", "週150分→90分"],
+            result: true
+          }
+        ]
+      },
+      {
+        id: "measure-time-and-use",
+        tag: "仕事の測定",
+        difficulty: "入門",
+        question: "見直す定例業務を選ぶとき、先に測る組み合わせは？",
+        hint: "忙しさだけでなく、時間と使われ方を見る。",
+        choices: [
+          "担当者の年齢とAI使用回数",
+          "ページ数とファイル容量",
+          "作業時間と、出力が実際に使われたか"
+        ],
+        correctIndex: 2,
+        answerTitle: "時間と、使われたかを測る",
+        principle: "時間と利用実績で、見直す仕事を選ぶ。",
+        answerParagraphs: [
+          "仕事ごとに、かかった時間を記録する。",
+          "成果物が誰かに使われたかを見る。",
+          "長時間で未使用なら、見直し候補。",
+          "長くても必要なら、残す候補。"
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "何が問題？",
+            image: "./assets/2026-07-24-q2-01-what.png",
+            zoomImage: "./assets/2026-07-24-q2-01-what.png",
+            imageAlt: "忙しそうな職場を見ても、どの定例業務に価値があるか分からない管理者",
+            caption: "忙しそう、だけでは価値は分からない。",
+            labels: ["① 何か", "忙しそうだけでは不明", "時間と利用を測る"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "どう測る？",
+            image: "./assets/2026-07-24-q2-02-how.png",
+            zoomImage: "./assets/2026-07-24-q2-02-how.png",
+            imageAlt: "担当者がタイマーで作業時間を測り、報告書の閲覧記録を確認している職場",
+            caption: "開始と終了、閲覧の有無を記録する。",
+            labels: ["② どう測る？", "開始", "終了", "作業45分", "閲覧0回"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "なぜ両方？",
+            image: "./assets/2026-07-24-q2-03-why.png",
+            zoomImage: "./assets/2026-07-24-q2-03-why.png",
+            imageAlt: "業務改善板で、長時間で未使用の報告と、長時間でも使われる報告を比較する職場",
+            caption: "時間だけではなく、使われ方も比べる。",
+            labels: ["③ なぜ？", "長い＋未使用", "見直し候補", "長い＋使用", "残す候補"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "何が選べる？",
+            image: "./assets/2026-07-24-q2-04-result.png",
+            zoomImage: "./assets/2026-07-24-q2-04-result.png",
+            imageAlt: "測定結果から停止候補と削減候補を選び、空いた週120分を再配分する業務板",
+            caption: "測定すると、止める仕事と残す仕事を分けられる。",
+            labels: ["④ 結果", "停止候補3件", "削減候補1件", "週120分を再配分"],
+            result: true
+          }
+        ]
+      },
+      {
+        id: "leader-trial-stop-low-value-report",
+        tag: "リーダーの決断",
+        difficulty: "入門",
+        question: "毎週時間がかかり、ほぼ使われない報告への対応は？",
+        hint: "止めた後に支障がないか、確かめる流れを考える。",
+        choices: [
+          "試しに止める・回数を減らし、支障を確かめる",
+          "AIだけ高速化して、毎週続ける",
+          "確認欄を追加して、さらに細かくする"
+        ],
+        correctIndex: 0,
+        answerTitle: "止める実験をして、支障を確かめる",
+        principle: "リーダーが、停止・回数削減を決める。",
+        answerParagraphs: [
+          "現場だけでは、定例業務を止めにくい。",
+          "リーダーが、期間を決めて試しに止める。",
+          "支障や再開依頼がないかを確認する。",
+          "問題がなければ、廃止や隔週化を決める。"
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "何が起きている？",
+            image: "./assets/2026-07-24-q3-01-what.png",
+            zoomImage: "./assets/2026-07-24-q3-01-what.png",
+            imageAlt: "不要と分かっていても、現場の判断だけでは止められない定例会議の職場",
+            caption: "現場は、勝手に定例業務を止められない。",
+            labels: ["① 何か", "現場は勝手に止められない", "決定権はリーダー"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "どう決める？",
+            image: "./assets/2026-07-24-q3-02-how.png",
+            zoomImage: "./assets/2026-07-24-q3-02-how.png",
+            imageAlt: "リーダーが週次報告の停止実験と隔週化をチームへ指示している職場",
+            caption: "期間と条件を決めて、停止を試す。",
+            labels: ["② どう決める？", "停止実験2週間", "必要なら再開", "週1→隔週"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "なぜ試す？",
+            image: "./assets/2026-07-24-q3-03-why.png",
+            zoomImage: "./assets/2026-07-24-q3-03-why.png",
+            imageAlt: "停止実験中に支障と再開依頼を確認し、問題がないか記録している職場",
+            caption: "止めても困らないか、記録で確かめる。",
+            labels: ["③ なぜ試す？", "支障0件", "再開依頼0件", "問題なければ廃止"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "どう変わる？",
+            image: "./assets/2026-07-24-q3-04-result.png",
+            zoomImage: "./assets/2026-07-24-q3-04-result.png",
+            imageAlt: "定例業務3件を廃止し、1件を隔週にして、空いた時間を企画と育成へ移した職場",
+            caption: "止める決断で、週120分を重要な仕事へ戻す。",
+            labels: ["④ 結果", "定例3件を廃止", "1件を隔週へ", "週120分削減", "企画・育成へ"],
+            result: true
+          }
+        ]
+      }
+    ]
   }
 ];

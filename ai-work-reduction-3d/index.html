@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#151713">
+  <meta name="description" content="AIで仕事を速くすることと、仕事そのものを減らすことを比べる3Dラボ">
+  <title>AI時短と仕事削減 3Dラボ</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="lab-shell" id="labRoot">
+    <canvas id="labCanvas" aria-label="AIで仕事を速くすることと仕事を減らすことを比べる3D教材"></canvas>
+
+    <div class="interface-layer">
+      <header class="topbar">
+        <div class="brand-block">
+          <p class="eyebrow">INVENTOR PRINCIPLE LAB</p>
+          <h1>AI時短と仕事削減</h1>
+          <p class="subtitle">1件を速くする。仕事の数を見直す。</p>
+        </div>
+        <div class="top-actions">
+          <button class="quiet-button" id="motionToggle" type="button" aria-pressed="false">
+            <span class="button-dot" aria-hidden="true"></span>
+            <span id="motionLabel">動きを止める</span>
+          </button>
+          <div class="state-badge" id="stateBadge">初期状態</div>
+        </div>
+      </header>
+
+      <section class="readout-strip" aria-label="現在の仕事量" aria-live="polite">
+        <div class="readout-cell">
+          <span class="readout-label">稼働中の仕事</span>
+          <strong id="taskCount">8件</strong>
+        </div>
+        <div class="readout-cell">
+          <span class="readout-label">週の作業時間</span>
+          <strong id="minutes">300分</strong>
+        </div>
+        <div class="readout-cell accent-cell">
+          <span class="readout-label">空いた時間</span>
+          <strong id="freeMinutes">0分</strong>
+        </div>
+      </section>
+
+      <section class="principle-panel" aria-live="polite">
+        <div class="panel-kicker">見える原理</div>
+        <h2 id="stateTitle">AIを入れる前</h2>
+        <p id="stateDescription">8件の定例業務が、同じ列に並んでいます。</p>
+      </section>
+
+      <section class="measure-panel" id="measurePanel" aria-live="polite" hidden>
+        <div class="panel-kicker">時間と利用実績</div>
+        <h2>測ると、候補が見える</h2>
+        <div class="measure-list" id="measureList"></div>
+      </section>
+
+      <section class="legend-panel" aria-label="3Dラボの見方">
+        <div class="legend-item"><span class="legend-swatch task-swatch"></span><span>定例業務</span></div>
+        <div class="legend-item"><span class="legend-swatch station-swatch"></span><span>AI処理台</span></div>
+        <div class="legend-item"><span class="legend-swatch free-swatch"></span><span>企画・育成</span></div>
+      </section>
+
+      <nav class="control-rail" aria-label="3Dラボ操作">
+        <button class="lab-control is-active" type="button" data-action="initial" aria-pressed="true">
+          <span class="control-index">01</span>
+          <span>初期状態</span>
+          <small>8件・300分</small>
+        </button>
+        <button class="lab-control" type="button" data-action="ai" aria-pressed="false">
+          <span class="control-index">02</span>
+          <span>AIで速くする</span>
+          <small>8件・150分</small>
+        </button>
+        <button class="lab-control" type="button" data-action="measure" aria-pressed="false">
+          <span class="control-index">03</span>
+          <span>時間・利用を見る</span>
+          <small>測定する</small>
+        </button>
+        <button class="lab-control" type="button" data-action="reduction" aria-pressed="false">
+          <span class="control-index">04</span>
+          <span>仕事を減らす</span>
+          <small>5件・90分</small>
+        </button>
+        <button class="lab-control reset-control" type="button" data-action="reset" aria-pressed="false">
+          <span class="control-index">↺</span>
+          <span>リセット</span>
+          <small>最初に戻る</small>
+        </button>
+      </nav>
+
+      <p class="interaction-hint">画面をドラッグ：視点　／　ホイール：拡大・縮小</p>
+    </div>
+
+    <section class="webgl-error" id="webglError" hidden>
+      <strong>WebGL表示を開始できません</strong>
+      <p>ブラウザのハードウェアアクセラレーションを確認してください。</p>
+    </section>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

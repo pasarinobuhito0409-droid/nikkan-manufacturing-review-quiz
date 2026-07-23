@@ -1,9 +1,9 @@
-const CACHE_NAME = "nikkan-manufacturing-review-quiz-v46";
+const CACHE_NAME = "nikkan-manufacturing-review-quiz-v47";
 
 const PRECACHE_ASSETS = [
   "./",
   "./index.html",
-  "./quiz-data.js?v=46",
+  "./quiz-data.js?v=47",
   "./manifest.webmanifest",
   "./service-worker.js",
   "./assets/icon.svg",
@@ -28,7 +28,29 @@ const PRECACHE_ASSETS = [
   "./multifinger-hand-3d/index.html",
   "./multifinger-hand-3d/styles.css",
   "./multifinger-hand-3d/app.js",
-  "./quantum-laser-3d/vendor/three.module.js"
+  "./quantum-laser-3d/vendor/three.module.js",
+  "./assets/2026-07-24-hero-ai-work-reduction-lab.png",
+  "./assets/2026-07-24-ai-overtime-marked-source.png",
+  "./assets/2026-07-24-green-01-what.png",
+  "./assets/2026-07-24-green-02-how.png",
+  "./assets/2026-07-24-green-03-why.png",
+  "./assets/2026-07-24-green-04-result.png",
+  "./assets/2026-07-24-q1-01-what.png",
+  "./assets/2026-07-24-q1-02-how.png",
+  "./assets/2026-07-24-q1-03-why.png",
+  "./assets/2026-07-24-q1-04-result.png",
+  "./assets/2026-07-24-q2-01-what.png",
+  "./assets/2026-07-24-q2-02-how.png",
+  "./assets/2026-07-24-q2-03-why.png",
+  "./assets/2026-07-24-q2-04-result.png",
+  "./assets/2026-07-24-q3-01-what.png",
+  "./assets/2026-07-24-q3-02-how.png",
+  "./assets/2026-07-24-q3-03-why.png",
+  "./assets/2026-07-24-q3-04-result.png",
+  "./ai-work-reduction-3d/index.html",
+  "./ai-work-reduction-3d/styles.css",
+  "./ai-work-reduction-3d/app.js",
+  "./ai-work-reduction-3d/vendor/three.module.js"
 ];
 
 self.addEventListener("install", (event) => {
