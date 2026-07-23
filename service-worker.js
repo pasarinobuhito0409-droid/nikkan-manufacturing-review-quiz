@@ -53,9 +53,33 @@ const PRECACHE_ASSETS = [
   "./ai-work-reduction-3d/vendor/three.module.js"
 ];
 
+const PRECACHE_BATCH_SIZE = 5;
+const MAX_BATCH_RETRIES = 3;
+const BATCH_RETRY_DELAY_MS = 300;
+
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const cacheBatchWithRetry = async (cache, assets) => {
+  for (let attempt = 0; attempt <= MAX_BATCH_RETRIES; attempt += 1) {
+    try {
+      await cache.addAll(assets);
+      return;
+    } catch (error) {
+      if (attempt === MAX_BATCH_RETRIES) throw error;
+      await delay(BATCH_RETRY_DELAY_MS);
+    }
+  }
+};
+
+const precacheInBatches = async (cache, assets) => {
+  for (let start = 0; start < assets.length; start += PRECACHE_BATCH_SIZE) {
+    await cacheBatchWithRetry(cache, assets.slice(start, start + PRECACHE_BATCH_SIZE));
+  }
+};
+
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(PRECACHE_ASSETS))
+    caches.open(CACHE_NAME).then((cache) => precacheInBatches(cache, PRECACHE_ASSETS))
   );
   self.skipWaiting();
 });
