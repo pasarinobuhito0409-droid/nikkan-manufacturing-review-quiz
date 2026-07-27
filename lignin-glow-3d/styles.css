@@ -1,0 +1,544 @@
+:root {
+  color-scheme: dark;
+  font-family: "Yu Gothic UI", "Hiragino Kaku Gothic ProN", Meiryo, system-ui, sans-serif;
+  color: #f1eadf;
+  background: #10181a;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #10181a;
+}
+
+button {
+  font: inherit;
+}
+
+.lab-shell {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  min-height: 560px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 48%, rgba(38, 106, 103, .2), transparent 34%),
+    linear-gradient(135deg, #10181a 0%, #172427 52%, #10181a 100%);
+  isolation: isolate;
+}
+
+#labCanvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  cursor: grab;
+}
+
+#labCanvas:active {
+  cursor: grabbing;
+}
+
+.interface-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.topbar,
+.readout-strip,
+.principle-panel,
+.legend-panel,
+.control-rail,
+.interaction-hint,
+.quiet-button,
+.lab-control {
+  pointer-events: auto;
+}
+
+.topbar {
+  position: absolute;
+  top: max(20px, env(safe-area-inset-top));
+  right: 38px;
+  left: 38px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand-block {
+  max-width: 430px;
+  padding-left: 14px;
+  border-left: 2px solid #d18c4e;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, .35);
+}
+
+.eyebrow,
+.panel-kicker,
+.readout-label,
+.control-index {
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: #e0a46a;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 5px;
+  color: #f5ede0;
+  font-family: Georgia, "Yu Mincho", serif;
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 1.08;
+}
+
+.subtitle {
+  margin-bottom: 0;
+  color: #c1c7bf;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quiet-button,
+.state-badge {
+  min-height: 38px;
+  border: 1px solid rgba(224, 164, 106, .42);
+  background: rgba(16, 24, 26, .88);
+  color: #e2ddd3;
+}
+
+.quiet-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.quiet-button:hover,
+.quiet-button:focus-visible,
+.lab-control:hover,
+.lab-control:focus-visible {
+  border-color: #e0a46a;
+  outline: 2px solid rgba(224, 164, 106, .34);
+  outline-offset: 2px;
+}
+
+.button-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #86d3bd;
+  box-shadow: 0 0 0 4px rgba(134, 211, 189, .14);
+}
+
+.state-badge {
+  display: grid;
+  place-items: center;
+  min-width: 134px;
+  padding: 8px 12px;
+  color: #e0a46a;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.readout-strip {
+  position: absolute;
+  top: 148px;
+  right: 38px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(112px, 140px));
+  border: 1px solid rgba(231, 235, 224, .18);
+  background: rgba(16, 24, 26, .84);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .2);
+}
+
+.readout-cell {
+  min-height: 70px;
+  padding: 10px 12px;
+  border-left: 1px solid rgba(231, 235, 224, .13);
+}
+
+.readout-cell:first-child {
+  border-left: 0;
+}
+
+.readout-label {
+  display: block;
+  color: #a9b3aa;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.readout-cell strong {
+  display: block;
+  margin-top: 5px;
+  color: #eff4eb;
+  font-family: Consolas, "Yu Gothic UI", monospace;
+  font-size: 20px;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.accent-cell strong {
+  color: #f1b36f;
+}
+
+.principle-panel,
+.legend-panel {
+  border: 1px solid rgba(231, 235, 224, .17);
+  background: rgba(16, 24, 26, .84);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, .2);
+}
+
+.principle-panel {
+  position: absolute;
+  bottom: 170px;
+  left: 38px;
+  width: 328px;
+  padding: 14px 16px 16px;
+}
+
+.panel-kicker {
+  margin-bottom: 8px;
+  color: #e0a46a;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.principle-panel h2 {
+  margin-bottom: 7px;
+  color: #f0eadf;
+  font-family: Georgia, "Yu Mincho", serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.principle-panel p:last-child {
+  margin-bottom: 0;
+  color: #c5ccc3;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.legend-panel {
+  position: absolute;
+  right: 38px;
+  bottom: 170px;
+  display: grid;
+  gap: 8px;
+  width: 172px;
+  padding: 12px 14px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #c5ccc3;
+  font-size: 11px;
+}
+
+.legend-swatch {
+  width: 11px;
+  height: 11px;
+  border: 1px solid rgba(255, 255, 255, .3);
+}
+
+.lignin-swatch {
+  background: #b99062;
+}
+
+.molecule-swatch {
+  background: #86d3bd;
+}
+
+.uv-swatch {
+  background: #b9a9ff;
+}
+
+.interaction-hint {
+  position: absolute;
+  right: 38px;
+  bottom: 120px;
+  margin: 0;
+  color: #aeb9b0;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.control-rail {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(150px, 1fr));
+  min-height: 104px;
+  padding: 12px 18px max(12px, env(safe-area-inset-bottom));
+  border-top: 1px solid rgba(231, 235, 224, .18);
+  background: rgba(12, 19, 20, .95);
+}
+
+.lab-control {
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  gap: 4px;
+  min-width: 0;
+  padding: 10px 14px;
+  border: 0;
+  border-left: 1px solid rgba(231, 235, 224, .12);
+  background: transparent;
+  color: #c5ccc3;
+  text-align: left;
+  cursor: pointer;
+}
+
+.lab-control:first-child {
+  border-left: 0;
+}
+
+.lab-control > span:not(.control-index) {
+  color: #eff4eb;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.lab-control small {
+  color: #99a49c;
+  font-size: 10px;
+  line-height: 1.3;
+}
+
+.control-index {
+  color: #e0a46a;
+  font-family: Consolas, monospace;
+  font-size: 10px;
+}
+
+.lab-control.is-active {
+  background: rgba(224, 164, 106, .1);
+  box-shadow: inset 0 -2px 0 #e0a46a;
+}
+
+.webgl-error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  width: 380px;
+  max-width: calc(100vw - 36px);
+  padding: 22px;
+  transform: translate(-50%, -50%);
+  border: 1px solid #d78669;
+  background: #271d1a;
+  color: #f3ddd4;
+  text-align: center;
+}
+
+.webgl-error strong {
+  display: block;
+  margin-bottom: 8px;
+  font-family: Georgia, "Yu Mincho", serif;
+  font-size: 20px;
+}
+
+.webgl-error p {
+  margin: 0;
+  color: #d0b9ad;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .topbar {
+    right: 22px;
+    left: 22px;
+  }
+
+  .readout-strip {
+    top: 142px;
+    right: 22px;
+  }
+
+  .principle-panel {
+    bottom: 154px;
+    left: 22px;
+  }
+
+  .legend-panel {
+    right: 22px;
+    bottom: 154px;
+  }
+
+  .interaction-hint {
+    right: 22px;
+    bottom: 112px;
+  }
+}
+
+@media (max-width: 650px) {
+  .lab-shell {
+    min-height: 650px;
+  }
+
+  .topbar {
+    right: 14px;
+    left: 14px;
+    gap: 12px;
+  }
+
+  .brand-block {
+    max-width: 230px;
+    padding-left: 10px;
+  }
+
+  .eyebrow {
+    font-size: 9px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  .subtitle {
+    font-size: 10px;
+  }
+
+  .top-actions {
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .quiet-button {
+    padding: 7px 9px;
+    font-size: 10px;
+    white-space: nowrap;
+  }
+
+  .state-badge {
+    min-width: 110px;
+    padding: 7px 9px;
+    font-size: 10px;
+  }
+
+  .readout-strip {
+    top: 134px;
+    right: 14px;
+    left: 14px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .readout-cell {
+    min-height: 58px;
+    padding: 8px 7px;
+  }
+
+  .readout-label {
+    font-size: 8px;
+  }
+
+  .readout-cell strong {
+    font-size: 14px;
+  }
+
+  .principle-panel {
+    right: 14px;
+    bottom: 206px;
+    left: 14px;
+    width: auto;
+    padding: 10px 12px 12px;
+  }
+
+  .principle-panel h2 {
+    font-size: 17px;
+  }
+
+  .principle-panel p:last-child {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .legend-panel {
+    right: 14px;
+    bottom: 206px;
+    width: auto;
+    padding: 8px 10px;
+  }
+
+  .legend-item {
+    font-size: 9px;
+  }
+
+  .control-rail {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    min-height: 126px;
+    padding: 8px 8px max(8px, env(safe-area-inset-bottom));
+  }
+
+  .lab-control {
+    justify-items: center;
+    gap: 3px;
+    padding: 8px 4px;
+    text-align: center;
+  }
+
+  .lab-control > span:not(.control-index) {
+    font-size: 10px;
+    line-height: 1.3;
+  }
+
+  .lab-control small {
+    font-size: 8px;
+  }
+
+  .interaction-hint {
+    right: 14px;
+    bottom: 185px;
+    font-size: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+  }
+}

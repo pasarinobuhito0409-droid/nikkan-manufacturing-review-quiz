@@ -1342,7 +1342,7 @@
     </div>
   </div>
 
-  <script src="./quiz-data.js?v=47"></script>
+  <script src="./quiz-data.js?v=48"></script>
   <script>
     const quizSets = window.NIKKAN_QUIZ_SETS || [];
     const storageKey = "nikkan-manufacturing-review-quiz-library-v2";
@@ -1863,6 +1863,16 @@
 
     function renderLab(set) {
       stageInner.innerHTML = "";
+      if (set && set.id === "2026-07-27-poplar-lignin-photoluminescence") {
+        stage.classList.add("lab-active");
+        const iframe = document.createElement("iframe");
+        iframe.className = "lab-frame";
+        iframe.src = "./lignin-glow-3d/index.html?v=48";
+        iframe.title = "木を材料工場にするリグニン発光 3Dラボ";
+        iframe.loading = "eager";
+        stageInner.appendChild(iframe);
+        return;
+      }
       if (set && set.id === "2026-07-24-ai-speed-vs-work-removal") {
         stage.classList.add("lab-active");
         const iframe = document.createElement("iframe");
@@ -2139,14 +2149,14 @@
 
     if ("serviceWorker" in navigator && location.protocol !== "file:") {
       window.addEventListener("load", async () => {
-        const reloadKey = "nikkan-sw-reloaded-v47";
+        const reloadKey = "nikkan-sw-reloaded-v48";
         navigator.serviceWorker.addEventListener("controllerchange", () => {
           if (sessionStorage.getItem(reloadKey)) return;
           sessionStorage.setItem(reloadKey, "1");
           location.reload();
         });
         try {
-          const registration = await navigator.serviceWorker.register("./service-worker.js?v=47");
+          const registration = await navigator.serviceWorker.register("./service-worker.js?v=48");
           try {
             await registration?.update?.();
           } catch (error) {

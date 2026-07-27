@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>木を材料工場にする 3Dラボ</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="lab-shell" id="labRoot">
+    <canvas id="labCanvas" aria-label="リグニンが発光材料へ変わる3Dアニメーション"></canvas>
+
+    <div class="interface-layer">
+      <header class="topbar">
+        <div class="brand-block">
+          <p class="eyebrow">POPlar LIGNIN / 3D STUDY LAB</p>
+          <h1>木を材料工場にする</h1>
+          <p class="subtitle">リグニンの中へ、光る分子の働きを組み込む。</p>
+        </div>
+        <div class="top-actions">
+          <button class="quiet-button" id="motionToggle" type="button" aria-pressed="true">
+            <span class="button-dot" aria-hidden="true"></span>
+            <span id="motionLabel">自動再生を停止</span>
+          </button>
+          <span class="state-badge" id="stateBadge">1 / 4 木の土台</span>
+        </div>
+      </header>
+
+      <section class="readout-strip" aria-label="現在の状態">
+        <div class="readout-cell">
+          <span class="readout-label">ステージ</span>
+          <strong id="readoutStage">01 / 04</strong>
+        </div>
+        <div class="readout-cell">
+          <span class="readout-label">分子の経路</span>
+          <strong id="readoutRoute">木質材料</strong>
+        </div>
+        <div class="readout-cell accent-cell">
+          <span class="readout-label">測定信号</span>
+          <strong id="readoutSignal">発光なし</strong>
+        </div>
+      </section>
+
+      <section class="principle-panel" aria-live="polite">
+        <p class="panel-kicker" id="stageKicker">WHAT / 木の構造</p>
+        <h2 id="stageTitle">普通のリグニン</h2>
+        <p id="stageDescription">リグニンは、木の細胞壁を支える土台。まずは木質材料の姿を見る。</p>
+      </section>
+
+      <aside class="legend-panel" aria-label="3D表示の凡例">
+        <div class="legend-item"><span class="legend-swatch lignin-swatch"></span><span>リグニン</span></div>
+        <div class="legend-item"><span class="legend-swatch molecule-swatch"></span><span>スコポレチン</span></div>
+        <div class="legend-item"><span class="legend-swatch uv-swatch"></span><span>紫外線・発光</span></div>
+      </aside>
+
+      <p class="interaction-hint">ドラッグ：視点　ホイール：距離</p>
+
+      <nav class="control-rail" aria-label="学習ステージ">
+        <button class="lab-control is-active" data-stage="0" type="button" aria-pressed="true">
+          <span class="control-index">01</span>
+          <span>木の土台</span>
+          <small>普通のリグニン</small>
+        </button>
+        <button class="lab-control" data-stage="1" type="button" aria-pressed="false">
+          <span class="control-index">02</span>
+          <span>経路を変える</span>
+          <small>F6′H1 / 分子</small>
+        </button>
+        <button class="lab-control" data-stage="2" type="button" aria-pressed="false">
+          <span class="control-index">03</span>
+          <span>応答を測る</span>
+          <small>UV / pH</small>
+        </button>
+        <button class="lab-control" data-stage="3" type="button" aria-pressed="false">
+          <span class="control-index">04</span>
+          <span>機能性の膜</span>
+          <small>抽出リグニン</small>
+        </button>
+      </nav>
+    </div>
+
+    <div class="webgl-error" id="webglError" hidden>
+      <strong>3D表示を開始できません</strong>
+      <p>この端末のブラウザでWebGL（3D描画）が使えるか確認してください。</p>
+    </div>
+  </main>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

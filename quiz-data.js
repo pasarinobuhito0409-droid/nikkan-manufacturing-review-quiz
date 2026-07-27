@@ -3335,5 +3335,334 @@ window.NIKKAN_QUIZ_SETS = [
         ]
       }
     ]
+  },
+  {
+    id: "2026-07-27-poplar-lignin-photoluminescence",
+    date: "2026-07-27",
+    sourceDate: "2026-07-27",
+    difficulty: "入門",
+    strictVisuals: true,
+    paperTheater: {
+      frameCount: 4,
+      phases: ["what", "how", "why", "result"]
+    },
+    title: "日刊工業新聞 7/27 樹木育て発光材料に 木を材料工場にする3問",
+    titleLines: ["日刊工業新聞 7/27", "樹木育て発光材料に", "木を材料工場にする3問"],
+    shortTitle: "樹木育て発光材料に",
+    sourceLabel: "日刊工業新聞 2026/7/27 7面",
+    heroImage: "./assets/2026-07-27-hero-lignin-lab.png",
+    heroAlt: "ポプラと木材由来リグニンを紫外線測定室で調べる植物材料研究室",
+    summary: [
+      {
+        text: "リグニン（木の細胞壁を支える成分）は、木質バイオマスに多いが、使われ方が少ない。",
+        breathLines: [
+          { text: "リグニンは、木を支える。" },
+          { text: "木質バイオマスに多い。" },
+          { text: "まだ使われ方が少ない。" }
+        ]
+      },
+      {
+        text: "遺伝子組み換え（遺伝子の働きを変える）ハイブリッドポプラ／アスペンで、F6′H1（フェルロイルCoA 6′ヒドロキシラーゼ）を強く働かせる。",
+        breathLines: [
+          { text: "遺伝子組み換えポプラ。" },
+          { text: "F6′H1を強く働かせる。" },
+          { text: "分子の流れを変える。" }
+        ]
+      },
+      {
+        text: "F6′H1で、フェルロイルCoAをスコポレチン（光る性質を持つ分子）へ流し、リグニンに取り込む。",
+        breathLines: [
+          { text: "スコポレチンを増やす。" },
+          { text: "リグニンへ取り込む。" }
+        ]
+      },
+      {
+        text: "改変リグニンは、強く長波長のフォトルミネッセンス（光を受けた発光）を示す。消光（発光が弱まること）は限られ、pH（酸性・アルカリ性の度合い）にも応答する。",
+        breathLines: [
+          { text: "強く、長波長で発光。" },
+          { text: "消光が限られる。" },
+          { text: "pHに応答する。" }
+        ]
+      },
+      {
+        text: "クマリン（光に反応する分子）の光二量化（ひかりで2分子を結ぶ反応）は、可逆的に切り替えられる。",
+        breathLines: [
+          { text: "クマリン光二量化。" },
+          { text: "可逆的に切り替える。" },
+          { text: "研究段階の機能を測る。" }
+        ]
+      }
+    ],
+    articleFocus: {
+      title: "赤マーカーの芯：木を材料工場にする",
+      breathLines: [
+        { label: "変化", text: "樹木の中で、経路を変える。" },
+        { label: "仕組み", text: "分子をリグニンに組み込む。" },
+        { label: "測定", text: "抽出膜を365 nmで測る。" },
+        { label: "注意", text: "昼に木が光る話ではない。" }
+      ]
+    },
+    articleEvidence: {
+      image: "./assets/2026-07-27-lignin-marked-source.png",
+      zoomImage: "./assets/2026-07-27-lignin-marked-source.png",
+      alt: "赤マーカーで『樹木育て発光材料に』が示された日刊工業新聞2026年7月27日の紙面",
+      caption: "赤マーカーの原典。見出し『樹木育て発光材料に』を証拠として読む。",
+      evidenceOnly: true
+    },
+    curiosityTitle: "赤：木を材料工場にする原理",
+    curiosityPoints: [
+      {
+        title: "赤：木を材料工場にする",
+        text: "ハイブリッドポプラ／アスペンでF6′H1を強く働かせる。フェルロイルCoAからスコポレチンへ流し、スコポレチンをリグニンへ取り込む。改変リグニンは、より強く長波長の発光を示し、消光が限られる。pH応答と可逆的なクマリン光二量化も示す。",
+        breathLines: [
+          { label: "① 何がある？", text: "木の細胞壁成分を使う。" },
+          { label: "② どうする？", text: "F6′H1を強く働かせる。" },
+          { label: "③ なぜ？", text: "スコポレチンを入れる。" },
+          { label: "④ 結果", text: "365 nm UVで発光を測る。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "何がある？",
+            image: "./assets/2026-07-27-lignin-green-01-what.png",
+            zoomImage: "./assets/2026-07-27-lignin-green-01-what.png",
+            imageAlt: "普通の木材とリグニンを植物材料の研究室で見る場面",
+            caption: "木の細胞壁を支えるリグニンを見る。",
+            labels: ["① 何がある？", "木質バイオマス", "リグニン", "細胞壁の土台"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "どう変える？",
+            image: "./assets/2026-07-27-lignin-green-02-how.png",
+            zoomImage: "./assets/2026-07-27-lignin-green-02-how.png",
+            imageAlt: "ポプラの植物材料で遺伝子の働きを変える実験をする研究者",
+            caption: "ポプラでF6′H1を強く働かせる。",
+            labels: ["② どう変える？", "F6′H1", "遺伝子組み換え", "経路を変える"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "なぜ光る？",
+            image: "./assets/2026-07-27-lignin-green-03-why.png",
+            zoomImage: "./assets/2026-07-27-lignin-green-03-why.png",
+            imageAlt: "紫外線の下で木材試料の発光を測定する分光実験",
+            caption: "スコポレチンがリグニンに入り、UVで発光する。",
+            labels: ["③ なぜ光る？", "スコポレチン", "リグニンに入る", "紫外線で発光"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "どうなった？",
+            image: "./assets/2026-07-27-lignin-green-04-result.png",
+            zoomImage: "./assets/2026-07-27-lignin-green-04-result.png",
+            imageAlt: "改変された木材材料の発光を分光器で確認する結果場面",
+            caption: "抽出リグニンの膜が、365 nm UVで発光する。",
+            labels: ["④ 結果", "抽出リグニン膜", "365 nm UV", "発光を確認"],
+            result: true
+          }
+        ]
+      }
+    ],
+    importantTitle: "緑：重要な原理",
+    importantPoints: [],
+    glossaryTitle: "黄：読みと意味",
+    glossary: [],
+    insightQuotes: [],
+    questions: [
+      {
+        id: "poplar-f6h1-pathway",
+        tag: "F6′H1の役割",
+        difficulty: "入門",
+        question: "F6′H1を強く働かせると？",
+        hint: "酵素が、分子の流れを変える。",
+        choices: [
+          "リグニンを全部なくす",
+          "スコポレチンを増やし、リグニンへ入れる",
+          "木の表面へ発光剤を付ける"
+        ],
+        correctIndex: 1,
+        answerTitle: "F6′H1は、酵素経路を変える",
+        principle: "酵素で、フェルロイルCoAの流れを変える。",
+        answerParagraphs: [
+          "F6′H1は、酵素（反応を助ける分子）。",
+          "フェルロイルCoAを、別の経路へ流す。",
+          "スコポレチンが増え、リグニンへ入る。",
+          "木の表面に薬を塗る話ではない。"
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "何がある？",
+            image: "./assets/2026-07-27-lignin-q1-01-what.png",
+            zoomImage: "./assets/2026-07-27-lignin-q1-01-what.png",
+            imageAlt: "植物材料の中にある発光材料への出発点を研究する場面",
+            caption: "材料の出発点は、木の細胞壁。",
+            labels: ["① 何がある？", "木の細胞壁", "リグニン"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "どうする？",
+            image: "./assets/2026-07-27-lignin-q1-02-how.png",
+            zoomImage: "./assets/2026-07-27-lignin-q1-02-how.png",
+            imageAlt: "植物材料の実験でF6′H1の働きを増やす研究者",
+            caption: "F6′H1という酵素の働きを増やす。",
+            labels: ["② どうする？", "F6′H1", "酵素の働きを増やす"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "なぜ？",
+            image: "./assets/2026-07-27-lignin-q1-03-why.png",
+            zoomImage: "./assets/2026-07-27-lignin-q1-03-why.png",
+            imageAlt: "フェルロイルCoAからスコポレチンへ向かう分子反応を木材材料と共に見る場面",
+            caption: "フェルロイルCoAが、スコポレチンへ流れる。",
+            labels: ["③ なぜ？", "フェルロイルCoA", "スコポレチン", "経路を変える"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "何が確認できる？",
+            image: "./assets/2026-07-27-lignin-q1-04-result.png",
+            zoomImage: "./assets/2026-07-27-lignin-q1-04-result.png",
+            imageAlt: "改変された植物材料の発光信号を分光器で確認する結果",
+            caption: "増えたスコポレチンが、リグニンへ入る。",
+            labels: ["④ 結果", "スコポレチン", "リグニンへ入る"],
+            result: true
+          }
+        ]
+      },
+      {
+        id: "pH-electron-state-response",
+        tag: "pHと電子状態",
+        difficulty: "入門",
+        question: "pHで発光が変わる理由は？",
+        hint: "pHは、分子の状態を変える。",
+        choices: [
+          "木の温度だけ",
+          "リグニン量だけ",
+          "H+が外れ、電子状態が変わる"
+        ],
+        correctIndex: 2,
+        answerTitle: "pHで、分子の電子状態が変わる",
+        principle: "H+の変化が、発光の応答を変える。",
+        answerParagraphs: [
+          "pHは、酸性・アルカリ性の度合い。",
+          "H+（水素イオン）が外れる。",
+          "分子の電子状態が変わる。",
+          "そのため、発光の強さが変わる。"
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "何が変わる？",
+            image: "./assets/2026-07-27-lignin-q2-01-what.png",
+            zoomImage: "./assets/2026-07-27-lignin-q2-01-what.png",
+            imageAlt: "木の細胞壁とリグニンを植物材料の研究室で調べる場面",
+            caption: "改変リグニンは、pHにも応答する。",
+            labels: ["① 何が変わる？", "改変リグニン", "pH応答"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "どう調べる？",
+            image: "./assets/2026-07-27-lignin-q2-02-how.png",
+            zoomImage: "./assets/2026-07-27-lignin-q2-02-how.png",
+            imageAlt: "スコポレチンをリグニン構造へ組み込む材料研究の場面",
+            caption: "酸性・アルカリ性の条件を変える。",
+            labels: ["② どう調べる？", "酸性", "アルカリ性", "発光を測る"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "なぜ変わる？",
+            image: "./assets/2026-07-27-lignin-q2-03-why.png",
+            zoomImage: "./assets/2026-07-27-lignin-q2-03-why.png",
+            imageAlt: "木材由来ポリマーの発光と消光を紫外線下で調べる場面",
+            caption: "H+が外れ、分子の電子状態が変わる。",
+            labels: ["③ なぜ変わる？", "H+が外れる", "電子状態", "発光変化"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "どうなった？",
+            image: "./assets/2026-07-27-lignin-q2-04-result.png",
+            zoomImage: "./assets/2026-07-27-lignin-q2-04-result.png",
+            imageAlt: "リグニン由来の機能性素材を紫外線と分光器で測定する結果",
+            caption: "条件ごとの発光応答を測定する。",
+            labels: ["④ 結果", "条件ごとに測定", "pH応答を確認"],
+            result: true
+          }
+        ]
+      },
+      {
+        id: "reversible-coumarin-photodimerization",
+        tag: "可逆的な光二量化",
+        difficulty: "入門",
+        question: "光二量化で可逆的とは？",
+        hint: "結ぶ向きと、戻す向きを分ける。",
+        choices: [
+          "365 nmで結び、254 nmで戻す",
+          "365 nmで結び、固定する",
+          "254 nmで結び、さらに固める"
+        ],
+        correctIndex: 0,
+        answerTitle: "光で、結ぶ・戻すを切り替える",
+        principle: "365 nmと254 nmで、結合を往復させる。",
+        answerParagraphs: [
+          "可逆的は、行きと戻りができること。",
+          "365 nmで、クマリンを結ぶ。",
+          "254 nmで、結合を戻す。",
+          "光二量化を、切り替えて使える。"
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "何に反応？",
+            image: "./assets/2026-07-27-lignin-q3-01-what.png",
+            zoomImage: "./assets/2026-07-27-lignin-q3-01-what.png",
+            imageAlt: "紫外線とpHに対する木材由来材料の応答を調べる場面",
+            caption: "改変リグニンは、光に応答する。",
+            labels: ["① 何に反応？", "365 nm", "254 nm", "光応答"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "どう確かめる？",
+            image: "./assets/2026-07-27-lignin-q3-02-how.png",
+            zoomImage: "./assets/2026-07-27-lignin-q3-02-how.png",
+            imageAlt: "紫外線とpH条件を変えながら木材由来材料を測定する場面",
+            caption: "365 nmで、クマリン同士を結ぶ。",
+            labels: ["② どうする？", "365 nm", "クマリン", "結ぶ"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "なぜ変わる？",
+            image: "./assets/2026-07-27-lignin-q3-03-why.png",
+            zoomImage: "./assets/2026-07-27-lignin-q3-03-why.png",
+            imageAlt: "紫外線によるクマリン光二量化を材料実験で調べる場面",
+            caption: "結合と解離を、光で切り替えられる。",
+            labels: ["③ なぜ？", "可逆的", "結ぶ", "戻す"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "何が確認できる？",
+            image: "./assets/2026-07-27-lignin-q3-04-result.png",
+            zoomImage: "./assets/2026-07-27-lignin-q3-04-result.png",
+            imageAlt: "紫外線とpHを変えて機能性材料の応答を測定する結果",
+            caption: "365 nmと254 nmで、可逆応答を確認する。",
+            labels: ["④ 結果", "365 nmで結ぶ", "254 nmで戻す", "可逆応答"],
+            result: true
+          }
+        ]
+      }
+    ]
   }
 ];

@@ -1,9 +1,9 @@
-const CACHE_NAME = "nikkan-manufacturing-review-quiz-v47";
+const CACHE_NAME = "nikkan-manufacturing-review-quiz-v48";
 
 const PRECACHE_ASSETS = [
   "./",
   "./index.html",
-  "./quiz-data.js?v=47",
+  "./quiz-data.js?v=48",
   "./manifest.webmanifest",
   "./service-worker.js",
   "./assets/icon.svg",
@@ -50,7 +50,29 @@ const PRECACHE_ASSETS = [
   "./ai-work-reduction-3d/index.html",
   "./ai-work-reduction-3d/styles.css",
   "./ai-work-reduction-3d/app.js",
-  "./ai-work-reduction-3d/vendor/three.module.js"
+  "./ai-work-reduction-3d/vendor/three.module.js",
+  "./assets/2026-07-27-hero-lignin-lab.png",
+  "./assets/2026-07-27-lignin-marked-source.png",
+  "./assets/2026-07-27-lignin-green-01-what.png",
+  "./assets/2026-07-27-lignin-green-02-how.png",
+  "./assets/2026-07-27-lignin-green-03-why.png",
+  "./assets/2026-07-27-lignin-green-04-result.png",
+  "./assets/2026-07-27-lignin-q1-01-what.png",
+  "./assets/2026-07-27-lignin-q1-02-how.png",
+  "./assets/2026-07-27-lignin-q1-03-why.png",
+  "./assets/2026-07-27-lignin-q1-04-result.png",
+  "./assets/2026-07-27-lignin-q2-01-what.png",
+  "./assets/2026-07-27-lignin-q2-02-how.png",
+  "./assets/2026-07-27-lignin-q2-03-why.png",
+  "./assets/2026-07-27-lignin-q2-04-result.png",
+  "./assets/2026-07-27-lignin-q3-01-what.png",
+  "./assets/2026-07-27-lignin-q3-02-how.png",
+  "./assets/2026-07-27-lignin-q3-03-why.png",
+  "./assets/2026-07-27-lignin-q3-04-result.png",
+  "./lignin-glow-3d/index.html",
+  "./lignin-glow-3d/styles.css",
+  "./lignin-glow-3d/app.js",
+  "./lignin-glow-3d/vendor/three.module.js"
 ];
 
 const PRECACHE_BATCH_SIZE = 5;
@@ -101,7 +123,8 @@ self.addEventListener("fetch", (event) => {
     event.request.mode === "navigate" ||
     url.pathname.endsWith("/index.html") ||
     url.pathname.endsWith("/service-worker.js") ||
-    url.pathname.includes("/adaptive-robot-3d/");
+    url.pathname.includes("/adaptive-robot-3d/") ||
+    url.pathname.includes("/lignin-glow-3d/");
 
   const cacheResponseAndReturn = (response) => {
     if (!response.ok) return Promise.resolve(response);
