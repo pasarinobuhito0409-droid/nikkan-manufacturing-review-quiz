@@ -75,6 +75,7 @@ const PRECACHE_ASSETS = [
   "./lignin-glow-3d/vendor/three.module.js",
   "./assets/2026-07-28-hero-rem-energy.png",
   "./assets/2026-07-28-rem-marked-source.png",
+  "./assets/2026-07-28-rem-article-hires.png",
   "./assets/2026-07-28-rem-red-01-what.png",
   "./assets/2026-07-28-rem-red-02-how.png",
   "./assets/2026-07-28-rem-red-03-why.png",

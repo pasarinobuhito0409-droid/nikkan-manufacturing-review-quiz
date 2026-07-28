@@ -3702,7 +3702,7 @@ window.NIKKAN_QUIZ_SETS = [
     },
     articleEvidence: {
       image: "./assets/2026-07-28-rem-marked-source.png",
-      zoomImage: "./assets/2026-07-28-rem-marked-source.png",
+      zoomImage: "./assets/2026-07-28-rem-article-hires.png",
       alt: "レム睡眠中のパラドックス状態を示すマーカー付き新聞記事",
       caption: "赤・緑・黄のマーカーは証拠専用。図解には流用しない。",
       evidenceOnly: true
