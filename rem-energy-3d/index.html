@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>レム睡眠とATPの逆説 3Dラボ</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="lab-shell" id="labRoot">
+    <canvas id="labCanvas" aria-label="レム睡眠中の脳血流とATPの変化を動かして見る3Dアニメーション"></canvas>
+
+    <div class="interface-layer">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">脳エネルギー / 3D学習ラボ</p>
+          <h1>レム睡眠の逆説</h1>
+          <p class="subtitle">血流が増えても、細胞内ATPは下がる。</p>
+        </div>
+        <div class="top-actions">
+          <button class="quiet-button" id="motionToggle" type="button" aria-pressed="true">
+            <span class="button-dot" aria-hidden="true"></span>
+            <span id="motionLabel">自動再生を停止</span>
+          </button>
+          <span class="state-badge" id="stateBadge">01 / 04 覚醒</span>
+        </div>
+      </header>
+
+      <section class="readout-strip" aria-label="現在の状態">
+        <div class="readout-cell">
+          <span class="readout-label">段階</span>
+          <strong id="readoutStage">01 / 04</strong>
+        </div>
+        <div class="readout-cell">
+          <span class="readout-label">脳血流</span>
+          <strong id="readoutBlood">中</strong>
+        </div>
+        <div class="readout-cell accent-cell">
+          <span class="readout-label">細胞内ATP</span>
+          <strong id="readoutAtp">高</strong>
+        </div>
+        <div class="readout-cell balance-cell">
+          <span class="readout-label">収支</span>
+          <strong id="readoutBalance">安定</strong>
+        </div>
+      </section>
+
+      <section class="principle-panel" aria-live="polite">
+        <p class="panel-kicker" id="stageKicker">01 / 覚醒</p>
+        <h2 id="stageTitle">ATPが高い</h2>
+        <p id="stageDescription">脳が活動し、細胞内ATPは高い状態。</p>
+      </section>
+
+      <aside class="legend-panel" aria-label="3D表示の凡例">
+        <div class="legend-item"><span class="legend-swatch brain-swatch"></span><span>大脳皮質</span></div>
+        <div class="legend-item"><span class="legend-swatch blood-swatch"></span><span>脳血流</span></div>
+        <div class="legend-item"><span class="legend-swatch atp-swatch"></span><span>ATP</span></div>
+      </aside>
+
+      <p class="interaction-hint">ドラッグ：視点　ホイール：距離</p>
+
+      <nav class="control-rail" aria-label="学習ステージ">
+        <button class="lab-control is-active" data-stage="0" type="button" aria-pressed="true">
+          <span class="control-index">01</span>
+          <span>覚醒</span>
+          <small>ATP 高</small>
+        </button>
+        <button class="lab-control" data-stage="1" type="button" aria-pressed="false">
+          <span class="control-index">02</span>
+          <span>ノンレム睡眠</span>
+          <small>ATP 少し低下</small>
+        </button>
+        <button class="lab-control" data-stage="2" type="button" aria-pressed="false">
+          <span class="control-index">03</span>
+          <span>レム・供給増加</span>
+          <small>脳血流 増</small>
+        </button>
+        <button class="lab-control" data-stage="3" type="button" aria-pressed="false">
+          <span class="control-index">04</span>
+          <span>レム・ATP低下</span>
+          <small>血流↑・ATP↓</small>
+        </button>
+      </nav>
+    </div>
+    <p class="fallback-message" id="fallbackMessage" hidden>3D表示を読み込めませんでした。</p>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

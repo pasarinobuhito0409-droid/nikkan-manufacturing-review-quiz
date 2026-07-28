@@ -1,9 +1,9 @@
-const CACHE_NAME = "nikkan-manufacturing-review-quiz-v48";
+const CACHE_NAME = "nikkan-manufacturing-review-quiz-v49";
 
 const PRECACHE_ASSETS = [
   "./",
   "./index.html",
-  "./quiz-data.js?v=48",
+  "./quiz-data.js?v=49",
   "./manifest.webmanifest",
   "./service-worker.js",
   "./assets/icon.svg",
@@ -72,7 +72,33 @@ const PRECACHE_ASSETS = [
   "./lignin-glow-3d/index.html",
   "./lignin-glow-3d/styles.css",
   "./lignin-glow-3d/app.js",
-  "./lignin-glow-3d/vendor/three.module.js"
+  "./lignin-glow-3d/vendor/three.module.js",
+  "./assets/2026-07-28-hero-rem-energy.png",
+  "./assets/2026-07-28-rem-marked-source.png",
+  "./assets/2026-07-28-rem-red-01-what.png",
+  "./assets/2026-07-28-rem-red-02-how.png",
+  "./assets/2026-07-28-rem-red-03-why.png",
+  "./assets/2026-07-28-rem-red-04-result.png",
+  "./assets/2026-07-28-rem-green-01-what.png",
+  "./assets/2026-07-28-rem-green-02-how.png",
+  "./assets/2026-07-28-rem-green-03-why.png",
+  "./assets/2026-07-28-rem-green-04-result.png",
+  "./assets/2026-07-28-rem-q1-01-what.png",
+  "./assets/2026-07-28-rem-q1-02-how.png",
+  "./assets/2026-07-28-rem-q1-03-why.png",
+  "./assets/2026-07-28-rem-q1-04-result.png",
+  "./assets/2026-07-28-rem-q2-01-what.png",
+  "./assets/2026-07-28-rem-q2-02-how.png",
+  "./assets/2026-07-28-rem-q2-03-why.png",
+  "./assets/2026-07-28-rem-q2-04-result.png",
+  "./assets/2026-07-28-rem-q3-01-what.png",
+  "./assets/2026-07-28-rem-q3-02-how.png",
+  "./assets/2026-07-28-rem-q3-03-why.png",
+  "./assets/2026-07-28-rem-q3-04-result.png",
+  "./rem-energy-3d/index.html",
+  "./rem-energy-3d/styles.css",
+  "./rem-energy-3d/app.js",
+  "./rem-energy-3d/vendor/three.module.js"
 ];
 
 const PRECACHE_BATCH_SIZE = 5;
@@ -124,7 +150,8 @@ self.addEventListener("fetch", (event) => {
     url.pathname.endsWith("/index.html") ||
     url.pathname.endsWith("/service-worker.js") ||
     url.pathname.includes("/adaptive-robot-3d/") ||
-    url.pathname.includes("/lignin-glow-3d/");
+    url.pathname.includes("/lignin-glow-3d/") ||
+    url.pathname.includes("/rem-energy-3d/");
 
   const cacheResponseAndReturn = (response) => {
     if (!response.ok) return Promise.resolve(response);

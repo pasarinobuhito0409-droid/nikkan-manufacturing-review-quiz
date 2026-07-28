@@ -3664,5 +3664,385 @@ window.NIKKAN_QUIZ_SETS = [
         ]
       }
     ]
+  },
+  {
+    id: "2026-07-28-rem-sleep-energy-paradox",
+    date: "2026-07-28",
+    sourceDate: "2026-07-28",
+    difficulty: "入門",
+    strictVisuals: true,
+    paperTheater: {
+      frameCount: 4,
+      phases: ["what", "how", "why", "result"]
+    },
+    title: "日刊工業新聞 7/28 レム睡眠中のパラドックス状態 脳エネルギーの逆説3問",
+    titleLines: [
+      "日刊工業新聞 7/28",
+      "レム睡眠中の逆説",
+      "脳エネルギーの3問"
+    ],
+    shortTitle: "レム睡眠・ATPの逆説",
+    sourceLabel: "日刊工業新聞 2026/7/28 22面",
+    heroImage: "./assets/2026-07-28-hero-rem-energy.png",
+    heroAlt: "レム睡眠中のマウスと脳エネルギーを調べる研究室",
+    summary: [
+      "レム睡眠は、脳が活動する眠り。",
+      "脳血流は増え、ATPは低下する。",
+      "マウスの大脳皮質で確認された。",
+      "人間でも同じとは断定しない。"
+    ],
+    articleFocus: {
+      title: "今回の芯：供給とATPの逆説",
+      breathLines: [
+        { label: "対象", text: "生きたマウスの研究。" },
+        { label: "注意", text: "人間と同じとは断定しない。" },
+        { label: "赤", text: "血流↑でもATP↓が発明の種。" },
+        { label: "緑", text: "ATPは生産−消費の差。" }
+      ]
+    },
+    articleEvidence: {
+      image: "./assets/2026-07-28-rem-marked-source.png",
+      zoomImage: "./assets/2026-07-28-rem-marked-source.png",
+      alt: "レム睡眠中のパラドックス状態を示すマーカー付き新聞記事",
+      caption: "赤・緑・黄のマーカーは証拠専用。図解には流用しない。",
+      evidenceOnly: true
+    },
+    curiosityTitle: "赤：発明の種",
+    curiosityPoints: [
+      {
+        title: "血流が増えてもATPが減る",
+        text: "レム睡眠では、脳血流が増えても細胞内ATPが低下する。供給だけでは細胞の余力を読めない。",
+        breathLines: [
+          { label: "発見", text: "レムでATPが低下する。" },
+          { label: "逆説", text: "脳血流は増えている。" },
+          { label: "種", text: "供給と余力を同時に測る。" },
+          { label: "注意", text: "原因はまだ確定しない。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "何が起きる？",
+            image: "./assets/2026-07-28-rem-red-01-what.png",
+            zoomImage: "./assets/2026-07-28-rem-red-01-what.png",
+            imageAlt: "レム睡眠中のマウスで脳は活動し体は脱力する場面",
+            caption: "脳は活動し、体は脱力する。",
+            labels: ["① 何が起きる？", "脳は活動", "体は脱力"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "どう測る？",
+            image: "./assets/2026-07-28-rem-red-02-how.png",
+            zoomImage: "./assets/2026-07-28-rem-red-02-how.png",
+            imageAlt: "マウスの脳血流と細胞内ATPを同時に測定する研究者",
+            caption: "脳血流とATPを同じ睡眠状態で測る。",
+            labels: ["② どう測る？", "脳血流", "細胞内ATP", "同時測定"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "なぜ逆説？",
+            image: "./assets/2026-07-28-rem-red-03-why.png",
+            zoomImage: "./assets/2026-07-28-rem-red-03-why.png",
+            imageAlt: "脳血流の増加とATP低下を画面で比較する研究室",
+            caption: "届く燃料が増えても、ATPは下がる。",
+            labels: ["③ なぜ逆説？", "血流↑", "ATP↓", "負の収支の可能性"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "発明の種",
+            image: "./assets/2026-07-28-rem-red-04-result.png",
+            zoomImage: "./assets/2026-07-28-rem-red-04-result.png",
+            imageAlt: "脳エネルギーの隠れた不足を監視する研究装置の発想",
+            caption: "供給・ATP・睡眠を同時に見る装置へ。",
+            labels: ["④ 発明の種", "供給量", "ATP残量", "睡眠状態"],
+            result: true
+          }
+        ]
+      }
+    ],
+    importantTitle: "緑：原理を深掘り",
+    importantPoints: [
+      {
+        title: "供給とATPは同じではない",
+        text: "脳血流は燃料を運ぶ側。ATPは細胞が今使えるエネルギー。ATP変化は生産と消費の差で決まる。",
+        breathLines: [
+          { label: "供給", text: "脳血流は燃料を運ぶ。" },
+          { label: "残量", text: "ATPは細胞内の電池。" },
+          { label: "式", text: "ATP変化＝生産−消費。" },
+          { label: "推定", text: "消費増などが示唆される。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "供給と残量",
+            image: "./assets/2026-07-28-rem-green-01-what.png",
+            zoomImage: "./assets/2026-07-28-rem-green-01-what.png",
+            imageAlt: "血液から神経細胞へ燃料が届きATPが作られる場面",
+            caption: "血流は、燃料を運ぶ道。",
+            labels: ["① 供給と残量", "血液", "燃料", "神経細胞"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "どう分ける？",
+            image: "./assets/2026-07-28-rem-green-02-how.png",
+            zoomImage: "./assets/2026-07-28-rem-green-02-how.png",
+            imageAlt: "脳血流とATPを別々の測定器で記録する研究者",
+            caption: "血流とATPを別の指標として記録する。",
+            labels: ["② どう分ける？", "脳血流", "ATP", "別の指標"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "なぜ差が出る？",
+            image: "./assets/2026-07-28-rem-green-03-why.png",
+            zoomImage: "./assets/2026-07-28-rem-green-03-why.png",
+            imageAlt: "神経細胞のATP生産と消費を天びんで比べる原理図解",
+            caption: "ATPは、生産から消費を引いた差。",
+            labels: ["③ なぜ差が出る？", "生産", "消費", "ATP変化"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "原理",
+            image: "./assets/2026-07-28-rem-green-04-result.png",
+            zoomImage: "./assets/2026-07-28-rem-green-04-result.png",
+            imageAlt: "脳血流が増えてもATP収支が負になる可能性を研究者が確認する場面",
+            caption: "生産−消費が0未満なら、ATPは下がる。",
+            labels: ["④ 原理", "生産−消費＜0", "負の収支"],
+            result: true
+          }
+        ]
+      }
+    ],
+    glossaryTitle: "黄：読みと意味",
+    glossary: [
+      { term: "覚醒（かくせい）", meaning: "目が覚めている状態。" },
+      { term: "代謝（たいしゃ）", meaning: "栄養から力を作り使う働き。" },
+      { term: "大脳皮質（だいのうひしつ）", meaning: "脳の表面にある考える部分。" },
+      { term: "興奮性神経細胞（こうふんせいしんけいさいぼう）", meaning: "次の細胞へ信号を送る神経。" },
+      { term: "ATP（エーティーピー）", meaning: "細胞がすぐ使う小さな電池。" },
+      { term: "脳血流（のうけつりゅう）", meaning: "脳へ流れる血液の量。" },
+      { term: "アストロサイト", meaning: "神経細胞を支える細胞。" },
+      { term: "ピルビン酸（ピルビンさん）", meaning: "糖から力を作る途中の物質。" },
+      { term: "負のエネルギーバランス", meaning: "作る力より使う力が多い状態。" },
+      { term: "パラドックス（逆説）", meaning: "反対に見えることが同時に起きること。" }
+    ],
+    insightQuotes: [],
+    sources: [
+      "https://www.tohoku.ac.jp/japanese/2020/09/press20200904-01-rem.html",
+      "https://doi.org/10.1038/s42003-020-01215-6"
+    ],
+    questions: [
+      {
+        id: "rem-blood-atp",
+        tag: "レム睡眠の観察",
+        difficulty: "入門",
+        question: "レム睡眠中、研究で確認された組み合わせは？",
+        hint: "血流とATPを分けて見る。",
+        choices: [
+          "脳血流は増え、細胞内ATPは大きく低下する",
+          "脳血流もATPも大きく増える",
+          "脳血流もATPも大きく低下する"
+        ],
+        correctIndex: 0,
+        answerTitle: "答え：脳血流↑・細胞内ATP↓",
+        principle: "供給増とATP低下が同時に起きた。",
+        answerParagraphs: [
+          "対象は生きたマウス。",
+          "大脳皮質の神経細胞を測った。",
+          "レムでATPは大きく下がった。",
+          "一方、脳血流は増えていた。",
+          "人間と同じとは断定しない。"
+        ],
+        breathLines: [
+          { label: "確認", text: "血流↑・ATP↓。" },
+          { label: "対象", text: "生きたマウス。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "状態を分ける",
+            image: "./assets/2026-07-28-rem-q1-01-what.png",
+            zoomImage: "./assets/2026-07-28-rem-q1-01-what.png",
+            imageAlt: "覚醒ノンレムレム睡眠を並べて比較する研究画面",
+            caption: "睡眠状態ごとに脳を比べる。",
+            labels: ["① 状態を分ける", "覚醒", "ノンレム", "レム"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "血流を見る",
+            image: "./assets/2026-07-28-rem-q1-02-how.png",
+            zoomImage: "./assets/2026-07-28-rem-q1-02-how.png",
+            imageAlt: "レム睡眠中に脳血流が増えることを測る研究室",
+            caption: "レム睡眠で血流が上がる。",
+            labels: ["② 血流を見る", "レム睡眠", "脳血流↑"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "ATPを見る",
+            image: "./assets/2026-07-28-rem-q1-03-why.png",
+            zoomImage: "./assets/2026-07-28-rem-q1-03-why.png",
+            imageAlt: "神経細胞内のATP低下を研究者が確認する場面",
+            caption: "同じレム睡眠でATPは下がる。",
+            labels: ["③ ATPを見る", "細胞内ATP↓", "大きく低下"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "正解",
+            image: "./assets/2026-07-28-rem-q1-04-result.png",
+            zoomImage: "./assets/2026-07-28-rem-q1-04-result.png",
+            imageAlt: "脳血流上昇とATP低下の正解を確認する研究画面",
+            caption: "正解は、脳血流↑・細胞内ATP↓。",
+            labels: ["④ 正解", "血流↑", "ATP↓"],
+            result: true
+          }
+        ]
+      },
+      {
+        id: "negative-energy-balance",
+        tag: "エネルギー収支",
+        difficulty: "入門",
+        question: "負のエネルギーバランスとは？",
+        hint: "作る量と使う量を比べる。",
+        choices: [
+          "ATPを使う量より、作る量が多い状態",
+          "ATPを作る量より、使う量が多い状態",
+          "脳血流が少なく、血液が止まる状態"
+        ],
+        correctIndex: 1,
+        answerTitle: "答え：作る量より使う量が多い",
+        principle: "ATP変化＝生産−消費。",
+        answerParagraphs: [
+          "ATPは細胞の小さな電池。",
+          "生産より消費が多いと減る。",
+          "これが負のエネルギー収支。",
+          "原因はまだ確定していない。"
+        ],
+        breathLines: [
+          { label: "式", text: "生産−消費＜0。" },
+          { label: "意味", text: "使う方が多い。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "燃料が届く",
+            image: "./assets/2026-07-28-rem-q2-01-what.png",
+            zoomImage: "./assets/2026-07-28-rem-q2-01-what.png",
+            imageAlt: "血液から神経細胞へ燃料が届くエネルギー研究の場面",
+            caption: "血液から燃料が届く。",
+            labels: ["① 燃料が届く", "血液", "燃料"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "ATPを作る",
+            image: "./assets/2026-07-28-rem-q2-02-how.png",
+            zoomImage: "./assets/2026-07-28-rem-q2-02-how.png",
+            imageAlt: "神経細胞の内部でATPが作られる仕組みを調べる研究者",
+            caption: "細胞内でATPを作る。",
+            labels: ["② ATPを作る", "細胞内", "ATP生産"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "消費が上回る",
+            image: "./assets/2026-07-28-rem-q2-03-why.png",
+            zoomImage: "./assets/2026-07-28-rem-q2-03-why.png",
+            imageAlt: "神経細胞のATP生産と消費の差を比較する研究画面",
+            caption: "使う量が、生産量を上回る。",
+            labels: ["③ 消費が上回る", "ATP生産", "ATP消費"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "定義",
+            image: "./assets/2026-07-28-rem-q2-04-result.png",
+            zoomImage: "./assets/2026-07-28-rem-q2-04-result.png",
+            imageAlt: "負のエネルギー収支を天びんで確認する研究説明",
+            caption: "生産−消費が負なら、ATPは減る。",
+            labels: ["④ 定義", "負のエネルギー収支", "生産−消費＜0"],
+            result: true
+          }
+        ]
+      },
+      {
+        id: "rem-triple-measurement",
+        tag: "発明の計測",
+        difficulty: "入門",
+        question: "この発見を生かす計測方法は？",
+        hint: "1つの値だけでは、逆説を見落とす。",
+        choices: [
+          "脳血流だけを測る",
+          "睡眠時間だけを測る",
+          "睡眠状態・脳血流・細胞内ATPを同時に測る"
+        ],
+        correctIndex: 2,
+        answerTitle: "答え：3つの信号を同時に測る",
+        principle: "供給・残量・状態を同時に見る。",
+        answerParagraphs: [
+          "血流だけでは供給しか分からない。",
+          "ATPを加えると細胞の余力が分かる。",
+          "睡眠状態を重ねて逆説を見つける。",
+          "発明は同時測定装置につながる。"
+        ],
+        breathLines: [
+          { label: "3点", text: "状態・血流・ATP。" },
+          { label: "狙い", text: "隠れた不足を見つける。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "血流だけでは",
+            image: "./assets/2026-07-28-rem-q3-01-what.png",
+            zoomImage: "./assets/2026-07-28-rem-q3-01-what.png",
+            imageAlt: "血流だけを測ると脳エネルギーが十分に見える研究画面",
+            caption: "血流だけでは、供給しか見えない。",
+            labels: ["① 血流だけでは", "供給量", "見えない不足"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "ATPを足す",
+            image: "./assets/2026-07-28-rem-q3-02-how.png",
+            zoomImage: "./assets/2026-07-28-rem-q3-02-how.png",
+            imageAlt: "脳血流計に細胞内ATPの計測を加える研究装置",
+            caption: "ATP計を加え、細胞の余力を見る。",
+            labels: ["② ATPを足す", "ATP計", "細胞の余力"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "状態を重ねる",
+            image: "./assets/2026-07-28-rem-q3-03-why.png",
+            zoomImage: "./assets/2026-07-28-rem-q3-03-why.png",
+            imageAlt: "睡眠状態と脳血流とATPを同じ時間軸で重ねる研究画面",
+            caption: "睡眠状態を重ね、逆説を見つける。",
+            labels: ["③ 状態を重ねる", "睡眠状態", "血流", "ATP"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "発明の種",
+            image: "./assets/2026-07-28-rem-q3-04-result.png",
+            zoomImage: "./assets/2026-07-28-rem-q3-04-result.png",
+            imageAlt: "脳エネルギーを三つの信号で監視し隠れた不足を警告する装置",
+            caption: "3つの信号で、隠れた不足を警告する。",
+            labels: ["④ 発明の種", "状態・血流・ATP", "不足を警告"],
+            result: true
+          }
+        ]
+      }
+    ]
   }
 ];

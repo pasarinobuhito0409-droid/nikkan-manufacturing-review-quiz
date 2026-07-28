@@ -1342,7 +1342,7 @@
     </div>
   </div>
 
-  <script src="./quiz-data.js?v=48"></script>
+  <script src="./quiz-data.js?v=49"></script>
   <script>
     const quizSets = window.NIKKAN_QUIZ_SETS || [];
     const storageKey = "nikkan-manufacturing-review-quiz-library-v2";
@@ -1863,6 +1863,17 @@
 
     function renderLab(set) {
       stageInner.innerHTML = "";
+      if (set && set.id === "2026-07-28-rem-sleep-energy-paradox") {
+        stage.classList.add("lab-active");
+        const iframe = document.createElement("iframe");
+        iframe.className = "lab-frame";
+        iframe.src = "./rem-energy-3d/index.html?v=49";
+        iframe.title = "レム睡眠とATPの逆説 3Dラボ";
+        iframe.setAttribute("aria-label", "レム睡眠中の脳血流とATPの変化を動かして見る3Dラボ");
+        iframe.loading = "eager";
+        stageInner.appendChild(iframe);
+        return;
+      }
       if (set && set.id === "2026-07-27-poplar-lignin-photoluminescence") {
         stage.classList.add("lab-active");
         const iframe = document.createElement("iframe");
