@@ -1342,7 +1342,7 @@
     </div>
   </div>
 
-  <script src="./quiz-data.js?v=49"></script>
+  <script src="./quiz-data.js?v=50"></script>
   <script>
     const quizSets = window.NIKKAN_QUIZ_SETS || [];
     const storageKey = "nikkan-manufacturing-review-quiz-library-v2";
@@ -1867,7 +1867,7 @@
         stage.classList.add("lab-active");
         const iframe = document.createElement("iframe");
         iframe.className = "lab-frame";
-        iframe.src = "./rem-energy-3d/index.html?v=49";
+        iframe.src = "./rem-energy-3d/index.html?v=50";
         iframe.title = "レム睡眠とATPの逆説 3Dラボ";
         iframe.setAttribute("aria-label", "レム睡眠中の脳血流とATPの変化を動かして見る3Dラボ");
         iframe.loading = "eager";
@@ -2160,14 +2160,14 @@
 
     if ("serviceWorker" in navigator && location.protocol !== "file:") {
       window.addEventListener("load", async () => {
-        const reloadKey = "nikkan-sw-reloaded-v48";
+        const reloadKey = "nikkan-sw-reloaded-v50";
         navigator.serviceWorker.addEventListener("controllerchange", () => {
           if (sessionStorage.getItem(reloadKey)) return;
           sessionStorage.setItem(reloadKey, "1");
           location.reload();
         });
         try {
-          const registration = await navigator.serviceWorker.register("./service-worker.js?v=48");
+          const registration = await navigator.serviceWorker.register("./service-worker.js?v=50");
           try {
             await registration?.update?.();
           } catch (error) {
