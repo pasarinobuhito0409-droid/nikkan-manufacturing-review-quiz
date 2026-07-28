@@ -3813,7 +3813,7 @@ window.NIKKAN_QUIZ_SETS = [
             zoomImage: "./assets/2026-07-28-rem-green-04-result.png",
             imageAlt: "脳血流が増えてもATP収支が負になる可能性を研究者が確認する場面",
             caption: "生産−消費が0未満なら、ATPは下がる。",
-            labels: ["④ 原理", "生産−消費＜0", "負の収支"],
+            labels: ["④ 原理", "生産−消費＜0", "負の収支の可能性"],
             result: true
           }
         ]

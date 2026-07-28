@@ -19,7 +19,7 @@ const stages = [
   { name: "覚醒", title: "ATPが高い", description: "脳が活動し、細胞内ATPは高い状態。", blood: "中", atp: "高", balance: "安定", bloodLevel: 0.55, atpLevel: 1, balanceLevel: 0.55 },
   { name: "ノンレム睡眠", title: "ATPが少し低下", description: "眠りに入り、細胞内ATPが少し下がる。", blood: "中", atp: "少し低下", balance: "やや低下", bloodLevel: 0.45, atpLevel: 0.72, balanceLevel: 0.38 },
   { name: "レム・供給増加", title: "脳血流が増える", description: "レム睡眠で、脳へ流れる血液が増える。", blood: "増", atp: "低下中", balance: "逆向き", bloodLevel: 0.92, atpLevel: 0.55, balanceLevel: 0.16 },
-  { name: "レム・ATP低下", title: "血流↑・ATP↓", description: "血流が増えても、細胞内ATPは大きく下がる。", blood: "増", atp: "大きく低下", balance: "負の収支", bloodLevel: 1, atpLevel: 0.25, balanceLevel: -0.55 }
+  { name: "レム・ATP低下", title: "血流↑・ATP↓", description: "血流が増えても、細胞内ATPは大きく下がる。負の収支の可能性がある。", blood: "増", atp: "大きく低下", balance: "負の収支の可能性", bloodLevel: 1, atpLevel: 0.25, balanceLevel: -0.55 }
 ];
 
 let renderer;
