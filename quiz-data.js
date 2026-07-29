@@ -4235,42 +4235,42 @@ window.NIKKAN_QUIZ_SETS = [
           {
             order: 1,
             phase: "what",
-            phaseLabel: "記事の数字",
-            image: "./assets/2026-07-29-large-generator-q2-01-what.png",
-            zoomImage: "./assets/2026-07-29-large-generator-q2-01-what.png",
-            imageAlt: "大型発電機の年産60台と2024年度比約3倍を示す場面",
-            caption: "記事は、年産60台、2024年度比で最大約3倍を示す。",
-            requiredLabels: ["① 記事の数字", "年産60台", "約3倍"]
+            phaseLabel: "生産目標",
+            image: "./assets/2026-07-29-large-generator-q3-01-what.png",
+            zoomImage: "./assets/2026-07-29-large-generator-q3-01-what.png",
+            imageAlt: "大型発電機を年産60台へ増やす計画を示す場面",
+            caption: "年産60台、2024年度比で最大3倍が目標。",
+            requiredLabels: ["① 生産目標", "年産60台", "最大3倍"]
           },
           {
             order: 2,
             phase: "how",
-            phaseLabel: "熱に変える",
-            image: "./assets/2026-07-29-large-generator-q2-02-how.png",
-            zoomImage: "./assets/2026-07-29-large-generator-q2-02-how.png",
-            imageAlt: "LNGが燃焼して高温のガスと回転を生む場面",
-            caption: "燃料の熱が、タービンの回転を生む。",
-            requiredLabels: ["② 熱に変える", "燃料", "高温のガス", "回転"]
+            phaseLabel: "増産のしくみ",
+            image: "./assets/2026-07-29-large-generator-q3-02-how.png",
+            zoomImage: "./assets/2026-07-29-large-generator-q3-02-how.png",
+            imageAlt: "組立と検査の工程を増やして供給力を高める場面",
+            caption: "組立・検査の工程を増やし、作れる台数を増やす。",
+            requiredLabels: ["② 増産のしくみ", "組立", "検査"]
           },
           {
             order: 3,
             phase: "why",
-            phaseLabel: "生産能力を増やす",
-            image: "./assets/2026-07-29-large-generator-q2-03-why.png",
-            zoomImage: "./assets/2026-07-29-large-generator-q2-03-why.png",
-            imageAlt: "LNGと石炭の二つの火力を排出量で比較する場面",
-            caption: "燃料ごとの排出量を比べる。",
-            requiredLabels: ["③ 排出を比べる", "LNG", "石炭"]
+            phaseLabel: "需要が増える",
+            image: "./assets/2026-07-29-large-generator-q3-03-why.png",
+            zoomImage: "./assets/2026-07-29-large-generator-q3-03-why.png",
+            imageAlt: "データセンターの電力需要と発電機の引き合いが増える場面",
+            caption: "データセンターなどの電力需要が、増産の背景になる。",
+            requiredLabels: ["③ 需要が増える", "電力需要", "引き合い"]
           },
           {
             order: 4,
             phase: "result",
             phaseLabel: "正解",
-            image: "./assets/2026-07-29-large-generator-q2-04-result.png",
-            zoomImage: "./assets/2026-07-29-large-generator-q2-04-result.png",
-            imageAlt: "LNGは相対的にCO2が少ないがゼロではないという結果の場面",
-            caption: "正解は、石炭などより相対的にCO2が少ない。",
-            requiredLabels: ["④ 正解", "相対的に少ない", "排出はある"],
+            image: "./assets/2026-07-29-large-generator-q3-04-result.png",
+            zoomImage: "./assets/2026-07-29-large-generator-q3-04-result.png",
+            imageAlt: "大型発電機の生産体制を強化し電力供給に貢献する場面",
+            caption: "増産の目的は、増える電力需要を支えること。",
+            requiredLabels: ["④ 正解", "年産60台", "安定した電力供給"],
             result: true
           }
         ]
@@ -4304,8 +4304,8 @@ window.NIKKAN_QUIZ_SETS = [
             order: 1,
             phase: "what",
             phaseLabel: "LNGを燃やす",
-            image: "./assets/2026-07-29-large-generator-q3-01-what.png",
-            zoomImage: "./assets/2026-07-29-large-generator-q3-01-what.png",
+            image: "./assets/2026-07-29-large-generator-q2-01-what.png",
+            zoomImage: "./assets/2026-07-29-large-generator-q2-01-what.png",
             imageAlt: "LNGを燃料にしてガスタービンを動かす場面",
             caption: "LNGも燃料として燃える。",
             requiredLabels: ["① LNGを燃やす", "液化天然ガス", "燃料"]
@@ -4314,31 +4314,31 @@ window.NIKKAN_QUIZ_SETS = [
             order: 2,
             phase: "how",
             phaseLabel: "排出を比べる",
-            image: "./assets/2026-07-29-large-generator-q3-02-how.png",
-            zoomImage: "./assets/2026-07-29-large-generator-q3-02-how.png",
-            imageAlt: "大型発電機の組立と検査を増やして生産能力を高める場面",
-            caption: "組立と検査の流れを増やし、供給力を高める。",
-            requiredLabels: ["② 生産能力を増やす", "組立を増やす", "検査をそろえる"]
+            image: "./assets/2026-07-29-large-generator-q2-02-how.png",
+            zoomImage: "./assets/2026-07-29-large-generator-q2-02-how.png",
+            imageAlt: "LNGの燃焼で高温のガスが生まれタービンを回す場面",
+            caption: "LNGを燃やすと、高温のガスがタービンを回す。",
+            requiredLabels: ["② 燃焼のしくみ", "高温のガス", "タービン"]
           },
           {
             order: 3,
             phase: "why",
-            phaseLabel: "需要とつながる",
-            image: "./assets/2026-07-29-large-generator-q3-03-why.png",
-            zoomImage: "./assets/2026-07-29-large-generator-q3-03-why.png",
-            imageAlt: "データセンターの電力需要と発電機の引き合いが増える場面",
-            caption: "データセンターなどの電力需要が、増産の背景になる。",
-            requiredLabels: ["③ なぜ必要？", "電力需要が増える", "引き合いが増える"]
+            phaseLabel: "排出を比べる",
+            image: "./assets/2026-07-29-large-generator-q2-03-why.png",
+            zoomImage: "./assets/2026-07-29-large-generator-q2-03-why.png",
+            imageAlt: "LNGと石炭の火力発電を排出量で比較する場面",
+            caption: "石炭などと比べると、LNGはCO2が相対的に少ない。",
+            requiredLabels: ["③ 排出を比べる", "LNG", "石炭"]
           },
           {
             order: 4,
             phase: "result",
             phaseLabel: "正解",
-            image: "./assets/2026-07-29-large-generator-q3-04-result.png",
-            zoomImage: "./assets/2026-07-29-large-generator-q3-04-result.png",
-            imageAlt: "大型発電機の生産体制を強化し電力供給に貢献する場面",
-            caption: "増産の目的は、増える電力需要を支えること。",
-            requiredLabels: ["④ 正解", "年産60台", "安定した電力供給"],
+            image: "./assets/2026-07-29-large-generator-q2-04-result.png",
+            zoomImage: "./assets/2026-07-29-large-generator-q2-04-result.png",
+            imageAlt: "LNGはCO2が相対的に少ないがゼロではないという結果の場面",
+            caption: "正解は、石炭などより相対的にCO2が少ない。ただしゼロではない。",
+            requiredLabels: ["④ 正解", "相対的に少ない", "排出はある"],
             result: true
           }
         ]
