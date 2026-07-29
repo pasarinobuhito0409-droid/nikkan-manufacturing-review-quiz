@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>大型発電機の原理 3Dラボ</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="lab-shell" id="labRoot">
+    <canvas id="labCanvas" aria-label="燃料の熱から電磁誘導までを動かして見る大型発電機の3D教材"></canvas>
+    <div class="interface-layer">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">発電の原理 / 3D学習ラボ</p>
+          <h1>大型発電機のしくみ</h1>
+          <p class="subtitle">燃料の熱を、回転を通して電気へ変える。</p>
+        </div>
+        <div class="top-actions">
+          <button class="quiet-button" id="motionToggle" type="button" aria-pressed="true">
+            <span class="button-dot" aria-hidden="true"></span>
+            <span id="motionLabel">自動再生を停止</span>
+          </button>
+          <span class="state-badge" id="stateBadge">01 / 04 燃料の熱</span>
+        </div>
+      </header>
+      <section class="readout-strip" aria-label="現在の原理">
+        <div class="readout-cell"><span class="readout-label">段階</span><strong id="readoutStage">01 / 04</strong></div>
+        <div class="readout-cell"><span class="readout-label">入力</span><strong id="readoutInput">燃料の熱</strong></div>
+        <div class="readout-cell accent-cell"><span class="readout-label">回転</span><strong id="readoutRotation">準備中</strong></div>
+        <div class="readout-cell output-cell"><span class="readout-label">出力</span><strong id="readoutOutput">まだ電気なし</strong></div>
+      </section>
+      <section class="principle-panel" aria-live="polite">
+        <p class="panel-kicker" id="stageKicker">01 / 燃料の熱</p>
+        <h2 id="stageTitle">熱で高圧ガスを作る</h2>
+        <p id="stageDescription">燃料を燃やし、空気を押し広げる力を作る。</p>
+      </section>
+      <aside class="legend-panel" aria-label="3D表示の凡例">
+        <div class="legend-item"><span class="legend-swatch heat-swatch"></span><span>高温ガス</span></div>
+        <div class="legend-item"><span class="legend-swatch shaft-swatch"></span><span>回転軸</span></div>
+        <div class="legend-item"><span class="legend-swatch coil-swatch"></span><span>磁石とコイル</span></div>
+        <div class="legend-item"><span class="legend-swatch power-swatch"></span><span>電気</span></div>
+      </aside>
+      <p class="interaction-hint">ドラッグ：視点　ホイール：距離</p>
+      <nav class="control-rail" aria-label="原理の学習段階">
+        <button class="lab-control is-active" data-stage="0" type="button" aria-pressed="true"><span class="control-index">01</span><span>燃料の熱</span><small>高温・高圧</small></button>
+        <button class="lab-control" data-stage="1" type="button" aria-pressed="false"><span class="control-index">02</span><span>タービン回転</span><small>ガスが羽根を押す</small></button>
+        <button class="lab-control" data-stage="2" type="button" aria-pressed="false"><span class="control-index">03</span><span>軸で伝える</span><small>別機械をつなぐ</small></button>
+        <button class="lab-control" data-stage="3" type="button" aria-pressed="false"><span class="control-index">04</span><span>電磁誘導</span><small>電気が生まれる</small></button>
+      </nav>
+    </div>
+    <p class="fallback-message" id="fallbackMessage" hidden>3D表示を読み込めませんでした。</p>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

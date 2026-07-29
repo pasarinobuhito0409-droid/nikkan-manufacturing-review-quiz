@@ -1,9 +1,9 @@
-const CACHE_NAME = "nikkan-manufacturing-review-quiz-v50";
+const CACHE_NAME = "nikkan-manufacturing-review-quiz-v51";
 
 const PRECACHE_ASSETS = [
   "./",
   "./index.html",
-  "./quiz-data.js?v=50",
+  "./quiz-data.js?v=51",
   "./manifest.webmanifest",
   "./service-worker.js",
   "./assets/icon.svg",
@@ -99,19 +99,53 @@ const PRECACHE_ASSETS = [
   "./rem-energy-3d/index.html",
   "./rem-energy-3d/styles.css",
   "./rem-energy-3d/app.js",
-  "./rem-energy-3d/vendor/three.module.js"
+  "./rem-energy-3d/vendor/three.module.js",
+  "./assets/2026-07-29-large-generator-hero.png",
+  "./assets/2026-07-29-large-generator-source.png",
+  "./assets/2026-07-29-large-generator-source-hires.png",
+  "./assets/2026-07-29-large-generator-deep-01-what.png",
+  "./assets/2026-07-29-large-generator-deep-02-how.png",
+  "./assets/2026-07-29-large-generator-deep-03-why.png",
+  "./assets/2026-07-29-large-generator-deep-04-result.png",
+  "./assets/2026-07-29-large-generator-q1-01-what.png",
+  "./assets/2026-07-29-large-generator-q1-02-how.png",
+  "./assets/2026-07-29-large-generator-q1-03-why.png",
+  "./assets/2026-07-29-large-generator-q1-04-result.png",
+  "./assets/2026-07-29-large-generator-q2-01-what.png",
+  "./assets/2026-07-29-large-generator-q2-02-how.png",
+  "./assets/2026-07-29-large-generator-q2-03-why.png",
+  "./assets/2026-07-29-large-generator-q2-04-result.png",
+  "./assets/2026-07-29-large-generator-q3-01-what.png",
+  "./assets/2026-07-29-large-generator-q3-02-how.png",
+  "./assets/2026-07-29-large-generator-q3-03-why.png",
+  "./assets/2026-07-29-large-generator-q3-04-result.png",
+  "./large-generator-3d/index.html",
+  "./large-generator-3d/styles.css",
+  "./large-generator-3d/app.js",
+  "./large-generator-3d/vendor/three.module.js"
 ];
 
 const PRECACHE_BATCH_SIZE = 5;
 const MAX_BATCH_RETRIES = 3;
 const BATCH_RETRY_DELAY_MS = 300;
+const isPlannedJuly29Image = (asset) => asset.startsWith("./assets/2026-07-29-large-generator-");
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const cacheBatchWithRetry = async (cache, assets) => {
+  const requiredAssets = assets.filter((asset) => !isPlannedJuly29Image(asset));
+  const plannedImages = assets.filter(isPlannedJuly29Image);
   for (let attempt = 0; attempt <= MAX_BATCH_RETRIES; attempt += 1) {
     try {
-      await cache.addAll(assets);
+      if (requiredAssets.length) await cache.addAll(requiredAssets);
+      await Promise.all(plannedImages.map(async (asset) => {
+        try {
+          const response = await fetch(asset, { cache: "no-store" });
+          if (response.ok) await cache.put(asset, response);
+        } catch (error) {
+          // 画像生成前の参照は、完成後の取得に任せる。
+        }
+      }));
       return;
     } catch (error) {
       if (attempt === MAX_BATCH_RETRIES) throw error;
@@ -152,7 +186,8 @@ self.addEventListener("fetch", (event) => {
     url.pathname.endsWith("/service-worker.js") ||
     url.pathname.includes("/adaptive-robot-3d/") ||
     url.pathname.includes("/lignin-glow-3d/") ||
-    url.pathname.includes("/rem-energy-3d/");
+    url.pathname.includes("/rem-energy-3d/") ||
+    url.pathname.includes("/large-generator-3d/");
 
   const cacheResponseAndReturn = (response) => {
     if (!response.ok) return Promise.resolve(response);

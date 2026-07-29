@@ -4044,5 +4044,305 @@ window.NIKKAN_QUIZ_SETS = [
         ]
       }
     ]
+  },
+  {
+    id: "2026-07-29-large-generator-scale-up",
+    date: "2026-07-29",
+    sourceDate: "2026-07-29",
+    difficulty: "入門",
+    strictVisuals: true,
+    paperTheater: {
+      frameCount: 4,
+      phases: ["what", "how", "why", "result"]
+    },
+    title: "日刊工業新聞 7/29 大型発電機 年産3倍",
+    titleLines: [
+      "日刊工業新聞 7/29",
+      "大型発電機 年産3倍",
+      "ガスタービン向け"
+    ],
+    shortTitle: "大型発電機・電磁誘導",
+    sourceLabel: "日刊工業新聞 2026/7/29 1面",
+    heroImage: "./assets/2026-07-29-large-generator-hero.png",
+    heroAlt: "大型発電機とガスタービンを学ぶ日本語の研究室イメージ",
+    summary: [
+      "大型発電機を60台へ。",
+      "2024年度比で最大3倍。",
+      "投資額は70億〜80億円。",
+      "電力需要の増加が背景。"
+    ],
+    articleFocus: {
+      title: "自動選定・原理を深掘り",
+      breathLines: [
+        { label: "記事", text: "大型発電機を60台へ。" },
+        { label: "流れ", text: "燃料の熱を回転へ。" },
+        { label: "原理", text: "回転を電磁誘導へ。" },
+        { label: "注意", text: "LNGもゼロ排出ではない。" }
+      ],
+      frames: [
+        {
+          order: 1,
+          phase: "what",
+          phaseLabel: "何が起きる？",
+          image: "./assets/2026-07-29-large-generator-deep-01-what.png",
+          zoomImage: "./assets/2026-07-29-large-generator-deep-01-what.png",
+          imageAlt: "大型発電機とガスタービンを並べて見る場面",
+          caption: "記事の中心は、大型発電機の供給力を増やすこと。",
+          requiredLabels: ["① 記事の中心", "大型発電機", "年産60台"]
+        },
+        {
+          order: 2,
+          phase: "how",
+          phaseLabel: "どう変わる？",
+          image: "./assets/2026-07-29-large-generator-deep-02-how.png",
+          zoomImage: "./assets/2026-07-29-large-generator-deep-02-how.png",
+          imageAlt: "燃料の熱が高温高圧ガスとタービン回転へ変わる場面",
+          caption: "燃料の熱が、高温高圧ガスを通して回転になる。",
+          requiredLabels: ["② 熱から回転", "燃料の熱", "タービン回転"]
+        },
+        {
+          order: 3,
+          phase: "why",
+          phaseLabel: "なぜ電気になる？",
+          image: "./assets/2026-07-29-large-generator-deep-03-why.png",
+          zoomImage: "./assets/2026-07-29-large-generator-deep-03-why.png",
+          imageAlt: "回転軸で磁石を回しコイルに電気が生まれる場面",
+          caption: "回る磁石がコイルの磁界を変え、電磁誘導が起きる。",
+          requiredLabels: ["③ 電磁誘導", "回転する磁石", "コイル"]
+        },
+        {
+          order: 4,
+          phase: "result",
+          phaseLabel: "結果は？",
+          image: "./assets/2026-07-29-large-generator-deep-04-result.png",
+          zoomImage: "./assets/2026-07-29-large-generator-deep-04-result.png",
+          imageAlt: "燃料から回転を経て電気が生まれた結果の場面",
+          caption: "熱 → 回転 → 電磁誘導 → 電気。",
+          requiredLabels: ["④ 結果", "燃料の熱", "回転", "電気"],
+          result: true
+        }
+      ]
+    },
+    articleEvidence: {
+      image: "./assets/2026-07-29-large-generator-source.png",
+      zoomImage: "./assets/2026-07-29-large-generator-source-hires.png",
+      alt: "2026年7月29日1面の大型発電機年産3倍の記事",
+      caption: "新聞の該当記事。これは証拠画像として使う。"
+    },
+    curiosityPoints: [],
+    importantPoints: [],
+    glossary: [],
+    insightQuotes: [],
+    sources: [
+      "https://www.mitsubishigenerator.com/products/turbine.html",
+      "https://www.mitsubishigenerator.com/products/index.html"
+    ],
+    questions: [
+      {
+        id: "generator-electromagnetic-induction",
+        tag: "発電機の直接原理",
+        difficulty: "入門",
+        question: "発電機が電気を作る直接の原理は？",
+        hint: "磁石とコイルの動きを考える。",
+        choices: [
+          "電磁誘導（でんじゆうどう）",
+          "燃料が電線に流れる",
+          "冷却水が電気に変わる"
+        ],
+        correctIndex: 0,
+        answerTitle: "答え：電磁誘導（でんじゆうどう）",
+        principle: "磁界の変化が電圧を生む。",
+        answerParagraphs: [
+          "回転軸が発電機を回す。",
+          "中の磁石も一緒に回る。",
+          "コイルを通る磁界が変わる。",
+          "その変化で電圧が生まれる。",
+          "燃料は直接電気にならない。"
+        ],
+        breathLines: [
+          { label: "原理", text: "磁界の変化で電圧。" },
+          { label: "流れ", text: "回転 → 磁界変化 → 電気。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "磁石を回す",
+            image: "./assets/2026-07-29-large-generator-q1-01-what.png",
+            zoomImage: "./assets/2026-07-29-large-generator-q1-01-what.png",
+            imageAlt: "発電機の中で磁石が回り始める場面",
+            caption: "回転軸が磁石を回す。",
+            requiredLabels: ["① 磁石を回す", "回転軸", "磁石"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "磁界が変わる",
+            image: "./assets/2026-07-29-large-generator-q1-02-how.png",
+            zoomImage: "./assets/2026-07-29-large-generator-q1-02-how.png",
+            imageAlt: "回転する磁石の周りで磁界が変化する場面",
+            caption: "磁石が回ると、コイルを通る磁界が変わる。",
+            requiredLabels: ["② 磁界が変わる", "磁石", "コイル"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "電圧が生まれる",
+            image: "./assets/2026-07-29-large-generator-q1-03-why.png",
+            zoomImage: "./assets/2026-07-29-large-generator-q1-03-why.png",
+            imageAlt: "磁界の変化でコイルに電圧が生まれる場面",
+            caption: "磁界の変化が、コイル内の電荷を動かす。",
+            requiredLabels: ["③ 電圧が生まれる", "磁界の変化", "電荷の移動"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "正解",
+            image: "./assets/2026-07-29-large-generator-q1-04-result.png",
+            zoomImage: "./assets/2026-07-29-large-generator-q1-04-result.png",
+            imageAlt: "電磁誘導で電気が発生した結果を確認する場面",
+            caption: "正解は、電磁誘導。",
+            requiredLabels: ["④ 正解", "電磁誘導", "電気"],
+            result: true
+          }
+        ]
+      },
+      {
+        id: "generator-production-capacity",
+        tag: "大型発電機の増産",
+        difficulty: "入門",
+        question: "大型発電機の年産能力を増やす主な理由は？",
+        hint: "電力を使う場所と、注文の増加を見る。",
+        choices: [
+          "データセンターなどで電力需要が増えたから",
+          "燃料がいらなくなったから",
+          "発電機が回転しなくなったから"
+        ],
+        correctIndex: 0,
+        answerTitle: "答え：電力需要と引き合いが増えたから",
+        principle: "需要が増えると、供給力を増やす。",
+        answerParagraphs: [
+          "データセンターは多くの電気を使う。",
+          "発電機の引き合いが世界で増える。",
+          "足りない分を作れるようにする。",
+          "だから年産能力を60台へ高める。"
+        ],
+        breathLines: [
+          { label: "背景", text: "電力需要が増える。" },
+          { label: "対応", text: "生産能力を高める。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "記事の数字",
+            image: "./assets/2026-07-29-large-generator-q2-01-what.png",
+            zoomImage: "./assets/2026-07-29-large-generator-q2-01-what.png",
+            imageAlt: "大型発電機の年産60台と2024年度比約3倍を示す場面",
+            caption: "記事は、年産60台、2024年度比で最大約3倍を示す。",
+            requiredLabels: ["① 記事の数字", "年産60台", "約3倍"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "熱に変える",
+            image: "./assets/2026-07-29-large-generator-q2-02-how.png",
+            zoomImage: "./assets/2026-07-29-large-generator-q2-02-how.png",
+            imageAlt: "LNGが燃焼して高温のガスと回転を生む場面",
+            caption: "燃料の熱が、タービンの回転を生む。",
+            requiredLabels: ["② 熱に変える", "燃料", "高温のガス", "回転"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "生産能力を増やす",
+            image: "./assets/2026-07-29-large-generator-q2-03-why.png",
+            zoomImage: "./assets/2026-07-29-large-generator-q2-03-why.png",
+            imageAlt: "LNGと石炭の二つの火力を排出量で比較する場面",
+            caption: "燃料ごとの排出量を比べる。",
+            requiredLabels: ["③ 排出を比べる", "LNG", "石炭"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "正解",
+            image: "./assets/2026-07-29-large-generator-q2-04-result.png",
+            zoomImage: "./assets/2026-07-29-large-generator-q2-04-result.png",
+            imageAlt: "LNGは相対的にCO2が少ないがゼロではないという結果の場面",
+            caption: "正解は、石炭などより相対的にCO2が少ない。",
+            requiredLabels: ["④ 正解", "相対的に少ない", "排出はある"],
+            result: true
+          }
+        ]
+      },
+      {
+        id: "lng-relative-emissions",
+        tag: "LNGの位置づけ",
+        difficulty: "入門",
+        question: "LNGの説明で正しいのは？",
+        hint: "ゼロ排出か、相対的な比較か。",
+        choices: [
+          "LNGはゼロ排出である",
+          "石炭などより相対的にCO2が少ない",
+          "LNGは燃料ではない"
+        ],
+        correctIndex: 1,
+        answerTitle: "答え：石炭などより相対的にCO2が少ない",
+        principle: "相対的に少ないが、排出はある。",
+        answerParagraphs: [
+          "LNGは液化天然ガス。",
+          "燃やせばCO2は出る。",
+          "石炭火力などと比べて少ない。",
+          "ゼロ排出とは書かない。"
+        ],
+        breathLines: [
+          { label: "正確", text: "相対的にCO2が少ない。" },
+          { label: "注意", text: "ゼロ排出ではない。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "LNGを燃やす",
+            image: "./assets/2026-07-29-large-generator-q3-01-what.png",
+            zoomImage: "./assets/2026-07-29-large-generator-q3-01-what.png",
+            imageAlt: "LNGを燃料にしてガスタービンを動かす場面",
+            caption: "LNGも燃料として燃える。",
+            requiredLabels: ["① LNGを燃やす", "液化天然ガス", "燃料"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "排出を比べる",
+            image: "./assets/2026-07-29-large-generator-q3-02-how.png",
+            zoomImage: "./assets/2026-07-29-large-generator-q3-02-how.png",
+            imageAlt: "大型発電機の組立と検査を増やして生産能力を高める場面",
+            caption: "組立と検査の流れを増やし、供給力を高める。",
+            requiredLabels: ["② 生産能力を増やす", "組立を増やす", "検査をそろえる"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "需要とつながる",
+            image: "./assets/2026-07-29-large-generator-q3-03-why.png",
+            zoomImage: "./assets/2026-07-29-large-generator-q3-03-why.png",
+            imageAlt: "データセンターの電力需要と発電機の引き合いが増える場面",
+            caption: "データセンターなどの電力需要が、増産の背景になる。",
+            requiredLabels: ["③ なぜ必要？", "電力需要が増える", "引き合いが増える"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "正解",
+            image: "./assets/2026-07-29-large-generator-q3-04-result.png",
+            zoomImage: "./assets/2026-07-29-large-generator-q3-04-result.png",
+            imageAlt: "大型発電機の生産体制を強化し電力供給に貢献する場面",
+            caption: "増産の目的は、増える電力需要を支えること。",
+            requiredLabels: ["④ 正解", "年産60台", "安定した電力供給"],
+            result: true
+          }
+        ]
+      }
+    ]
   }
 ];

@@ -1829,6 +1829,19 @@
         const focus = document.createElement("section");
         focus.className = "evidence-band article-focus";
         focus.innerHTML = `<h3>${set.articleFocus.title || "今日の芯"}</h3>${renderBreathLines(set.articleFocus.text || "", set.articleFocus.breathLines)}`;
+        if (Array.isArray(set.articleFocus.frames) && set.articleFocus.frames.length) {
+          const theater = createPaperTheater({
+            frames: set.articleFocus.frames,
+            key: getPaperFrameKey("evidence-focus", set.id, "article-focus"),
+            title: set.articleFocus.title || "原理を深掘り",
+            fallbackImage: set.articleFocus.teachingImage,
+            fallbackZoomImage: set.articleFocus.teachingZoomImage,
+            fallbackAlt: set.articleFocus.teachingImageAlt || set.articleFocus.title || "原理の説明画像",
+            fallbackCaption: set.articleFocus.teachingImageCaption || ""
+          });
+          theater.classList.add("evidence-paper-theater");
+          focus.appendChild(theater);
+        }
         stageInner.appendChild(focus);
       }
       if (set.articleEvidence && set.articleEvidence.image) {
@@ -1863,6 +1876,17 @@
 
     function renderLab(set) {
       stageInner.innerHTML = "";
+      if (set && set.id === "2026-07-29-large-generator-scale-up") {
+        stage.classList.add("lab-active");
+        const iframe = document.createElement("iframe");
+        iframe.className = "lab-frame";
+        iframe.src = "./large-generator-3d/index.html?v=51";
+        iframe.title = "大型発電機の燃料から電気までを学ぶ3Dラボ";
+        iframe.setAttribute("aria-label", "燃料の熱、タービン回転、軸、電磁誘導を動かして見る3D教材");
+        iframe.loading = "eager";
+        stageInner.appendChild(iframe);
+        return;
+      }
       if (set && set.id === "2026-07-28-rem-sleep-energy-paradox") {
         stage.classList.add("lab-active");
         const iframe = document.createElement("iframe");
@@ -2160,14 +2184,14 @@
 
     if ("serviceWorker" in navigator && location.protocol !== "file:") {
       window.addEventListener("load", async () => {
-        const reloadKey = "nikkan-sw-reloaded-v50";
+        const reloadKey = "nikkan-sw-reloaded-v51";
         navigator.serviceWorker.addEventListener("controllerchange", () => {
           if (sessionStorage.getItem(reloadKey)) return;
           sessionStorage.setItem(reloadKey, "1");
           location.reload();
         });
         try {
-          const registration = await navigator.serviceWorker.register("./service-worker.js?v=50");
+          const registration = await navigator.serviceWorker.register("./service-worker.js?v=51");
           try {
             await registration?.update?.();
           } catch (error) {
