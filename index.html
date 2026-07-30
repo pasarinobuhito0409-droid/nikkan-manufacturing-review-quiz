@@ -1203,6 +1203,8 @@
     .evidence-band.neutral h3 { color: #e7d2a4; }
     .article-evidence .evidence-visual { max-width: 100%; margin-top: 18px; }
     .article-evidence .source-button img { max-height: none; }
+    .article-evidence-grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
+    .article-evidence-grid .evidence-visual { margin-top: 0; }
 
     @media (min-width: 721px) {
       .evidence-row {
@@ -1224,6 +1226,7 @@
       .evidence-row .teaching-visual { margin-top: 0; }
       .evidence-row > .breath-lines { margin-top: 24px; }
       .evidence-row .source-visual { margin-top: 28px; }
+      .article-evidence-grid { grid-template-columns: 1fr; }
     }
 
     .result-flash.playing .result-flash-card { animation: result-arrive .9s ease both; }
@@ -1342,7 +1345,7 @@
     </div>
   </div>
 
-  <script src="./quiz-data.js?v=54"></script>
+  <script src="./quiz-data.js?v=55"></script>
   <script>
     const quizSets = window.NIKKAN_QUIZ_SETS || [];
     const storageKey = "nikkan-manufacturing-review-quiz-library-v2";
@@ -1844,22 +1847,50 @@
         }
         stageInner.appendChild(focus);
       }
-      if (set.articleEvidence && set.articleEvidence.image) {
+      const normalizeArticleEvidence = (articleEvidence) => {
+        if (Array.isArray(articleEvidence)) return articleEvidence;
+        if (!articleEvidence || typeof articleEvidence !== "object") return [];
+        if (Array.isArray(articleEvidence.items)) return articleEvidence.items;
+        return articleEvidence.image ? [articleEvidence] : [];
+      };
+
+      const articleEvidenceItems = normalizeArticleEvidence(set.articleEvidence);
+      if (articleEvidenceItems.length) {
         const evidence = document.createElement("section");
         evidence.className = "evidence-band neutral article-evidence";
-        evidence.innerHTML = `
-          <h3>記事の証拠</h3>
-          <figure class="evidence-visual source-visual">
-            <p class="evidence-visual-label">新聞の該当記事</p>
-            <button class="source-button" type="button" aria-label="記事の証拠画像を高画質で開く"><img src="${set.articleEvidence.image}" alt="${set.articleEvidence.alt || set.title}"></button>
-            ${set.articleEvidence.caption ? `<figcaption>${renderBreathLines(set.articleEvidence.caption)}</figcaption>` : ""}
-          </figure>
-        `;
-        evidence.querySelector("button").addEventListener("click", () => openImageViewer(
-          set.articleEvidence.zoomImage || set.articleEvidence.image,
-          set.articleEvidence.alt || set.title,
-          set.articleEvidence.caption || ""
-        ));
+        const heading = document.createElement("h3");
+        heading.textContent = "記事の証拠";
+        const evidenceGrid = document.createElement("div");
+        evidenceGrid.className = "article-evidence-grid";
+        articleEvidenceItems.forEach((item) => {
+          if (!item || !item.image) return;
+          const figure = document.createElement("figure");
+          figure.className = "evidence-visual source-visual";
+          const label = document.createElement("p");
+          label.className = "evidence-visual-label";
+          label.textContent = item.title || "新聞の該当記事";
+          const button = document.createElement("button");
+          button.className = "source-button";
+          button.type = "button";
+          button.setAttribute("aria-label", "記事の証拠画像を高画質で開く");
+          const image = document.createElement("img");
+          image.src = item.image;
+          image.alt = item.alt || set.title;
+          button.appendChild(image);
+          figure.append(label, button);
+          if (item.caption) {
+            const caption = document.createElement("figcaption");
+            caption.innerHTML = renderBreathLines(item.caption);
+            figure.appendChild(caption);
+          }
+          button.addEventListener("click", () => openImageViewer(
+            item.zoomImage || item.image,
+            item.alt || set.title,
+            item.caption || ""
+          ));
+          evidenceGrid.appendChild(figure);
+        });
+        evidence.append(heading, evidenceGrid);
         stageInner.appendChild(evidence);
       }
       addEvidenceBand(stageInner, "red", set.curiosityTitle || "赤：気になる原理", Array.isArray(set.curiosityPoints) ? set.curiosityPoints : []);
@@ -1876,6 +1907,17 @@
 
     function renderLab(set) {
       stageInner.innerHTML = "";
+      if (set && set.id === "2026-07-30-kumamoto-earthquake-supply-chain") {
+        stage.classList.add("lab-active");
+        const iframe = document.createElement("iframe");
+        iframe.className = "lab-frame";
+        iframe.src = "./earthquake-supply-3d/index.html?v=55";
+        iframe.title = "熊本地震後の設備点検と供給網確認 3Dラボ";
+        iframe.setAttribute("aria-label", "地震発生、設備点検、供給網確認、段階再開を操作して見る3D教材");
+        iframe.loading = "eager";
+        stageInner.appendChild(iframe);
+        return;
+      }
       if (set && set.id === "2026-07-29-large-generator-scale-up") {
         stage.classList.add("lab-active");
         const iframe = document.createElement("iframe");
@@ -2191,7 +2233,7 @@
           location.reload();
         });
         try {
-          const registration = await navigator.serviceWorker.register("./service-worker.js?v=54");
+          const registration = await navigator.serviceWorker.register("./service-worker.js?v=55");
           try {
             await registration?.update?.();
           } catch (error) {

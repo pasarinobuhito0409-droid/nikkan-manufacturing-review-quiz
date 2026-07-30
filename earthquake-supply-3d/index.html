@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>熊本地震・安全再稼働 3Dラボ</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="lab-shell" id="labRoot">
+    <canvas id="labCanvas" aria-label="地震発生から設備点検、供給網確認、段階再開までを動かして見る3D教材"></canvas>
+
+    <div class="interface-layer">
+      <header class="topbar">
+        <div class="brand-block">
+          <p class="eyebrow">熊本地震 / 供給網安全ラボ</p>
+          <h1>安全確認は再稼働の入口</h1>
+          <p class="subtitle">設備、半導体、道路、橋を順番に確認する。</p>
+        </div>
+        <div class="top-actions">
+          <button class="quiet-button" id="motionToggle" type="button" aria-pressed="true">
+            <span class="button-dot" aria-hidden="true"></span>
+            <span id="motionLabel">自動再生を停止</span>
+          </button>
+          <button class="reset-button" id="resetButton" type="button" title="最初からやり直す" aria-label="最初からやり直す">↺</button>
+          <span class="state-badge" id="stateBadge">01 / 04 地震発生</span>
+        </div>
+      </header>
+
+      <section class="status-strip" aria-label="安全確認の状態">
+        <div class="status-cell" id="statusEarthquake">
+          <span class="status-label">地震影響</span>
+          <span class="status-state"><i class="status-dot" aria-hidden="true"></i><strong>発生中</strong></span>
+        </div>
+        <div class="status-cell" id="statusEquipment">
+          <span class="status-label">設備点検</span>
+          <span class="status-state"><i class="status-dot" aria-hidden="true"></i><strong>未確認</strong></span>
+        </div>
+        <div class="status-cell" id="statusSupply">
+          <span class="status-label">供給網確認</span>
+          <span class="status-state"><i class="status-dot" aria-hidden="true"></i><strong>未確認</strong></span>
+        </div>
+        <div class="status-cell" id="statusRestart">
+          <span class="status-label">再稼働</span>
+          <span class="status-state"><i class="status-dot" aria-hidden="true"></i><strong>不可</strong></span>
+        </div>
+      </section>
+
+      <section class="principle-panel" aria-live="polite">
+        <p class="panel-kicker" id="stageKicker">何が起きる？ / 地震発生</p>
+        <h2 id="stageTitle">まず止める</h2>
+        <p id="stageDescription">揺れが続く間は、工場と物流を止めて安全を確かめる。</p>
+        <button class="action-button" id="actionButton" type="button">揺れを止めて点検へ</button>
+        <p class="action-hint" id="actionHint">未確認の設備を動かすことはできません。</p>
+      </section>
+
+      <aside class="legend-panel" aria-label="状態と3D表示の凡例">
+        <div class="legend-title">状態</div>
+        <div class="legend-item"><span class="legend-swatch red-swatch"></span><span>未確認・危険</span></div>
+        <div class="legend-item"><span class="legend-swatch yellow-swatch"></span><span>確認中・待機</span></div>
+        <div class="legend-item"><span class="legend-swatch green-swatch"></span><span>確認済み・再開可</span></div>
+        <div class="legend-title subject-title">3Dの対象</div>
+        <div class="legend-item"><span class="legend-swatch factory-swatch"></span><span>工場・設備</span></div>
+        <div class="legend-item"><span class="legend-swatch route-swatch"></span><span>道路・橋・部品</span></div>
+      </aside>
+
+      <p class="interaction-hint">ドラッグ：視点　ホイール：距離</p>
+
+      <nav class="control-rail" aria-label="確認の段階">
+        <button class="lab-control is-active" data-stage="0" type="button" aria-pressed="true">
+          <span class="control-index">01</span>
+          <span>地震発生</span>
+          <small>まず停止</small>
+        </button>
+        <button class="lab-control" data-stage="1" type="button" aria-pressed="false">
+          <span class="control-index">02</span>
+          <span>設備点検</span>
+          <small>ずれ・損傷</small>
+        </button>
+        <button class="lab-control" data-stage="2" type="button" aria-pressed="false">
+          <span class="control-index">03</span>
+          <span>供給網確認</span>
+          <small>道路・橋・部品</small>
+        </button>
+        <button class="lab-control" data-stage="3" type="button" aria-pressed="false">
+          <span class="control-index">04</span>
+          <span>段階再開</span>
+          <small>全条件で実行</small>
+        </button>
+      </nav>
+    </div>
+
+    <p class="fallback-message" id="webglError" hidden>3D表示を開始できませんでした。</p>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

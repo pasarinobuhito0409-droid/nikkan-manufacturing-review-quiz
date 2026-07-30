@@ -4344,5 +4344,321 @@ window.NIKKAN_QUIZ_SETS = [
         ]
       }
     ]
+  },
+  {
+    id: "2026-07-30-kumamoto-earthquake-supply-chain",
+    date: "2026-07-30",
+    sourceDate: "2026-07-30",
+    difficulty: "入門",
+    strictVisuals: true,
+    paperTheater: {
+      frameCount: 4,
+      phases: ["what", "how", "why", "result"]
+    },
+    selection: { mode: "auto", reason: "マーカーなし" },
+    title: "日刊工業新聞 7/30 完成車4社稼働停止 熊本地震・安全再稼働3問",
+    titleLines: [
+      "日刊工業新聞 7/30",
+      "完成車4社稼働停止",
+      "熊本地震・安全再稼働3問"
+    ],
+    shortTitle: "熊本地震・安全再稼働",
+    sourceLabel: "日刊工業新聞 2026/7/30 1面・2面",
+    heroImage: "./assets/2026-07-30-kumamoto-hero.png",
+    heroAlt: "熊本地震後の自動車工場、半導体工場、道路と橋を確認する学習画面",
+    summary: [
+      "7/28、最大震度7の令和8年熊本地震。",
+      "九州の自動車と半導体を直撃。",
+      "29日、完成車4社が工場停止。",
+      "設備点検と供給網確認を急ぐ。"
+    ],
+    articleFocus: {
+      title: "今日の芯：安全確認は再稼働の入口",
+      breathLines: [
+        { label: "発生", text: "7/28、最大震度7。" },
+        { label: "影響", text: "自動車・半導体を直撃。" },
+        { label: "停止", text: "29日、4社が停止を決定。" },
+        { label: "芯", text: "安全確認が再稼働の入口。" }
+      ],
+      frames: [
+        {
+          order: 1,
+          phase: "what",
+          phaseLabel: "何が起きた？",
+          image: "./assets/2026-07-30-kumamoto-deep-01-what.png",
+          zoomImage: "./assets/2026-07-30-kumamoto-deep-01-what.png",
+          imageAlt: "最大震度7の熊本地震が九州の自動車と半導体を直撃した場面",
+          caption: "地震が、工場と供給網を同時に揺らした。",
+          requiredLabels: ["① 何が起きる？", "地震", "設備停止", "安全確認"]
+        },
+        {
+          order: 2,
+          phase: "how",
+          phaseLabel: "どう確認する？",
+          image: "./assets/2026-07-30-kumamoto-deep-02-how.png",
+          zoomImage: "./assets/2026-07-30-kumamoto-deep-02-how.png",
+          imageAlt: "工場の設備点検と半導体関連設備の状態確認を進める場面",
+          caption: "設備を点検し、部品が届く経路も確認する。",
+          requiredLabels: ["② どう進む？", "建屋", "電気・水", "設備", "物流"]
+        },
+        {
+          order: 3,
+          phase: "why",
+          phaseLabel: "なぜ止める？",
+          image: "./assets/2026-07-30-kumamoto-deep-03-why.png",
+          zoomImage: "./assets/2026-07-30-kumamoto-deep-03-why.png",
+          imageAlt: "高速道路と橋梁の損傷が部品物流を止める可能性を示す場面",
+          caption: "工場だけでなく、道路・橋・電気・水も生産を支える。",
+          requiredLabels: ["③ なぜ広がる？", "部品が1つ欠ける", "組立停止", "供給網"]
+        },
+        {
+          order: 4,
+          phase: "result",
+          phaseLabel: "結果は？",
+          image: "./assets/2026-07-30-kumamoto-deep-04-result.png",
+          zoomImage: "./assets/2026-07-30-kumamoto-deep-04-result.png",
+          imageAlt: "設備と供給網を確認した後に段階的な再稼働へ進む結果の場面",
+          caption: "安全確認がそろって初めて、段階的な再稼働へ進める。",
+          requiredLabels: ["④ 結果は？", "安全確認済み", "段階的再開", "供給ルート確認済み", "人命優先"],
+          result: true
+        }
+      ]
+    },
+    articleEvidence: {
+      items: [
+        {
+          id: "kumamoto-main",
+          title: "主証拠：1面の工場停止",
+          image: "./assets/2026-07-30-kumamoto-main-source.png",
+          zoomImage: "./assets/2026-07-30-kumamoto-main-source.png",
+          alt: "日刊工業新聞2026年7月30日1面の熊本地震と工場停止の記事",
+          caption: "7/28最大震度7。29日に完成車4社などが工場停止を決定。"
+        },
+        {
+          id: "kumamoto-infrastructure",
+          title: "インフラ証拠：2面の被害",
+          image: "./assets/2026-07-30-kumamoto-infrastructure-source.png",
+          zoomImage: "./assets/2026-07-30-kumamoto-infrastructure-source.png",
+          alt: "日刊工業新聞2026年7月30日2面の高速道路と橋梁など産業インフラ被害の記事",
+          caption: "高速道路・橋梁（きょうりょう：橋）の損傷など、産業・インフラ被害。"
+        }
+      ]
+    },
+    curiosityPoints: [],
+    importantPoints: [],
+    glossaryTitle: "黄：読みと意味",
+    glossary: [
+      { term: "供給網（きょうきゅうもう）", meaning: "部品が届くつながり。" },
+      { term: "再稼働（さいかどう）", meaning: "止めた工場を再び動かすこと。" },
+      { term: "段階的（だんかいてき）", meaning: "一度に全部でなく順番に進めること。" }
+    ],
+    insightQuotes: [],
+    sources: [],
+    questions: [
+      {
+        id: "kumamoto-equipment-inspection",
+        tag: "設備点検",
+        difficulty: "入門",
+        question: "地震後、設備点検をする目的は？",
+        hint: "見た目だけでは分からない損傷も考える。",
+        choices: [
+          "生産速度を上げるため",
+          "見えないずれや損傷を確認し、事故・不良を防ぐため",
+          "部品価格を下げるため"
+        ],
+        correctIndex: 1,
+        answerTitle: "答え：見えないずれや損傷を確認するため",
+        principle: "安全確認が、生産再開の条件。",
+        answerParagraphs: [
+          "揺れで機械や配管がずれる。",
+          "見た目だけでは内部の損傷は分からない。",
+          "点検で異常を見つける。",
+          "事故と不良を防いでから再開する。"
+        ],
+        breathLines: [
+          { label: "目的", text: "ずれや損傷を確認。" },
+          { label: "結果", text: "事故・不良を防ぐ。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "揺れで変わる",
+            image: "./assets/2026-07-30-kumamoto-q1-01-what.png",
+            zoomImage: "./assets/2026-07-30-kumamoto-q1-01-what.png",
+            imageAlt: "地震の揺れで工場設備や配管にずれが生じる場面",
+            caption: "地震の揺れは、設備の位置や配管を変える。",
+            requiredLabels: ["① 何を見る？", "見えない損傷", "点検の目的", "設備"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "設備を点検する",
+            image: "./assets/2026-07-30-kumamoto-q1-02-how.png",
+            zoomImage: "./assets/2026-07-30-kumamoto-q1-02-how.png",
+            imageAlt: "作業員が工場設備のずれや損傷を点検する場面",
+            caption: "設備を一つずつ見て、異常を探す。",
+            requiredLabels: ["② どう調べる？", "建屋", "設備", "電気・水", "順番に確認"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "事故を防ぐ",
+            image: "./assets/2026-07-30-kumamoto-q1-03-why.png",
+            zoomImage: "./assets/2026-07-30-kumamoto-q1-03-why.png",
+            imageAlt: "未確認の設備を動かすと事故や製品不良につながることを示す場面",
+            caption: "未確認の設備を動かすと、事故や不良につながる。",
+            requiredLabels: ["③ なぜ必要？", "見えないずれ", "事故", "不良"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "正解",
+            image: "./assets/2026-07-30-kumamoto-q1-04-result.png",
+            zoomImage: "./assets/2026-07-30-kumamoto-q1-04-result.png",
+            imageAlt: "設備点検で異常がないことを確認し安全再開へ進む場面",
+            caption: "正解は、見えないずれや損傷を確認し、事故・不良を防ぐため。",
+            requiredLabels: ["④ 結果は？", "安全確認済み", "再開条件", "段階的に再開"],
+            result: true
+          }
+        ]
+      },
+      {
+        id: "kumamoto-semiconductor-safety",
+        tag: "半導体の安全確認",
+        difficulty: "入門",
+        question: "半導体工場が安全確認を急ぐ理由は？",
+        hint: "精密設備を動かす条件を考える。",
+        choices: [
+          "人を増やすだけで再開できるため",
+          "工場を広くするため",
+          "精密設備と電気・水などの条件がそろわないと、安全と品質を保てないため"
+        ],
+        correctIndex: 2,
+        answerTitle: "答え：精密設備と電気・水などの条件をそろえるため",
+        principle: "精密生産は、設備と環境の両方が必要。",
+        answerParagraphs: [
+          "半導体工場は精密な設備を使う。",
+          "電気・水・空調の条件も必要。",
+          "一つでも欠けると品質を保てない。",
+          "だから安全確認を急ぐ。"
+        ],
+        breathLines: [
+          { label: "必要", text: "精密設備と電気・水。" },
+          { label: "理由", text: "安全と品質を守る。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "精密設備を見る",
+            image: "./assets/2026-07-30-kumamoto-q2-01-what.png",
+            zoomImage: "./assets/2026-07-30-kumamoto-q2-01-what.png",
+            imageAlt: "半導体工場の精密設備を確認する場面",
+            caption: "半導体工場には、ずれに弱い精密設備がある。",
+            requiredLabels: ["① 何を見る？", "半導体", "精密設備", "安全確認"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "条件をそろえる",
+            image: "./assets/2026-07-30-kumamoto-q2-02-how.png",
+            zoomImage: "./assets/2026-07-30-kumamoto-q2-02-how.png",
+            imageAlt: "半導体工場の電気と水と空調を点検する場面",
+            caption: "電気・水・空調などの条件を一つずつ確認する。",
+            requiredLabels: ["② どう調べる？", "電気", "水", "温度", "清浄度"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "品質を守る",
+            image: "./assets/2026-07-30-kumamoto-q2-03-why.png",
+            zoomImage: "./assets/2026-07-30-kumamoto-q2-03-why.png",
+            imageAlt: "条件が一つ欠けると半導体の安全と品質を保てない場面",
+            caption: "条件が欠けたままでは、安全と品質を保てない。",
+            requiredLabels: ["③ なぜ必要？", "条件が乱れる", "品質低下", "安全"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "正解",
+            image: "./assets/2026-07-30-kumamoto-q2-04-result.png",
+            zoomImage: "./assets/2026-07-30-kumamoto-q2-04-result.png",
+            imageAlt: "精密設備と電気や水の条件を確認して再開準備が整う場面",
+            caption: "正解は、精密設備と電気・水などの条件をそろえるため。",
+            requiredLabels: ["④ 結果は？", "条件確認済み", "品質確認済み", "段階再開"],
+            result: true
+          }
+        ]
+      },
+      {
+        id: "kumamoto-infrastructure-logistics",
+        tag: "道路・橋と物流",
+        difficulty: "入門",
+        question: "道路・橋の損傷まで確認する理由は？",
+        hint: "工場の外から届くものを考える。",
+        choices: [
+          "工場が無事でも、部品・人・物流が届かなければ生産できないため",
+          "車のデザインが変わるため",
+          "価格が上がるため"
+        ],
+        correctIndex: 0,
+        answerTitle: "答え：部品・人・物流が届かなければ生産できないため",
+        principle: "工場の再開には、外の供給網も必要。",
+        answerParagraphs: [
+          "工場内だけ無事でも足りない。",
+          "部品と人は道路・橋を通る。",
+          "物流が止まると生産も止まる。",
+          "だからインフラも確認する。"
+        ],
+        breathLines: [
+          { label: "経路", text: "部品・人・物流が通る。" },
+          { label: "結論", text: "供給網も確認する。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "物流の道を見る",
+            image: "./assets/2026-07-30-kumamoto-q3-01-what.png",
+            zoomImage: "./assets/2026-07-30-kumamoto-q3-01-what.png",
+            imageAlt: "工場へ部品を運ぶトラックと道路を確認する場面",
+            caption: "部品は、工場の外から道路を通って届く。",
+            requiredLabels: ["① 何を見る？", "道路・橋", "物流停止", "部品"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "橋を確認する",
+            image: "./assets/2026-07-30-kumamoto-q3-02-how.png",
+            zoomImage: "./assets/2026-07-30-kumamoto-q3-02-how.png",
+            imageAlt: "高速道路と橋梁の損傷を点検する場面",
+            caption: "高速道路や橋梁の損傷を確認する。",
+            requiredLabels: ["② どう調べる？", "道路確認", "代替ルート", "輸送"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "生産をつなぐ",
+            image: "./assets/2026-07-30-kumamoto-q3-03-why.png",
+            zoomImage: "./assets/2026-07-30-kumamoto-q3-03-why.png",
+            imageAlt: "道路と橋が止まると部品と人が工場へ届かないことを示す場面",
+            caption: "工場が無事でも、部品と人が届かなければ生産できない。",
+            requiredLabels: ["③ なぜ必要？", "供給網", "部品不足", "組立停止"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "正解",
+            image: "./assets/2026-07-30-kumamoto-q3-04-result.png",
+            zoomImage: "./assets/2026-07-30-kumamoto-q3-04-result.png",
+            imageAlt: "道路と橋と供給網の安全確認を終えて物流を再開する場面",
+            caption: "正解は、部品・人・物流が届かなければ生産できないため。",
+            requiredLabels: ["④ 結果は？", "物流再開", "部品到着", "生産再開"],
+            result: true
+          }
+        ]
+      }
+    ]
   }
 ];

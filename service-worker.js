@@ -1,9 +1,9 @@
-const CACHE_NAME = "nikkan-manufacturing-review-quiz-v54";
+const CACHE_NAME = "nikkan-manufacturing-review-quiz-v55";
 
 const PRECACHE_ASSETS = [
   "./",
   "./index.html",
-  "./quiz-data.js?v=54",
+  "./quiz-data.js?v=55",
   "./manifest.webmanifest",
   "./service-worker.js",
   "./assets/icon.svg",
@@ -122,7 +122,30 @@ const PRECACHE_ASSETS = [
   "./large-generator-3d/index.html",
   "./large-generator-3d/styles.css",
   "./large-generator-3d/app.js",
-  "./large-generator-3d/vendor/three.module.js"
+  "./large-generator-3d/vendor/three.module.js",
+  "./assets/2026-07-30-kumamoto-hero.png",
+  "./assets/2026-07-30-kumamoto-main-source.png",
+  "./assets/2026-07-30-kumamoto-infrastructure-source.png",
+  "./assets/2026-07-30-kumamoto-deep-01-what.png",
+  "./assets/2026-07-30-kumamoto-deep-02-how.png",
+  "./assets/2026-07-30-kumamoto-deep-03-why.png",
+  "./assets/2026-07-30-kumamoto-deep-04-result.png",
+  "./assets/2026-07-30-kumamoto-q1-01-what.png",
+  "./assets/2026-07-30-kumamoto-q1-02-how.png",
+  "./assets/2026-07-30-kumamoto-q1-03-why.png",
+  "./assets/2026-07-30-kumamoto-q1-04-result.png",
+  "./assets/2026-07-30-kumamoto-q2-01-what.png",
+  "./assets/2026-07-30-kumamoto-q2-02-how.png",
+  "./assets/2026-07-30-kumamoto-q2-03-why.png",
+  "./assets/2026-07-30-kumamoto-q2-04-result.png",
+  "./assets/2026-07-30-kumamoto-q3-01-what.png",
+  "./assets/2026-07-30-kumamoto-q3-02-how.png",
+  "./assets/2026-07-30-kumamoto-q3-03-why.png",
+  "./assets/2026-07-30-kumamoto-q3-04-result.png",
+  "./earthquake-supply-3d/index.html",
+  "./earthquake-supply-3d/styles.css",
+  "./earthquake-supply-3d/app.js",
+  "./earthquake-supply-3d/vendor/three.module.js"
 ];
 
 const PRECACHE_BATCH_SIZE = 5;
@@ -187,7 +210,8 @@ self.addEventListener("fetch", (event) => {
     url.pathname.includes("/adaptive-robot-3d/") ||
     url.pathname.includes("/lignin-glow-3d/") ||
     url.pathname.includes("/rem-energy-3d/") ||
-    url.pathname.includes("/large-generator-3d/");
+    url.pathname.includes("/large-generator-3d/") ||
+    url.pathname.includes("/earthquake-supply-3d/");
 
   const cacheResponseAndReturn = (response) => {
     if (!response.ok) return Promise.resolve(response);
