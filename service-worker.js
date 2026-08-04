@@ -1,9 +1,9 @@
-const CACHE_NAME = "nikkan-manufacturing-review-quiz-v55";
+const CACHE_NAME = "nikkan-manufacturing-review-quiz-v56";
 
 const PRECACHE_ASSETS = [
   "./",
   "./index.html",
-  "./quiz-data.js?v=55",
+  "./quiz-data.js?v=56",
   "./manifest.webmanifest",
   "./service-worker.js",
   "./assets/icon.svg",
@@ -142,6 +142,28 @@ const PRECACHE_ASSETS = [
   "./assets/2026-07-30-kumamoto-q3-02-how.png",
   "./assets/2026-07-30-kumamoto-q3-03-why.png",
   "./assets/2026-07-30-kumamoto-q3-04-result.png",
+  "./assets/2026-08-04-passion-iteration-hero.png",
+  "./assets/2026-08-04-passion-innovation-source.png",
+  "./assets/2026-08-04-passion-green-01-what.png",
+  "./assets/2026-08-04-passion-green-02-how.png",
+  "./assets/2026-08-04-passion-green-03-why.png",
+  "./assets/2026-08-04-passion-green-04-result.png",
+  "./assets/2026-08-04-passion-q1-01-what.png",
+  "./assets/2026-08-04-passion-q1-02-how.png",
+  "./assets/2026-08-04-passion-q1-03-why.png",
+  "./assets/2026-08-04-passion-q1-04-result.png",
+  "./assets/2026-08-04-passion-q2-01-what.png",
+  "./assets/2026-08-04-passion-q2-02-how.png",
+  "./assets/2026-08-04-passion-q2-03-why.png",
+  "./assets/2026-08-04-passion-q2-04-result.png",
+  "./assets/2026-08-04-passion-q3-01-what.png",
+  "./assets/2026-08-04-passion-q3-02-how.png",
+  "./assets/2026-08-04-passion-q3-03-why.png",
+  "./assets/2026-08-04-passion-q3-04-result.png",
+  "./passion-iteration-3d/index.html",
+  "./passion-iteration-3d/styles.css",
+  "./passion-iteration-3d/app.js",
+  "./passion-iteration-3d/vendor/three.module.js",
   "./earthquake-supply-3d/index.html",
   "./earthquake-supply-3d/styles.css",
   "./earthquake-supply-3d/app.js",
@@ -211,7 +233,8 @@ self.addEventListener("fetch", (event) => {
     url.pathname.includes("/lignin-glow-3d/") ||
     url.pathname.includes("/rem-energy-3d/") ||
     url.pathname.includes("/large-generator-3d/") ||
-    url.pathname.includes("/earthquake-supply-3d/");
+    url.pathname.includes("/earthquake-supply-3d/") ||
+    url.pathname.includes("/passion-iteration-3d/");
 
   const cacheResponseAndReturn = (response) => {
     if (!response.ok) return Promise.resolve(response);

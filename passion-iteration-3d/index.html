@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>情熱と改善反復 3Dラボ</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="lab-shell" id="labRoot">
+    <canvas id="labCanvas" aria-label="試作、測定、改善、再試験を動かして見る3D教材"></canvas>
+
+    <div class="interface-layer">
+      <header class="topbar">
+        <div class="brand-block">
+          <p class="eyebrow">改善反復 / 発明ラボ</p>
+          <h1>情熱は、改善を止めない</h1>
+          <p class="subtitle">作る。試す。測る。直す。</p>
+        </div>
+        <div class="top-actions">
+          <button class="quiet-button" id="motionToggle" type="button" aria-pressed="true">
+            <span class="button-dot" aria-hidden="true"></span>
+            <span id="motionLabel">自動再生を停止</span>
+          </button>
+          <button class="reset-button" id="resetButton" type="button" title="最初からやり直す" aria-label="最初からやり直す">↺</button>
+          <span class="performance-badge" id="performanceBadge">性能 42</span>
+        </div>
+      </header>
+
+      <section class="status-strip" aria-label="改善の状態">
+        <div class="status-cell" id="statusPrototype">
+          <span class="status-label">試作</span>
+          <span class="status-state"><i class="status-dot" aria-hidden="true"></i><strong>失敗</strong></span>
+        </div>
+        <div class="status-cell" id="statusMeasure">
+          <span class="status-label">測定</span>
+          <span class="status-state"><i class="status-dot" aria-hidden="true"></i><strong>未確認</strong></span>
+        </div>
+        <div class="status-cell" id="statusImprove">
+          <span class="status-label">改善</span>
+          <span class="status-state"><i class="status-dot" aria-hidden="true"></i><strong>0回</strong></span>
+        </div>
+        <div class="status-cell" id="statusTarget">
+          <span class="status-label">目標</span>
+          <span class="status-state"><i class="status-dot" aria-hidden="true"></i><strong>未達</strong></span>
+        </div>
+      </section>
+
+      <section class="principle-panel" aria-live="polite">
+        <p class="panel-kicker" id="stageKicker">① 何が起きる？ / 試作</p>
+        <h2 id="stageTitle">試作を動かす</h2>
+        <p id="stageDescription">性能42。目標に届かず、失敗する。</p>
+        <button class="action-button" id="actionButton" type="button">試作を動かす</button>
+        <p class="action-hint" id="actionHint">まず、失敗を数字で見る。</p>
+      </section>
+
+      <aside class="legend-panel" aria-label="3D表示の見方">
+        <div class="legend-title">表示</div>
+        <div class="legend-item"><span class="legend-swatch machine-swatch"></span><span>試作機</span></div>
+        <div class="legend-item"><span class="legend-swatch measure-swatch"></span><span>測定</span></div>
+        <div class="legend-item"><span class="legend-swatch improvement-swatch"></span><span>改善済み</span></div>
+        <div class="legend-title subject-title">操作</div>
+        <div class="legend-item"><span class="legend-key">ドラッグ</span><span>視点を回す</span></div>
+        <div class="legend-item"><span class="legend-key">ホイール</span><span>距離を変える</span></div>
+      </aside>
+
+      <p class="interaction-hint">視点を動かして、変化を見る。</p>
+
+      <nav class="control-rail" aria-label="改善の段階">
+        <button class="lab-control is-active" data-stage="0" type="button" aria-pressed="true">
+          <span class="control-index">01</span>
+          <span>試作を動かす</span>
+          <small>性能42 / 失敗</small>
+        </button>
+        <button class="lab-control" data-stage="1" type="button" aria-pressed="false">
+          <span class="control-index">02</span>
+          <span>目的を保って測る</span>
+          <small>振動・発熱</small>
+        </button>
+        <button class="lab-control" data-stage="2" type="button" aria-pressed="false">
+          <span class="control-index">03</span>
+          <span>1か所直す</span>
+          <small>軸位置を調整</small>
+        </button>
+        <button class="lab-control" data-stage="3" type="button" aria-pressed="false">
+          <span class="control-index">04</span>
+          <span>再試験する</span>
+          <small>性能67</small>
+        </button>
+        <button class="lab-control" data-stage="4" type="button" aria-pressed="false">
+          <span class="control-index">05</span>
+          <span>2回目の改善</span>
+          <small>性能91 / 目標達成</small>
+        </button>
+      </nav>
+    </div>
+
+    <p class="fallback-message" id="webglError" hidden>3D表示を開始できませんでした。</p>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

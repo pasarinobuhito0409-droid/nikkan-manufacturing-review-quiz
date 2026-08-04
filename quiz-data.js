@@ -4660,5 +4660,318 @@ window.NIKKAN_QUIZ_SETS = [
         ]
       }
     ]
+  },
+  {
+    id: "2026-08-04-passion-iteration-invention",
+    date: "2026-08-04",
+    sourceDate: "2026-08-04",
+    difficulty: "入門",
+    strictVisuals: true,
+    paperTheater: {
+      frameCount: 4,
+      phases: ["what", "how", "why", "result"]
+    },
+    selection: { mode: "green", reason: "緑ラインを中心に学ぶ" },
+    title: "日刊工業新聞 8/4 イノベには情熱が重要 改善反復3問",
+    titleLines: [
+      "日刊工業新聞 8/4",
+      "イノベには情熱が重要",
+      "改善反復3問"
+    ],
+    shortTitle: "情熱・改善反復",
+    sourceLabel: "日刊工業新聞 2026/8/4「愛知の発明の日」記念講演",
+    heroImage: "./assets/2026-08-04-passion-iteration-hero.png",
+    heroAlt: "試作と改善を続ける発明現場",
+    summary: [
+      "反対されても、決めたら続ける。",
+      "作る。試す。測る。直す。",
+      "改善の積み重ねが、発明になる。"
+    ],
+    articleFocus: {
+      title: "今日の芯：情熱は改善を止めない力",
+      breathLines: [
+        { label: "記事", text: "反対されても、最後までやる。" },
+        { label: "行動", text: "作る→試す→測る→直す。" },
+        { label: "原理", text: "情熱が、改善回数を守る。" },
+        { label: "注意", text: "目的は保つ。方法は変える。" }
+      ]
+    },
+    articleEvidence: {
+      items: [
+        {
+          id: "passion-innovation-source",
+          title: "記事の証拠：緑ライン",
+          image: "./assets/2026-08-04-passion-innovation-source.png",
+          zoomImage: "./assets/2026-08-04-passion-innovation-source.png",
+          alt: "イノベには情熱が重要と伝える日刊工業新聞の記事",
+          caption: "反対の後も続ける情熱と、改善の継続を示す記事。"
+        }
+      ]
+    },
+    curiosityPoints: [],
+    importantTitle: "緑：情熱は、改善を止めない力",
+    importantPoints: [
+      {
+        id: "passion-iteration-core",
+        title: "緑：反対の後も、改善を続ける",
+        text: "情熱は、気合いだけではない。",
+        breathLines: [
+          { label: "記事", text: "反対されても、最後までやる。" },
+          { label: "手順", text: "作る→試す→測る→直す。" },
+          { label: "原理", text: "改善の回数が、発明を近づける。" },
+          { label: "判断", text: "目的は保ち、方法は変える。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "何が大事？",
+            image: "./assets/2026-08-04-passion-green-01-what.png",
+            zoomImage: "./assets/2026-08-04-passion-green-01-what.png",
+            imageAlt: "反対意見の中でも試作を始める発明者",
+            caption: "情熱は、反対されても試作を始める力。",
+            requiredLabels: ["① 情熱", "反対", "試作を始める"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "どう続ける？",
+            image: "./assets/2026-08-04-passion-green-02-how.png",
+            zoomImage: "./assets/2026-08-04-passion-green-02-how.png",
+            imageAlt: "試作を測定して一か所を直す発明者",
+            caption: "作る。試す。測る。直す。を繰り返す。",
+            requiredLabels: ["② 改善", "測る", "一か所を直す"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "なぜ発明になる？",
+            image: "./assets/2026-08-04-passion-green-03-why.png",
+            zoomImage: "./assets/2026-08-04-passion-green-03-why.png",
+            imageAlt: "改善前後の性能を測定値で比べる発明チーム",
+            caption: "小さな改善を重ねると、性能の差が見える。",
+            requiredLabels: ["③ なぜ？", "比較", "改善の積み重ね"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "結果は？",
+            image: "./assets/2026-08-04-passion-green-04-result.png",
+            zoomImage: "./assets/2026-08-04-passion-green-04-result.png",
+            imageAlt: "改善を重ねて発明を完成させる発明チーム",
+            caption: "情熱が改善を守り、発明が目標に届く。",
+            requiredLabels: ["④ 結果", "発明", "目標達成"],
+            result: true
+          }
+        ]
+      }
+    ],
+    glossaryTitle: "黄：読みと意味",
+    glossary: [],
+    insightQuotes: [],
+    sources: [],
+    questions: [
+      {
+        id: "passion-why-important",
+        tag: "情熱（じょうねつ）",
+        difficulty: "入門",
+        question: "情熱（じょうねつ）が重要なのはなぜ？",
+        hint: "失敗した後の行動を考える。",
+        choices: [
+          "熱が冷めるまで待つため",
+          "反対や失敗の後も、改善を続けるため",
+          "反対する人を説得し続けるだけのため"
+        ],
+        correctIndex: 1,
+        answerTitle: "答え：反対や失敗の後も改善を続けるため",
+        principle: "情熱は、改善（かいぜん）を止めない力。",
+        answerParagraphs: [
+          "発明（はつめい）は、最初から完成しない。",
+          "反対や失敗で、問題が見える。",
+          "改善を続けると、性能が上がる。"
+        ],
+        breathLines: [
+          { label: "核心", text: "情熱＝改善を続ける力。" },
+          { label: "流れ", text: "失敗→測る→直す→前進。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "失敗を見る",
+            image: "./assets/2026-08-04-passion-q1-01-what.png",
+            zoomImage: "./assets/2026-08-04-passion-q1-01-what.png",
+            imageAlt: "最初の試作が目標性能に届かない発明現場",
+            caption: "最初の試作は、目標に届かない。",
+            requiredLabels: ["① 失敗", "性能42", "未達"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "原因を測る",
+            image: "./assets/2026-08-04-passion-q1-02-how.png",
+            zoomImage: "./assets/2026-08-04-passion-q1-02-how.png",
+            imageAlt: "発明者が振動と温度を測定して原因を探す場面",
+            caption: "失敗を数字にして、原因を一つ選ぶ。",
+            requiredLabels: ["② 測る", "振動", "温度"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "続ける理由",
+            image: "./assets/2026-08-04-passion-q1-03-why.png",
+            zoomImage: "./assets/2026-08-04-passion-q1-03-why.png",
+            imageAlt: "改善前後の測定結果を見て次の試作を決めるチーム",
+            caption: "止めると、次の改善も止まる。",
+            requiredLabels: ["③ 理由", "比較", "次の試作"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "正解",
+            image: "./assets/2026-08-04-passion-q1-04-result.png",
+            zoomImage: "./assets/2026-08-04-passion-q1-04-result.png",
+            imageAlt: "改善を続けて目標性能へ近づく発明チーム",
+            caption: "正解は、反対や失敗の後も改善を続けるため。",
+            requiredLabels: ["④ 正解", "改善継続", "目標へ進む"],
+            result: true
+          }
+        ]
+      },
+      {
+        id: "passion-improvement-cycle",
+        tag: "改善（かいぜん）の手順",
+        difficulty: "入門",
+        question: "改善（かいぜん）の基本手順は？",
+        hint: "発明を動詞4つで並べる。",
+        choices: [
+          "作る→試す→測る→直す",
+          "直す→隠す→作る→終わる",
+          "考える→待つ→忘れる→止める"
+        ],
+        correctIndex: 0,
+        answerTitle: "答え：作る→試す→測る→直す",
+        principle: "測定（そくてい）が、改善の方向を決める。",
+        answerParagraphs: [
+          "まず、試作品を作る。",
+          "動かして、結果を測る。",
+          "原因を一つ直し、再び試す。"
+        ],
+        breathLines: [
+          { label: "手順", text: "作る→試す→測る→直す。" },
+          { label: "コツ", text: "一度に一か所だけ直す。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "試作品を作る",
+            image: "./assets/2026-08-04-passion-q2-01-what.png",
+            zoomImage: "./assets/2026-08-04-passion-q2-01-what.png",
+            imageAlt: "発明者が試作品を組み立てる作業台",
+            caption: "最初に、動かせる試作品を作る。",
+            requiredLabels: ["① 作る", "試作品", "作業台"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "試して測る",
+            image: "./assets/2026-08-04-passion-q2-02-how.png",
+            zoomImage: "./assets/2026-08-04-passion-q2-02-how.png",
+            imageAlt: "試作品を動かし性能を測定する発明者",
+            caption: "動かして、性能を数字で記録する。",
+            requiredLabels: ["② 試す・測る", "性能", "記録"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "一か所を直す",
+            image: "./assets/2026-08-04-passion-q2-03-why.png",
+            zoomImage: "./assets/2026-08-04-passion-q2-03-why.png",
+            imageAlt: "測定結果から軸の位置を一か所だけ調整する発明者",
+            caption: "原因を一つに絞ると、効果を比べやすい。",
+            requiredLabels: ["③ 直す", "原因を一つ", "軸を調整"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "正解",
+            image: "./assets/2026-08-04-passion-q2-04-result.png",
+            zoomImage: "./assets/2026-08-04-passion-q2-04-result.png",
+            imageAlt: "作る試す測る直すの改善サイクルが回る発明現場",
+            caption: "正解は、作る→試す→測る→直す。",
+            requiredLabels: ["④ 正解", "改善サイクル", "再試験"],
+            result: true
+          }
+        ]
+      },
+      {
+        id: "passion-purpose-method",
+        tag: "反対された時の判断",
+        difficulty: "入門",
+        question: "反対された時の判断は？",
+        hint: "目的と方法を分けて考える。",
+        choices: [
+          "目的も方法も、すぐ捨てる",
+          "反対意見を聞かず、同じ方法を続ける",
+          "目的を保ち、結果を測って方法を変える"
+        ],
+        correctIndex: 2,
+        answerTitle: "答え：目的を保ち、結果を測って方法を変える",
+        principle: "情熱は、目的への執着と方法の柔軟さ。",
+        answerParagraphs: [
+          "反対意見には、失敗の種がある。",
+          "目的まで捨てる必要はない。",
+          "結果を測り、方法だけ変える。"
+        ],
+        breathLines: [
+          { label: "守る", text: "目的を保つ。" },
+          { label: "変える", text: "方法を変える。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "反対を受ける",
+            image: "./assets/2026-08-04-passion-q3-01-what.png",
+            zoomImage: "./assets/2026-08-04-passion-q3-01-what.png",
+            imageAlt: "発明チームが試作案への反対意見を聞く場面",
+            caption: "反対意見は、方法の弱点を知らせる。",
+            requiredLabels: ["① 反対", "意見", "弱点"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "結果を測る",
+            image: "./assets/2026-08-04-passion-q3-02-how.png",
+            zoomImage: "./assets/2026-08-04-passion-q3-02-how.png",
+            imageAlt: "発明者が目的と測定結果を並べて確認する場面",
+            caption: "目的と測定結果を、同じ表で比べる。",
+            requiredLabels: ["② 測る", "目的", "結果"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "方法を変える",
+            image: "./assets/2026-08-04-passion-q3-03-why.png",
+            zoomImage: "./assets/2026-08-04-passion-q3-03-why.png",
+            imageAlt: "目的を保ったまま設計方法を変更する発明チーム",
+            caption: "目的を保てば、方法変更は撤退ではない。",
+            requiredLabels: ["③ 変える", "目的は同じ", "方法変更"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "正解",
+            image: "./assets/2026-08-04-passion-q3-04-result.png",
+            zoomImage: "./assets/2026-08-04-passion-q3-04-result.png",
+            imageAlt: "方法を変えて目的を達成する発明チーム",
+            caption: "正解は、目的を保ち、結果を測って方法を変える。",
+            requiredLabels: ["④ 正解", "目的達成", "新しい方法"],
+            result: true
+          }
+        ]
+      }
+    ]
   }
 ];
