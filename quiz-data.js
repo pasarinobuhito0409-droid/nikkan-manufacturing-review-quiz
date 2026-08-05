@@ -5280,5 +5280,334 @@ window.NIKKAN_QUIZ_SETS = [
         ]
       }
     ]
+  },
+  {
+    id: "2026-08-05-todai-reward-expectation",
+    date: "2026-08-05",
+    sourceDate: "2026-08-05",
+    difficulty: "入門",
+    strictVisuals: true,
+    paperTheater: {
+      frameCount: 4,
+      phases: ["what", "how", "why", "result"]
+    },
+    selection: { mode: "red-green-yellow", reason: "赤・緑・黄を登録" },
+    title: "日刊工業新聞 8/5 期待と行動つなぐ脳領域 3問",
+    titleLines: [
+      "日刊工業新聞 8/5",
+      "期待と行動つなぐ脳領域",
+      "東大の発見 3問"
+    ],
+    shortTitle: "期待と行動つなぐ脳",
+    sourceLabel: "日刊工業新聞 2026/8/5 期待と行動つなぐ／東大、脳領域を発見",
+    summary: [
+      "東大が報酬期待と行動をつなぐ脳領域を発見。",
+      "マーモセットの動きと脳活動を調べた。",
+      "数理モデルで広い動きの反応を分けた。",
+      "イメージングで脳活動を画像化した。"
+    ],
+    curiosityTitle: "赤：記事の革新",
+    importantTitle: "緑：報酬期待と行動をつなぐ脳領域",
+    articleFocus: {
+      title: "今日の芯：期待が行動を動かす脳領域",
+      breathLines: [
+        { label: "何が新しい？", text: "東大が脳領域を発見。" },
+        { label: "どう調べた？", text: "動きと脳活動を記録。" },
+        { label: "なぜ分けた？", text: "動きで広く反応するから。" },
+        { label: "結果は？", text: "期待の領域を画像化。" }
+      ],
+      frames: [
+        {
+          order: 1,
+          phase: "what",
+          phaseLabel: "何が新しい？",
+          image: "./assets/2026-08-05-reward-expectation-deep-01-what.png",
+          zoomImage: "./assets/2026-08-05-reward-expectation-deep-01-what.png",
+          imageAlt: "東大が報酬期待と行動をつなぐ脳領域を発見した場面",
+          caption: "報酬期待と行動をつなぐ領域を発見。",
+          requiredLabels: ["① 何が新しい？", "東大", "報酬期待", "行動"]
+        },
+        {
+          order: 2,
+          phase: "how",
+          phaseLabel: "どう調べた？",
+          image: "./assets/2026-08-05-reward-expectation-deep-02-how.png",
+          zoomImage: "./assets/2026-08-05-reward-expectation-deep-02-how.png",
+          imageAlt: "マーモセットの動きと脳活動をイメージングで調べる場面",
+          caption: "身体を動かすと広い脳活動が活発になる。",
+          requiredLabels: ["② どう調べた？", "マーモセット", "動き", "イメージング"]
+        },
+        {
+          order: 3,
+          phase: "why",
+          phaseLabel: "なぜ分けた？",
+          image: "./assets/2026-08-05-reward-expectation-deep-03-why.png",
+          zoomImage: "./assets/2026-08-05-reward-expectation-deep-03-why.png",
+          imageAlt: "動きで広く反応する脳活動を数理モデルで分ける場面",
+          caption: "広い動きの反応を数理モデルで分ける。",
+          requiredLabels: ["③ なぜ分けた？", "広く反応", "数理モデル", "分離"]
+        },
+        {
+          order: 4,
+          phase: "result",
+          phaseLabel: "結果は？",
+          image: "./assets/2026-08-05-reward-expectation-deep-04-result.png",
+          zoomImage: "./assets/2026-08-05-reward-expectation-deep-04-result.png",
+          imageAlt: "報酬期待と行動をつなぐ脳領域を画像化した結果",
+          caption: "期待と行動をつなぐ脳領域を画像化。",
+          requiredLabels: ["④ 結果は？", "脳領域", "期待", "画像化"],
+          result: true
+        }
+      ]
+    },
+    articleEvidence: {
+      image: "./assets/2026-08-05-reward-expectation-source.png",
+      zoomImage: "./assets/2026-08-05-reward-expectation-source.png",
+      alt: "日刊工業新聞2026年8月5日の東大の脳領域発見記事",
+      caption: "出典：日刊工業新聞 2026/8/5。記事の証拠画像。"
+    },
+    curiosityPoints: [
+      {
+        title: "赤：報酬期待と行動をつなぐ発見（ほうしゅうきたいとこうどうをつなぐはっけん）",
+        text: "東大（とうだい）が、報酬期待（ほうしゅうきたい）と行動（こうどう）をつなぐ脳領域（のうりょういき）を発見（はっけん）した。",
+        breathLines: [
+          { label: "革新（かくしん）", text: "期待（きたい）が行動（こうどう）を動（うご）かす場所（ばしょ）を見（み）つけた。" }
+        ],
+        image: "./assets/2026-08-05-reward-expectation-source.png",
+        zoomImage: "./assets/2026-08-05-reward-expectation-source.png",
+        imageAlt: "東大（とうだい）が報酬期待（ほうしゅうきたい）と行動（こうどう）をつなぐ脳領域（のうりょういき）を発見（はっけん）した記事（きじ）",
+        caption: "赤（あか）の記事証拠（きじしょうこ）。報酬期待（ほうしゅうきたい）と行動（こうどう）をつなぐ脳領域（のうりょういき）の発見（はっけん）。"
+      }
+    ],
+    importantPoints: [
+      {
+        title: "緑：広い脳活動から領域を分ける（ひろいのうかつどうからりょういきをわける）",
+        text: "報酬期待（ほうしゅうきたい）と行動（こうどう）をつなぐ脳領域（のうりょういき）を、身体（しんたい）の動（うご）きで広（ひろ）く反応（はんのう）する脳活動（のうかつどう）から数理（すうり）モデルで分離（ぶんり）し、イメージングで画像化（がぞうか）した。",
+        breathLines: [
+          { label: "根拠（こんきょ）", text: "身体（しんたい）の動（うご）きで広（ひろ）く反応（はんのう）する活動（かつどう）を分（わ）けた。" },
+          { label: "結果（けっか）", text: "期待（きたい）と行動（こうどう）の領域（りょういき）を画像化（がぞうか）した。" }
+        ],
+        image: "./assets/2026-08-05-reward-expectation-source.png",
+        zoomImage: "./assets/2026-08-05-reward-expectation-source.png",
+        imageAlt: "身体（しんたい）の動（うご）きによる広（ひろ）い脳活動（のうかつどう）を数理（すうり）モデルで分離（ぶんり）し画像化（がぞうか）した記事（きじ）",
+        caption: "緑（みどり）の記事証拠（きじしょうこ）。広（ひろ）い反応（はんのう）を分（わ）け、脳領域（のうりょういき）を画像化（がぞうか）。"
+      }
+    ],
+    glossaryTitle: "黄：読みと意味",
+    glossary: [
+      { term: "報酬期待（ほうしゅうきたい）", meaning: "ごほうびがもらえそう、と先に思うこと。" },
+      { term: "マーモセット（小型のサル）", meaning: "研究で調べた、小さなサル。" },
+      { term: "運動前野（うんどうぜんや）", meaning: "動く準備をする脳の場所。" },
+      { term: "数理モデル（すうりモデル）", meaning: "数字の計算で、働きを分ける方法。" },
+      { term: "イメージング（画像化）", meaning: "脳の活動を画像で見る方法。" }
+    ],
+    insightQuotes: [],
+    sources: [],
+    questions: [
+      {
+        id: "todai-reward-expectation-discovery",
+        tag: "赤｜記事の革新",
+        difficulty: "入門",
+        question: "東大が発見した記事の革新は？",
+        hint: "期待と行動のつながりを見る。",
+        choices: [
+          "脳全体が大きくなった",
+          "報酬期待と行動をつなぐ脳領域を見つけた",
+          "動物の動きを止めた"
+        ],
+        correctIndex: 1,
+        answerTitle: "答え：期待と行動をつなぐ脳領域",
+        principle: "ごほうびの期待が、動く行動とつながる場所を見つけた。",
+        answerParagraphs: [
+          "東大は脳の領域を調べた。",
+          "報酬期待はごほうびの予想。",
+          "行動とつながる場所を発見。",
+          "記事の革新は、そのつながり。"
+        ],
+        breathLines: [
+          { label: "答え", text: "期待と行動をつなぐ領域。" },
+          { label: "赤", text: "脳の新しいつながりを発見。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "新しい発見",
+            image: "./assets/2026-08-05-reward-expectation-q1-01-what.png",
+            zoomImage: "./assets/2026-08-05-reward-expectation-q1-01-what.png",
+            imageAlt: "東大が脳の新しい領域を調べる場面",
+            caption: "記事の革新は、脳の新しい発見。",
+            requiredLabels: ["① 新しい発見", "東大", "脳領域"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "つながりを調べる",
+            image: "./assets/2026-08-05-reward-expectation-q1-02-how.png",
+            zoomImage: "./assets/2026-08-05-reward-expectation-q1-02-how.png",
+            imageAlt: "報酬期待と行動の脳活動を比べる場面",
+            caption: "期待と動きの脳活動を比べる。",
+            requiredLabels: ["② 方法", "報酬期待", "行動"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "なぜ重要？",
+            image: "./assets/2026-08-05-reward-expectation-q1-03-why.png",
+            zoomImage: "./assets/2026-08-05-reward-expectation-q1-03-why.png",
+            imageAlt: "期待と行動がつながる意味を考える場面",
+            caption: "期待と行動のつながりが分かる。",
+            requiredLabels: ["③ 理由", "期待", "行動", "つながり"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "正解",
+            image: "./assets/2026-08-05-reward-expectation-q1-04-result.png",
+            zoomImage: "./assets/2026-08-05-reward-expectation-q1-04-result.png",
+            imageAlt: "期待と行動をつなぐ脳領域が見つかった結果",
+            caption: "正解は、つながる脳領域の発見。",
+            requiredLabels: ["④ 正解", "脳領域", "発見"],
+            result: true
+          }
+        ]
+      },
+      {
+        id: "todai-reward-expectation-motion",
+        tag: "緑｜脳領域の働き",
+        difficulty: "入門",
+        question: "調べるとき、何に注意した？",
+        hint: "身体を動かしたときの脳を見る。",
+        choices: [
+          "動きでも広く脳が反応すること",
+          "脳をまったく動かさないこと",
+          "計算を使わないこと"
+        ],
+        correctIndex: 0,
+        answerTitle: "答え：動きで広い脳活動が活発になる",
+        principle: "身体の動きによる広い反応を分けて考える。",
+        answerParagraphs: [
+          "身体を動かすと脳が反応する。",
+          "その反応は広い範囲に出る。",
+          "期待だけの反応と混ざる。",
+          "だから数理モデルで分ける。"
+        ],
+        breathLines: [
+          { label: "現象", text: "動きで広い脳活動が活発。" },
+          { label: "方法", text: "数理モデルで反応を分ける。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "広い脳の反応",
+            image: "./assets/2026-08-05-reward-expectation-q2-01-what.png",
+            zoomImage: "./assets/2026-08-05-reward-expectation-q2-01-what.png",
+            imageAlt: "マーモセットが身体を動かし広い脳活動が起きる場面",
+            caption: "身体を動かすと広い脳活動が活発になる。",
+            requiredLabels: ["① 広い反応", "身体の動き", "脳活動"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "反応を分ける",
+            image: "./assets/2026-08-05-reward-expectation-q2-02-how.png",
+            zoomImage: "./assets/2026-08-05-reward-expectation-q2-02-how.png",
+            imageAlt: "数理モデルで動きの反応と期待の反応を分ける場面",
+            caption: "数理モデルで広い反応を分ける。",
+            requiredLabels: ["② 方法", "数理モデル", "分離"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "なぜ必要？",
+            image: "./assets/2026-08-05-reward-expectation-q2-03-why.png",
+            zoomImage: "./assets/2026-08-05-reward-expectation-q2-03-why.png",
+            imageAlt: "動きの反応が広いため分けて考える場面",
+            caption: "動きの反応が広いので分けて考える。",
+            requiredLabels: ["③ 理由", "広く反応", "分けて考える"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "正解",
+            image: "./assets/2026-08-05-reward-expectation-q2-04-result.png",
+            zoomImage: "./assets/2026-08-05-reward-expectation-q2-04-result.png",
+            imageAlt: "動きの反応を分けて期待と行動の脳領域を見る結果",
+            caption: "正解は、動きの反応を分けること。",
+            requiredLabels: ["④ 正解", "動き", "脳領域"],
+            result: true
+          }
+        ]
+      },
+      {
+        id: "todai-reward-expectation-imaging",
+        tag: "緑｜数理モデルと画像化",
+        difficulty: "入門",
+        question: "研究チームは脳の活動をどう確かめた？",
+        hint: "活動する場所を画像で見る。",
+        choices: [
+          "イメージングで画像化した",
+          "音だけで想像した",
+          "脳の動きを見なかった"
+        ],
+        correctIndex: 0,
+        answerTitle: "答え：イメージングで脳を画像化した",
+        principle: "脳の活動する場所を画像で確かめた。",
+        answerParagraphs: [
+          "脳の活動を画像で見る。",
+          "活動する場所を比べる。",
+          "動きの広い反応を分ける。",
+          "期待と行動の領域を確かめる。"
+        ],
+        breathLines: [
+          { label: "方法", text: "イメージングで脳を画像化。" },
+          { label: "結果", text: "期待と行動の領域を確認。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "活動を画像で見る",
+            image: "./assets/2026-08-05-reward-expectation-q3-01-what.png",
+            zoomImage: "./assets/2026-08-05-reward-expectation-q3-01-what.png",
+            imageAlt: "イメージングでマーモセットの脳活動を画像化する場面",
+            caption: "脳の活動する場所を画像で見る。",
+            requiredLabels: ["① 画像化", "脳活動", "イメージング"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "画像を比べる",
+            image: "./assets/2026-08-05-reward-expectation-q3-02-how.png",
+            zoomImage: "./assets/2026-08-05-reward-expectation-q3-02-how.png",
+            imageAlt: "脳活動の画像を数理モデルで比べる場面",
+            caption: "画像を比べ、反応を分ける。",
+            requiredLabels: ["② 方法", "画像", "数理モデル"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "なぜ画像化？",
+            image: "./assets/2026-08-05-reward-expectation-q3-03-why.png",
+            zoomImage: "./assets/2026-08-05-reward-expectation-q3-03-why.png",
+            imageAlt: "画像化で脳の働く場所を確かめる意味を示す場面",
+            caption: "画像なら働く場所を確かめやすい。",
+            requiredLabels: ["③ 理由", "働く場所", "確認"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "正解",
+            image: "./assets/2026-08-05-reward-expectation-q3-04-result.png",
+            zoomImage: "./assets/2026-08-05-reward-expectation-q3-04-result.png",
+            imageAlt: "報酬期待と行動をつなぐ脳領域が画像で示された結果",
+            caption: "正解は、脳領域を画像で確かめること。",
+            requiredLabels: ["④ 正解", "脳領域", "画像化"],
+            result: true
+          }
+        ]
+      }
+    ]
   }
 ];

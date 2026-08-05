@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#081321">
+  <title>報酬期待から行動へ｜3D教材</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app-shell" id="app" aria-label="報酬期待から行動までを学ぶ3D教材">
+    <canvas id="sceneCanvas" aria-label="報酬の光、脳活動、運動前野の信号、手の動きを見る3Dアニメーション"></canvas>
+
+    <div class="ui-layer">
+      <header class="hero">
+        <p class="eyebrow">東京大学の記事を起点に見る、脳と行動の流れ</p>
+        <h1>報酬の予感が、<span>手を動かすまで</span></h1>
+        <p class="hero-copy">期待の合図 → 脳活動の広がり → 数理モデルで分離 → 運動前野の信号 → 行動</p>
+        <span class="local-badge"><i aria-hidden="true"></i> LOCAL 3D / 外部CDNなし</span>
+      </header>
+
+      <div class="top-controls" aria-label="再生コントロール">
+        <button class="control-button" id="autoButton" type="button" aria-pressed="false" aria-label="自動再生を開始">
+          <span class="control-icon" aria-hidden="true">▶</span><span id="autoLabel">自動再生</span>
+        </button>
+        <button class="control-button reset" id="resetButton" type="button" aria-label="教材を最初の状態にリセット">
+          <span class="control-icon" aria-hidden="true">↻</span><span>リセット</span>
+        </button>
+      </div>
+
+      <nav class="state-strip" id="stateStrip" aria-label="5つの状態。押すとその状態へ移動します">
+        <button class="state-card is-active" type="button" data-state="0" aria-label="1段階目、期待の合図" aria-current="step">
+          <span class="state-number">01</span><span><strong>期待の合図</strong><small>報酬の光</small></span>
+        </button>
+        <button class="state-card" type="button" data-state="1" aria-label="2段階目、脳活動の広がり">
+          <span class="state-number">02</span><span><strong>脳活動の広がり</strong><small>領域が呼応</small></span>
+        </button>
+        <button class="state-card" type="button" data-state="2" aria-label="3段階目、数理モデルで分離">
+          <span class="state-number">03</span><span><strong>数理モデルで分離</strong><small>信号を読む</small></span>
+        </button>
+        <button class="state-card" type="button" data-state="3" aria-label="4段階目、運動前野の信号">
+          <span class="state-number">04</span><span><strong>運動前野の信号</strong><small>準備が進む</small></span>
+        </button>
+        <button class="state-card" type="button" data-state="4" aria-label="5段階目、行動">
+          <span class="state-number">05</span><span><strong>行動</strong><small>手が動く</small></span>
+        </button>
+      </nav>
+
+      <section class="lesson-panel" aria-live="polite" aria-atomic="true">
+        <div class="panel-topline">
+          <span class="step-label" id="stepLabel">STEP 01 / 05</span>
+          <span class="state-chip" id="stateChip">期待の合図</span>
+        </div>
+        <h2 id="stateTitle">期待の合図</h2>
+        <p class="state-description" id="stateDescription">報酬が得られそうだという合図を受けると、脳の中に「動く理由」の光が灯ります。</p>
+
+        <div class="live-readout">
+          <span class="live-dot" aria-hidden="true"></span>
+          <div><small>いま見えている変化</small><strong id="liveStatus">報酬の光が先に点灯しました</strong></div>
+        </div>
+
+        <div class="memory-line"><span>覚えること</span><strong id="memoryPoint">期待は、行動に先行する信号になる</strong></div>
+
+        <div class="panel-actions">
+          <button class="nav-button secondary" id="prevButton" type="button" aria-label="前の状態へ移動">← 前へ</button>
+          <button class="nav-button primary" id="nextButton" type="button" aria-label="次の状態へ移動">次へ <span aria-hidden="true">→</span></button>
+        </div>
+        <p class="panel-hint" id="panelHint">カードを押すか、ステージをドラッグして立体を観察できます</p>
+      </section>
+
+      <aside class="legend" aria-label="3Dシーンの見方">
+        <p class="legend-title">3Dシーンの見方</p>
+        <div class="legend-item"><i class="legend-swatch reward" aria-hidden="true"></i><span>報酬の光</span><small>期待を表す</small></div>
+        <div class="legend-item"><i class="legend-swatch brain" aria-hidden="true"></i><span>脳領域の発光</span><small>活動の広がり</small></div>
+        <div class="legend-item"><i class="legend-swatch signal" aria-hidden="true"></i><span>信号の流れ</span><small>準備から行動へ</small></div>
+        <div class="legend-divider"></div>
+        <p class="drag-tip"><b>ドラッグ</b> 視点を回す<br><b>ピンチ / ホイール</b> 拡大縮小</p>
+      </aside>
+
+      <div class="progress-wrap" aria-label="学習の進捗">
+        <div class="progress-meta"><span>進捗</span><strong id="progressText">1 / 5</strong></div>
+        <div class="progress-track"><span id="progressBar"></span></div>
+      </div>
+
+      <p class="scene-caption" id="sceneCaption"><span class="caption-mark" aria-hidden="true"></span><span>光が脳へ届く前の、期待の瞬間</span></p>
+      <p class="webgl-error" id="webglError" hidden>この端末では3D表示を開始できません。ブラウザのWebGL設定を確認してください。</p>
+    </div>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

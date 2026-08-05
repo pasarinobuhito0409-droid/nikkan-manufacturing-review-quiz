@@ -1345,7 +1345,7 @@
     </div>
   </div>
 
-  <script src="./quiz-data.js?v=57"></script>
+  <script src="./quiz-data.js?v=58"></script>
   <script>
     const quizSets = window.NIKKAN_QUIZ_SETS || [];
     const storageKey = "nikkan-manufacturing-review-quiz-library-v2";
@@ -1822,10 +1822,16 @@
       stage.classList.remove("lab-active");
       clearPaperFrameIndexes("evidence-", set.id);
       const titleLines = normalizeBreathLines(set.title, set.titleLines);
+      const heroImage = set.heroImage || (set.id === "2026-08-05-todai-reward-expectation"
+        ? "./assets/2026-08-05-reward-expectation-hero.png"
+        : "");
+      const heroAlt = set.heroAlt || (set.id === "2026-08-05-todai-reward-expectation"
+        ? "期待と行動をつなぐ脳領域の研究イメージ"
+        : set.title);
       stageInner.innerHTML = `
         <section class="evidence-header">
           <div><div class="calibration-line">EVIDENCE FILE</div><h2>${titleLines.map((line) => `<span>${typeof line === "object" ? line.text : line}</span>`).join("")}</h2><ul class="summary-list">${(set.summary || []).map((item) => `<li>${renderBreathLines(item, item && item.breathLines)}</li>`).join("")}</ul></div>
-          ${set.heroImage ? `<img class="hero-image" src="${set.heroImage}" alt="${set.heroAlt || set.title}">` : ""}
+          ${heroImage ? `<img class="hero-image" src="${heroImage}" alt="${heroAlt}">` : ""}
         </section>
       `;
       if (set.articleFocus) {
@@ -1914,6 +1920,17 @@
         iframe.src = "./ai-inspection-3d/index.html?v=57";
         iframe.title = "AI外観検査 3Dラボ";
         iframe.setAttribute("aria-label", "AI外観検査を動かして学ぶ3D教材");
+        iframe.loading = "eager";
+        stageInner.appendChild(iframe);
+        return;
+      }
+      if (set && set.id === "2026-08-05-todai-reward-expectation") {
+        stage.classList.add("lab-active");
+        const iframe = document.createElement("iframe");
+        iframe.className = "lab-frame";
+        iframe.src = "./reward-expectation-3d/index.html?v=58";
+        iframe.title = "期待と行動をつなぐ脳領域 3Dラボ";
+        iframe.setAttribute("aria-label", "報酬期待と行動の脳領域を動かして学ぶ3D教材");
         iframe.loading = "eager";
         stageInner.appendChild(iframe);
         return;
@@ -2255,7 +2272,7 @@
           location.reload();
         });
         try {
-          const registration = await navigator.serviceWorker.register("./service-worker.js?v=57");
+          const registration = await navigator.serviceWorker.register("./service-worker.js?v=58");
           try {
             await registration?.update?.();
           } catch (error) {
