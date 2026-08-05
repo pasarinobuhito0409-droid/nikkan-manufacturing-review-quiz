@@ -5285,6 +5285,7 @@ window.NIKKAN_QUIZ_SETS = [
     id: "2026-08-05-todai-reward-expectation",
     date: "2026-08-05",
     sourceDate: "2026-08-05",
+    heroImage: "./assets/2026-08-05-reward-expectation-hero.png",
     difficulty: "入門",
     strictVisuals: true,
     paperTheater: {
