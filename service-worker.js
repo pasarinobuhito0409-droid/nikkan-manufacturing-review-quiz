@@ -1,9 +1,9 @@
-const CACHE_NAME = "nikkan-manufacturing-review-quiz-v56";
+const CACHE_NAME = "nikkan-manufacturing-review-quiz-v57";
 
 const PRECACHE_ASSETS = [
   "./",
   "./index.html",
-  "./quiz-data.js?v=56",
+  "./quiz-data.js?v=57",
   "./manifest.webmanifest",
   "./service-worker.js",
   "./assets/icon.svg",
@@ -167,7 +167,29 @@ const PRECACHE_ASSETS = [
   "./earthquake-supply-3d/index.html",
   "./earthquake-supply-3d/styles.css",
   "./earthquake-supply-3d/app.js",
-  "./earthquake-supply-3d/vendor/three.module.js"
+  "./earthquake-supply-3d/vendor/three.module.js",
+  "./assets/2026-08-05-ai-inspection-hero.png",
+  "./assets/2026-08-05-ai-inspection-source.png",
+  "./assets/2026-08-05-ai-inspection-deep-01-what.png",
+  "./assets/2026-08-05-ai-inspection-deep-02-how.png",
+  "./assets/2026-08-05-ai-inspection-deep-03-why.png",
+  "./assets/2026-08-05-ai-inspection-deep-04-result.png",
+  "./assets/2026-08-05-ai-inspection-q1-01-what.png",
+  "./assets/2026-08-05-ai-inspection-q1-02-how.png",
+  "./assets/2026-08-05-ai-inspection-q1-03-why.png",
+  "./assets/2026-08-05-ai-inspection-q1-04-result.png",
+  "./assets/2026-08-05-ai-inspection-q2-01-what.png",
+  "./assets/2026-08-05-ai-inspection-q2-02-how.png",
+  "./assets/2026-08-05-ai-inspection-q2-03-why.png",
+  "./assets/2026-08-05-ai-inspection-q2-04-result.png",
+  "./assets/2026-08-05-ai-inspection-q3-01-what.png",
+  "./assets/2026-08-05-ai-inspection-q3-02-how.png",
+  "./assets/2026-08-05-ai-inspection-q3-03-why.png",
+  "./assets/2026-08-05-ai-inspection-q3-04-result.png",
+  "./ai-inspection-3d/index.html",
+  "./ai-inspection-3d/styles.css",
+  "./ai-inspection-3d/app.js",
+  "./ai-inspection-3d/vendor/three.module.js"
 ];
 
 const PRECACHE_BATCH_SIZE = 5;
@@ -234,7 +256,8 @@ self.addEventListener("fetch", (event) => {
     url.pathname.includes("/rem-energy-3d/") ||
     url.pathname.includes("/large-generator-3d/") ||
     url.pathname.includes("/earthquake-supply-3d/") ||
-    url.pathname.includes("/passion-iteration-3d/");
+    url.pathname.includes("/passion-iteration-3d/") ||
+    url.pathname.includes("/ai-inspection-3d/");
 
   const cacheResponseAndReturn = (response) => {
     if (!response.ok) return Promise.resolve(response);

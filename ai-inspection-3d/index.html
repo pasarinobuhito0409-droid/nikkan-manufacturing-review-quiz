@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>外観検査の人工知能　現場学習ラボ</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="lab-shell" id="labRoot">
+    <canvas id="labCanvas" aria-label="外観検査の人工知能を学ぶ立体教材"></canvas>
+
+    <div class="interface-layer">
+      <header class="topbar">
+        <div class="brand-block">
+          <p class="eyebrow">日刊ものづくり / 現場実習</p>
+          <h1>
+            <span>外観検査の人工知能</span>
+            <span>現場で教える</span>
+          </h1>
+          <p class="subtitle">
+            <span>部品を見せる。</span>
+            <span>判定を直す。</span>
+          </p>
+        </div>
+
+        <div class="top-actions">
+          <button class="motion-button" id="motionToggle" type="button" aria-pressed="true">
+            <span class="button-dot" aria-hidden="true"></span>
+            <span id="motionLabel">自動運転を停止</span>
+          </button>
+          <button class="reset-button" id="resetButton" type="button" title="最初からやり直す" aria-label="最初からやり直す">↺</button>
+          <div class="accuracy-badge" aria-label="現在の正解率">
+            <span>正解率</span>
+            <strong id="accuracyValue">52%</strong>
+            <small id="accuracyCaption">未学習</small>
+          </div>
+        </div>
+      </header>
+
+      <section class="state-strip" aria-label="学習の状態">
+        <div class="state-card is-active" data-phase="0">
+          <span class="state-index">一</span>
+          <div>
+            <strong>未学習</strong>
+            <small>誤判定あり</small>
+          </div>
+        </div>
+        <div class="state-card" data-phase="1">
+          <span class="state-index">二</span>
+          <div>
+            <strong>現場で教える</strong>
+            <small>サンプル登録</small>
+          </div>
+        </div>
+        <div class="state-card" data-phase="2">
+          <span class="state-index">三</span>
+          <div>
+            <strong>追加学習</strong>
+            <small>誤判定を修正</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="lesson-panel" aria-live="polite">
+        <div class="panel-head">
+          <p class="panel-kicker" id="lessonKicker">現在の状態</p>
+          <span class="panel-number" id="panelNumber">一</span>
+        </div>
+        <h2 id="lessonTitle">未学習</h2>
+        <p class="panel-description" id="lessonDescription">
+          <span class="short-line">カメラは部品を見ます。</span>
+          <span class="short-line">不良を1つ見逃します。</span>
+        </p>
+
+        <div class="status-readout" id="statusReadout">
+          <span class="status-led" aria-hidden="true"></span>
+          <div>
+            <small>現場メッセージ</small>
+            <strong id="liveStatus">
+              <span class="short-line">カメラを動かして始めます。</span>
+            </strong>
+          </div>
+        </div>
+
+        <div class="sample-actions" id="sampleActions" hidden>
+          <button class="sample-button" id="goodSampleButton" data-sample="good" type="button">
+            <span class="sample-mark" aria-hidden="true">○</span>
+            <span>良品を登録</span>
+            <small id="goodSampleState">未登録</small>
+          </button>
+          <button class="sample-button" id="defectSampleButton" data-sample="defect" type="button">
+            <span class="sample-mark is-defect" aria-hidden="true">×</span>
+            <span>不良品を登録</span>
+            <small id="defectSampleState">未登録</small>
+          </button>
+        </div>
+
+        <button class="action-button" id="actionButton" type="button">
+          <span id="actionLabel">カメラで見る</span>
+          <span class="action-arrow" aria-hidden="true">→</span>
+        </button>
+        <p class="action-hint" id="actionHint">
+          <span class="short-line">まずカメラで部品を見ます。</span>
+        </p>
+      </section>
+
+      <aside class="scene-legend" aria-label="立体表示の見方">
+        <p class="legend-title">立体表示</p>
+        <div class="legend-item"><span class="legend-swatch camera-swatch"></span><span>検査カメラ</span></div>
+        <div class="legend-item"><span class="legend-swatch sample-swatch"></span><span>現場サンプル</span></div>
+        <div class="legend-item"><span class="legend-swatch defect-swatch"></span><span>不良品箱</span></div>
+        <div class="legend-rule"></div>
+        <div class="legend-item"><span class="legend-key">指で回す</span><span>視点を動かす</span></div>
+        <div class="legend-item"><span class="legend-key">二本指</span><span>距離を変える</span></div>
+      </aside>
+
+      <p class="interaction-hint">
+        <span>立体表示</span>
+        <span>指で回せます。</span>
+      </p>
+
+      <nav class="flow-rail" aria-label="学習の順序">
+        <div class="flow-line" aria-hidden="true"></div>
+        <button class="flow-step is-active" data-flow="0" type="button" disabled aria-current="step">
+          <span class="flow-index">一</span>
+          <span class="flow-label">カメラ</span>
+          <small>見る</small>
+        </button>
+        <button class="flow-step" data-flow="1" type="button" disabled>
+          <span class="flow-index">二</span>
+          <span class="flow-label">画像</span>
+          <small>切り出す</small>
+        </button>
+        <button class="flow-step" data-flow="2" type="button" disabled>
+          <span class="flow-index">三</span>
+          <span class="flow-label">ラベル</span>
+          <small>教える</small>
+        </button>
+        <button class="flow-step" data-flow="3" type="button" disabled>
+          <span class="flow-index">四</span>
+          <span class="flow-label">モデル</span>
+          <small>更新する</small>
+        </button>
+        <button class="flow-step" data-flow="4" type="button" disabled>
+          <span class="flow-index">五</span>
+          <span class="flow-label">判定</span>
+          <small>直す</small>
+        </button>
+        <button class="flow-step" data-flow="5" type="button" disabled>
+          <span class="flow-index">六</span>
+          <span class="flow-label">分離</span>
+          <small>分ける</small>
+        </button>
+      </nav>
+
+      <section class="result-lock" id="resultLock" hidden aria-live="polite">
+        <span class="lock-icon" aria-hidden="true">✓</span>
+        <div>
+          <p>結果ロック</p>
+          <strong id="lockTitle">分離まで完了</strong>
+          <span id="lockDescription" class="short-line">学習済みモデルで不良品を分けました。</span>
+        </div>
+      </section>
+    </div>
+
+    <p class="fallback-message" id="webglError" hidden>
+      <span class="short-line">立体表示を開始できません。</span>
+      <span class="short-line">画面を再読み込みしてください。</span>
+    </p>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

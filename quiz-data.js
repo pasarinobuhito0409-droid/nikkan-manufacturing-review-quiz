@@ -4973,5 +4973,312 @@ window.NIKKAN_QUIZ_SETS = [
         ]
       }
     ]
+  },
+  {
+    id: "2026-08-05-ai-inspection-field-learning",
+    date: "2026-08-05",
+    sourceDate: "2026-08-05",
+    difficulty: "入門",
+    strictVisuals: true,
+    paperTheater: {
+      frameCount: 4,
+      phases: ["what", "how", "why", "result"]
+    },
+    selection: { mode: "auto", reason: "マーカーなし" },
+    title: "日刊工業新聞 8/5 外観検査AI 学習容易に 現場学習3問",
+    titleLines: [
+      "日刊工業新聞 8/5",
+      "外観検査AI 学習容易に",
+      "現場学習3問"
+    ],
+    shortTitle: "外観検査AI・現場学習",
+    sourceLabel: "日刊工業新聞 2026/8/5 外観検査AI 学習容易に",
+    heroImage: "./assets/2026-08-05-ai-inspection-hero.png",
+    heroAlt: "TESRAYで外観検査AIを現場で育てる専用端末",
+    summary: [
+      "外観検査（がいかんけんさ）AIを育てる。",
+      "現場で追加学習（ついかがくしゅう）。",
+      "良品（りょうひん）を教える。",
+      "不良品（ふりょうひん）も教える。",
+      "良品画像から不足画像を生成する方法も紹介。",
+      "判定（はんてい）を見直す。"
+    ],
+    articleFocus: {
+      title: "今日の芯：現場で検査AIを育てる",
+      breathLines: [
+        { label: "記事", text: "Robotが専用端末TESRAYを開発。" },
+        { label: "方法", text: "現場担当者が画像を学習。" },
+        { label: "背景", text: "外部依頼は時間と費用が必要。" },
+        { label: "補助", text: "良品画像から不足画像も作る。" },
+        { label: "注意", text: "学習方法は二つある。" }
+      ],
+      frames: [
+        {
+          order: 1,
+          phase: "what",
+          phaseLabel: "何が新しい？",
+          image: "./assets/2026-08-05-ai-inspection-deep-01-what.png",
+          zoomImage: "./assets/2026-08-05-ai-inspection-deep-01-what.png",
+          imageAlt: "Robotが専用端末TESRAYを開発した場面",
+          caption: "TESRAYは現場で使う専用端末。",
+          requiredLabels: ["① 何が新しい？", "TESRAY", "専用端末"]
+        },
+        {
+          order: 2,
+          phase: "how",
+          phaseLabel: "どう育てる？",
+          image: "./assets/2026-08-05-ai-inspection-deep-02-how.png",
+          zoomImage: "./assets/2026-08-05-ai-inspection-deep-02-how.png",
+          imageAlt: "現場担当者がTESRAYで検査AIに画像を追加学習する場面",
+          caption: "現場担当者が画像を足して学習する。",
+          requiredLabels: ["② どう育てる？", "現場担当者", "画像", "追加学習"]
+        },
+        {
+          order: 3,
+          phase: "why",
+          phaseLabel: "なぜ便利？",
+          image: "./assets/2026-08-05-ai-inspection-deep-03-why.png",
+          zoomImage: "./assets/2026-08-05-ai-inspection-deep-03-why.png",
+          imageAlt: "外部依頼の時間と費用を現場学習で減らしやすくする場面",
+          caption: "外部依頼の待ち時間と費用を減らしやすい。",
+          requiredLabels: ["③ なぜ便利？", "外部依頼", "時間", "費用"]
+        },
+        {
+          order: 4,
+          phase: "result",
+          phaseLabel: "結果は？",
+          image: "./assets/2026-08-05-ai-inspection-deep-04-result.png",
+          zoomImage: "./assets/2026-08-05-ai-inspection-deep-04-result.png",
+          imageAlt: "現場の変化に合わせた検査AIの判定へ進む結果の場面",
+          caption: "現場の変化に合わせた判定へ。",
+          requiredLabels: ["④ 結果は？", "現場学習", "変化", "判定"],
+          result: true
+        }
+      ]
+    },
+    articleEvidence: {
+      image: "./assets/2026-08-05-ai-inspection-source.png",
+      zoomImage: "./assets/2026-08-05-ai-inspection-source.png",
+      alt: "日刊工業新聞2026年8月5日の外観検査AI記事",
+      caption: "出典：日刊工業新聞 2026/8/5。記事の証拠画像。"
+    },
+    curiosityPoints: [],
+    importantPoints: [],
+    glossaryTitle: "黄：読みと意味",
+    glossary: [
+      { term: "外観検査（がいかんけんさ）", meaning: "製品の見た目を調べること。" },
+      { term: "追加学習（ついかがくしゅう）", meaning: "新しい画像をAIに教えること。" },
+      { term: "判定（はんてい）", meaning: "良品か不良品かを決めること。" },
+      { term: "良品（りょうひん）", meaning: "問題がない製品。" },
+      { term: "不良品（ふりょうひん）", meaning: "問題がある製品。" }
+    ],
+    insightQuotes: [],
+    sources: [],
+    questions: [
+      {
+        id: "ai-inspection-field-learning-core",
+        tag: "記事の革新",
+        difficulty: "入門",
+        question: "記事の革新は？",
+        hint: "誰が画像を教えるかを見る。",
+        choices: [
+          "検査を人だけで行う",
+          "現場担当者が検査AIを追加学習できる",
+          "外観検査をやめる"
+        ],
+        correctIndex: 1,
+        answerTitle: "答え：現場担当者が検査AIを育てる",
+        principle: "現場で追加学習できると、製品の変化をすぐ反映できる。",
+        answerParagraphs: [
+          "TESRAYは専用端末。",
+          "現場担当者が画像を教える。",
+          "検査AIを追加学習できる。",
+          "現場の変化を反映しやすい。"
+        ],
+        breathLines: [
+          { label: "答え", text: "現場担当者がAIを育てる。" },
+          { label: "原理", text: "変化を反映しやすい。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "現場の課題",
+            image: "./assets/2026-08-05-ai-inspection-q1-01-what.png",
+            zoomImage: "./assets/2026-08-05-ai-inspection-q1-01-what.png",
+            imageAlt: "外部の担当者へ検査AIの調整を依頼する現場",
+            caption: "従来は外部へ調整を依頼した。",
+            requiredLabels: ["① 課題", "外部依頼", "調整"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "現場で学習",
+            image: "./assets/2026-08-05-ai-inspection-q1-02-how.png",
+            zoomImage: "./assets/2026-08-05-ai-inspection-q1-02-how.png",
+            imageAlt: "現場担当者がTESRAYで画像を選び検査AIを追加学習する場面",
+            caption: "TESRAYで現場担当者が画像を教える。",
+            requiredLabels: ["② 方法", "TESRAY", "画像を教える"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "変化に対応",
+            image: "./assets/2026-08-05-ai-inspection-q1-03-why.png",
+            zoomImage: "./assets/2026-08-05-ai-inspection-q1-03-why.png",
+            imageAlt: "製品の変化に合わせて外観検査AIを調整する現場",
+            caption: "現場の変化をAIへ反映しやすい。",
+            requiredLabels: ["③ 理由", "品種の変化", "AIを調整"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "正解",
+            image: "./assets/2026-08-05-ai-inspection-q1-04-result.png",
+            zoomImage: "./assets/2026-08-05-ai-inspection-q1-04-result.png",
+            imageAlt: "現場担当者が検査AIを追加学習して育てる結果の場面",
+            caption: "正解は、現場担当者が検査AIを育てる。",
+            requiredLabels: ["④ 正解", "現場担当者", "追加学習"],
+            result: true
+          }
+        ]
+      },
+      {
+        id: "ai-inspection-field-learning-why-local",
+        tag: "現場学習の理由",
+        difficulty: "入門",
+        question: "なぜ現場で追加学習する？",
+        hint: "品種と依頼時間を考える。",
+        choices: [
+          "品種の変化に合わせ、待ち時間と手間を減らすため",
+          "外部の知識を全部なくすため",
+          "画像を使わずに判定するため"
+        ],
+        correctIndex: 0,
+        answerTitle: "答え：変化に合わせ、待ち時間と手間を減らす",
+        principle: "現場の誤判定をすぐ直せるため、外部依頼の待ち時間を減らせる。",
+        answerParagraphs: [
+          "品種が変わると、画像も変わる。",
+          "外部依頼では返事を待つ。",
+          "現場で画像を足して学習する。",
+          "待ち時間と手間を減らしやすい。"
+        ],
+        breathLines: [
+          { label: "理由", text: "品種の変化に合わせる。" },
+          { label: "効果", text: "待ち時間と手間を減らす。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "品種が変わる",
+            image: "./assets/2026-08-05-ai-inspection-q2-01-what.png",
+            zoomImage: "./assets/2026-08-05-ai-inspection-q2-01-what.png",
+            imageAlt: "品種が変わり外観画像も変わる現場",
+            caption: "品種が変わると、見る画像も変わる。",
+            requiredLabels: ["① 変化", "品種", "画像"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "画像を足す",
+            image: "./assets/2026-08-05-ai-inspection-q2-02-how.png",
+            zoomImage: "./assets/2026-08-05-ai-inspection-q2-02-how.png",
+            imageAlt: "現場担当者がTESRAYへ画像を追加する場面",
+            caption: "現場で画像を足して学習する。",
+            requiredLabels: ["② 方法", "画像追加", "現場"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "待ち時間を減らす",
+            image: "./assets/2026-08-05-ai-inspection-q2-03-why.png",
+            zoomImage: "./assets/2026-08-05-ai-inspection-q2-03-why.png",
+            imageAlt: "外部へ調整を頼み返答を待つ現場",
+            caption: "外部依頼は待ち時間と手間がかかる。",
+            requiredLabels: ["③ 理由", "外部依頼", "待ち時間"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "正解",
+            image: "./assets/2026-08-05-ai-inspection-q2-04-result.png",
+            zoomImage: "./assets/2026-08-05-ai-inspection-q2-04-result.png",
+            imageAlt: "品種の変化に合わせて現場でAIを調整する場面",
+            caption: "正解は、変化に合わせ待ち時間と手間を減らす。",
+            requiredLabels: ["④ 正解", "品種の変化", "現場学習"],
+            result: true
+          }
+        ]
+      },
+      {
+        id: "ai-inspection-field-learning-loop",
+        tag: "AIを育てるループ",
+        difficulty: "入門",
+        question: "検査AIを育てる基本ループは？",
+        hint: "画像から結果まで順に見る。",
+        choices: [
+          "画像を集める→良品/不良品を教える→判定→誤りを直す",
+          "作らずに人の記憶だけで判定する",
+          "結果を測らず同じ設定を続ける"
+        ],
+        correctIndex: 0,
+        answerTitle: "答え：集める→教える→判定→直す",
+        principle: "実際の画像と誤りを使い、次の判定を改善する。",
+        answerParagraphs: [
+          "まず、実際の画像を集める。",
+          "良品と不良品を分けて教える。",
+          "AIの判定を確認する。",
+          "誤りを直し、次へ生かす。"
+        ],
+        breathLines: [
+          { label: "手順", text: "集める→教える→判定→直す。" },
+          { label: "コツ", text: "誤りが次の学習材料。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "画像を集める",
+            image: "./assets/2026-08-05-ai-inspection-q3-01-what.png",
+            zoomImage: "./assets/2026-08-05-ai-inspection-q3-01-what.png",
+            imageAlt: "現場の検査画像を集める場面",
+            caption: "まず、実際の検査画像を集める。",
+            requiredLabels: ["① 集める", "検査画像", "現場"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "良品と不良品を教える",
+            image: "./assets/2026-08-05-ai-inspection-q3-02-how.png",
+            zoomImage: "./assets/2026-08-05-ai-inspection-q3-02-how.png",
+            imageAlt: "良品と不良品の画像を分けて教える場面",
+            caption: "良品と不良品を分けて教える。",
+            requiredLabels: ["② 教える", "良品", "不良品"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "判定を確かめる",
+            image: "./assets/2026-08-05-ai-inspection-q3-03-why.png",
+            zoomImage: "./assets/2026-08-05-ai-inspection-q3-03-why.png",
+            imageAlt: "AIが画像を判定し結果を表示する場面",
+            caption: "AIの判定を見て、誤りを探す。",
+            requiredLabels: ["③ 判定", "結果", "誤り"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "正解",
+            image: "./assets/2026-08-05-ai-inspection-q3-04-result.png",
+            zoomImage: "./assets/2026-08-05-ai-inspection-q3-04-result.png",
+            imageAlt: "誤った判定を直し次の学習へ回す場面",
+            caption: "正解は、集める→教える→判定→直す。",
+            requiredLabels: ["④ 正解", "誤りを直す", "次の学習"],
+            result: true
+          }
+        ]
+      }
+    ]
   }
 ];
