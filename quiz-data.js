@@ -5371,12 +5371,47 @@ window.NIKKAN_QUIZ_SETS = [
         title: "赤：報酬期待と行動をつなぐ発見（ほうしゅうきたいとこうどうをつなぐはっけん）",
         text: "東大（とうだい）が、報酬期待（ほうしゅうきたい）と行動（こうどう）をつなぐ脳領域（のうりょういき）を発見（はっけん）した。",
         breathLines: [
-          { label: "革新（かくしん）", text: "期待（きたい）が行動（こうどう）を動（うご）かす場所（ばしょ）を見（み）つけた。" }
+          { label: "革新（かくしん）", text: "期待が行動を動かす場所を発見。" }
         ],
         image: "./assets/2026-08-05-reward-expectation-source.png",
         zoomImage: "./assets/2026-08-05-reward-expectation-source.png",
         imageAlt: "東大（とうだい）が報酬期待（ほうしゅうきたい）と行動（こうどう）をつなぐ脳領域（のうりょういき）を発見（はっけん）した記事（きじ）",
-        caption: "赤（あか）の記事証拠（きじしょうこ）。報酬期待（ほうしゅうきたい）と行動（こうどう）をつなぐ脳領域（のうりょういき）の発見（はっけん）。"
+        caption: "赤（あか）の記事証拠（きじしょうこ）。報酬期待（ほうしゅうきたい）と行動（こうどう）をつなぐ脳領域（のうりょういき）の発見（はっけん）。",
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "発見",
+            image: "./assets/2026-08-05-reward-expectation-red-01-what.png",
+            zoomImage: "./assets/2026-08-05-reward-expectation-red-01-what.png",
+            requiredLabels: ["① 発見", "報酬期待", "運動前野", "行動準備"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "調べ方",
+            image: "./assets/2026-08-05-reward-expectation-red-02-how.png",
+            zoomImage: "./assets/2026-08-05-reward-expectation-red-02-how.png",
+            requiredLabels: ["② 調べ方", "合図", "ごほうび", "脳活動を測る"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "原理",
+            image: "./assets/2026-08-05-reward-expectation-red-03-why.png",
+            zoomImage: "./assets/2026-08-05-reward-expectation-red-03-why.png",
+            requiredLabels: ["③ 原理", "混ざった信号", "数理モデル", "期待の信号を分ける"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "結果",
+            image: "./assets/2026-08-05-reward-expectation-red-04-result.png",
+            zoomImage: "./assets/2026-08-05-reward-expectation-red-04-result.png",
+            requiredLabels: ["④ 結果", "期待", "運動準備", "つなぐ領域"],
+            result: true
+          }
+        ]
       }
     ],
     importantPoints: [
@@ -5384,13 +5419,48 @@ window.NIKKAN_QUIZ_SETS = [
         title: "緑：広い脳活動から領域を分ける（ひろいのうかつどうからりょういきをわける）",
         text: "報酬期待（ほうしゅうきたい）と行動（こうどう）をつなぐ脳領域（のうりょういき）を、身体（しんたい）の動（うご）きで広（ひろ）く反応（はんのう）する脳活動（のうかつどう）から数理（すうり）モデルで分離（ぶんり）し、イメージングで画像化（がぞうか）した。",
         breathLines: [
-          { label: "根拠（こんきょ）", text: "身体（しんたい）の動（うご）きで広（ひろ）く反応（はんのう）する活動（かつどう）を分（わ）けた。" },
-          { label: "結果（けっか）", text: "期待（きたい）と行動（こうどう）の領域（りょういき）を画像化（がぞうか）した。" }
+          { label: "根拠（こんきょ）", text: "動きで広く反応する活動を分けた。" },
+          { label: "結果（けっか）", text: "期待と行動の領域を画像化した。" }
         ],
         image: "./assets/2026-08-05-reward-expectation-source.png",
         zoomImage: "./assets/2026-08-05-reward-expectation-source.png",
         imageAlt: "身体（しんたい）の動（うご）きによる広（ひろ）い脳活動（のうかつどう）を数理（すうり）モデルで分離（ぶんり）し画像化（がぞうか）した記事（きじ）",
-        caption: "緑（みどり）の記事証拠（きじしょうこ）。広（ひろ）い反応（はんのう）を分（わ）け、脳領域（のうりょういき）を画像化（がぞうか）。"
+        caption: "緑（みどり）の記事証拠（きじしょうこ）。広（ひろ）い反応（はんのう）を分（わ）け、脳領域（のうりょういき）を画像化（がぞうか）。",
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "広い反応",
+            image: "./assets/2026-08-05-reward-expectation-green-01-what.png",
+            zoomImage: "./assets/2026-08-05-reward-expectation-green-01-what.png",
+            requiredLabels: ["① 広い反応", "身体の動き", "脳活動が広がる"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "数理モデル",
+            image: "./assets/2026-08-05-reward-expectation-green-02-how.png",
+            zoomImage: "./assets/2026-08-05-reward-expectation-green-02-how.png",
+            requiredLabels: ["② 数理モデル", "動きの影響", "期待の信号", "分けて見る"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "画像化",
+            image: "./assets/2026-08-05-reward-expectation-green-03-why.png",
+            zoomImage: "./assets/2026-08-05-reward-expectation-green-03-why.png",
+            requiredLabels: ["③ イメージング", "測る", "画像で見る", "運動前野"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "重要な結果",
+            image: "./assets/2026-08-05-reward-expectation-green-04-result.png",
+            zoomImage: "./assets/2026-08-05-reward-expectation-green-04-result.png",
+            requiredLabels: ["④ 重要な結果", "期待", "運動前野", "行動準備につながる"],
+            result: true
+          }
+        ]
       }
     ],
     glossaryTitle: "黄：読みと意味",
