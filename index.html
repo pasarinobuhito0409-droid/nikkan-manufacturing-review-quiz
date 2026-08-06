@@ -1345,7 +1345,7 @@
     </div>
   </div>
 
-  <script src="./quiz-data.js?v=58"></script>
+  <script src="./quiz-data.js?v=59"></script>
   <script>
     const quizSets = window.NIKKAN_QUIZ_SETS || [];
     const storageKey = "nikkan-manufacturing-review-quiz-library-v2";
@@ -1928,7 +1928,7 @@
         stage.classList.add("lab-active");
         const iframe = document.createElement("iframe");
         iframe.className = "lab-frame";
-        iframe.src = "./reward-expectation-3d/index.html?v=58";
+        iframe.src = "./reward-expectation-3d/index.html?v=59";
         iframe.title = "期待と行動をつなぐ脳領域 3Dラボ";
         iframe.setAttribute("aria-label", "報酬期待と行動の脳領域を動かして学ぶ3D教材");
         iframe.loading = "eager";
@@ -2272,7 +2272,7 @@
           location.reload();
         });
         try {
-          const registration = await navigator.serviceWorker.register("./service-worker.js?v=58");
+          const registration = await navigator.serviceWorker.register("./service-worker.js?v=59");
           try {
             await registration?.update?.();
           } catch (error) {

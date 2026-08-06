@@ -1,9 +1,9 @@
-const CACHE_NAME = "nikkan-manufacturing-review-quiz-v58";
+const CACHE_NAME = "nikkan-manufacturing-review-quiz-v59";
 
 const PRECACHE_ASSETS = [
   "./",
   "./index.html",
-  "./quiz-data.js?v=58",
+  "./quiz-data.js?v=59",
   "./manifest.webmanifest",
   "./service-worker.js",
   "./assets/icon.svg",
@@ -219,7 +219,32 @@ const PRECACHE_ASSETS = [
   "./reward-expectation-3d/index.html",
   "./reward-expectation-3d/styles.css",
   "./reward-expectation-3d/app.js",
-  "./reward-expectation-3d/vendor/three.module.js"
+  "./reward-expectation-3d/vendor/three.module.js",
+  "./assets/2026-08-06-kosen-recruitment-source.png",
+  "./assets/2026-08-06-kosen-recruitment-focus-01-what.png",
+  "./assets/2026-08-06-kosen-recruitment-focus-02-how.png",
+  "./assets/2026-08-06-kosen-recruitment-focus-03-why.png",
+  "./assets/2026-08-06-kosen-recruitment-focus-04-result.png",
+  "./assets/2026-08-06-kosen-recruitment-red-01-what.png",
+  "./assets/2026-08-06-kosen-recruitment-red-02-how.png",
+  "./assets/2026-08-06-kosen-recruitment-red-03-why.png",
+  "./assets/2026-08-06-kosen-recruitment-red-04-result.png",
+  "./assets/2026-08-06-kosen-recruitment-green-01-what.png",
+  "./assets/2026-08-06-kosen-recruitment-green-02-how.png",
+  "./assets/2026-08-06-kosen-recruitment-green-03-why.png",
+  "./assets/2026-08-06-kosen-recruitment-green-04-result.png",
+  "./assets/2026-08-06-kosen-recruitment-q1-01-what.png",
+  "./assets/2026-08-06-kosen-recruitment-q1-02-how.png",
+  "./assets/2026-08-06-kosen-recruitment-q1-03-why.png",
+  "./assets/2026-08-06-kosen-recruitment-q1-04-result.png",
+  "./assets/2026-08-06-kosen-recruitment-q2-01-what.png",
+  "./assets/2026-08-06-kosen-recruitment-q2-02-how.png",
+  "./assets/2026-08-06-kosen-recruitment-q2-03-why.png",
+  "./assets/2026-08-06-kosen-recruitment-q2-04-result.png",
+  "./assets/2026-08-06-kosen-recruitment-q3-01-what.png",
+  "./assets/2026-08-06-kosen-recruitment-q3-02-how.png",
+  "./assets/2026-08-06-kosen-recruitment-q3-03-why.png",
+  "./assets/2026-08-06-kosen-recruitment-q3-04-result.png"
 ];
 
 const PRECACHE_BATCH_SIZE = 5;

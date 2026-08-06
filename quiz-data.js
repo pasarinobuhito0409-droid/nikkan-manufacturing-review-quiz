@@ -5680,5 +5680,428 @@ window.NIKKAN_QUIZ_SETS = [
         ]
       }
     ]
+  },
+  {
+    id: "2026-08-06-kosen-recruitment",
+    date: "2026-08-06",
+    sourceDate: "2026-08-06",
+    difficulty: "入門",
+    strictVisuals: true,
+    paperTheater: {
+      frameCount: 4,
+      phases: ["what", "how", "why", "result"]
+    },
+    selection: { mode: "marked", reason: "赤・緑・黄色マーカー画像を確認" },
+    title: "日刊工業新聞 8/6 中小が学生獲得模索 高専採用3問",
+    titleLines: [
+      "日刊工業新聞 8/6",
+      "中小が学生獲得模索",
+      "高専採用3問"
+    ],
+    shortTitle: "高専採用・中小の人材戦略",
+    sourceLabel: "日刊工業新聞 2026/8/6 中小が学生獲得模索",
+    heroImage: "./assets/2026-08-06-kosen-recruitment-focus-01-what.png",
+    heroAlt: "中小企業と高専生の採用競争を示す説明画像",
+    summary: [
+      "高専生（こうせんせい）の採用競争（さいようきょうそう）が激しくなっている。",
+      "給与を見直し、研究職（けんきゅうしょく）を売りにする。",
+      "製造（せいぞう）と設計開発（せっけいかいはつ）の両方を経験させる。",
+      "待遇（たいぐう）と成長経路（せいちょうけいろ）を見える化する。"
+    ],
+    curiosityTitle: "赤ライン：給与見直し・「研究職」売りに",
+    importantTitle: "緑ライン：製造と設計開発を経験",
+    articleFocus: {
+      title: "今日の芯：人材獲得は待遇と成長設計",
+      breathLines: [
+        { label: "記事", text: "中小企業が高専生の採用を模索する。" },
+        { label: "赤", text: "給与を見直し、研究職を売りにする。" },
+        { label: "緑", text: "製造と設計開発を両方経験する。" },
+        { label: "原理", text: "待遇と成長経路が、選ぶ理由になる。" },
+        { label: "発明の種", text: "会社の価値を、見える形にする。" }
+      ],
+      frames: [
+        {
+          order: 1,
+          phase: "what",
+          phaseLabel: "何が起きている？",
+          image: "./assets/2026-08-06-kosen-recruitment-focus-01-what.png",
+          zoomImage: "./assets/2026-08-06-kosen-recruitment-focus-01-what.png",
+          imageAlt: "中小企業と高専生が採用条件と仕事の成長を見比べる場面",
+          caption: "中小企業は、高専生に選ばれる理由を探している。",
+          requiredLabels: ["① 何が起きている？", "中小企業", "高専生", "採用競争"]
+        },
+        {
+          order: 2,
+          phase: "how",
+          phaseLabel: "どう示す？",
+          image: "./assets/2026-08-06-kosen-recruitment-focus-02-how.png",
+          zoomImage: "./assets/2026-08-06-kosen-recruitment-focus-02-how.png",
+          imageAlt: "中小企業が給与と研究職と成長経路を採用資料に示す場面",
+          caption: "給与と、研究・成長の道を見える化する。",
+          requiredLabels: ["② どう示す？", "給与", "研究職", "成長経路"]
+        },
+        {
+          order: 3,
+          phase: "why",
+          phaseLabel: "なぜ効く？",
+          image: "./assets/2026-08-06-kosen-recruitment-focus-03-why.png",
+          zoomImage: "./assets/2026-08-06-kosen-recruitment-focus-03-why.png",
+          imageAlt: "高専生が待遇と仕事の成長を比較して会社を判断する場面",
+          caption: "見える情報があると、学生は未来を比べられる。",
+          requiredLabels: ["③ なぜ効く？", "待遇", "成長", "比較できる"]
+        },
+        {
+          order: 4,
+          phase: "result",
+          phaseLabel: "何が伝わる？",
+          image: "./assets/2026-08-06-kosen-recruitment-focus-04-result.png",
+          zoomImage: "./assets/2026-08-06-kosen-recruitment-focus-04-result.png",
+          imageAlt: "高専生が中小企業の待遇と成長設計を理解して応募を判断する結果",
+          caption: "待遇と成長設計が、会社の選ばれる価値になる。",
+          requiredLabels: ["④ 結果", "待遇", "成長設計", "選ばれる価値"],
+          result: true
+        }
+      ]
+    },
+    articleEvidence: {
+      image: "./assets/2026-08-06-kosen-recruitment-source.png",
+      zoomImage: "./assets/2026-08-06-kosen-recruitment-source.png",
+      alt: "赤・緑・黄色のマーカーが付いた日刊工業新聞2026年8月6日の高専採用記事",
+      caption: "出典：日刊工業新聞 2026/8/6。赤・緑・黄色マーカー付き記事の証拠画像。"
+    },
+    curiosityPoints: [
+      {
+        title: "赤ライン：給与見直し・「研究職」売りに",
+        text: "中小企業が給与を見直し、研究職を売りにして、高専生に選ばれる理由を作る。",
+        shortLines: [
+          "給与を見直す",
+          "研究職を売りにする",
+          "中小でも学生に選ばれる理由を作る"
+        ],
+        breathLines: [
+          { label: "赤①", text: "給与を見直す。" },
+          { label: "赤②", text: "研究職を売りにする。" },
+          { label: "赤③", text: "中小でも学生に選ばれる理由を作る。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "赤：何を変える？",
+            image: "./assets/2026-08-06-kosen-recruitment-red-01-what.png",
+            zoomImage: "./assets/2026-08-06-kosen-recruitment-red-01-what.png",
+            imageAlt: "給与と研究職の見直しを始める中小企業の採用担当者",
+            caption: "給与と仕事の見せ方を、見直し始める。",
+            requiredLabels: ["① 何を変える？", "給与", "研究職", "見直し"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "赤：どう売りにする？",
+            image: "./assets/2026-08-06-kosen-recruitment-red-02-how.png",
+            zoomImage: "./assets/2026-08-06-kosen-recruitment-red-02-how.png",
+            imageAlt: "研究職の仕事と給与の見直しを採用資料にまとめる中小企業",
+            caption: "研究職の仕事と給与を、具体的に示す。",
+            requiredLabels: ["② どう売りにする？", "研究職", "給与", "具体化"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "赤：なぜ必要？",
+            image: "./assets/2026-08-06-kosen-recruitment-red-03-why.png",
+            zoomImage: "./assets/2026-08-06-kosen-recruitment-red-03-why.png",
+            imageAlt: "高専生が大企業と中小企業の給与と研究の機会を比較する場面",
+            caption: "給与と研究の機会が、選ぶ比較軸になる。",
+            requiredLabels: ["③ なぜ必要？", "比較軸", "給与", "研究の機会"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "赤：発明の種",
+            image: "./assets/2026-08-06-kosen-recruitment-red-04-result.png",
+            zoomImage: "./assets/2026-08-06-kosen-recruitment-red-04-result.png",
+            imageAlt: "中小企業が給与と研究職を強みにして高専生へ選ばれる理由を伝える結果",
+            caption: "中小でも、選ばれる理由を作って伝えられる。",
+            requiredLabels: ["④ 発明の種", "中小企業", "選ばれる理由", "伝える"],
+            result: true
+          }
+        ]
+      }
+    ],
+    importantPoints: [
+      {
+        title: "緑ライン：製造と設計開発を経験",
+        text: "高専生を早く戦力化し、製造と設計開発を行き来して、現場の気づきを設計へ戻す。",
+        shortLines: [
+          "高専生を早く戦力化",
+          "製造と設計開発を行き来",
+          "現場の気づきを設計へ戻す"
+        ],
+        breathLines: [
+          { label: "緑①", text: "高専生を早く戦力化する。" },
+          { label: "緑②", text: "製造と設計開発を行き来する。" },
+          { label: "緑③", text: "現場の気づきを設計へ戻す。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "緑：何を経験？",
+            image: "./assets/2026-08-06-kosen-recruitment-green-01-what.png",
+            zoomImage: "./assets/2026-08-06-kosen-recruitment-green-01-what.png",
+            imageAlt: "高専生が製造現場と設計開発室を見比べる中小企業の職場",
+            caption: "製造と設計開発の両方を経験する。",
+            requiredLabels: ["① 何を経験？", "製造", "設計開発", "両方"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "緑：どう育てる？",
+            image: "./assets/2026-08-06-kosen-recruitment-green-02-how.png",
+            zoomImage: "./assets/2026-08-06-kosen-recruitment-green-02-how.png",
+            imageAlt: "若手社員が製造現場と設計開発を順番に学ぶ中小企業の教育場面",
+            caption: "現場と設計を行き来して、仕事を覚える。",
+            requiredLabels: ["② どう育てる？", "現場", "設計", "行き来"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "緑：なぜ効く？",
+            image: "./assets/2026-08-06-kosen-recruitment-green-03-why.png",
+            zoomImage: "./assets/2026-08-06-kosen-recruitment-green-03-why.png",
+            imageAlt: "製造現場の気づきを設計図へ書き戻す若手社員と先輩技術者",
+            caption: "現場の気づきを設計へ戻すと、改善につながる。",
+            requiredLabels: ["③ なぜ効く？", "現場の気づき", "設計へ戻す", "改善"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "緑：何が変わる？",
+            image: "./assets/2026-08-06-kosen-recruitment-green-04-result.png",
+            zoomImage: "./assets/2026-08-06-kosen-recruitment-green-04-result.png",
+            imageAlt: "製造と設計開発を理解した高専生が早く戦力として改善に参加する結果",
+            caption: "全体を理解した人材が、早く現場で役立つ。",
+            requiredLabels: ["④ 結果", "全体を理解", "早く戦力化", "改善"],
+            result: true
+          }
+        ]
+      }
+    ],
+    glossaryTitle: "黄色：読みと意味",
+    glossary: [
+      { term: "高専（こうせん）", meaning: "高校と専門学校を合わせたような、技術を深く学ぶ学校。" },
+      { term: "即戦力（そくせんりょく）", meaning: "仕事を始めて早く役に立てる力。" },
+      { term: "研究職（けんきゅうしょく）", meaning: "新しい材料や製品を調べ、作る仕事。" },
+      { term: "レクチャー", meaning: "先生や先輩が教えること。" },
+      { term: "アクティブ", meaning: "自分から動いて取り組むこと。" }
+    ],
+    insightQuotes: [],
+    sources: [],
+    questions: [
+      {
+        id: "2026-08-06-kosen-recruitment-q1",
+        tag: "赤｜高専生に選ばれる条件",
+        difficulty: "入門",
+        question: "高専生（こうせんせい）に選ばれるため、中小企業（ちゅうしょうきぎょう）が見直す組み合わせは？",
+        hint: "給与（きゅうよ）だけでなく、研究職（けんきゅうしょく）と成長の道を見る。",
+        choices: [
+          "給与と研究・成長の道を見える化する",
+          "会社名だけを大きく見せ、仕事の内容は説明しない",
+          "入社後の仕事を一つに固定し、学ぶ機会を減らす"
+        ],
+        correctIndex: 0,
+        answerTitle: "答え：給与と研究・成長の道を見える化する",
+        principle: "待遇（たいぐう）と成長経路（せいちょうけいろ）が、会社を選ぶ判断材料になる。",
+        answerParagraphs: [
+          "高専生は、技術を深く学んでいる。",
+          "給与を見直し、研究職を売りにする。",
+          "仕事と成長の道を、見える形で示す。",
+          "学生が、自分の未来を想像しやすくなる。"
+        ],
+        breathLines: [
+          { label: "答え", text: "給与と研究・成長の道を見える化。" },
+          { label: "原理", text: "見える情報が、会社を選ぶ材料になる。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "条件を比べる",
+            image: "./assets/2026-08-06-kosen-recruitment-q1-01-what.png",
+            zoomImage: "./assets/2026-08-06-kosen-recruitment-q1-01-what.png",
+            imageAlt: "高専生が中小企業の給与と仕事の成長を比べる場面",
+            caption: "高専生は、給与と仕事の未来を比べる。",
+            requiredLabels: ["① 条件を比べる", "高専生", "給与", "成長"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "道を見せる",
+            image: "./assets/2026-08-06-kosen-recruitment-q1-02-how.png",
+            zoomImage: "./assets/2026-08-06-kosen-recruitment-q1-02-how.png",
+            imageAlt: "中小企業が給与と研究職と成長経路を採用資料で示す場面",
+            caption: "給与と研究・成長の道を、具体的に示す。",
+            requiredLabels: ["② 道を見せる", "給与", "研究職", "成長経路"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "選ぶ理由になる",
+            image: "./assets/2026-08-06-kosen-recruitment-q1-03-why.png",
+            zoomImage: "./assets/2026-08-06-kosen-recruitment-q1-03-why.png",
+            imageAlt: "高専生が見える待遇と成長経路から中小企業を判断する場面",
+            caption: "見える道があると、会社の価値を判断できる。",
+            requiredLabels: ["③ 選ぶ理由", "見える道", "会社の価値", "判断"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "正解",
+            image: "./assets/2026-08-06-kosen-recruitment-q1-04-result.png",
+            zoomImage: "./assets/2026-08-06-kosen-recruitment-q1-04-result.png",
+            imageAlt: "給与と研究・成長の道を見える化した中小企業が高専生に選ばれる結果",
+            caption: "正解は、給与と研究・成長の道を見える化すること。",
+            requiredLabels: ["④ 正解", "給与", "研究・成長", "見える化"],
+            result: true
+          }
+        ]
+      },
+      {
+        id: "2026-08-06-kosen-recruitment-q2",
+        tag: "緑｜製造と設計開発の経験",
+        difficulty: "入門",
+        question: "製造（せいぞう）と設計開発（せっけいかいはつ）の両方を経験（けいけん）させる狙（ねら）いは？",
+        hint: "現場（げんば）と設計をつなぎ、仕事全体を見る。",
+        choices: [
+          "設計だけに集中し、現場は見ない",
+          "現場と設計をつなぎ、仕事全体を理解して即戦力になる",
+          "仕事を細かく分け、全体を知らないまま進める"
+        ],
+        correctIndex: 1,
+        answerTitle: "答え：現場と設計をつなぎ、仕事全体を理解して即戦力になる",
+        principle: "製造と設計開発を行き来すると、現場の気づきを設計へ戻せる。",
+        answerParagraphs: [
+          "製造では、品物ができる流れを知る。",
+          "設計開発では、形と仕組みを考える。",
+          "両方を経験すると、現場の気づきを設計へ戻せる。",
+          "仕事全体を理解し、即戦力になりやすい。"
+        ],
+        breathLines: [
+          { label: "答え", text: "現場と設計をつなぎ、即戦力になる。" },
+          { label: "原理", text: "行き来すると、仕事全体が見える。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "両方を経験する",
+            image: "./assets/2026-08-06-kosen-recruitment-q2-01-what.png",
+            zoomImage: "./assets/2026-08-06-kosen-recruitment-q2-01-what.png",
+            imageAlt: "高専生が製造現場と設計開発室の両方で学ぶ場面",
+            caption: "製造と設計開発の両方を経験する。",
+            requiredLabels: ["① 両方を経験", "製造", "設計開発", "学ぶ"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "行き来して学ぶ",
+            image: "./assets/2026-08-06-kosen-recruitment-q2-02-how.png",
+            zoomImage: "./assets/2026-08-06-kosen-recruitment-q2-02-how.png",
+            imageAlt: "若手社員が製造現場の気づきを設計開発へ持ち帰る場面",
+            caption: "現場で見て、設計で考え、また現場へ戻る。",
+            requiredLabels: ["② 行き来", "現場", "設計", "戻る"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "つながる理由",
+            image: "./assets/2026-08-06-kosen-recruitment-q2-03-why.png",
+            zoomImage: "./assets/2026-08-06-kosen-recruitment-q2-03-why.png",
+            imageAlt: "製造現場の気づきを設計図へ戻して改善する若手社員",
+            caption: "現場の気づきが、設計の改善に戻る。",
+            requiredLabels: ["③ つながる理由", "気づき", "設計へ戻す", "改善"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "正解",
+            image: "./assets/2026-08-06-kosen-recruitment-q2-04-result.png",
+            zoomImage: "./assets/2026-08-06-kosen-recruitment-q2-04-result.png",
+            imageAlt: "製造と設計を理解した高専生が仕事全体を見て早く役立つ結果",
+            caption: "正解は、現場と設計をつなぎ、即戦力になること。",
+            requiredLabels: ["④ 正解", "現場と設計", "仕事全体", "即戦力"],
+            result: true
+          }
+        ]
+      },
+      {
+        id: "2026-08-06-kosen-recruitment-q3",
+        tag: "原理｜採用の価値を見える化",
+        difficulty: "入門",
+        question: "記事から見える採用（さいよう）の原理（げんり）は？",
+        hint: "待遇（たいぐう）と成長経路（せいちょうけいろ）が、学生の判断を助ける。",
+        choices: [
+          "給与や成長の説明を隠し、入社後に考える",
+          "採用は会社の知名度だけで決まる",
+          "待遇と成長経路を見える化すると、学生が会社の価値を判断できる"
+        ],
+        correctIndex: 2,
+        answerTitle: "答え：待遇と成長経路を見える化すると、学生が会社の価値を判断できる",
+        principle: "待遇と成長経路を見える化すると、学生が会社の価値を判断できる。",
+        answerParagraphs: [
+          "学生は、会社で何を得られるかを考える。",
+          "給与は、今の待遇を表す。",
+          "成長経路は、入社後の未来を表す。",
+          "両方を見える化すると、会社の価値を判断できる。"
+        ],
+        breathLines: [
+          { label: "答え", text: "待遇と成長経路を見える化する。" },
+          { label: "原理", text: "学生が会社の価値を判断できる。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "会社の価値を見る",
+            image: "./assets/2026-08-06-kosen-recruitment-q3-01-what.png",
+            zoomImage: "./assets/2026-08-06-kosen-recruitment-q3-01-what.png",
+            imageAlt: "高専生が会社の給与と成長の情報を確認する場面",
+            caption: "学生は、待遇と成長の情報を見る。",
+            requiredLabels: ["① 会社の価値", "学生", "待遇", "成長"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "見える化する",
+            image: "./assets/2026-08-06-kosen-recruitment-q3-02-how.png",
+            zoomImage: "./assets/2026-08-06-kosen-recruitment-q3-02-how.png",
+            imageAlt: "中小企業が給与と入社後の成長経路を一枚の資料にまとめる場面",
+            caption: "給与と成長経路を、具体的な情報にする。",
+            requiredLabels: ["② 見える化", "給与", "成長経路", "具体化"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "判断できる理由",
+            image: "./assets/2026-08-06-kosen-recruitment-q3-03-why.png",
+            zoomImage: "./assets/2026-08-06-kosen-recruitment-q3-03-why.png",
+            imageAlt: "高専生が複数の会社の待遇と成長経路を比較して判断する場面",
+            caption: "同じ軸で比べると、会社の価値が分かる。",
+            requiredLabels: ["③ 判断できる理由", "比較", "会社の価値", "分かる"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "正解",
+            image: "./assets/2026-08-06-kosen-recruitment-q3-04-result.png",
+            zoomImage: "./assets/2026-08-06-kosen-recruitment-q3-04-result.png",
+            imageAlt: "待遇と成長経路を見える化した会社を高専生が選ぶ結果",
+            caption: "正解は、見える情報で会社の価値を判断できること。",
+            requiredLabels: ["④ 正解", "待遇", "成長経路", "判断できる"],
+            result: true
+          }
+        ]
+      }
+    ]
   }
 ];
