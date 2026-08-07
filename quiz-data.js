@@ -6116,7 +6116,7 @@ window.NIKKAN_QUIZ_SETS = [
       reason: "赤・緑・黄色マーカーを確認"
     },
     title: "日刊工業新聞 8/7 指触覚クリップで補正 深掘り3問",
-    titleLines: ["日刊工業新聞 8/7", "指触覚クリップで補正 深掘り3問"],
+    titleLines: ["日刊工業新聞 8/7", "指触覚クリップで補正", "深掘り3問"],
     shortTitle: "指触覚クリップ",
     sourceLabel: "日刊工業新聞 2026/8/7 第21面",
     heroImage: "./assets/2026-08-07-finger-tactile-evidence-hires.png",

@@ -1345,7 +1345,7 @@
     </div>
   </div>
 
-  <script src="./quiz-data.js?v=61"></script>
+  <script src="./quiz-data.js?v=62"></script>
   <script>
     const quizSets = window.NIKKAN_QUIZ_SETS || [];
     const storageKey = "nikkan-manufacturing-review-quiz-library-v2";
@@ -2272,7 +2272,7 @@
           location.reload();
         });
         try {
-          const registration = await navigator.serviceWorker.register("./service-worker.js?v=61");
+          const registration = await navigator.serviceWorker.register("./service-worker.js?v=62");
           try {
             await registration?.update?.();
           } catch (error) {
