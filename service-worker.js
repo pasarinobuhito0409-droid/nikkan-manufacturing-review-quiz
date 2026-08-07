@@ -1,9 +1,9 @@
-const CACHE_NAME = "nikkan-manufacturing-review-quiz-v60";
+const CACHE_NAME = "nikkan-manufacturing-review-quiz-v61";
 
 const PRECACHE_ASSETS = [
   "./",
   "./index.html",
-  "./quiz-data.js?v=60",
+  "./quiz-data.js?v=61",
   "./manifest.webmanifest",
   "./service-worker.js",
   "./assets/icon.svg",
@@ -244,7 +244,33 @@ const PRECACHE_ASSETS = [
   "./assets/2026-08-06-kosen-recruitment-q3-01-what.png",
   "./assets/2026-08-06-kosen-recruitment-q3-02-how.png",
   "./assets/2026-08-06-kosen-recruitment-q3-03-why.png",
-  "./assets/2026-08-06-kosen-recruitment-q3-04-result.png"
+  "./assets/2026-08-06-kosen-recruitment-q3-04-result.png",
+  "./assets/2026-08-07-finger-tactile-evidence-hires.png",
+  "./assets/2026-08-07-finger-tactile-source-marked.png",
+  "./assets/2026-08-07-finger-tactile-focus-01.png",
+  "./assets/2026-08-07-finger-tactile-focus-02.png",
+  "./assets/2026-08-07-finger-tactile-focus-03.png",
+  "./assets/2026-08-07-finger-tactile-focus-04.png",
+  "./assets/2026-08-07-finger-tactile-red-01.png",
+  "./assets/2026-08-07-finger-tactile-red-02.png",
+  "./assets/2026-08-07-finger-tactile-red-03.png",
+  "./assets/2026-08-07-finger-tactile-red-04.png",
+  "./assets/2026-08-07-finger-tactile-green-01.png",
+  "./assets/2026-08-07-finger-tactile-green-02.png",
+  "./assets/2026-08-07-finger-tactile-green-03.png",
+  "./assets/2026-08-07-finger-tactile-green-04.png",
+  "./assets/2026-08-07-finger-tactile-q1-01.png",
+  "./assets/2026-08-07-finger-tactile-q1-02.png",
+  "./assets/2026-08-07-finger-tactile-q1-03.png",
+  "./assets/2026-08-07-finger-tactile-q1-04.png",
+  "./assets/2026-08-07-finger-tactile-q2-01.png",
+  "./assets/2026-08-07-finger-tactile-q2-02.png",
+  "./assets/2026-08-07-finger-tactile-q2-03.png",
+  "./assets/2026-08-07-finger-tactile-q2-04.png",
+  "./assets/2026-08-07-finger-tactile-q3-01.png",
+  "./assets/2026-08-07-finger-tactile-q3-02.png",
+  "./assets/2026-08-07-finger-tactile-q3-03.png",
+  "./assets/2026-08-07-finger-tactile-q3-04.png"
 ];
 
 const PRECACHE_BATCH_SIZE = 5;

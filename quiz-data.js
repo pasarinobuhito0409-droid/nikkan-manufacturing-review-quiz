@@ -6103,5 +6103,424 @@ window.NIKKAN_QUIZ_SETS = [
         ]
       }
     ]
-  }
+  },
+  {
+    id: "2026-08-07-finger-tactile",
+    date: "2026-08-07",
+    sourceDate: "2026-08-07",
+    difficulty: "入門",
+    strictVisuals: true,
+    paperTheater: true,
+    selection: {
+      mode: "marked",
+      reason: "赤・緑・黄色マーカーを確認"
+    },
+    title: "日刊工業新聞 8/7 指触覚クリップで補正 深掘り3問",
+    titleLines: ["日刊工業新聞 8/7", "指触覚クリップで補正 深掘り3問"],
+    shortTitle: "指触覚クリップ",
+    sourceLabel: "日刊工業新聞 2026/8/7 第21面",
+    heroImage: "./assets/2026-08-07-finger-tactile-evidence-hires.png",
+    heroAlt: "指先に装着したクリップで硬さと触覚を調整する研究の証拠画像",
+    summary: [
+      "指先の硬さを、クリップで調整する。",
+      "触覚（しょっかく）を安定させる。",
+      "繊細な作業の再現性を高める。"
+    ],
+    curiosityTitle: "赤：指触覚クリップで補正",
+    importantTitle: "緑：指先の硬さと力の関係",
+    articleFocus: {
+      title: "今日の芯：指先の感覚を調整して再現性を作る",
+      breathLines: [
+        { label: "記事", text: "指先の硬さを、クリップで調整する。" },
+        { label: "赤", text: "触覚と押す力のばらつきを補正する。" },
+        { label: "緑", text: "指先の状態を、意図的に変える。" },
+        { label: "原理", text: "硬さが変わると、力の伝わり方が変わる。" },
+        { label: "発明の種", text: "個人差を、道具で整える。" }
+      ],
+      frames: [
+        {
+          order: 1,
+          phase: "what",
+          phaseLabel: "何が起きている？",
+          image: "./assets/2026-08-07-finger-tactile-focus-01.png",
+          zoomImage: "./assets/2026-08-07-finger-tactile-focus-01.png",
+          imageAlt: "指先の硬さが日によって変わり触覚と押す力が揺れる様子",
+          caption: "指先の状態が変わると、同じ作業でも力が揺れる。",
+          requiredLabels: ["① 何が起きている？", "指先", "硬さの変化", "力のばらつき"]
+        },
+        {
+          order: 2,
+          phase: "how",
+          phaseLabel: "どう調整する？",
+          image: "./assets/2026-08-07-finger-tactile-focus-02.png",
+          zoomImage: "./assets/2026-08-07-finger-tactile-focus-02.png",
+          imageAlt: "3Dプリンターで作った指触覚クリップを指先に装着する様子",
+          caption: "3Dプリンター製のクリップで、指先を調整する。",
+          requiredLabels: ["② どう調整する？", "3Dプリンター", "指触覚クリップ", "装着"]
+        },
+        {
+          order: 3,
+          phase: "why",
+          phaseLabel: "なぜ効く？",
+          image: "./assets/2026-08-07-finger-tactile-focus-03.png",
+          zoomImage: "./assets/2026-08-07-finger-tactile-focus-03.png",
+          imageAlt: "クリップの拘束力が指腹の硬さと押す力に影響する仕組み",
+          caption: "拘束力が指腹の硬さを変え、力の感じ方を整える。",
+          requiredLabels: ["③ なぜ効く？", "拘束力", "指腹の硬さ", "力を整える"]
+        },
+        {
+          order: 4,
+          phase: "result",
+          phaseLabel: "何が変わる？",
+          image: "./assets/2026-08-07-finger-tactile-focus-04.png",
+          zoomImage: "./assets/2026-08-07-finger-tactile-focus-04.png",
+          imageAlt: "指触覚クリップで細かな作業の押す力が安定する結果",
+          caption: "指先の感覚を整え、繊細な作業を再現しやすくする。",
+          requiredLabels: ["④ 結果", "感覚を調整", "押す力が安定", "再現性"] ,
+          result: true
+        }
+      ]
+    },
+    articleEvidence: {
+      image: "./assets/2026-08-07-finger-tactile-evidence-hires.png",
+      zoomImage: "./assets/2026-08-07-finger-tactile-source-marked.png",
+      alt: "日刊工業新聞2026年8月7日第21面の指触覚クリップ記事",
+      caption: "出典：日刊工業新聞 2026/8/7 第21面。赤・緑・黄色マーカー付き。"
+    },
+    curiosityPoints: [
+      {
+        title: "赤ライン：指触覚クリップで補正",
+        text: "指先の硬さを、道具で意図的に調整する。",
+        shortLines: [
+          "指先の硬さを調整する。",
+          "触覚と押す力を補正する。",
+          "細かな作業を安定させる。"
+        ],
+        breathLines: [
+          { label: "赤①", text: "指先の硬さを調整する。" },
+          { label: "赤②", text: "触覚と押す力を補正する。" },
+          { label: "赤③", text: "細かな作業を安定させる。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "何を変える？",
+            image: "./assets/2026-08-07-finger-tactile-red-01.png",
+            zoomImage: "./assets/2026-08-07-finger-tactile-red-01.png",
+            imageAlt: "作業者の指先の硬さが日によって違う様子",
+            caption: "指先の硬さには、日ごとの変化がある。",
+            requiredLabels: ["① 何を変える？", "指先", "日ごとの変化", "硬さ"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "どう補正する？",
+            image: "./assets/2026-08-07-finger-tactile-red-02.png",
+            zoomImage: "./assets/2026-08-07-finger-tactile-red-02.png",
+            imageAlt: "3Dプリンター製のクリップを指先へ装着して調整する様子",
+            caption: "クリップの形と締め付けで、指先を調整する。",
+            requiredLabels: ["② どう補正する？", "3Dプリンター", "クリップ", "装着"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "なぜ必要？",
+            image: "./assets/2026-08-07-finger-tactile-red-03.png",
+            zoomImage: "./assets/2026-08-07-finger-tactile-red-03.png",
+            imageAlt: "指先の硬さを調整すると押す力のばらつきが減る仕組み",
+            caption: "硬さをそろえると、押す力の差を小さくできる。",
+            requiredLabels: ["③ なぜ必要？", "硬さをそろえる", "押す力", "差を減らす"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "発明の種",
+            image: "./assets/2026-08-07-finger-tactile-red-04.png",
+            zoomImage: "./assets/2026-08-07-finger-tactile-red-04.png",
+            imageAlt: "指触覚クリップでピアノや手作業の感覚を安定させる結果",
+            caption: "感覚の個人差を、身につける道具で補正する。",
+            requiredLabels: ["④ 発明の種", "感覚の個人差", "身につける道具", "補正"] ,
+            result: true
+          }
+        ]
+      }
+    ],
+    importantPoints: [
+      {
+        title: "緑ライン：指先の硬さと力の関係",
+        text: "拘束力と指腹の硬さを測り、触覚との関係を見る。",
+        shortLines: [
+          "拘束力で指腹を調整する。",
+          "硬さと押す力を測る。",
+          "感覚の関係を確かめる。"
+        ],
+        breathLines: [
+          { label: "緑①", text: "拘束力で指腹を調整する。" },
+          { label: "緑②", text: "硬さと押す力を測る。" },
+          { label: "緑③", text: "感覚の関係を確かめる。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "何を測る？",
+            image: "./assets/2026-08-07-finger-tactile-green-01.png",
+            zoomImage: "./assets/2026-08-07-finger-tactile-green-01.png",
+            imageAlt: "指腹にクリップを付け拘束力を確認する研究の様子",
+            caption: "指腹にかかる拘束力を、研究で確かめる。",
+            requiredLabels: ["① 何を測る？", "指腹", "拘束力", "研究"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "どう測る？",
+            image: "./assets/2026-08-07-finger-tactile-green-02.png",
+            zoomImage: "./assets/2026-08-07-finger-tactile-green-02.png",
+            imageAlt: "指腹の変形と硬さを測定装置で調べる様子",
+            caption: "押したときの変形から、指腹の硬さを測る。",
+            requiredLabels: ["② どう測る？", "押す", "変形", "硬さを測る"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "なぜ見る？",
+            image: "./assets/2026-08-07-finger-tactile-green-03.png",
+            zoomImage: "./assets/2026-08-07-finger-tactile-green-03.png",
+            imageAlt: "ヤング率と触覚と押す力の関係をグラフで確認する様子",
+            caption: "硬さと力の関係が分かると、補正量を決められる。",
+            requiredLabels: ["③ なぜ見る？", "ヤング率", "触覚", "補正量"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "結果",
+            image: "./assets/2026-08-07-finger-tactile-green-04.png",
+            zoomImage: "./assets/2026-08-07-finger-tactile-green-04.png",
+            imageAlt: "指先の硬さと押す力の関係を使って作業条件を整える結果",
+            caption: "測った関係を使い、作業条件を安定させる。",
+            requiredLabels: ["④ 結果", "測った関係", "作業条件", "安定"] ,
+            result: true
+          }
+        ]
+      }
+    ],
+    glossaryTitle: "黄色：読みと意味",
+    glossary: [
+      { term: "指触覚（ししょっかく）", meaning: "指先で、硬さや力を感じる感覚。" },
+      { term: "指腹（しふく）", meaning: "指の先の、やわらかい内側。" },
+      { term: "拘束力（こうそくりょく）", meaning: "指を押さえ、動きを制限する力。" },
+      { term: "ヤング率（やんぐりつ）", meaning: "押したときの、変形しにくさ。" },
+      { term: "触覚（しょっかく）", meaning: "触ったときに分かる感覚。" }
+    ],
+    insightQuotes: [],
+    sources: [],
+    questions: [
+      {
+        id: "2026-08-07-finger-tactile-q1",
+        tag: "赤｜触覚を補正する原理",
+        difficulty: "入門",
+        question: "クリップが触覚（しょっかく）を補正する原理（げんり）は？",
+        hint: "硬さと押す力の関係を見る。",
+        choices: [
+          "指先の硬さを調整し、押す力のばらつきを減らす",
+          "指先を完全に動かなくする",
+          "力を強くすれば、硬さは変わらない"
+        ],
+        correctIndex: 0,
+        answerTitle: "答え：指先の硬さを調整し、押す力のばらつきを減らす",
+        principle: "指先の硬さを変えると、力の伝わり方が変わる。",
+        answerParagraphs: [
+          "指先の硬さは、日ごとに変わる。",
+          "硬さが変わると、押す力も変わる。",
+          "クリップで硬さを、意図的に調整する。",
+          "作業のばらつきを、減らしやすくなる。"
+        ],
+        breathLines: [
+          { label: "答え", text: "硬さを調整し、押す力を整える。" },
+          { label: "原理", text: "硬さが変わると、力も変わる。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "ばらつきを見る",
+            image: "./assets/2026-08-07-finger-tactile-q1-01.png",
+            zoomImage: "./assets/2026-08-07-finger-tactile-q1-01.png",
+            imageAlt: "同じ作業でも指先の硬さで押す力が違う様子",
+            caption: "同じ作業でも、押す力に差が出る。",
+            requiredLabels: ["① ばらつきを見る", "同じ作業", "押す力", "差"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "硬さを調整する",
+            image: "./assets/2026-08-07-finger-tactile-q1-02.png",
+            zoomImage: "./assets/2026-08-07-finger-tactile-q1-02.png",
+            imageAlt: "指先の硬さをクリップで調整している様子",
+            caption: "クリップで、指先の硬さを調整する。",
+            requiredLabels: ["② 硬さを調整", "クリップ", "指先", "硬さ"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "力をそろえる",
+            image: "./assets/2026-08-07-finger-tactile-q1-03.png",
+            zoomImage: "./assets/2026-08-07-finger-tactile-q1-03.png",
+            imageAlt: "指先の硬さを調整して押す力の差を小さくする仕組み",
+            caption: "硬さをそろえると、押す力の差が小さくなる。",
+            requiredLabels: ["③ 力をそろえる", "硬さ", "押す力", "差を減らす"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "正解",
+            image: "./assets/2026-08-07-finger-tactile-q1-04.png",
+            zoomImage: "./assets/2026-08-07-finger-tactile-q1-04.png",
+            imageAlt: "指先の硬さを調整して押す力のばらつきを減らした結果",
+            caption: "硬さを調整し、押す力のばらつきを減らす。",
+            requiredLabels: ["④ 正解", "硬さを調整", "ばらつきを減らす", "補正"] ,
+            result: true
+          }
+        ]
+      },
+      {
+        id: "2026-08-07-finger-tactile-q2",
+        tag: "緑｜繊細な作業への活用",
+        difficulty: "入門",
+        question: "記事が想定する活用先は？",
+        hint: "指先の細かな感覚を使う仕事。",
+        choices: [
+          "ピアニストや職人など、繊細な作業",
+          "大型機械の輸送",
+          "睡眠の管理"
+        ],
+        correctIndex: 0,
+        answerTitle: "答え：ピアニストや職人など、繊細な作業",
+        principle: "細かな力加減が必要な仕事ほど、感覚の安定が効く。",
+        answerParagraphs: [
+          "ピアノは、指の力加減が音を変える。",
+          "職人は、押す力で仕上がりを調整する。",
+          "指触覚を整えると、感覚を再現しやすい。",
+          "繊細な作業の、失敗を減らしやすい。"
+        ],
+        breathLines: [
+          { label: "答え", text: "繊細な作業の感覚を安定させる。" },
+          { label: "原理", text: "細かな力加減ほど、補正が効く。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "活用先を見る",
+            image: "./assets/2026-08-07-finger-tactile-q2-01.png",
+            zoomImage: "./assets/2026-08-07-finger-tactile-q2-01.png",
+            imageAlt: "ピアニストと職人が指先の感覚を使って作業する様子",
+            caption: "ピアニストや職人は、指先の感覚を細かく使う。",
+            requiredLabels: ["① 活用先を見る", "ピアニスト", "職人", "指先の感覚"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "力加減を使う",
+            image: "./assets/2026-08-07-finger-tactile-q2-02.png",
+            zoomImage: "./assets/2026-08-07-finger-tactile-q2-02.png",
+            imageAlt: "ピアノ演奏と手作業で押す力を細かく変える様子",
+            caption: "押す力の小さな違いが、結果を変える。",
+            requiredLabels: ["② 力加減を使う", "押す力", "小さな違い", "結果"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "補正が効く理由",
+            image: "./assets/2026-08-07-finger-tactile-q2-03.png",
+            zoomImage: "./assets/2026-08-07-finger-tactile-q2-03.png",
+            imageAlt: "指触覚クリップでピアノと手作業の感覚を安定させる仕組み",
+            caption: "感覚の揺れを補正すると、細かな操作を続けやすい。",
+            requiredLabels: ["③ 補正が効く理由", "感覚の揺れ", "クリップ", "細かな操作"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "正解",
+            image: "./assets/2026-08-07-finger-tactile-q2-04.png",
+            zoomImage: "./assets/2026-08-07-finger-tactile-q2-04.png",
+            imageAlt: "指触覚クリップでピアニストや職人の繊細な作業を支える結果",
+            caption: "繊細な作業で、感覚を再現しやすくする。",
+            requiredLabels: ["④ 正解", "ピアニスト", "職人", "繊細な作業"] ,
+            result: true
+          }
+        ]
+      },
+      {
+        id: "2026-08-07-finger-tactile-q3",
+        tag: "原理｜ヤング率と指の硬さ",
+        difficulty: "入門",
+        question: "ヤング率（やんぐりつ）を簡単に言うと？",
+        hint: "押したときの変形を見る。",
+        choices: [
+          "押したとき、どれだけ変形しにくいか",
+          "指の長さを表す数値",
+          "作業時間の長さを表す数値"
+        ],
+        correctIndex: 0,
+        answerTitle: "答え：押したとき、どれだけ変形しにくいか",
+        principle: "ヤング率は、物の変形しにくさを表す指標（しひょう）。",
+        answerParagraphs: [
+          "指腹（しふく）を押すと、少し形が変わる。",
+          "変形しにくさを、数値で表す。",
+          "その数値が、ヤング率（やんぐりつ）。",
+          "硬さの違いを、比べやすくなる。"
+        ],
+        breathLines: [
+          { label: "答え", text: "押したときの変形しにくさ。" },
+          { label: "原理", text: "硬さの違いを、数値で比べる。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "押して見る",
+            image: "./assets/2026-08-07-finger-tactile-q3-01.png",
+            zoomImage: "./assets/2026-08-07-finger-tactile-q3-01.png",
+            imageAlt: "指腹を押して形が変わる様子を観察する場面",
+            caption: "指腹を押すと、形が少し変わる。",
+            requiredLabels: ["① 押して見る", "指腹", "押す", "形が変わる"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "変形を測る",
+            image: "./assets/2026-08-07-finger-tactile-q3-02.png",
+            zoomImage: "./assets/2026-08-07-finger-tactile-q3-02.png",
+            imageAlt: "押す力と指腹の変形量を測定する様子",
+            caption: "押す力と、変形した量を測る。",
+            requiredLabels: ["② 変形を測る", "押す力", "変形量", "測定"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "数値にする",
+            image: "./assets/2026-08-07-finger-tactile-q3-03.png",
+            zoomImage: "./assets/2026-08-07-finger-tactile-q3-03.png",
+            imageAlt: "押す力と変形量からヤング率を計算する仕組み",
+            caption: "力と変形の関係を、ヤング率で表す。",
+            requiredLabels: ["③ 数値にする", "力", "変形", "ヤング率"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "正解",
+            image: "./assets/2026-08-07-finger-tactile-q3-04.png",
+            zoomImage: "./assets/2026-08-07-finger-tactile-q3-04.png",
+            imageAlt: "ヤング率で指先の変形しにくさを比べる結果",
+            caption: "ヤング率で、押したときの硬さを比べられる。",
+            requiredLabels: ["④ 正解", "ヤング率", "変形しにくさ", "比べる"] ,
+            result: true
+          }
+        ]
+      }
+    ]
+  },
+
 ];
