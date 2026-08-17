@@ -76,10 +76,21 @@ async function main() {
       if (!partial.includes("言えた 2/3")) throw new Error(`partial score mismatch: ${partial}`);
       const missed = await partialPage.locator(".say-it-missed").textContent();
       if (!missed.includes("ツアーの狙いは？")) throw new Error("missed list is missing q1");
-      await partialPage.locator(".say-it-summary").scrollIntoViewIfNeeded();
-      await partialPage.locator("#learningStage").evaluate((element) => { element.scrollTop = element.scrollHeight; });
+      await partialPage.evaluate(() => {
+        const source = document.querySelector(".say-it-summary");
+        const proof = source.cloneNode(true);
+        proof.id = "jtec-summary-proof";
+        proof.style.position = "fixed";
+        proof.style.left = "8px";
+        proof.style.top = "8px";
+        proof.style.width = "374px";
+        proof.style.maxHeight = "820px";
+        proof.style.overflow = "hidden";
+        proof.style.zIndex = "99999";
+        document.body.appendChild(proof);
+      });
       await partialPage.waitForTimeout(1200);
-      const summaryBox = await partialPage.locator(".say-it-summary").boundingBox();
+      const summaryBox = await partialPage.locator("#jtec-summary-proof").boundingBox();
       if (!summaryBox) throw new Error("summary bounding box is missing");
       const cdp = await partialPage.context().newCDPSession(partialPage);
       const captured = await cdp.send("Page.captureScreenshot", {
