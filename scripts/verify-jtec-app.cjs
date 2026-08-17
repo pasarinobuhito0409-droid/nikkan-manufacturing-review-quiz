@@ -1,4 +1,5 @@
 const path = require("node:path");
+const fs = require("node:fs");
 
 const playwrightPath = process.env.PLAYWRIGHT_PATH || "C:/Users/今林拓也/AppData/Local/OpenAI/Codex/runtimes/cua_node/f1bf3cd3a5929acd/bin/node_modules/playwright";
 const executablePath = process.env.BROWSER_PATH || "C:/Users/今林拓也/AppData/Local/ms-playwright/chromium-1228/chrome-win64/chrome.exe";
@@ -80,7 +81,13 @@ async function main() {
       await partialPage.waitForTimeout(1200);
       const summaryBox = await partialPage.locator(".say-it-summary").boundingBox();
       if (!summaryBox) throw new Error("summary bounding box is missing");
-      await partialPage.screenshot({ path: screenshotPath, clip: summaryBox, timeout: 5000 });
+      const cdp = await partialPage.context().newCDPSession(partialPage);
+      const captured = await cdp.send("Page.captureScreenshot", {
+        format: "png",
+        captureBeyondViewport: false,
+        clip: { ...summaryBox, scale: 1 }
+      });
+      fs.writeFileSync(screenshotPath, Buffer.from(captured.data, "base64"));
       const overflow = await partialPage.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
       if (overflow) throw new Error("horizontal overflow on mobile viewport");
       console.log(JSON.stringify({ ok: true, url: baseUrl, paperTheaters: 3, perfect, partial, screenshotPath }));
