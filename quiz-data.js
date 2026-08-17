@@ -6522,5 +6522,433 @@ window.NIKKAN_QUIZ_SETS = [
       }
     ]
   },
+  {
+    id: "2026-08-17-jtec-regenerative-tour",
+    date: "2026-08-17",
+    sourceDate: "2026-08-17",
+    difficulty: "入門",
+    strictVisuals: true,
+    paperTheater: {
+      frameCount: 4,
+      phases: ["what", "how", "why", "result"]
+    },
+    responseMode: "say-it",
+    selection: {
+      mode: "marked",
+      reason: "添付画像の赤・緑・黄色を確認"
+    },
+    title: "日刊工業新聞 8/17 再生医療を見て触れる",
+    titleLines: ["日刊工業新聞 8/17", "再生医療を見て触れる", "思い出す3問"],
+    shortTitle: "再生医療ツアー",
+    sourceLabel: "日刊工業新聞 2026/8/17（添付マーカー画像）",
+    heroImage: "./assets/2026-08-17-jtec-source-marked.png",
+    heroAlt: "再生医療の職場ツアーを伝える新聞記事の証拠画像",
+    summary: [
+      "J-TECが職場を開く。",
+      "女子中高生が体験する。",
+      "再生医療を身近にする。"
+    ],
+    curiosityTitle: "赤：再生医療を見て触れる",
+    importantTitle: "緑：STEM人材を育てる",
+    articleFocus: {
+      title: "今日の芯",
+      breathLines: [
+        { label: "記事", text: "職場で再生医療を体験。" },
+        { label: "赤", text: "見て触れて理解を深める。" },
+        { label: "緑", text: "STEM人材の育成を支援。" },
+        { label: "原理", text: "体験で仕事の意味が具体化。" },
+        { label: "発明の種", text: "研究を進路につなぐ。" }
+      ],
+      frames: [
+        {
+          order: 1,
+          phase: "what",
+          phaseLabel: "何が起きた？",
+          image: "./assets/2026-08-17-jtec-focus-01.png",
+          zoomImage: "./assets/2026-08-17-jtec-focus-01.png",
+          imageAlt: "女子中高生が再生医療の研究室を見学する様子",
+          caption: "研究の現場を、実物で見る。",
+          requiredLabels: ["① 何が起きた？", "研究の現場", "職場を見学"]
+        },
+        {
+          order: 2,
+          phase: "how",
+          phaseLabel: "どう学ぶ？",
+          image: "./assets/2026-08-17-jtec-focus-02.png",
+          zoomImage: "./assets/2026-08-17-jtec-focus-02.png",
+          imageAlt: "女子中高生が細胞を扱う体験をする様子",
+          caption: "細胞を、手順に沿って観察する。",
+          requiredLabels: ["② どう学ぶ？", "細胞を観察", "体験"]
+        },
+        {
+          order: 3,
+          phase: "why",
+          phaseLabel: "なぜ深まる？",
+          image: "./assets/2026-08-17-jtec-focus-03.png",
+          zoomImage: "./assets/2026-08-17-jtec-focus-03.png",
+          imageAlt: "顕微鏡と記録を使って細胞を学ぶ様子",
+          caption: "見ると、意味が具体化。",
+          requiredLabels: ["③ なぜ深まる？", "見る→記録", "仕事の意味"]
+        },
+        {
+          order: 4,
+          phase: "result",
+          phaseLabel: "何が残る？",
+          image: "./assets/2026-08-17-jtec-focus-04.png",
+          zoomImage: "./assets/2026-08-17-jtec-focus-04.png",
+          imageAlt: "研究者と学生が次の学びを話す様子",
+          caption: "体験が進路の材料に。",
+          requiredLabels: ["④ 何が残る？", "進路の種", "学び"],
+          result: true
+        }
+      ]
+    },
+    articleEvidence: {
+      image: "./assets/2026-08-17-jtec-source-marked.png",
+      zoomImage: "./assets/2026-08-17-jtec-source-marked.png",
+      alt: "日刊工業新聞2026年8月17日の再生医療職場ツアー記事",
+      caption: "出典：新聞8/17。添付画像。"
+    },
+    curiosityPoints: [
+      {
+        title: "赤ライン：見て触れて学ぶ",
+        text: "研究を、職場体験で身近にする。",
+        shortLines: [
+          "研究の現場を見る。",
+          "細胞を実際に扱う。",
+          "仕事の意味を知る。"
+        ],
+        breathLines: [
+          { label: "赤①", text: "研究の現場を見る。" },
+          { label: "赤②", text: "細胞を実際に扱う。" },
+          { label: "赤③", text: "仕事の意味を知る。" }
+        ],
+        image: "./assets/2026-08-17-jtec-source-marked.png",
+        zoomImage: "./assets/2026-08-17-jtec-source-marked.png",
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "何が遠い？",
+            image: "./assets/2026-08-17-jtec-red-01.png",
+            zoomImage: "./assets/2026-08-17-jtec-red-01.png",
+            imageAlt: "研究室に入る前の生徒と研究者",
+            caption: "研究は見ないと遠い。",
+            requiredLabels: ["① 課題", "研究が遠い"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "どう近づく？",
+            image: "./assets/2026-08-17-jtec-red-02.png",
+            zoomImage: "./assets/2026-08-17-jtec-red-02.png",
+            imageAlt: "生徒が研究者と培養皿を観察する様子",
+            caption: "実物で仕事が具体化。",
+            requiredLabels: ["② 体験", "手で確かめる"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "なぜ分かる？",
+            image: "./assets/2026-08-17-jtec-red-03.png",
+            zoomImage: "./assets/2026-08-17-jtec-red-03.png",
+            imageAlt: "顕微鏡で細胞を見て研究者が説明する様子",
+            caption: "体験が言葉を意味に。",
+            requiredLabels: ["③ 原理", "見る→意味"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "何が残る？",
+            image: "./assets/2026-08-17-jtec-red-04.png",
+            zoomImage: "./assets/2026-08-17-jtec-red-04.png",
+            imageAlt: "生徒が研究者と次の学びを話す様子",
+            caption: "体験が進路の材料に。",
+            requiredLabels: ["④ 結果", "進路につなぐ"],
+            result: true
+          }
+        ]
+      }
+    ],
+    importantPoints: [
+      {
+        title: "緑ライン：STEM人材を育てる",
+        text: "四分野を現場で学ぶ。",
+        shortLines: [
+          "道具を使って観察する。",
+          "数字を残して比べる。",
+          "学びを進路につなぐ。"
+        ],
+        breathLines: [
+          { label: "緑①", text: "道具を使って観察する。" },
+          { label: "緑②", text: "数字を残して比べる。" },
+          { label: "緑③", text: "学びを進路につなぐ。" }
+        ],
+        image: "./assets/2026-08-17-jtec-source-marked.png",
+        zoomImage: "./assets/2026-08-17-jtec-source-marked.png",
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "何を学ぶ？",
+            image: "./assets/2026-08-17-jtec-green-01.png",
+            zoomImage: "./assets/2026-08-17-jtec-green-01.png",
+            imageAlt: "研究室で道具を使いながら説明を聞く生徒",
+            caption: "STEMは道具から始まる。",
+            requiredLabels: ["① STEM", "科学・技術"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "どう確かめる？",
+            image: "./assets/2026-08-17-jtec-green-02.png",
+            zoomImage: "./assets/2026-08-17-jtec-green-02.png",
+            imageAlt: "生徒が培養試料を測る様子",
+            caption: "測って、数字を残す。",
+            requiredLabels: ["② 測る", "数字を残す"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "なぜ数字が要る？",
+            image: "./assets/2026-08-17-jtec-green-03.png",
+            zoomImage: "./assets/2026-08-17-jtec-green-03.png",
+            imageAlt: "観察結果をグラフで確かめる生徒と研究者",
+            caption: "数字で変化を比べる。",
+            requiredLabels: ["③ 考える", "観察→データ"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "何が育つ？",
+            image: "./assets/2026-08-17-jtec-green-04.png",
+            zoomImage: "./assets/2026-08-17-jtec-green-04.png",
+            imageAlt: "生徒たちが実験結果を話し合う様子",
+            caption: "学びが、次の進路をつくる。",
+            requiredLabels: ["④ 育つ", "学び→進路"],
+            result: true
+          }
+        ]
+      }
+    ],
+    glossaryTitle: "黄色：読みと意味",
+    glossary: [
+      {
+        term: "再生医療（さいせいいりょう）",
+        meaning: "傷んだ体を、細胞で助ける。",
+        breathLines: ["傷んだ体を、", "細胞などで助ける医療。"]
+      },
+      {
+        term: "細胞（さいぼう）",
+        meaning: "体をつくる、とても小さな単位。",
+        breathLines: ["体をつくる、", "とても小さな単位。"]
+      },
+      {
+        term: "培養（ばいよう）",
+        meaning: "細胞を、条件つきで育てる。",
+        breathLines: ["細胞を育てること。", "温度などを整える。"]
+      },
+      {
+        term: "STEM（ステム）",
+        meaning: "科学・技術・工学・数学の学び。",
+        breathLines: ["科学・技術・工学・数学。", "実物を使って学ぶ。"]
+      }
+    ],
+    questions: [
+      {
+        id: "2026-08-17-jtec-q1",
+        tag: "赤｜体験の意味",
+        question: "ツアーの狙いは？",
+        scenarioLines: [
+          "J-TECが職場を開く。",
+          "女子中高生が細胞を見る。",
+          "再生医療を体験する。"
+        ],
+        hint: "赤ラインを思い出す。",
+        answerTitle: "答え：職場で体験する",
+        principle: "実物で、仕事が具体化。",
+        answerParagraphs: [
+          "職場で、再生医療を体験する。",
+      "見るだけでなく、",
+      "仕事を身近にする。",
+      "出典：2026年",
+      "8月17日記事。"
+        ],
+        caption: "体験が、研究を進路へつなぐ。",
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "現場を見る",
+            image: "./assets/2026-08-17-jtec-q1-01.png",
+            zoomImage: "./assets/2026-08-17-jtec-q1-01.png",
+            imageAlt: "生徒が再生医療の現場を見学する様子",
+            caption: "研究の現場を、目で確かめる。",
+            requiredLabels: ["① 現場", "研究を知る"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "細胞を見る",
+            image: "./assets/2026-08-17-jtec-q1-02.png",
+            zoomImage: "./assets/2026-08-17-jtec-q1-02.png",
+            imageAlt: "生徒が顕微鏡で細胞を見る様子",
+            caption: "細胞を、実際に観察する。",
+            requiredLabels: ["② 見る", "細胞を見る"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "意味をつなぐ",
+            image: "./assets/2026-08-17-jtec-q1-03.png",
+            zoomImage: "./assets/2026-08-17-jtec-q1-03.png",
+            imageAlt: "研究者が顕微鏡の仕事を説明する様子",
+            caption: "体験を、仕事の理解につなげる。",
+            requiredLabels: ["③ つなぐ", "仕事を理解"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "材料が残る",
+            image: "./assets/2026-08-17-jtec-q1-04.png",
+            zoomImage: "./assets/2026-08-17-jtec-q1-04.png",
+            imageAlt: "生徒が研究体験をノートに残す様子",
+            caption: "体験が、次の学びの材料になる。",
+            requiredLabels: ["④ 残る", "体験を記録"],
+            result: true
+          }
+        ]
+      },
+      {
+        id: "2026-08-17-jtec-q2",
+        tag: "緑｜育てたい人材",
+        question: "育てたい人材は？",
+        scenarioLines: [
+          "細胞を観察する。",
+          "器具を実際に使う。",
+          "数字も記録する。"
+        ],
+        hint: "緑ラインの言葉を思い出す。",
+        answerTitle: "答え：STEM人材",
+        principle: "実物で四分野を学ぶ。",
+        answerParagraphs: [
+          "STEM（ステム）は、",
+          "四分野の学び。",
+          "科学・技術・",
+          "工学・数学をつなぐ。",
+          "出典：2026年",
+          "8月17日記事。"
+        ],
+        caption: "体験が、STEMの入口。",
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "道具を見る",
+            image: "./assets/2026-08-17-jtec-q2-01.png",
+            zoomImage: "./assets/2026-08-17-jtec-q2-01.png",
+            imageAlt: "研究室の道具を説明する研究者と生徒",
+            caption: "観察と測定の道具を知る。",
+            requiredLabels: ["① 道具", "観察と測定"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "数字を残す",
+            image: "./assets/2026-08-17-jtec-q2-02.png",
+            zoomImage: "./assets/2026-08-17-jtec-q2-02.png",
+            imageAlt: "生徒が培養試料を測定する様子",
+            caption: "測った値を、数字にする。",
+            requiredLabels: ["② 測る", "数値にする"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "データで考える",
+            image: "./assets/2026-08-17-jtec-q2-03.png",
+            zoomImage: "./assets/2026-08-17-jtec-q2-03.png",
+            imageAlt: "観察結果をグラフで考える生徒と研究者",
+            caption: "数字で変化を比べる。",
+            requiredLabels: ["③ 考える", "データで見る"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "学びが育つ",
+            image: "./assets/2026-08-17-jtec-q2-04.png",
+            zoomImage: "./assets/2026-08-17-jtec-q2-04.png",
+            imageAlt: "生徒たちが研究結果を話し合う様子",
+            caption: "STEMを次の学びへ。",
+            requiredLabels: ["④ 育つ", "STEMへ進む"],
+            result: true
+          }
+        ]
+      },
+      {
+        id: "2026-08-17-jtec-q3",
+        tag: "原理｜再生医療の土台",
+        question: "再生医療の土台は？",
+        scenarioLines: [
+          "細胞を培養する。",
+          "状態を観察する。",
+          "研究を積み重ねる。"
+        ],
+        hint: "黄色の言葉も手がかり。",
+        answerTitle: "答え：細胞を扱う研究",
+        principle: "育てて観察し、変化を見る。",
+        answerParagraphs: [
+          "細胞を培養し、状態を観察する。",
+          "研究を積み重ね、",
+          "再生医療を支える。",
+          "出典：2026年",
+          "8月17日記事。"
+        ],
+        caption: "細胞研究が、医療を支える。",
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "細胞を見る",
+            image: "./assets/2026-08-17-jtec-q3-01.png",
+            zoomImage: "./assets/2026-08-17-jtec-q3-01.png",
+            imageAlt: "研究者が培養皿を生徒に見せる様子",
+            caption: "細胞は、研究の材料になる。",
+            requiredLabels: ["① 細胞", "小さな材料"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "環境を整える",
+            image: "./assets/2026-08-17-jtec-q3-02.png",
+            zoomImage: "./assets/2026-08-17-jtec-q3-02.png",
+            imageAlt: "研究者が培養皿を装置へ入れる様子",
+            caption: "細胞が育つ環境を整える。",
+            requiredLabels: ["② 培養", "環境を整える"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "状態を確かめる",
+            image: "./assets/2026-08-17-jtec-q3-03.png",
+            zoomImage: "./assets/2026-08-17-jtec-q3-03.png",
+            imageAlt: "顕微鏡で細胞の状態を確認する様子",
+            caption: "観察で、変化を確かめる。",
+            requiredLabels: ["③ 観察", "状態を確かめる"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "研究を積む",
+            image: "./assets/2026-08-17-jtec-q3-04.png",
+            zoomImage: "./assets/2026-08-17-jtec-q3-04.png",
+            imageAlt: "研究チームが細胞の研究結果を確認する様子",
+            caption: "観察と記録を積み重ねる。",
+            requiredLabels: ["④ 研究", "積み重ねる"],
+            result: true
+          }
+        ]
+      }
+    ]
+  },
 
 ];

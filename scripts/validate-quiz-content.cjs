@@ -309,6 +309,12 @@ try {
 const strictSets = sets.filter((set) => set && set.strictVisuals === true);
 const paperSets = sets.filter((set) => set && set.paperTheater);
 const validationSets = [...new Set([...strictSets, ...paperSets])];
+sets.forEach((set, index) => {
+  if (!set || set.responseMode === undefined) return;
+  if (set.responseMode !== "say-it") {
+    fail(`set(${set.id || index}).responseMode`, 'must be "say-it" when provided');
+  }
+});
 validationSets.forEach((set, setIndex) => {
   const location = `set(${set.id || setIndex})`;
   const imageRegistry = new Map();
@@ -339,10 +345,10 @@ validationSets.forEach((set, setIndex) => {
         if (!Array.isArray(question.answerParagraphs) || !question.answerParagraphs.length) {
           fail(`${questionLocation}.answerParagraphs`, "a non-empty answerParagraphs array is required");
         }
-        if (!Array.isArray(question.choices) || question.choices.length < 2) {
+        if (set.responseMode !== "say-it" && (!Array.isArray(question.choices) || question.choices.length < 2)) {
           fail(`${questionLocation}.choices`, "at least two choices are required");
         }
-        if (!Number.isInteger(question.correctIndex) || !Array.isArray(question.choices) || question.correctIndex < 0 || question.correctIndex >= question.choices.length) {
+        if (set.responseMode !== "say-it" && (!Number.isInteger(question.correctIndex) || !Array.isArray(question.choices) || question.correctIndex < 0 || question.correctIndex >= question.choices.length)) {
           fail(`${questionLocation}.correctIndex`, "must point to an existing choice");
         }
       });

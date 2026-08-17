@@ -1,9 +1,9 @@
-const CACHE_NAME = "nikkan-manufacturing-review-quiz-v62";
+const CACHE_NAME = "nikkan-manufacturing-review-quiz-v63";
 
 const PRECACHE_ASSETS = [
   "./",
   "./index.html",
-  "./quiz-data.js?v=62",
+  "./quiz-data.js?v=63",
   "./manifest.webmanifest",
   "./service-worker.js",
   "./assets/icon.svg",
@@ -270,7 +270,32 @@ const PRECACHE_ASSETS = [
   "./assets/2026-08-07-finger-tactile-q3-01.png",
   "./assets/2026-08-07-finger-tactile-q3-02.png",
   "./assets/2026-08-07-finger-tactile-q3-03.png",
-  "./assets/2026-08-07-finger-tactile-q3-04.png"
+  "./assets/2026-08-07-finger-tactile-q3-04.png",
+  "./assets/2026-08-17-jtec-source-marked.png",
+  "./assets/2026-08-17-jtec-focus-01.png",
+  "./assets/2026-08-17-jtec-focus-02.png",
+  "./assets/2026-08-17-jtec-focus-03.png",
+  "./assets/2026-08-17-jtec-focus-04.png",
+  "./assets/2026-08-17-jtec-red-01.png",
+  "./assets/2026-08-17-jtec-red-02.png",
+  "./assets/2026-08-17-jtec-red-03.png",
+  "./assets/2026-08-17-jtec-red-04.png",
+  "./assets/2026-08-17-jtec-green-01.png",
+  "./assets/2026-08-17-jtec-green-02.png",
+  "./assets/2026-08-17-jtec-green-03.png",
+  "./assets/2026-08-17-jtec-green-04.png",
+  "./assets/2026-08-17-jtec-q1-01.png",
+  "./assets/2026-08-17-jtec-q1-02.png",
+  "./assets/2026-08-17-jtec-q1-03.png",
+  "./assets/2026-08-17-jtec-q1-04.png",
+  "./assets/2026-08-17-jtec-q2-01.png",
+  "./assets/2026-08-17-jtec-q2-02.png",
+  "./assets/2026-08-17-jtec-q2-03.png",
+  "./assets/2026-08-17-jtec-q2-04.png",
+  "./assets/2026-08-17-jtec-q3-01.png",
+  "./assets/2026-08-17-jtec-q3-02.png",
+  "./assets/2026-08-17-jtec-q3-03.png",
+  "./assets/2026-08-17-jtec-q3-04.png"
 ];
 
 const PRECACHE_BATCH_SIZE = 5;
