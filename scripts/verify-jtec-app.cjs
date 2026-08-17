@@ -25,7 +25,7 @@ async function answer(page, label) {
 }
 
 async function openJtec(page) {
-  await page.goto(`${baseUrl}?v=63`, { waitUntil: "networkidle" });
+  await page.goto(`${baseUrl}?v=64`, { waitUntil: "networkidle" });
   await page.evaluate(() => {
     localStorage.clear();
     sessionStorage.clear();
