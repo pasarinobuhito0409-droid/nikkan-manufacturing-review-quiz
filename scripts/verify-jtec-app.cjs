@@ -78,7 +78,9 @@ async function main() {
       await partialPage.locator(".say-it-summary").scrollIntoViewIfNeeded();
       await partialPage.locator("#learningStage").evaluate((element) => { element.scrollTop = element.scrollHeight; });
       await partialPage.waitForTimeout(1200);
-      await partialPage.locator(".say-it-summary").screenshot({ path: screenshotPath });
+      const summaryBox = await partialPage.locator(".say-it-summary").boundingBox();
+      if (!summaryBox) throw new Error("summary bounding box is missing");
+      await partialPage.screenshot({ path: screenshotPath, clip: summaryBox, timeout: 5000 });
       const overflow = await partialPage.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
       if (overflow) throw new Error("horizontal overflow on mobile viewport");
       console.log(JSON.stringify({ ok: true, url: baseUrl, paperTheaters: 3, perfect, partial, screenshotPath }));
