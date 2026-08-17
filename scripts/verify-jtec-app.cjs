@@ -25,12 +25,14 @@ async function answer(page, label) {
 }
 
 async function openJtec(page) {
-  await page.goto(`${baseUrl}?v=64`, { waitUntil: "networkidle" });
+  await page.goto(`${baseUrl}?v=64`, { waitUntil: "domcontentloaded", timeout: 60000 });
+  await page.waitForTimeout(1500);
   await page.evaluate(() => {
     localStorage.clear();
     sessionStorage.clear();
   });
-  await page.reload({ waitUntil: "networkidle" });
+  await page.reload({ waitUntil: "domcontentloaded", timeout: 60000 });
+  await page.waitForTimeout(1000);
   await page.locator("#shelfOpenButton").click();
   const latest = page.locator("#setList .set-row").first();
   await must(latest, "latest set");
