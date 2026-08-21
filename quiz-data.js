@@ -6951,4 +6951,88 @@ window.NIKKAN_QUIZ_SETS = [
     ]
   },
 
+  {
+    id: "2026-08-21-diamond-quantum-current-comparator",
+    date: "2026-08-21",
+    sourceDate: "2026-08-18",
+    difficulty: "入門",
+    responseMode: "say-it",
+    title: "日刊工業新聞 8/21 量子電流比較器",
+    titleLines: ["日刊工業新聞 8/21", "量子電流比較器", "思い出す3問"],
+    shortTitle: "量子電流比較器",
+    sourceLabel: "日刊工業新聞 2026/8/21・産総研 2026/8/18",
+    summary: [
+      "答えを、自分の言葉で言う。",
+      "3問だけ復習する。"
+    ],
+    questions: [
+      {
+        id: "2026-08-21-quantum-current-q1",
+        tag: "原理｜ゼロ点",
+        question: "何のズレを見る？",
+        scenarioLines: [
+          "2つの巻線がある。",
+          "磁気を打ち消す。",
+          "完全なゼロを狙う。"
+        ],
+        hint: "残ったものを見る。",
+        answerTitle: "答え：残った小さな磁気",
+        principle: "ゼロとの差だけを見る。",
+        answerParagraphs: [
+          "残った磁束が、",
+          "電流比のズレ。",
+          "出典：産総研 2026/8/18。"
+        ],
+        image: "./assets/2026-08-21-quantum-current-03-why.png",
+        zoomImage: "./assets/2026-08-21-quantum-current-03-why.png",
+        imageAlt: "打ち消した後に残る小さな磁気を検出する図解",
+        caption: "打ち消せず残った磁気を見る。"
+      },
+      {
+        id: "2026-08-21-quantum-current-q2",
+        tag: "仕組み｜ダイヤ",
+        question: "磁気をどう読む？",
+        scenarioLines: [
+          "コアの切れ目に、",
+          "ダイヤを置く。",
+          "磁気が少し残る。"
+        ],
+        hint: "緑と赤の光。",
+        answerTitle: "答え：赤い光の変化",
+        principle: "磁気で蛍光が変わる。",
+        answerParagraphs: [
+          "緑レーザーを当てる。",
+          "赤い蛍光の変化を読む。",
+          "出典：産総研 2026/8/18。"
+        ],
+        image: "./assets/2026-08-21-quantum-current-02-how.png",
+        zoomImage: "./assets/2026-08-21-quantum-current-02-how.png",
+        imageAlt: "ダイヤモンド量子センサーへ緑レーザーを当てる図解",
+        caption: "光の変化から磁気を読む。"
+      },
+      {
+        id: "2026-08-21-quantum-current-q3",
+        tag: "成果｜交流・直流",
+        question: "何が小さくなった？",
+        scenarioLines: [
+          "交流と直流を、",
+          "同じ装置で測る。",
+          "従来コイルも減らす。"
+        ],
+        hint: "3分の1と10分の1。",
+        answerTitle: "答え：中心部と質量",
+        principle: "量子センサーで小型化。",
+        answerParagraphs: [
+          "中心部は3分の1以下。",
+          "質量は10分の1以下。",
+          "出典：産総研 2026/8/18。"
+        ],
+        image: "./assets/2026-08-21-quantum-current-04-result.png",
+        zoomImage: "./assets/2026-08-21-quantum-current-04-result.png",
+        imageAlt: "交流と直流を同じ小型装置で測る図解",
+        caption: "同じ装置で交流と直流を測る。"
+      }
+    ]
+  },
+
 ];

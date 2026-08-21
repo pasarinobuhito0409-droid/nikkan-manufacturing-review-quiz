@@ -1,9 +1,9 @@
-const CACHE_NAME = "nikkan-manufacturing-review-quiz-v64";
+const CACHE_NAME = "nikkan-manufacturing-review-quiz-v65";
 
 const PRECACHE_ASSETS = [
   "./",
   "./index.html",
-  "./quiz-data.js?v=64",
+  "./quiz-data.js?v=65",
   "./manifest.webmanifest",
   "./service-worker.js",
   "./assets/icon.svg",
@@ -295,7 +295,11 @@ const PRECACHE_ASSETS = [
   "./assets/2026-08-17-jtec-q3-01.png",
   "./assets/2026-08-17-jtec-q3-02.png",
   "./assets/2026-08-17-jtec-q3-03.png",
-  "./assets/2026-08-17-jtec-q3-04.png"
+  "./assets/2026-08-17-jtec-q3-04.png",
+  "./assets/2026-08-21-quantum-current-01-what.png",
+  "./assets/2026-08-21-quantum-current-02-how.png",
+  "./assets/2026-08-21-quantum-current-03-why.png",
+  "./assets/2026-08-21-quantum-current-04-result.png"
 ];
 
 const PRECACHE_BATCH_SIZE = 5;
