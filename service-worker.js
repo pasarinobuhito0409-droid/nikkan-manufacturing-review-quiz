@@ -1,9 +1,9 @@
-const CACHE_NAME = "nikkan-manufacturing-review-quiz-v65";
+const CACHE_NAME = "nikkan-manufacturing-review-quiz-v66";
 
 const PRECACHE_ASSETS = [
   "./",
   "./index.html",
-  "./quiz-data.js?v=65",
+  "./quiz-data.js?v=66",
   "./manifest.webmanifest",
   "./service-worker.js",
   "./assets/icon.svg",
@@ -302,6 +302,15 @@ const PRECACHE_ASSETS = [
   "./assets/2026-08-21-quantum-current-04-result.png"
 ];
 
+const APP_SHELL_ASSETS = [
+  "./",
+  "./index.html",
+  "./quiz-data.js?v=66",
+  "./manifest.webmanifest",
+  "./service-worker.js",
+  "./assets/icon.svg"
+];
+
 const PRECACHE_BATCH_SIZE = 5;
 const MAX_BATCH_RETRIES = 3;
 const BATCH_RETRY_DELAY_MS = 300;
@@ -339,7 +348,7 @@ const precacheInBatches = async (cache, assets) => {
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => precacheInBatches(cache, PRECACHE_ASSETS))
+    caches.open(CACHE_NAME).then((cache) => precacheInBatches(cache, APP_SHELL_ASSETS))
   );
   self.skipWaiting();
 });
