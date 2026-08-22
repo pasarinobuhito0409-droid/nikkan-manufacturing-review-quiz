@@ -1,9 +1,9 @@
-const CACHE_NAME = "nikkan-manufacturing-review-quiz-v66";
+const CACHE_NAME = "nikkan-manufacturing-review-quiz-v67";
 
 const PRECACHE_ASSETS = [
   "./",
   "./index.html",
-  "./quiz-data.js?v=66",
+  "./quiz-data.js?v=67",
   "./manifest.webmanifest",
   "./service-worker.js",
   "./assets/icon.svg",
@@ -296,16 +296,16 @@ const PRECACHE_ASSETS = [
   "./assets/2026-08-17-jtec-q3-02.png",
   "./assets/2026-08-17-jtec-q3-03.png",
   "./assets/2026-08-17-jtec-q3-04.png",
-  "./assets/2026-08-21-quantum-current-01-what.png",
-  "./assets/2026-08-21-quantum-current-02-how.png",
-  "./assets/2026-08-21-quantum-current-03-why.png",
-  "./assets/2026-08-21-quantum-current-04-result.png"
+  "./assets/2026-08-21-quantum-current-01-what.webp",
+  "./assets/2026-08-21-quantum-current-02-how.webp",
+  "./assets/2026-08-21-quantum-current-03-why.webp",
+  "./assets/2026-08-21-quantum-current-04-result.webp"
 ];
 
 const APP_SHELL_ASSETS = [
   "./",
   "./index.html",
-  "./quiz-data.js?v=66",
+  "./quiz-data.js?v=67",
   "./manifest.webmanifest",
   "./service-worker.js",
   "./assets/icon.svg"

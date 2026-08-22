@@ -6983,8 +6983,8 @@ window.NIKKAN_QUIZ_SETS = [
           "電流比のズレ。",
           "出典：産総研 2026/8/18。"
         ],
-        image: "./assets/2026-08-21-quantum-current-03-why.png",
-        zoomImage: "./assets/2026-08-21-quantum-current-03-why.png",
+        image: "./assets/2026-08-21-quantum-current-03-why.webp",
+        zoomImage: "./assets/2026-08-21-quantum-current-03-why.webp",
         imageAlt: "打ち消した後に残る小さな磁気を検出する図解",
         caption: "打ち消せず残った磁気を見る。"
       },
@@ -7005,8 +7005,8 @@ window.NIKKAN_QUIZ_SETS = [
           "赤い蛍光の変化を読む。",
           "出典：産総研 2026/8/18。"
         ],
-        image: "./assets/2026-08-21-quantum-current-02-how.png",
-        zoomImage: "./assets/2026-08-21-quantum-current-02-how.png",
+        image: "./assets/2026-08-21-quantum-current-02-how.webp",
+        zoomImage: "./assets/2026-08-21-quantum-current-02-how.webp",
         imageAlt: "ダイヤモンド量子センサーへ緑レーザーを当てる図解",
         caption: "光の変化から磁気を読む。"
       },
@@ -7027,8 +7027,8 @@ window.NIKKAN_QUIZ_SETS = [
           "質量は10分の1以下。",
           "出典：産総研 2026/8/18。"
         ],
-        image: "./assets/2026-08-21-quantum-current-04-result.png",
-        zoomImage: "./assets/2026-08-21-quantum-current-04-result.png",
+        image: "./assets/2026-08-21-quantum-current-04-result.webp",
+        zoomImage: "./assets/2026-08-21-quantum-current-04-result.webp",
         imageAlt: "交流と直流を同じ小型装置で測る図解",
         caption: "同じ装置で交流と直流を測る。"
       }

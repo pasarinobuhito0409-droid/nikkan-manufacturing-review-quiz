@@ -358,6 +358,7 @@
     }
 
     .answer-visual {
+      position: relative;
       width: 100%;
       min-height: 300px;
       border: 0;
@@ -375,6 +376,32 @@
       max-height: 560px;
       object-fit: contain;
       background: var(--aluminum);
+    }
+
+    .answer-image-status {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 16px;
+      color: var(--muted);
+      background: rgba(241, 244, 243, .9);
+      font-size: 14px;
+      font-weight: 800;
+      text-align: center;
+      pointer-events: none;
+      transition: opacity .18s ease, visibility .18s ease;
+      z-index: 1;
+    }
+
+    .answer-visual.is-loaded .answer-image-status {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .answer-visual.is-error .answer-image-status {
+      color: var(--red);
+      background: rgba(255, 244, 242, .96);
     }
 
     .answer-copy p { margin: 0 0 14px; font-size: 16px; }
@@ -1084,6 +1111,16 @@
     .answer-visual,
     .answer-visual img { background: #0d0f0d; }
 
+    .answer-image-status {
+      color: #d9d1c2;
+      background: rgba(13, 15, 13, .92);
+    }
+
+    .answer-visual.is-error .answer-image-status {
+      color: #f0c5bf;
+      background: rgba(91, 29, 31, .94);
+    }
+
     .evidence-header,
     .evidence-band { border-color: rgba(201, 164, 97, .2); }
     .evidence-header h2, .evidence-band h3 { color: #eee3cf; font-weight: 500; }
@@ -1409,7 +1446,7 @@
     </div>
   </div>
 
-  <script src="./quiz-data.js?v=66"></script>
+  <script src="./quiz-data.js?v=67"></script>
   <script>
     const quizSets = window.NIKKAN_QUIZ_SETS || [];
     const storageKey = "nikkan-manufacturing-review-quiz-library-v2";
@@ -1671,10 +1708,34 @@
           const layout = document.createElement("div");
           layout.className = "answer-layout";
           layout.innerHTML = `
-            <button class="answer-visual" type="button" aria-label="説明画像を高画質で開く"><img src="${q.image}" alt="${q.imageAlt || q.answerTitle}"></button>
+            <button class="answer-visual" type="button" aria-label="説明画像を高画質で開く" aria-busy="true"><span class="answer-image-status" role="status">図解を読み込み中…</span><img src="${q.image}" alt="${q.imageAlt || q.answerTitle}"></button>
             <div class="answer-copy">${renderBreathLines(q.answerParagraphs || [])}<figcaption>${renderBreathLines(q.caption || "")}</figcaption></div>
           `;
-          layout.querySelector(".answer-visual").addEventListener("click", () => openImageViewer(q.zoomImage || q.image, q.imageAlt || q.answerTitle, q.caption || ""));
+          const visual = layout.querySelector(".answer-visual");
+          const answerImage = visual.querySelector("img");
+          const imageStatus = visual.querySelector(".answer-image-status");
+          const markImageLoaded = () => {
+            visual.classList.add("is-loaded");
+            visual.setAttribute("aria-busy", "false");
+            imageStatus.style.opacity = "0";
+            imageStatus.style.visibility = "hidden";
+            imageStatus.setAttribute("aria-hidden", "true");
+          };
+          const markImageError = () => {
+            visual.classList.add("is-error");
+            visual.setAttribute("aria-busy", "false");
+            imageStatus.textContent = "図解を読み込めませんでした";
+            imageStatus.style.opacity = "1";
+            imageStatus.style.visibility = "visible";
+            imageStatus.removeAttribute("aria-hidden");
+          };
+          answerImage.addEventListener("load", markImageLoaded, { once: true });
+          answerImage.addEventListener("error", markImageError, { once: true });
+          if (answerImage.complete) {
+            if (answerImage.naturalWidth > 0) markImageLoaded();
+            else markImageError();
+          }
+          visual.addEventListener("click", () => openImageViewer(q.zoomImage || q.image, q.imageAlt || q.answerTitle, q.caption || ""));
           answer.appendChild(layout);
         }
         article.appendChild(answer);
@@ -2463,14 +2524,14 @@
 
     if ("serviceWorker" in navigator && location.protocol !== "file:") {
       window.addEventListener("load", async () => {
-        const reloadKey = "nikkan-sw-reloaded-v66";
+        const reloadKey = "nikkan-sw-reloaded-v67";
         navigator.serviceWorker.addEventListener("controllerchange", () => {
           if (sessionStorage.getItem(reloadKey)) return;
           sessionStorage.setItem(reloadKey, "1");
           location.reload();
         });
         try {
-          const registration = await navigator.serviceWorker.register("./service-worker.js?v=66");
+          const registration = await navigator.serviceWorker.register("./service-worker.js?v=67");
           try {
             await registration?.update?.();
           } catch (error) {
