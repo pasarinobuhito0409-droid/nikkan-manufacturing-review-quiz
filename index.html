@@ -1446,7 +1446,7 @@
     </div>
   </div>
 
-  <script src="./quiz-data.js?v=67"></script>
+  <script src="./quiz-data.js?v=68"></script>
   <script>
     const quizSets = window.NIKKAN_QUIZ_SETS || [];
     const storageKey = "nikkan-manufacturing-review-quiz-library-v2";
@@ -2524,7 +2524,7 @@
 
     if ("serviceWorker" in navigator && location.protocol !== "file:") {
       window.addEventListener("load", async () => {
-        const reloadKey = "nikkan-sw-reloaded-v67";
+        const reloadKey = "nikkan-sw-reloaded-v68";
         navigator.serviceWorker.addEventListener("controllerchange", () => {
           if (sessionStorage.getItem(reloadKey)) return;
           sessionStorage.setItem(reloadKey, "1");

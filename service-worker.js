@@ -1,9 +1,9 @@
-const CACHE_NAME = "nikkan-manufacturing-review-quiz-v67";
+const CACHE_NAME = "nikkan-manufacturing-review-quiz-v68";
 
 const PRECACHE_ASSETS = [
   "./",
   "./index.html",
-  "./quiz-data.js?v=67",
+  "./quiz-data.js?v=68",
   "./manifest.webmanifest",
   "./service-worker.js",
   "./assets/icon.svg",
@@ -305,7 +305,7 @@ const PRECACHE_ASSETS = [
 const APP_SHELL_ASSETS = [
   "./",
   "./index.html",
-  "./quiz-data.js?v=67",
+  "./quiz-data.js?v=68",
   "./manifest.webmanifest",
   "./service-worker.js",
   "./assets/icon.svg"

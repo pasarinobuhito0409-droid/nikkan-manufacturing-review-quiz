@@ -7035,4 +7035,171 @@ window.NIKKAN_QUIZ_SETS = [
     ]
   },
 
+  {
+    id: "2026-08-27-quantum-usefulness-program",
+    date: "2026-08-27",
+    sourceDate: "2026-08-27",
+    difficulty: "入門",
+    responseMode: "say-it",
+    title: "日刊工業新聞 8/27 量子技術の産業化",
+    titleLines: ["日刊工業新聞 8/27", "量子技術の産業化", "思い出す3問"],
+    shortTitle: "量子技術を現場へ",
+    sourceLabel: "日刊工業新聞 2026/8/27・4ページ",
+    summary: [
+      "量子技術を、工学と現場へ移す。",
+      "答えを自分の言葉で言う。"
+    ],
+    articleEvidence: [
+      {
+        title: "4ページのマーカー部分",
+        image: "./assets/2026-08-27-quantum-usefulness-source.png",
+        zoomImage: "./assets/2026-08-27-quantum-usefulness-source.png",
+        alt: "量子有用性実証と工学連携の新聞記事に付いた緑と黄色のマーカー",
+        caption: "緑は工学連携。黄色は産業で使うための言葉。"
+      }
+    ],
+    curiosityTitle: "赤：気になる原理",
+    curiosityPoints: [],
+    importantTitle: "緑：量子技術を現場へ移す",
+    importantPoints: [
+      {
+        title: "緑：量子物理と工学をつなぐ",
+        text: "量子物理の研究を工学と連携させ、テストベッド機で使い道を実証する。",
+        breathLines: [
+          { label: "何か", text: "量子技術を現場へ移す。" },
+          { label: "どうする", text: "物理と工学を連携する。" },
+          { label: "なぜ", text: "使い道を実証する。" },
+          { label: "数字", text: "2027年度に265億円。" }
+        ],
+        frames: [
+          {
+            order: 1,
+            phase: "what",
+            phaseLabel: "研究室と現場の距離",
+            image: "./assets/2026-08-27-quantum-usefulness-01-what.webp",
+            zoomImage: "./assets/2026-08-27-quantum-usefulness-01-what.webp",
+            imageAlt: "量子実験の成果を工場で使える形へ移す前の研究室と設計机",
+            caption: "量子の成果だけでは、工場で使う形にならない。",
+            labels: ["① 何が起きている？", "研究の成果", "工場で使う形はまだ遠い"]
+          },
+          {
+            order: 2,
+            phase: "how",
+            phaseLabel: "研究と工学をつなぐ",
+            image: "./assets/2026-08-27-quantum-usefulness-02-how.webp",
+            zoomImage: "./assets/2026-08-27-quantum-usefulness-02-how.webp",
+            imageAlt: "量子研究者がデータを工学研究者へ渡し設計へ進める研究室",
+            caption: "研究データを、工学の設計へ渡す。",
+            labels: ["② どうする？", "データを渡す", "設計へ"]
+          },
+          {
+            order: 3,
+            phase: "why",
+            phaseLabel: "現場で使えるか試す",
+            image: "./assets/2026-08-27-quantum-usefulness-03-why.webp",
+            zoomImage: "./assets/2026-08-27-quantum-usefulness-03-why.webp",
+            imageAlt: "量子計測の試作機を工場の検査ラインで試す技術者",
+            caption: "テストベッド機で、現場の使い道を確かめる。",
+            labels: ["③ なぜ？", "テストベッド機", "使い道を確かめる"]
+          },
+          {
+            order: 4,
+            phase: "result",
+            phaseLabel: "現場で役立つ",
+            image: "./assets/2026-08-27-quantum-usefulness-04-result.webp",
+            zoomImage: "./assets/2026-08-27-quantum-usefulness-04-result.webp",
+            imageAlt: "量子計測装置が工場で安定して測定し合格結果を出している場面",
+            caption: "安定して測れれば、具体的な使い道になる。",
+            labels: ["④ 結果", "安定して測れる", "使い道が生まれる"],
+            result: true
+          }
+        ]
+      }
+    ],
+    glossaryTitle: "黄：読みと意味",
+    glossary: [
+      { term: "産業有用性（さんぎょうゆうようせい）", meaning: "会社や工場で役立つ度合い。" },
+      { term: "連携（れんけい）", meaning: "別々の人や組織が一緒に動くこと。" },
+      { term: "実証（じっしょう）", meaning: "本当に使えるか、試して確かめること。" },
+      { term: "テストベッド機（じっけんようのしさくき）", meaning: "新技術を実際の条件で試す装置。" },
+      { term: "ユースケース（つかいみちのれい）", meaning: "誰が何に使うかの具体例。" },
+      { term: "概算要求（がいさんようきゅう）", meaning: "来年度のお金を国に求める案。" }
+    ],
+    insightQuotes: [],
+    sources: [],
+    questions: [
+      {
+        id: "2026-08-27-quantum-usefulness-q1",
+        tag: "連携｜研究と工学",
+        difficulty: "入門",
+        question: "量子技術を産業で使うため、何と何をつなぐ？",
+        scenarioLines: [
+          "研究室だけでは、",
+          "工場で使いにくい。",
+          "次の一手を考える。"
+        ],
+        hint: "研究者の分野を見る。",
+        answerTitle: "答え：量子物理と工学",
+        principle: "原理を、装置と使い道へ移す。",
+        answerParagraphs: [
+          "量子物理の研究者と、",
+          "工学研究者をつなぐ。",
+          "出典：日刊工業新聞 2026/8/27。"
+        ],
+        image: "./assets/2026-08-27-quantum-usefulness-02-how.webp",
+        zoomImage: "./assets/2026-08-27-quantum-usefulness-02-how.webp",
+        imageAlt: "量子研究者から工学研究者へデータを渡し設計へ進める図解",
+        caption: "量子の原理を、工学の設計へ渡す。"
+      },
+      {
+        id: "2026-08-27-quantum-usefulness-q2",
+        tag: "実証｜テストベッド機",
+        difficulty: "入門",
+        question: "テストベッド機（実験用の試作機）で、何を確かめる？",
+        scenarioLines: [
+          "新技術を作った。",
+          "研究室の外へ出す。",
+          "何を測る？"
+        ],
+        hint: "現場での使い道。",
+        answerTitle: "答え：実際の使い道",
+        principle: "現場の条件で、使えるか確かめる。",
+        answerParagraphs: [
+          "試作機を、",
+          "実際の現場で動かす。",
+          "ユースケース（使い道の例）を実証する。",
+          "出典：日刊工業新聞 2026/8/27。"
+        ],
+        image: "./assets/2026-08-27-quantum-usefulness-03-why.webp",
+        zoomImage: "./assets/2026-08-27-quantum-usefulness-03-why.webp",
+        imageAlt: "量子計測の試作機を工場の検査ラインで試す図解",
+        caption: "現場で試して、使い道を確かめる。"
+      },
+      {
+        id: "2026-08-27-quantum-usefulness-q3",
+        tag: "数字｜概算要求",
+        difficulty: "入門",
+        question: "2027年度の概算要求はいくら？",
+        scenarioLines: [
+          "国が量子技術を支える。",
+          "工学連携を進める。",
+          "金額を思い出す。"
+        ],
+        hint: "265から始まる。",
+        answerTitle: "答え：265億円",
+        principle: "実証を進めるための予算案。",
+        answerParagraphs: [
+          "2027年度の、",
+          "概算要求は265億円。",
+          "記事では新規で盛り込む。",
+          "出典：日刊工業新聞 2026/8/27。"
+        ],
+        image: "./assets/2026-08-27-quantum-usefulness-04-result.webp",
+        zoomImage: "./assets/2026-08-27-quantum-usefulness-04-result.webp",
+        imageAlt: "量子計測装置が現場で安定して測定する図解",
+        caption: "予算で実証を進め、現場の使い道へつなげる。"
+      }
+    ]
+  },
+
 ];
